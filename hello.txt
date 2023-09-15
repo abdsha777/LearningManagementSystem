@@ -1,3 +1,8 @@
+<<<<<<< HEAD
 hellooo
 world
 hello
+=======
+hellooo0000
+world
+>>>>>>> f3778f2342167029f5009be4b0478a6b425fd08e
