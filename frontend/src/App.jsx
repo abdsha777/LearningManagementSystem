@@ -1,6 +1,8 @@
 import './App.css'
-import Layout from './components/Layout'
 import { BrowserRouter, Routes, Route } from 'react-router-dom'
+import Layout from './components/layout/Layout'
+
+
 
 function App() {
 
