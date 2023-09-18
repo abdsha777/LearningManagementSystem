@@ -132,7 +132,7 @@ main{
     margin-right: 5px;
     opacity: 0.7;
     fill: none;
-    transition: 400ms ease-in;
+    transition: transform 400ms ease-in;
 }
 
 
@@ -160,15 +160,114 @@ main{
 
 
 /* main content goes here */
+
 .main-content{
     width: 100%;
     height: 85vh;
     background-color: white;
     border-radius: 0 0 25px 0;
     overflow-y: scroll;
-    padding: 50px;
+    padding: 30px 40px;
 }
 .main-content::-webkit-scrollbar{
     display: none;
 }
 
+
+/* form goes here */
+
+.form h1{
+    font-size: 30px;
+    color: #323030;
+    font-style: normal;
+    font-weight: 700;
+    letter-spacing: 0.58px;
+    margin-bottom: 40px;
+}
+
+.input-field{
+    display: flex;
+    flex-direction: column;
+    width: 40%;
+    margin-bottom: 30px;
+}
+.input-field label{
+    color: #323030;
+    font-size: 18px;
+    font-weight: 500;
+    margin-bottom: 10px;
+}
+.input-field input,.input-field span {
+    border: #a2a2a2 1px solid;
+    border-radius: 3px;
+    padding: 10px;
+    background-color: #e0e0e0;
+    transition: 0.4s background-color ;
+}
+.input-field input:focus,.input-field span:focus {
+    outline: 0;
+    background-color: #fff;
+}
+.input-field span{
+    resize: none;
+}
+#drop{
+    display: none;
+}
+.droplabel{
+    cursor: pointer;
+    padding: 10px;
+    border: 2px solid #5DDCD6;
+    border-radius: 5px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: 0.4s background-color;
+}
+.droplabel svg{
+    width: 50px;
+    height: 50px;
+    transition: 0.4s transform;
+}
+.droplabel:hover{
+    background-color: #5DDCD6;
+}
+.droplabel:hover > svg{
+    transform: scale(1.2);
+}
+.droplabel:hover > svg path{
+    fill: white;
+}
+
+/* form ends here  */
+
+/* popup start here  */
+
+.filter-popup{
+    border: 0;
+    border-radius: 20px;
+    box-shadow: black 0px 3px 5px 0px;
+    width: 300px;
+    padding: 30px 60px;
+}
+.filter-popup h2{
+    color: #323030;
+    font-size: 30px;
+    font-style: normal;
+    font-weight: 700;
+    letter-spacing: 0.58px;
+    margin-bottom: 20px;
+}
+.filters{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 10px;
+    margin-bottom: 20px;
+}
+.filters label{
+    font-size: 14px;
+    font-style: normal;
+}
+.filters input{
+    background-color: #D6D6D6;
+}

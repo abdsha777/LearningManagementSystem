@@ -1,32 +1,8 @@
-<!DOCTYPE html>
-<html lang="en">
+import React from 'react'
+import './sidebar.css'
 
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>template</title>
-    <link rel="stylesheet" href="style.css">
-</head>
-
-<body>
-    <header>
-        <nav>
-            <div class="logo">
-                <div class="logo-img"></div>
-                <h2>LMS</h2>
-            </div>
-            <h1 class="greetings">Welcome Kamil Khan</h1>
-
-            <div class="profile">
-                <img src="images/sir.png" alt="sir">
-                <div class="profile-info">
-                    <h2>Kamil Khan</h2>
-                    <p>Teacher</p>
-                </div>
-            </div>
-        </nav>
-    </header>
-    <main>
+function Sidebar() {
+    return (
         <div class="sidebar">
             <a href="#" class="sidebar-links active">
                 <svg class="home-svg" width="800px" height="800px" viewBox="0 0 24 24"
@@ -114,24 +90,7 @@
                 My Course List
             </a>
         </div>
-        <div class="main-content">
-            <div class="filter-popup">
-                <h2>Filters</h2>
-                <div class="filters">
-                    <label for="">Department</label>
-                    <input type="checkbox">
-                    <label for="">Faculty</label>
-                    <input type="checkbox">
-                    <label for="">Year</label>
-                    <input type="checkbox">
-                </div>
-                <div class="popup-btns">
-                    <button class="btn-close">Close</button>
-                    <button class="btn-apply">Apply</button>
-                </div>
-            </div>
-        </div>
-    </main>
-</body>
+    )
+}
 
-</html>
+export default Sidebar
