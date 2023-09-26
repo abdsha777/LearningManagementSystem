@@ -24,7 +24,7 @@ const courseSchema = mongoose.Schema({
         default: Date.now,
         immutable:true
     },
-    acive:{
+    active:{
         type:Boolean,
         default:true
     }
