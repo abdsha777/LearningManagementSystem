@@ -29,7 +29,7 @@
 
 .course-right {
   display: grid;
-  grid-template-columns: 35% 75%;
+  grid-template-columns: 40% 60%;
   float: left;
   gap: 2px;
   width: 300px;
@@ -219,7 +219,7 @@
 .switch {
   position: relative;
   display: inline-block;
-  width: 80px;
+  width: 75px;
   height: 35px;
   border-radius: 20px;
   border: 2px solid #5ddcd6;
@@ -239,12 +239,12 @@
 
 .toggle-btn:checked+.switch:after {
   translate: 40px 0px;
+  background-color: red;
 }
 
 .toggle-btn:checked+.switch {
-  background-color: #868181;
-  border: 2px solid #868181;
   transition: 0.3s;
+  border: red 1px solid;
 }
 
 #toggle {

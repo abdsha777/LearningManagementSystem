@@ -2,8 +2,31 @@ import React from 'react'
 import './TeacherCourseDetail.css'
 import courseImg from '../../assets/image.jpg'
 import pieChart from '../../assets/pie-chart.png'
+import { Chart as ChartJS, ArcElement, Tooltip, Legend } from "chart.js";
+import { Pie } from 'react-chartjs-2';
+ChartJS.register(ArcElement, Tooltip, Legend);
 
 function TeacherCourseDetail() {
+    const data = {
+        labels: ['Ongoing', 'Completed', 'InComplete'],
+        datasets: [{
+            label: '# of Votes',
+            data: [121, 67,10],
+            backgroundColor: ['pink', 'lightblue','lightgreen']
+        }]
+    }
+    const options = {
+        responsive: true,
+        plugins: {
+          legend: {
+            position: 'top',
+          },
+          title: {
+            display: true,
+            text: 'Chart.js Pie Chart'
+          }
+        }
+      }
     return (
         <div className="teacher-view-course">
             <div className="right-content">
@@ -144,8 +167,9 @@ function TeacherCourseDetail() {
                 </div>
             </div>
             <div className="pie-chart">
-                <img
-                    src={pieChart}
+                <Pie
+                    options={options}
+                    data={data}
                 />
             </div>
         </div>
