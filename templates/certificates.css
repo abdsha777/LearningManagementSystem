@@ -1,0 +1,54 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+.certificate-heading{
+    color: #323030;
+    font-family: Roboto;
+    font-size: 32px;
+    font-style: bold;
+}
+.certificate-module{
+    padding-top: 20px;
+    border-radius: 10px;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 40px;
+}
+.certificate-box{
+    /* box-shadow: 6px 6px 8px #888888; */
+    border: 1px solid black;
+    border-radius: 10px;
+    padding: 10px;
+     
+}
+
+.certificate-image img{
+    width: 100%;
+    border: 1px solid black;
+    margin-bottom: 5px;
+}
+.certificate-details{
+    display: flex;
+    justify-content:space-between ;
+    align-items: center;
+}
+.certificate-details h2{
+    color: #323030;
+    font-size: 20px;
+    padding-bottom: 10px;
+}
+.certificate-details h3{
+    color: #48B803;
+    font-size: 16px;
+    display: flex;
+    align-items: center;
+}
+.certificate-details h3 svg{
+    width: 20px;
+    height: 20px;
+}
+.certificate-date{
+    color: #868181;
+    font-size: 15px;
+}
