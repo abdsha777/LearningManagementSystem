@@ -9,10 +9,9 @@ function Layout() {
         <main>
           <Sidebar />
           <div class="main-content">
-            
+            <Outlet />
           </div>
         </main>
-        <Outlet />
     </>
   )
 }
