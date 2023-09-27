@@ -1,0 +1,92 @@
+.mycourse {
+    background-color: white;
+
+}
+
+.mycourse .heading {
+    text-align: center;
+    padding-bottom: 15px;
+    color: #fff;
+    text-shadow: 0 5px 10px rgba(0, 0, 0, .2);
+    font-size: 40px;
+}
+
+.mycourse .box-container {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 40px;
+}
+
+.box-container .box {
+    box-shadow: 6px 6px 8px #888888;
+    border-radius: 20px;
+    background: #fff;
+    text-align: center;
+    padding: 10px;
+}
+
+.mycourse .box-container .box img {
+    border-radius: 20px;
+    width: 100%;
+
+}
+
+.mycourse .box-container .box h3 {
+    padding-top: 5px;
+    font-weight: bold;
+    text-align: left;
+}
+
+.mycourse .box-container .box h4 {
+    color: #868181;
+    font-style: normal;
+    font-weight: 600;
+    text-align: right;
+    color: green;
+}
+
+.mycourse .box-container .box h5 {
+    padding-top: 5px;
+    font-weight: bold;
+    text-align: left;
+}
+
+
+.mycourse .box-container .box p {
+    color: #777;
+    font-size: 15px;
+    line-height: 1.8;
+}
+
+.mycourse .box-container .box .btn {
+    margin-top: 10px;
+    display: inline-block;
+    background: #333;
+    color: #fff;
+    font-size: 17px;
+    border-radius: 5px;
+    padding: 8px 25px;
+}
+
+
+.corsname {
+    text-align: left;
+}
+
+.course-info {
+    display: flex;
+    justify-content: space-between;
+}
+
+.course-info h4 {
+    padding-top: 5px;
+    color: green;
+}
+
+.container .box-container .box h6 {
+    font-size: large;
+    font-style: normal;
+    font-weight: 600;
+    text-align: right;
+    color: red;
+}
