@@ -1,19 +1,19 @@
-@import url('https://fonts.googleapis.com/css2?family=Inter&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Inter&display=swap");
 
-*{
+* {
     box-sizing: border-box;
     margin: 0;
     padding: 0;
 }
 
-body{
-    background: #5DDCD6;
+body {
+    background: #5ddcd6;
     padding: 10px;
-    font-family: 'Inter', sans-serif;
+    font-family: "Inter", sans-serif;
     height: 100vh;
 }
 
-nav{
+nav {
     background-color: white;
     padding: 10px;
     border: 0;
@@ -24,7 +24,7 @@ nav{
     height: 10vh;
 }
 
-.logo{
+.logo {
     margin: 0 150px 0 50px;
     display: flex;
     align-items: center;
@@ -32,58 +32,58 @@ nav{
     color: #323030;
 }
 
-.logo-img{
+.logo-img {
     border-radius: 10px;
-    background: #C5EEE6;
+    background: #c5eee6;
     height: 40px;
     width: 40px;
     margin-right: 10px;
 }
 
-.greetings{
+.greetings {
     color: #323030;
 }
 
-.profile{
+.profile {
     margin-left: auto;
     display: flex;
     margin-right: 60px;
     align-items: center;
 }
 
-.profile img{
+.profile img {
     height: 52px;
     width: 52px;
 }
 
-.profile-info{
+.profile-info {
     margin-left: 10px;
 }
 
-.profile-info h2{
+.profile-info h2 {
     color: #323030;
     font-size: 20px;
     font-style: normal;
     font-weight: 500;
-    line-height: 29.124px; /* 145.62% */
+    line-height: 29.124px;
+    /* 145.62% */
 }
 
-.profile-info p{
+.profile-info p {
     color: #868181;
     font-size: 16px;
     font-style: normal;
     font-weight: 600;
-    line-height: 29.124px; /* 182.025% */
+    line-height: 29.124px;
+    /* 182.025% */
 }
 
-main{
+main {
     display: grid;
     grid-template-columns: 1fr 5fr;
 }
 
-
-
-.sidebar{
+.sidebar {
     background-color: white;
     display: flex;
     flex-direction: column;
@@ -91,16 +91,17 @@ main{
     border: 0;
     border-radius: 0 0 0 25px;
     margin-right: 10px;
-    min-height:85vh;
+    min-height: 85vh;
 }
 
-.sidebar-links{
+.sidebar-links {
     text-decoration: none;
     color: #868181;
     font-size: 14px;
     font-style: normal;
     font-weight: 500;
-    line-height: 29.124px; /* 208.029% */
+    line-height: 29.124px;
+    /* 208.029% */
     border: 0;
     border-radius: 15px;
     margin-bottom: 20px;
@@ -109,24 +110,28 @@ main{
     align-items: center;
     transition: 0.3s;
 }
-.sidebar-links:hover{
+
+.sidebar-links:hover {
     color: black;
     /* background-color: rgb(232, 232, 232); */
     transform: translateY(-2px);
-    box-shadow: #919191 0px 2px 7px 1px;;
+    box-shadow: #919191 0px 2px 7px 1px;
 }
-.sidebar-links.active{
-    background: #5DDCD6;
+
+.sidebar-links.active {
+    background: #5ddcd6;
     color: white;
 }
-.sidebar-links.active:hover{
+
+.sidebar-links.active:hover {
     color: black;
 }
-.sidebar-links.active:hover img{
+
+.sidebar-links.active:hover img {
     opacity: 1;
 }
 
-.sidebar-links svg{
+.sidebar-links svg {
     width: 25px;
     height: 25px;
     margin-right: 5px;
@@ -135,33 +140,35 @@ main{
     transition: transform 400ms ease-in;
 }
 
-
-
-.sidebar-links:hover > svg{
-    scale: 1.1;   
+.sidebar-links:hover>svg {
+    scale: 1.1;
 }
-.sidebar-links:hover > .home-svg{
-    fill: black;   
+
+.sidebar-links:hover>.home-svg {
+    fill: black;
 }
-.sidebar-links:hover > .course-svg{
+
+.sidebar-links:hover>.course-svg {
     transform: rotateY(360deg);
 }
-.sidebar-links:hover > .add-svg{
+
+.sidebar-links:hover>.add-svg {
     transform: rotate(90deg);
 }
-.sidebar-links:hover > .student-svg{
+
+.sidebar-links:hover>.student-svg {
     transform: rotateY(180deg);
     fill: black;
 }
-.sidebar-links:hover > .class-svg{
-    transform: rotateY(180deg);
-    fill: black
-}
 
+.sidebar-links:hover>.class-svg {
+    transform: rotateY(180deg);
+    fill: black;
+}
 
 /* main content goes here */
 
-.main-content{
+.main-content {
     width: 100%;
     height: 85vh;
     background-color: white;
@@ -169,14 +176,14 @@ main{
     overflow-y: scroll;
     padding: 30px 40px;
 }
-.main-content::-webkit-scrollbar{
+
+.main-content::-webkit-scrollbar {
     display: none;
 }
 
-
 /* form goes here */
 
-.form h1{
+.form h1 {
     font-size: 30px;
     color: #323030;
     font-style: normal;
@@ -185,89 +192,71 @@ main{
     margin-bottom: 40px;
 }
 
-.input-field{
+.input-field {
     display: flex;
     flex-direction: column;
     width: 40%;
     margin-bottom: 30px;
 }
-.input-field label{
+
+.input-field label {
     color: #323030;
     font-size: 18px;
     font-weight: 500;
     margin-bottom: 10px;
 }
-.input-field input,.input-field span {
+
+.input-field input,
+.input-field span {
     border: #a2a2a2 1px solid;
     border-radius: 3px;
     padding: 10px;
     background-color: #e0e0e0;
-    transition: 0.4s background-color ;
+    transition: 0.4s background-color;
 }
-.input-field input:focus,.input-field span:focus {
+
+.input-field input:focus,
+.input-field span:focus {
     outline: 0;
     background-color: #fff;
 }
-.input-field span{
+
+.input-field span {
     resize: none;
 }
-#drop{
+
+#drop {
     display: none;
 }
-.droplabel{
+
+.droplabel {
     cursor: pointer;
     padding: 10px;
-    border: 2px solid #5DDCD6;
+    border: 2px solid #5ddcd6;
     border-radius: 5px;
     display: flex;
     justify-content: center;
     align-items: center;
     transition: 0.4s background-color;
 }
-.droplabel svg{
+
+.droplabel svg {
     width: 50px;
     height: 50px;
     transition: 0.4s transform;
 }
-.droplabel:hover{
-    background-color: #5DDCD6;
+
+.droplabel:hover {
+    background-color: #5ddcd6;
 }
-.droplabel:hover > svg{
+
+.droplabel:hover>svg {
     transform: scale(1.2);
 }
-.droplabel:hover > svg path{
+
+.droplabel:hover>svg path {
     fill: white;
 }
 
 /* form ends here  */
 
-/* popup start here  */
-
-.filter-popup{
-    border: 0;
-    border-radius: 20px;
-    box-shadow: black 0px 3px 5px 0px;
-    width: 300px;
-    padding: 30px 60px;
-}
-.filter-popup h2{
-    color: #323030;
-    font-size: 30px;
-    font-style: normal;
-    font-weight: 700;
-    letter-spacing: 0.58px;
-    margin-bottom: 20px;
-}
-.filters{
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 10px;
-    margin-bottom: 20px;
-}
-.filters label{
-    font-size: 14px;
-    font-style: normal;
-}
-.filters input{
-    background-color: #D6D6D6;
-}
