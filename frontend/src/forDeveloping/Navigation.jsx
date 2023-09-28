@@ -9,6 +9,8 @@ function Navigation() {
         <div className='nav-links'>
             <Link to={'/teacherCourseDetail'}>Teacher Course Detail</Link>
             <Link to={'/studentDashboard'}>Student Dashboard</Link>
+            <Link to={'/studentCourseDetail'}>Student Course Detail</Link>
+
         </div>
     </div>
   )
