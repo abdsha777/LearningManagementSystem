@@ -5,21 +5,27 @@
 .video-info{
     display: grid;
     grid-template-columns: 1fr 1fr;
-    width: 250px;
+    width: 350px;
     gap: 10px;
     margin-bottom: 30px;
 }
+
 .video-info h4{
-    color: #847E7E;
-    font-size: 16px;
+    color:  #323030;
+    font-size: 18px;
     font-weight: 500;
 }
 .video-info p{
     color: #323030;
     font-family: Roboto;
-    font-size: 20px;
+    font-size: 25px;
     font-style: normal;
     font-weight: 600;
+}
+#video-no{
+    font-weight: 1000;
+    color: black;
+    font-size: 20px;
 }
 .video{
     width:100%;
@@ -28,6 +34,9 @@
     justify-content: center;
     position: relative;
     margin-bottom: 30px;
+}
+.video iframe{
+    border-radius:10px ;
 }
 .video img{
     width:746px;
@@ -39,7 +48,7 @@
     top: 150px;
 }
 .video-desc{
-    color: #323030;
+    color:black;
     font-family: Inter;
     font-size: 16px;
     font-style: normal;
@@ -49,22 +58,54 @@
     display:flex;
     margin-bottom: 40px;
 }
-
-.video-btn{
-    width: 150px;
-    height: 46px;
-    flex-shrink: 0;
-    border-radius: 15px;
-    border: 2px solid #5DDCD6;
-    background: #FFF;
-    box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
+.video-desc h4{
+    color:#847E7E ;
 }
-.next-btn{
-    width: 150px;
-    height: 46px;
-    border-radius: 15px;
-    border: 2px solid #5DDCD6;
-    background: #5DDCD6;
-    box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
-    float: right;
+
+.btn{
+    padding: 15px 20px;
+    border-radius: 10px;
+    width: 140px;
+    height: 40px;
+    background-color: white;
+    font-size: 15px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #323030;
+    font-style: normal;
+    font-weight: 400;;
+}
+.btn-border-blue{
+    border: 1px solid #5DDCD6;
+    transition: 0.5s background-color; 
+}   
+.btn-border-blue:hover{
+    background-color: #5DDCD6;
+    color: white;
+}   
+.btn-border{
+    border: 1px solid #868181;
+}
+.cancel-btn{
+    transition: 0.2s border;
+    transition: 0.3s color;
+}
+.cancel-btn:hover{
+    color: red;
+    border: 1px solid red;
+}
+.btn-filled{
+    background-color: #5DDCD6;
+    border: 0;
+    color: white;
+    font-weight: 500;
+    transition: 0.3s background-color;
+}
+.btn-filled:hover{
+    background-color: #5ddc90;
+}
+.video-btns{
+    display:flex;
+    justify-content: space-between;
 }
