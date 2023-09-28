@@ -1,0 +1,98 @@
+.heading {
+    color: #323030;
+    font-family: Roboto;
+    font-size: 20px;
+font-style: normal;
+font-weight: 700;
+line-height: 29.124px; /* 100.428% */
+letter-spacing: 0.58px;
+}
+/* Style for table header cells */
+th {
+    text-align: left; /* Align text to the left within cells */
+    padding: 8px 16px; /* Adjust padding for better spacing */
+    
+}
+
+
+/* ... (the rest of your CSS remains the same) */
+
+
+.sub_heading {
+    width: 20px;
+    height: 20px;
+    flex-shrink: 0;/* Reduced margin */
+}
+
+.sub_heading input[type=text] {
+    width: 240px; /* Reduced width */
+    height: 45px; /* Reduced height */
+    flex-shrink: 0;
+    border-radius: 10px; /* Reduced border radius */
+    border: 1px solid rgba(0, 0, 0, 0.40);
+    background: #FFFCFE;
+    box-shadow: 0px 2px 2px 0px rgba(0, 0, 0, 0.25);
+    color: #323030;
+    font-family: Roboto;
+    font-size: 14px; /* Reduced font size */
+    font-weight: 400;
+    padding-left: 12px; /* Reduced padding */
+    line-height: 22px; /* Reduced line height */
+}
+
+.filter1 {
+    width: 80px;
+    height: 45px; /* Reduced height */
+    flex-shrink: 0;
+    border-radius: 10px; /* Reduced border radius */
+    border: 1px solid rgba(0, 0, 0, 0.40);
+    background: #FFFCFE;
+    box-shadow: 0px 2px 2px 0px rgba(0, 0, 0, 0.25);
+    width: 100px; /* Reduced width */
+    color: #323030;
+    font-size: 16px; /* Reduced font size */
+    cursor: pointer;
+}
+/* Style for module2 */
+.heading1 {
+    padding: 10px;
+    border-radius: 10px;
+    margin-top: 10px;
+    color: #FFFFFF; 
+}
+
+/* Align module2 to the right */
+.right {
+    text-align: right;
+}
+
+
+.sub_heading input[type=text]:focus {
+    outline: none;
+}
+
+.module5 table {
+    width: 100%;
+}
+
+.module5 th {
+    color: #847E7E;
+    font-size: 14px; /* Reduced font size */
+}
+
+.module5 td {
+    text-align: center;
+    font-size: 14px; /* Reduced font size */
+    padding: 12px; /* Reduced padding */
+    color: #323030;
+    font-weight: 600;
+}
+
+.module5 td button {
+    padding: 4px 16px; /* Reduced padding */
+    background-color: white;
+    border-radius: 16px; /* Reduced border radius */
+    font-weight: normal;
+}
+
+
