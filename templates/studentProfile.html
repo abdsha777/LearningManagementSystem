@@ -6,19 +6,19 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>template</title>
     <link rel="stylesheet" href="style.css">
-    <link rel="stylesheet" href="course.css">
-    <link rel="stylesheet" href="TeacherModule.css">
-
+    <link rel="stylesheet" href="studentProfile.css">
 </head>
 
 <body>
     <header>
+        <!-- navbar -->
         <nav>
             <div class="logo">
                 <div class="logo-img"></div>
                 <h2>LMS</h2>
             </div>
             <h1 class="greetings">Welcome Kamil Khan</h1>
+
             <div class="profile">
                 <img src="images/sir.png" alt="sir">
                 <div class="profile-info">
@@ -27,8 +27,10 @@
                 </div>
             </div>
         </nav>
+        <!-- navbar end -->
     </header>
     <main>
+        <!-- sidebar -->
         <div class="sidebar">
             <a href="#" class="sidebar-links active">
                 <svg class="home-svg" width="800px" height="800px" viewBox="0 0 24 24"
@@ -117,79 +119,82 @@
                 My Course List
             </a>
         </div>
+        <!-- sidebar end -->
+
+        <!-- main content body  -->
         <div class="main-content">
-            <div class="course-tag">
-                <b>Course's</b>
-                <div class="search">
-                    <div class="search-box"><input type="text" class="search-bar" placeholder="Search Course"></div>
-                    <div class="filter-button"><button>Filter</button></div>
-                </div>
-            </div>
 
-
-            <div class="video-component">
-                <p class="heading">Web Development</p>
-                <div class="videos">
-                    <div class="video-box">
-                        <img src="./png/reactpic.jpg" alt="react video">
-                        <div class="video-info">
-                            <h1>Basic of JS</h1>
-                        
+            <!-- Add code here  -->
+            <div class="profile-container">
+                <div class="profile-detail">
+                    <h1>Student Profile</h1>
+                    <div class="inner-detail">
+                        <div class="profile-img">
+                            <img src="./images/shehzad.png" alt="">
                         </div>
-                        <small>Duration:16 Hours</small>
-
-                    </div>
-                    <div class="video-box">
-                        <img src="./png/reactpic.jpg" alt="react video">
-                        <div class="video-info">
-                            <h1>Fundamentals</h1>
+                        <div class="details">
+                            <h3>Username:</h3>
+                            <p>Shehzad</p>
+                            <h3>User id:</h3>
+                            <p>137809</p>
+                            <h3>Faculty:</h3>
+                            <p>Science</p>
+                            <h3>Email:</h3>
+                            <p>Af123@doodle.aAf123@doodle.abc </p>
+                            <h3>Phone no:</h3>
+                            <p>999999999</p>
+                            <h3>Year:</h3>
+                            <p>2023</p>
                         </div>
-                        <small>Duration:16 Hours</small>
-
-                    </div>
-                    <div class="video-box">
-                        <img src="./png/reactpic.jpg" alt="react video">
-                        <div class="video-info">
-                            <h1>Module Test 1</h1>
-                        </div>
-                        <small>Duration:16 Hours</small>
-
                     </div>
                 </div>
-            </div>
-            <div class="video-component">
-                <p class="heading">Web Development</p>
-                <div class="videos">
-                    <div class="video-box">
-                        <img src="./png/reactpic.jpg" alt="react video">
-                        <div class="video-info">
-                            <h1>Basic of JS</h1>
+            <div>
+                
+                <div class="student-progress">
+                    <h3>Student Progress</h3>
+                    <img src="./images/progress.png" alt="">
+                </div>
+                <div class="course-detail">
+                    <h1>Courses</h1>
+                    <div class="box-container">
+                        <div class="box">
+                            <img src="./images/reactjpeg.jpeg" alt="">
+                            <div class="course-info">
+                                <h4>REACT JS</h3>
+                                <h5> Completed</h4>
+                            </div>
                             
                         </div>
-                        <small>Duration:16 Hours</small>
-
-                    </div>
-                    <div class="video-box">
-                        <img src="./png/reactpic.jpg" alt="react video">
-                        <div class="video-info">
-                            <h1>Fundamentals</h1>
+                        <div class="box">
+                            <img src="./images/reactjpeg.jpeg" alt="">
+                            <div class="course-info">
+                                <h4>Fundamental</h4>
+                                <h5> Completed</h5>
+                            </div>
+                            
+                            
                         </div>
-                        <small>Duration:16 Hours</small>
-                        
-                    </div>
-                    <div class="video-box">
-                        <img src="./png/reactpic.jpg" alt="react video">
-                        <div class="video-info">
-                            <h1>Module Test 1</h1>
+                        <div class="box">
+                            <img src="./images/reactjpeg.jpeg" alt="">
+                            <div class="course-info">
+                                <h4>Module 1 Test</h4>
+                                <h5> Completed</h5>
+                            </div>
+                            
+                            </div>
                         </div>
-                        <small>Duration:16 Hours</small>
-                        
                     </div>
                 </div>
-            </div>
-          
         </div>
     </main>
+</body>
+
+</html>
+</div>
+</div>
+<!-- main content body end  -->
+
+</main>
 </body>
 
 </html>

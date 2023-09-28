@@ -1,17 +1,17 @@
 import React from 'react'
-import {Outlet} from 'react-router-dom'
+import { Outlet } from 'react-router-dom'
 import Navbar from '../navbar/Navbar'
 import Sidebar from '../sidebar/Sidebar'
 function Layout() {
   return (
     <>
-        <Navbar />
-        <main>
-          <Sidebar />
-          <div class="main-content">
-            <Outlet />
-          </div>
-        </main>
+      <Navbar />
+      <main>
+        <Sidebar />
+        <div className="main-content">
+          <Outlet />
+        </div>
+      </main>
     </>
   )
 }

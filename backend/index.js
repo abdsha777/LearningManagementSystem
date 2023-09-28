@@ -1,28 +1,15 @@
-const mongoose = require("mongoose");
-const User = require("./models/User");
+const express = require('express') 
+const connectToMongo = require("./db");
 
-async function connectToMongo() {
-    await mongoose.connect('mongodb://127.0.0.1:27017/lms');
-    console.log("connected")
-}
+// connectToMongo();
+
+const app = express();
+const port=5000;
 
 
+// routes
+app.use('/auth',require('./routes/auth/login.js'))
 
-async function fun(){
-    try {
-        await connectToMongo();
-        // const user = await User.create({
-        //     email:"aaa@a.com",
-        //     password:"abc",
-        //     name:"abdulla",
-        //     role:"student"
-        // })
-        // console.log(user)
-
-        
-    } catch (e) {
-        console.log(e.message);
-    }
-}
-
-fun();
+app.listen(port,()=>{
+    console.log(`express running on http://localhost:${port}`)
+})

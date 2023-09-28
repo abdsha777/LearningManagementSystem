@@ -1,0 +1,146 @@
+.module {
+  /* background-color: red; */
+  margin-top: 0%;
+  width: 650px;
+  display: grid;
+  grid-template-columns: 2fr 7fr;
+  grid-gap: 10px;
+  text-align: left;
+  font-size: 14px;
+  margin-bottom: 30px;
+}
+
+.heading {
+  margin-bottom: 10px;
+  font-size: 20px;
+}
+
+.module h2 {
+  color: #868181;
+  font-style: normal;
+  font-size: 18px;
+}
+.module p {
+  color: #323030;
+  font-family: Inter;
+  font-size: 16px;
+}
+
+.button {
+  display: flex;
+  justify-content: space-between;
+  width: 650px;
+}
+
+.notes-btn{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.notes-btn svg{
+  width: 30px;
+  height: 30px;
+}
+
+.box {
+  margin-top: 50px;
+  font-weight: bold;
+  display: flex;
+}
+
+.completed-box{
+  display: flex;
+  align-items: center;
+  padding: 20px 0;
+}
+
+
+.switch {
+  position: relative;
+  display: inline-block;
+  width: 80px;
+  height: 35px;
+  border-radius: 20px;
+  border: 2px solid #5ddcd6;
+  margin-left: 20px;
+}
+
+.switch::after {
+  content: "";
+  position: absolute;
+  top: 3px;
+  left: 5px;
+  width: 25px;
+  height: 25px;
+  border-radius: 50%;
+  background-color: #5ddcd6;
+  transition: 0.4s;
+}
+
+.completed-box input[type="checkbox"]:checked+.switch:after {
+  translate: 40px 0px;
+}
+
+.completed-box input[type="checkbox"]:checked+.switch {
+  background-color: #868181;
+  border: 2px solid #868181;
+  transition: 0.3s;
+}
+
+#toggle {
+  display: none;
+}
+
+.video-component {
+  padding-top: 10px;
+  margin-bottom: 20px;
+}
+.video-component .heading {
+  font-size: 25px;
+}
+
+.videos {
+  padding-top: 20px;
+  width: 100%;
+  border-radius: 10px;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 50px;
+}
+
+.video-box img {
+  border-radius: 10px;
+  width: 100%;
+  margin-bottom: 10px;
+}
+
+.video-box {
+  box-shadow: 1px 1px 6px #888888;
+  border-radius: 10px;
+  padding: 10px;
+}
+
+.video-info {
+  display: grid;
+  grid-template-columns: 1fr 0.5fr;
+}
+
+.video-info h1 {
+  color: #323030;
+  font-size: 20px;
+  font-weight: 500;
+  margin-bottom: 10px;
+}
+
+.video-info h4 {
+  color: #0BFF06;
+  text-align: right;
+}
+.video-info h4.incomplete {
+  color: red;
+}
+
+.video-info small {
+  color: #868181;
+  font-style: normal;
+}

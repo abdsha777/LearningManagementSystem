@@ -4,58 +4,65 @@
   justify-content: baseline;
 }
 
+.right-content{
+  padding: 0 20px 0 0;
+}
+
 .course-details {
   display: flex;
   flex-basis: fit-content;
 }
+
 .course-img {
   margin-left: auto;
 }
+
 .course-img img {
   width: 280px;
   float: right;
-  margin-right: 20px;
 }
-.pie-chart img {
-  width: 280px;
-  margin: auto;
-}
+
 .course-right {
   display: grid;
-  grid-template-columns: 35% 75%;
+  grid-template-columns: 40% 60%;
   float: left;
   gap: 2px;
   width: 300px;
-  font-family: Roboto;
   font-size: 16px;
   font-style: normal;
   font-weight: 400;
-  line-height: 29.124px; /* 182.025% */
+  line-height: 29.124px;
+  /* 182.025% */
 }
-#course-t,#Duration,#Faculty,#Teacher-name{
+
+#course-t,
+#Duration,
+#Faculty,
+#Teacher-name {
   color: #847e7e
 }
+
 .Description {
-  gap:12px;
+  gap: 12px;
   display: flex;
   font-family: Inter;
   font-size: 16px;
-  font-family: Roboto;
   font-style: normal;
   font-weight: 400;
-  line-height: 31.696px; /* 198.1% */
+  line-height: 31.696px;
+  /* 198.1% */
   letter-spacing: 0.32px;
   margin-right: 20px;
 }
-.course-compl {
+
+.course-complete {
   gap: 2px;
   display: flex;
   align-items: center;
-
 }
-.completed{
+
+.completed {
   color: #323030;
-  font-family: Roboto;
   font-size: 20px;
   font-style: normal;
   font-weight: 600;
@@ -63,7 +70,6 @@
 
 .module-d {
   color: #323030;
-  font-family: Roboto;
   font-size: 20px;
   font-style: normal;
   font-weight: 600;
@@ -79,17 +85,20 @@
   box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
   padding: 8px;
   color: #000;
-  font-family: Roboto;
   font-size: 16px;
   font-style: normal;
   font-weight: 600;
-  line-height: 29.124px; /* 182.025% */
+  line-height: 29.124px;
+  /* 182.025% */
 }
+
 .module-but {
   display: flex;
   align-items: center;
   gap: 10px;
+  margin-bottom: 30px;
 }
+
 .final-test {
   width: 124px;
   height: 46px;
@@ -100,15 +109,14 @@
   box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
 
   color: #000;
-  font-family: Roboto;
   font-size: 16px;
   font-style: normal;
   font-weight: 600;
   line-height: 29.124px;
 }
+
 .update-course {
   color: #fefefe;
-  font-family: Roboto;
   font-size: 16px;
   font-style: normal;
   font-weight: 600;
@@ -121,63 +129,45 @@
   background: #5ddcd6;
   box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
   margin-left: auto;
-  margin-right: 10px;
-}
-.module-details {
-  width: 100%;
-  margin: 40px 0 0 20px;
-}
-.module-box{
-  padding: 10px 20px;
-}
-.module1,.module4 {
-    display: flex;
-  border-radius: 25px 25px 0px 0px;
-  border: 1px solid #000;
-  background: #fff;
-  width: 612px;
-  height: 82px;
-  flex-shrink: 0;
-  justify-content: space-between;
-}
-.module2 ,.module3{
-  display: flex;
-  width: 612px;
-  height: 82px;
-  flex-shrink: 0;
-  border: 1px solid #000;
-  background: #fff;
-  justify-content: space-between;
 }
 
-.module4{
-  display: flex;
-  width: 612px;
-  height: 82px;
-  flex-shrink: 0;
-  border-radius: 0px 0px 25px 25px;
-  border: 1px solid #000;
-  background: #FFF;
-  justify-content: space-between;
+.module-details {
+  width: 100%;
 }
-.view-btn{
+
+.module-box {
+  padding: 10px 20px;
+  display: flex;
+  justify-content: space-between;
+  border: 1px solid #000;
+}
+.module-box.first {
+  border-radius: 20px 20px 0 0;
+}
+.module-box.last {
+  border-radius: 0 0 20px 20px;
+}
+
+.view-btn {
   display: flex;
   justify-content: center;
   align-items: center;
 }
+
 .module-time {
   display: flex;
   gap: 3px;
 }
-.view-module-btn{
+
+.view-module-btn {
   margin-left: auto;
   margin-right: 10px;
   color: #000;
-  font-family: Roboto;
   font-size: 16px;
   font-style: normal;
   font-weight: 600;
-  line-height: 29.124px; /* 182.025% */
+  line-height: 29.124px;
+  /* 182.025% */
   width: 133px;
   height: 46px;
   flex-shrink: 0;
@@ -185,66 +175,83 @@
   border: 1px solid #323030;
   background: #FFF;
   box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
-  
-  
-  }
-  .mod-text1{
-    color: #000;
-font-family: Roboto;
-font-size: 16px;
-font-style: normal;
-font-weight: 600;
-line-height: 29.124px; /* 182.025% */
-letter-spacing: 0.16px;
-  }
-  .module-time{
-    color: #272727;
-font-family: Roboto;
-font-size: 13px;
-font-style: normal;
-font-weight: 400;
-line-height: 29.124px; /* 224.031% */
-  }
-  /* .dot{
-      padding-top: 5px;
-  } */
-  .box {
-    margin-top: 50px;
-    font-weight: bold;
-    display:flex;
-  }
-  #head {
-    padding-top: 10px;
-  }
+
+
+}
+
+.mod-text1 {
+  color: #000;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: 29.124px;
+  /* 182.025% */
+  letter-spacing: 0.16px;
+}
+
+.module-time {
+  color: #272727;
+  font-size: 13px;
+  font-style: normal;
+  font-weight: 400;
+}
+
+.box {
+  margin-top: 50px;
+  font-weight: bold;
+  display: flex;
+}
+
+#head {
+  padding-top: 10px;
+}
+
 .switch {
-    position: relative;
-    display: inline-block;
-    width: 80px;
-    height: 35px;
-    border-radius: 20px;
-    border: 2px solid #5ddcd6;
-    box-shadow: 2px 3px 8px #888888
-    
-  }
-  .switch::after {
-    content: "";
-    position: absolute;
-    top: 3px;
-    left: 5px;
-    width: 25px;
-    height: 25px;
-    border-radius: 50%;
-    background-color: #5ddcd6;
-    transition: 0.4s;
-  }
-  .toggle-btn:checked + .switch:after {
-    translate: 40px 0px;
-  }
-  .toggle-btn:checked + .switch {
-    background-color: #868181;
-    border: 2px solid #868181;
-    transition: 0.3s;
-  }
-  #toggle {
-    display: none;
-  }
+  position: relative;
+  display: inline-block;
+  width: 75px;
+  height: 35px;
+  border-radius: 20px;
+  border: 2px solid #5ddcd6;
+}
+
+.switch::after {
+  content: "";
+  position: absolute;
+  top: 3px;
+  left: 5px;
+  width: 25px;
+  height: 25px;
+  border-radius: 50%;
+  background-color: #5ddcd6;
+  transition: 0.4s;
+}
+
+.toggle-btn:checked+.switch:after {
+  translate: 40px 0px;
+  background-color: red;
+}
+
+.toggle-btn:checked+.switch {
+  transition: 0.3s;
+  border: red 1px solid;
+}
+
+#toggle {
+  display: none;
+}
+.toggle{
+  display: flex;
+  align-items: center;
+  margin-left: 10px;
+}
+
+
+.left-content{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.pie-chart{
+  width: 80%;
+}

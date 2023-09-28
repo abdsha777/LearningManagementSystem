@@ -4,11 +4,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>template</title>
+    <title>Teacher Dasboard</title>
     <link rel="stylesheet" href="style.css">
-    <link rel="stylesheet" href="course.css">
-    <link rel="stylesheet" href="TeacherModule.css">
-
+    <link rel="stylesheet" href="Teacher_Dashboard.css">
 </head>
 
 <body>
@@ -19,6 +17,7 @@
                 <h2>LMS</h2>
             </div>
             <h1 class="greetings">Welcome Kamil Khan</h1>
+
             <div class="profile">
                 <img src="images/sir.png" alt="sir">
                 <div class="profile-info">
@@ -118,76 +117,80 @@
             </a>
         </div>
         <div class="main-content">
-            <div class="course-tag">
-                <b>Course's</b>
-                <div class="search">
-                    <div class="search-box"><input type="text" class="search-bar" placeholder="Search Course"></div>
-                    <div class="filter-button"><button>Filter</button></div>
+            <div class="Topcontent">
+                <div class="Studentinfo">
+                    <div class="totalStudent">
+
+                        <div class="Totalimg">%</div>
+                        <div>
+                            <div class="textTS">
+                                <h3 id="totalS">Total No. of Student</h3>
+                                <h4 id="num1">500</h4>
+                            </div>
+                        </div>
+
+                    </div>
+                    <br />
+                    <div class="TcoursesUpload">
+                        <div class="CourseUploadimg">%</div>
+                        <div>
+                            <div class="textCU">
+                                <h3 id="CourseUpload">Total Course Uploaded</h3>
+                                <h4 id="num2">5</h4>
+                            </div>
+                        </div>
+                    </div>
+
+                    <br />
+                    <div class="EnrolledStudent">
+                        <div class="Enrolledimg">%</div>
+                        <div>
+                            <div class="txtES">
+                                <h3 id="EnrolledS">Total No. of Student Enrolled</h3>
+                                <h4 id="num3">1000</h4>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+                <div class="graph">
+                    <img src="./images/FigmaGraph.jpg" alt="">
                 </div>
             </div>
-
-
-            <div class="video-component">
-                <p class="heading">Web Development</p>
-                <div class="videos">
-                    <div class="video-box">
-                        <img src="./png/reactpic.jpg" alt="react video">
-                        <div class="video-info">
-                            <h1>Basic of JS</h1>
-                        
-                        </div>
-                        <small>Duration:16 Hours</small>
-
-                    </div>
-                    <div class="video-box">
-                        <img src="./png/reactpic.jpg" alt="react video">
-                        <div class="video-info">
-                            <h1>Fundamentals</h1>
-                        </div>
-                        <small>Duration:16 Hours</small>
-
-                    </div>
-                    <div class="video-box">
-                        <img src="./png/reactpic.jpg" alt="react video">
-                        <div class="video-info">
-                            <h1>Module Test 1</h1>
-                        </div>
-                        <small>Duration:16 Hours</small>
-
-                    </div>
-                </div>
+            <div class="CourseTable">
+                <h1>My Course</h1>
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Course Name</th>
+                            <th>Uploaded On</th>
+                            <th>Total Enrollments</th>
+                            <th>Total No. of Student Completed</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>React JS</td>
+                            <td>29-AUG-2023</td>
+                            <td>50</td>
+                            <td>20</td>
+                        </tr>
+                        <tr>
+                            <td>React JS</td>
+                            <td>29-AUG-2023</td>
+                            <td>50</td>
+                            <td>20</td>
+                        </tr>
+                        <tr>
+                            <td>React JS</td>
+                            <td>29-AUG-2023</td>
+                            <td>50</td>
+                            <td>20</td>
+                        </tr>
+                    </tbody>
+                </table>
             </div>
-            <div class="video-component">
-                <p class="heading">Web Development</p>
-                <div class="videos">
-                    <div class="video-box">
-                        <img src="./png/reactpic.jpg" alt="react video">
-                        <div class="video-info">
-                            <h1>Basic of JS</h1>
-                            
-                        </div>
-                        <small>Duration:16 Hours</small>
 
-                    </div>
-                    <div class="video-box">
-                        <img src="./png/reactpic.jpg" alt="react video">
-                        <div class="video-info">
-                            <h1>Fundamentals</h1>
-                        </div>
-                        <small>Duration:16 Hours</small>
-                        
-                    </div>
-                    <div class="video-box">
-                        <img src="./png/reactpic.jpg" alt="react video">
-                        <div class="video-info">
-                            <h1>Module Test 1</h1>
-                        </div>
-                        <small>Duration:16 Hours</small>
-                        
-                    </div>
-                </div>
-            </div>
-          
         </div>
     </main>
 </body>
