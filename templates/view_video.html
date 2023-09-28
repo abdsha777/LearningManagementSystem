@@ -6,11 +6,12 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>template</title>
     <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="view_video.css">
+
 </head>
 
 <body>
     <header>
-        <!-- navbar -->
         <nav>
             <div class="logo">
                 <div class="logo-img"></div>
@@ -26,10 +27,8 @@
                 </div>
             </div>
         </nav>
-        <!-- navbar end -->
     </header>
     <main>
-        <!-- sidebar -->
         <div class="sidebar">
             <a href="#" class="sidebar-links active">
                 <svg class="home-svg" width="800px" height="800px" viewBox="0 0 24 24"
@@ -117,16 +116,41 @@
                 My Course List
             </a>
         </div>
-        <!-- sidebar end -->
-
-        <!-- main content body  -->
         <div class="main-content">
+            <div class="video-info">
+                <!-- <div id="video-no">Video No: 1</div><br>
+                <div id="video-name">Video Name: Basic of JS</div><br>
+                <div id="video-status">Status:  Completed</div><br> -->
+                <h4>Video No:</h4>
+                <p>1</p>
+                <h4>Video Name:</h4>
+                <p>Basic Of JS</p>
+                <h4>Status:</h4>
+                <p>Completed</p>
+            </div>
+               <div class="video">
+                <img src="./images/video.jpg"
+               />
+               <svg width="105" height="96" viewBox="0 0 105 96" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <g id="mdi:play">
+                <path id="Vector" d="M30.1055 0V88.6154L105.001 44.3077L30.1055 0Z" fill="white"/>
+                </g>
+                </svg>
+                
+               </div>
+            <div class="video-desc">
+                <br>
+             <h4> Description: </h4> 
+             <p>React is a powerful JavaScript library that you can use to build user interfaces 
+              for web and mobile applications (apps). In this course, you will explore 
+              the fundamental concepts that underpin the React library and learn the basic skills
+               required to build a simple, fast, and scalable app.
+            </p>
+            </div>
             
-            <!-- Add code here  -->
-            
+            <button class="video-btn">Previous Video</button>
+            <button class="next-btn">Next Video</button>
         </div>
-        <!-- main content body end  -->
-        
     </main>
 </body>
 

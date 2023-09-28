@@ -3,9 +3,9 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>template</title>
+    <title>Teacher Course View</title>
     <link rel="stylesheet" href="style.css" />
-    <link rel="stylesheet" href="teacherstyle.css" />
+    <link rel="stylesheet" href="teacher(ViewCourse).css" />
   </head>
 
   <body>
@@ -15,7 +15,7 @@
           <div class="logo-img"></div>
           <h2>LMS</h2>
         </div>
-        <h1 class="greetings">Welcome, Kamil Khan</h1>
+        <h1 class="greetings">Welcome Kamil Khan</h1>
 
         <div class="profile">
           <img src="images/sir.png" alt="sir" />
@@ -192,90 +192,155 @@
         </a>
       </div>
       <div class="main-content">
-        <div class="module">
-          <!-- format me likhneka -->
-          <h3 class="heading">Module: 1</h3>
-          <h3 class="heading"></h3>
-          <p1>Module Name:</p1>
-          <p>Fundamentals of React JS</p>
-          <p2>Duration:</p2>
-          <p>13 Mintues</p>
-          <p3>Description:</p3>
-          <p>
-            React is a powerful JavaScript library that you can use to build
-            user interfaces for web and mobile applications (apps). In this
-            course, you will explore the fundamental concepts that underpin the
-            React library and learn the basic skills required to build a simple,
-            fast, and scalable app.
-          </p>
-        </div>
-        <div class="button">
-          <button class="btn-1">Update Module</button>
-          <button class="btn-2">+ Add Test</button>
-          <button class="btn-3">+ Add Videos</button>
-          <button class="btn-4">
-            Notes
-            <svg
-              fill="#ffffff"
-              width="800px"
-              height="800px"
-              viewBox="0 0 1024 1024"
-              xmlns="http://www.w3.org/2000/svg"
-              stroke="#ffffff"
-            >
-              <g id="SVGRepo_bgCarrier" stroke-width="0" />
+        <div class="teacher-view-course">
+          
 
-              <g
-                id="SVGRepo_tracerCarrier"
-                stroke-linecap="round"
-                stroke-linejoin="round"
-              />
-
-              <g id="SVGRepo_iconCarrier">
-                <path
-                  d="M512 666.5L367.2 521.7l36.2-36.2 83 83V256h51.2v312.5l83-83 36.2 36.2L512 666.5zm-204.8 50.3V768h409.6v-51.2H307.2z"
+          <div class="right-content">
+            <div class="course-details">
+              <div class="course-right">
+                <p  id="course-t">Course Title:</p>
+                <p id="ReactJS">ReactJS</p>
+                <p id="Duration">Duration:</p>
+                <p id="16Hours">16 Hours</p>
+                <p  id="Faculty">Faculty:</p>
+                <p id="Science">Science</p>
+                <p  id="Teacher-name">Teacher Name:</p>
+                <p id="Kamil-Khan">Kamil Khan</p>
+              </div>
+              <div class="course-img">
+                <img
+                  src=".\images\image.jpg"
                 />
-              </g>
-            </svg>
-          </button>
-        </div>
-        <div class="box">
-         
-            <p id="head"> Module  Completed :</p>
-            <p>
-              <input type="checkbox"  class="togglebtn" name="checkbox" id="toggle" />
-              <label for="toggle" class="switch"></label>
-            </p>
-          
-        </div>
-        <div class="video">
-           <p>Videos :</p>
-           <div class="vid">
-             <div class="v">
-              <img src="./png/reactpic.jpg" alt="react video">
-              <div class="video-info">
-              <p1>Basic of JS</p1><p4>Complete</p4>
-              <p5>Video 1</p5>
+              </div>
             </div>
-            
-             </div>
-             <div class="v">
-              <img src="./png/reactpic.jpg" alt="react video">
-              <div class="video-info">
-              <p1>Fundamentals</p1><p4>Complete</p4>
-              <p5>Video 2</p5>  
+            <br />
+            <div class="Description">
+              <div class="desc">
+                <p style="color: #847e7e">Description:</p>
+              </div>
+              <div class="desc-deatail">
+                <p>
+                  React is a powerful JavaScript library that you can use to build
+                  user interfaces for web and mobile applications (apps). In this
+                  course, you will explore the fundamental concepts that underpin
+                  the React library and learn the basic skills required to build a
+                  simple, fast, and scalable app.
+                </p>
+              </div>
             </div>
-            
-             </div>
-             <div class="v">
-              <img src="./png/reactpic.jpg" alt="react video">
-              <div class="video-info">
-              <p1>Module Test 1</p1><p2>InComplete</p2>
-              <p5>Video 3</p5>
+            <br />
+            <div class="course-compl">
+              <div class="completed">
+                <p>Course Completed:</p>
+              </div>
+              <div class="toggle">
+                <input type="checkbox" name="checkbox" id="toggle" class="toggle-btn">
+                <label for="toggle" class="switch"></label>
+              </div>
             </div>
-          
-             </div>
+            <br />
+            <div class="module-but">
+              <div class="module-d">
+                <p>MODULE:</p>
+              </div>
+              <button class="add-module-btn">
+                <p>+ Add Module</p>
+              </button>
+              <button class="add-module-btn">
+                <p>+ Final Test</p>
+              </button>
+              <button class="update-course">
+                <p>Update Course</p>
+              </button>
+            </div>
+            <div class="module-details">
+              <div class="module1 module-box">
+                <div class="fun-react">
+                  <div class="mod-text1">
+                    <p>Fundamentals of React JS</p>
+                  </div>
+                  <div class="module-time">
+                    <div class="module-seq">
+                      <p>Module 1</p>
+                    </div>
+                    <div class="dot"><p>.</p></div>
+                    <div class="module-time">
+                      <p>13 Minutes</p>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="view-btn">
+                  <button class="view-module-btn">View Module</button>
+                </div>
+              </div>
+              <div class="module2 module-box">
+                <div class="mod-text">
+                  <div class="mod-text1">
+                    <p>Hooks</p>
+                  </div>
+                  <div class="module-time">
+                    <div class="module-seq">
+                      <p>Module 2</p>
+                    </div>
+                    <div class="module-time">
+                      <p>18 Minutes</p>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="view-btn">
+                  <button class="view-module-btn">View Module</button>
+                </div>
+              </div>
+              <div class="module3 module-box">
+                <div class="mod-text3">
+                  <div class="mod-text1">
+                    <p>Virtaul DOM</p>
+                  </div>
+                  <div class="module-time">
+                    <div class="module-seq">
+                      <p>Module 3</p>
+                    </div>
+                    <div class="module-time">
+                      <p>15 Minutes</p>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="view-btn">
+                  <button class="view-module-btn">View Module</button>
+                </div>
+              </div>
+
+              <div class="module4 module-box">
+                <div class="mod-text4">
+                  <div class="mod-text1">
+                    <p>Final Test</p>
+                  </div>
+                  <div class="module-time">
+                    <div class="module-seq">
+                      <p>Module 4</p>
+                    </div>
+                    <div class="module-time">
+                      <p>20 Minutes</p>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="view-btn">
+                  <button class="view-module-btn">View Module</button>
+                </div>
+              </div>
+            </div>
           </div>
+          <div class="pie-chart">
+            <img
+              src=".\images\pie-chart.png"
+            />
+          </div>
+
+        </div>
       </div>
     </main>
   </body>

@@ -1,0 +1,161 @@
+.Studentinfo {
+    display: inline;
+    gap: 10px;
+}
+
+.totalStudent {
+    width: 240px;
+    height: 80px;
+    flex-shrink: 0;
+    border-radius: 15px;
+    background: rgba(255, 255, 255, 0.75);
+    box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
+    display: grid;
+    grid-template-columns: 40% 60%;
+}
+
+.Totalimg {
+    color: #09adad;
+    font-family: Inter;
+    font-size: 36px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+    margin-left: 20px;
+    margin-top: 15px;
+
+}
+
+#totalS {
+    color: #868181;
+    font-family: Inter;
+    font-size: 10px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 29.124px;
+    /* 291.24% */
+    margin-top: 15px;
+}
+
+.TcoursesUpload {
+    width: 240px;
+    height: 80px;
+    flex-shrink: 0;
+    border-radius: 15px;
+    background: rgba(255, 255, 255, 0.75);
+    box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
+    display: grid;
+    grid-template-columns: 40% 60%;
+}
+
+.CourseUploadimg {
+    color: #09adad;
+    font-family: Inter;
+    font-size: 36px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+    margin-left: 20px;
+    margin-top: 15px;
+}
+
+.textCU {
+    color: #868181;
+    font-family: Inter;
+    font-size: 13px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 29.124px;
+    /* 291.24% */
+    margin-top: 15px;
+}
+
+#CourseUpload {
+    color: #868181;
+    font-family: Inter;
+    font-size: 10px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 29.124px;
+    /* 291.24% */
+    margin-top: 15px;
+}
+
+.EnrolledStudent {
+    width: 240px;
+    height: 80px;
+    flex-shrink: 0;
+    border-radius: 15px;
+    background: rgba(255, 255, 255, 0.75);
+    box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
+    display: grid;
+    grid-template-columns: 40% 60%;
+}
+
+.Enrolledimg {
+    color: #09adad;
+    font-family: Inter;
+    font-size: 36px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+    margin-left: 20px;
+    margin-top: 15px;
+}
+
+.txtES {
+    color: #868181;
+    font-family: Inter;
+    font-size: 13px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 29.124px;
+    /* 291.24% */
+    margin-top: 15px;
+}
+
+#EnrolledS {
+    color: #868181;
+    font-family: Inter;
+    font-size: 10px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 29.124px;
+    /* 291.24% */
+    margin-top: 15px;
+}
+
+table {
+    width: 100%;
+}
+
+th {
+    width: 20%;
+    color: #847E7E;
+    font-family: Inter;
+    font-size: 18px;
+    font-style: normal;
+    font-weight: 300;
+    line-height: 29.124px;
+    text-align: left;
+    /* 161.8% */
+}
+
+td{
+ padding: 2% 0;
+}
+
+img{
+    border-radius: 15px;
+    background: url(<path-to-image>), cover no-repeat;
+    max-width: 100%;
+    max-height: 100%;
+    padding-left: 10%;
+    padding-bottom: 6%;
+    width: 821px;
+    height: 338px;
+}
+.Topcontent{
+    display: flex;
+
+}

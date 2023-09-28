@@ -4,13 +4,13 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>template</title>
+    <title>Teacher Dasboard</title>
     <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="Teacher_Dashboard.css">
 </head>
 
 <body>
     <header>
-        <!-- navbar -->
         <nav>
             <div class="logo">
                 <div class="logo-img"></div>
@@ -26,10 +26,8 @@
                 </div>
             </div>
         </nav>
-        <!-- navbar end -->
     </header>
     <main>
-        <!-- sidebar -->
         <div class="sidebar">
             <a href="#" class="sidebar-links active">
                 <svg class="home-svg" width="800px" height="800px" viewBox="0 0 24 24"
@@ -86,8 +84,8 @@
                 Add New Course
             </a>
             <a href="#" class="sidebar-links">
-                <svg class="student-svg" width="800px" height="800px" viewBox="0 0 64 64" xmlns="http://www.w3.org/2000/svg"
-                    stroke-width="3" stroke="#000000" fill="none">
+                <svg class="student-svg" width="800px" height="800px" viewBox="0 0 64 64"
+                    xmlns="http://www.w3.org/2000/svg" stroke-width="3" stroke="#000000" fill="none">
                     <path
                         d="M43.31,37.52A11.83,11.83,0,0,1,31.25,49.35,12.1,12.1,0,0,1,19.63,37.12V20.64a.1.1,0,0,1,.08-.1,90.43,90.43,0,0,1,12.08-1,82.5,82.5,0,0,1,11.57,1,.09.09,0,0,1,.07.1Z" />
                     <path d="M19.63,26,9,20.47a.1.1,0,0,1,0-.18L31.49,8.86h.09L54,20.17a.1.1,0,0,1,0,.18L43.43,26" />
@@ -101,7 +99,8 @@
                 Student List
             </a>
             <a href="#" class="sidebar-links">
-                <svg class="class-svg" width="800px" height="800px" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <svg class="class-svg" width="800px" height="800px" viewBox="0 0 24 24" fill="none"
+                    xmlns="http://www.w3.org/2000/svg">
 
                     <g id="SVGRepo_bgCarrier" stroke-width="0" />
 
@@ -117,16 +116,84 @@
                 My Course List
             </a>
         </div>
-        <!-- sidebar end -->
-
-        <!-- main content body  -->
         <div class="main-content">
-            
-            <!-- Add code here  -->
-            
+            <div class="Topcontent">
+                <div class="Studentinfo">
+                    <div class="totalStudent">
+
+                        <div class="Totalimg">%</div>
+                        <div>
+                            <div class="textTS">
+                                <h3 id="totalS">Total No. of Student</h3>
+                                <h4 id="num1">500</h4>
+                            </div>
+                        </div>
+
+                    </div>
+                    <br />
+                    <div class="TcoursesUpload">
+                        <div class="CourseUploadimg">%</div>
+                        <div>
+                            <div class="textCU">
+                                <h3 id="CourseUpload">Total Course Uploaded</h3>
+                                <h4 id="num2">5</h4>
+                            </div>
+                        </div>
+                    </div>
+
+                    <br />
+                    <div class="EnrolledStudent">
+                        <div class="Enrolledimg">%</div>
+                        <div>
+                            <div class="txtES">
+                                <h3 id="EnrolledS">Total No. of Student Enrolled</h3>
+                                <h4 id="num3">1000</h4>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+                <div class="graph">
+                    <img src="./images/FigmaGraph.jpg" alt="">
+                </div>
+            </div>
+            <br>
+            <br>
+            <div class="CourseTable">
+                <h1>My Course</h1>
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Course Name</th>
+                            <th>Uploaded On</th>
+                            <th>Total Enrollments</th>
+                            <th>Total No. of Student Completed</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>React JS</td>
+                            <td>29-AUG-2023</td>
+                            <td>50</td>
+                            <td>20</td>
+                        </tr>
+                        <tr>
+                            <td>React JS</td>
+                            <td>29-AUG-2023</td>
+                            <td>50</td>
+                            <td>20</td>
+                        </tr>
+                        <tr>
+                            <td>React JS</td>
+                            <td>29-AUG-2023</td>
+                            <td>50</td>
+                            <td>20</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
         </div>
-        <!-- main content body end  -->
-        
     </main>
 </body>
 
