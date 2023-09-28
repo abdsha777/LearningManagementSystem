@@ -36,7 +36,7 @@
     border-radius: 10px;
     height: 35px;
     width: 120px;
-    box-shadow: 6px 6px 8px #888888;
+    box-shadow: 3px 3px 8px #888888;
     font-weight: bold;
   }
   
@@ -88,7 +88,7 @@
     height: 35px;
     border-radius: 20px;
     border: 2px solid #5ddcd6;
-    box-shadow: 6px 6px 8px #888888;
+    box-shadow: 3px 3px 8px #888888;
   }
   .switch::after {
     content: "";
@@ -101,10 +101,10 @@
     background-color: #5ddcd6;
     transition: 0.4s;
   }
-  input[type="checkbox"]:checked + .switch:after {
+  .togglebtn:checked + .switch:after {
     translate: 40px 0px;
   }
-  input[type="checkbox"]:checked + .switch {
+  .togglebtn:checked + .switch {
     background-color: #868181;
     border: 2px solid #868181;
     transition: 0.3s;
