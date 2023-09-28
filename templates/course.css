@@ -44,6 +44,7 @@ button{
     font-style: normal;
     font-weight: 500;
     line-height: 29.124px; /* 91.013% */
+    padding-top: 20px;
 }
 .course-module{
     width: 100%;

@@ -1,7 +1,33 @@
 import React from 'react'
 import './TeacherCourseDetail.css'
+import courseImg from '../../assets/image.jpg'
+import pieChart from '../../assets/pie-chart.png'
+import { Chart as ChartJS, ArcElement, Tooltip, Legend } from "chart.js";
+import { Pie } from 'react-chartjs-2';
+import Doubts from '../../components/chat/Doubts';
+ChartJS.register(ArcElement, Tooltip, Legend);
 
 function TeacherCourseDetail() {
+    const data = {
+        labels: ['Ongoing', 'Completed', 'InComplete'],
+        datasets: [{
+            label: '# of Votes',
+            data: [121, 67,10],
+            backgroundColor: ['pink', 'lightblue','lightgreen']
+        }]
+    }
+    const options = {
+        responsive: true,
+        plugins: {
+          legend: {
+            position: 'top',
+          },
+          title: {
+            display: true,
+            text: 'Chart.js Pie Chart'
+          }
+        }
+      }
     return (
         <div className="teacher-view-course">
             <div className="right-content">
@@ -17,15 +43,13 @@ function TeacherCourseDetail() {
                         <p id="Kamil-Khan">Kamil Khan</p>
                     </div>
                     <div className="course-img">
-                        <img
-                            src=".\images\image.jpg"
-                        />
+                        <img src={courseImg} />
                     </div>
                 </div>
                 <br />
                 <div className="Description">
                     <div className="desc">
-                        <p style="color: #847e7e">Description:</p>
+                        <p>Description:</p>
                     </div>
                     <div className="desc-deatail">
                         <p>
@@ -38,7 +62,7 @@ function TeacherCourseDetail() {
                     </div>
                 </div>
                 <br />
-                <div className="course-compl">
+                <div className="course-complete">
                     <div className="completed">
                         <p>Course Completed:</p>
                     </div>
@@ -63,7 +87,7 @@ function TeacherCourseDetail() {
                     </button>
                 </div>
                 <div className="module-details">
-                    <div className="module1 module-box">
+                    <div className="module-box first">
                         <div className="fun-react">
                             <div className="mod-text1">
                                 <p>Fundamentals of React JS</p>
@@ -83,7 +107,7 @@ function TeacherCourseDetail() {
                             <button className="view-module-btn">View Module</button>
                         </div>
                     </div>
-                    <div className="module2 module-box">
+                    <div className="module-box">
                         <div className="mod-text">
                             <div className="mod-text1">
                                 <p>Hooks</p>
@@ -102,7 +126,7 @@ function TeacherCourseDetail() {
                             <button className="view-module-btn">View Module</button>
                         </div>
                     </div>
-                    <div className="module3 module-box">
+                    <div className="module-box">
                         <div className="mod-text3">
                             <div className="mod-text1">
                                 <p>Virtaul DOM</p>
@@ -122,7 +146,7 @@ function TeacherCourseDetail() {
                         </div>
                     </div>
 
-                    <div className="module4 module-box">
+                    <div className="module-box last">
                         <div className="mod-text4">
                             <div className="mod-text1">
                                 <p>Final Test</p>
@@ -143,10 +167,14 @@ function TeacherCourseDetail() {
                     </div>
                 </div>
             </div>
-            <div className="pie-chart">
-                <img
-                    src=".\images\pie-chart.png"
-                />
+            <div className='left-content'>
+                <div className="pie-chart">
+                    <Pie
+                        options={options}
+                        data={data}
+                    />
+                </div>
+                <Doubts />
             </div>
         </div>
     )

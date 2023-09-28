@@ -1,0 +1,92 @@
+.header-db {
+    width: 1164px;
+    height: 905px;
+    flex-shrink: 0;
+    padding-left: 200px;
+}
+
+/* top ka card ka css */
+.segg-container {
+    display: flex;
+    padding-left: 70px;
+    gap: 350px;
+
+}
+
+.top-card {
+    display: flex;
+    justify-content: center;
+    margin: 0%;
+    padding: 0%;
+    padding-left: 100px;
+    border-radius: 15px;
+    gap: 120px;
+}
+
+.col-3 {
+    display: flex;
+    width: 240px;
+    height: 80px;
+    /* idhar thu green box ka size change kar sakta  */
+    border-radius: 15px;
+    background: rgba(93, 220, 214, 0.75);
+}
+
+.segg-text {
+    color: #000;
+    font-family: Inter;
+    font-size: 14px;
+    font-style: normal;
+    padding-left: 100px;
+    /* here u can shift the content  */
+}
+
+/* table   */
+
+.display-info {
+    padding: 20px;
+    border-collapse: collapse;
+    width: 100%;
+}
+
+tr {
+    width: 100px;
+}
+
+td,
+th {
+    text-align: center;
+    padding: 30px;
+}
+
+/* bottom card grid of suggestion  */
+.card {
+    padding-left: 30px;
+    display: flex;
+    flex-direction: row;
+    max-width: 100%;
+    margin: 20px;
+    gap: 150px;
+}
+
+.col-4 {
+    width: 318px;
+    height: 290px;
+
+    border-radius: 15px;
+    background: #FEFEFE;
+    padding: 20px;
+    box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
+}
+
+img {
+    width: 293.922px;
+    height: 185.201px;
+    border-radius: 15px;
+    padding: 0;
+}
+
+.image {
+    padding: 0;
+    margin: 0;
+}
