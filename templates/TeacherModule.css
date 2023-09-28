@@ -94,6 +94,9 @@
 .video-component {
   padding-top: 10px;
 }
+.video-component .heading {
+  font-size: 25px;
+}
 
 .videos {
   padding-top: 20px;
