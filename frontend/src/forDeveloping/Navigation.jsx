@@ -8,6 +8,7 @@ function Navigation() {
         <h2>Navigation Menu </h2> <small>check out your code</small>
         <div className='nav-links'>
             <Link to={'/teacherCourseDetail'}>Teacher Course Detail</Link>
+            <Link to={'/studentDashboard'}>Student Dashboard</Link>
         </div>
     </div>
   )
