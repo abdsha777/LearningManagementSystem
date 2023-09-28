@@ -1,5 +1,6 @@
 import React from 'react'
 import './sidebar.css'
+import { Link } from 'react-router-dom'
 
 function Sidebar() {
     return (
@@ -89,6 +90,9 @@ function Sidebar() {
                 </svg>
                 My Course List
             </a>
+            <Link to=".." className="sidebar-links">
+                &larr; GO BACK
+            </Link>
         </div>
     )
 }
