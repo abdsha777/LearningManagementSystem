@@ -1,23 +1,6 @@
-
-.main_module {
-    width: 1272px;
-    height: 748px;
-    flex-shrink: 0;
-    border-radius: 25px;
-    background: #FFF;
-    padding-top: 5px;
-    padding-left: 0px;
-}
-
 .heading {
     color: #323030;
-    font-family: Roboto;
     font-size: 29px;
-    font-style: normal;
-    font-weight: 700;
-    line-height: 29.124px;
-    /* 100.428% */
-    letter-spacing: 0.58px;
 }
 
 .module2 {
