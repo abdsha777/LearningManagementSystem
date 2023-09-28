@@ -1,51 +1,30 @@
 .heading {
     color: #323030;
-    font-size: 29px;
+    font-size: 36px;
+    margin-bottom: 20px;
 }
 
 .module2 {
     display: flex;
-    gap: 10px;
-    padding-top: 10px;
+    padding-bottom: 20px;
+    gap: 20px;
 }
 
-.Add_Students {
-    width: 168px;
-    height: 53px;
-    border-radius: 10px;
-    border: none;
-    border-radius: 18px;
-    border: 1px solid #5DDCD6;
-    background: #FDFDFD;
-    color: #323030;
-    font-family: Roboto;
-    font-size: 18px;
-    font-style: normal;
-    font-weight: 400;
-    line-height: 29.124px;
-    cursor: pointer;
-    /* 161.8% */
+.module2 button {
+    height: 50px;
 }
 
-.Bulk_Upload {
-    width: 158px;
-    height: 53px;
-    flex-shrink: 0;
-    border-radius: 18px;
-    border: 1px solid #5DDCD6;
-    background: #FDFDFD;
-    color: #323030;
-    font-family: Roboto;
-    font-size: 18px;
-    font-style: normal;
-    font-weight: 400;
-    line-height: 29.124px;
-    cursor: pointer;
-
-    /* 161.8% */
+.module2 button.big {
+    font-size: 21px;
 }
 
-input[type=text] {
+.sub_heading {
+    display: flex;
+    gap: 20px;
+    margin-bottom: 20px;
+}
+
+.sub_heading input[type=text] {
     width: 401px;
     height: 55px;
     flex-shrink: 0;
@@ -64,13 +43,6 @@ input[type=text] {
     /* 161.8% */
 }
 
-.sub_heading {
-    display: flex;
-    gap: 30px;
-    padding-top: 15px;
-    
-}
-
 .filter1 {
     width: 115px;
     height: 55px;
@@ -81,83 +53,47 @@ input[type=text] {
     box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
     width: 112px;
     color: #323030;
-    font-family: Roboto;
     font-size: 18px;
-    font-style: normal;
-    font-weight: 400;
-    line-height: 29.124px;
     cursor: pointer;
     /* 161.8% */
 }
 
-input[type=text]:focus {
+.sub_heading input[type=text]:focus {
     outline: none;
 }
 
-.heading2 {
-    width: 235px;
-    height: 28px;
-    flex-shrink: 0;
-    color: #323030;
-    font-family: Roboto;
-    font-size: 36px;
-    font-style: normal;
-    font-weight: 500;
-    line-height: 29.124px;
-    margin-top: 15px;
-    /* 80.9% */
+.module5 table {
+    width: 100%;
 }
 
-.module5 {
-    width: 100%;
-    height: 21px;
-    flex-shrink: 0;
+.module5 th {
     color: #847E7E;
-    font-family: Inter;
     font-size: 16px;
-    font-style: normal;
-    font-weight: 300;
-    line-height: 29.124px;
-    /* 182.025% */
 }
 
-table {
-    width: 100%;
-}
-
-td{
+.module5 td {
     text-align: center;
     font-size: 16px;
     padding: 16px;
+    color: #323030;
+    font-weight: 600;
 }
 
-/*tr {
-    display: flex;
-    flex-direction: row;
-    gap: 38px;
-}*/
-
-/*th {
-    width: 100px;
-} */
-
-.set_status {
-    width: 158px;
-    height: 53px;
-    flex-shrink: 0;
-    border-radius: 18px;
-    border: 1px solid #5DDCD6;
-    background: #5DDCD6;
-    color: #FFF;
-    font-family: Roboto;
-    font-size: 24px;
-    font-style: normal;
-    font-weight: 700;
-    line-height: 29.124px;
-    /* 121.35% */
+.module5 td button {
+    padding: 5px 20px;
+    background-color: white;
+    border-radius: 20px;
+    font-weight: normal;
 }
 
-.module4 {
-    display: flex;
-    gap: 970px;
+.module5 td button.status {
+    color: #0BFF06;
+    font-size: 16px;
+    font-weight: 600;
+    background-color: #E9FFE9;
+    border: 0;
+}
+.module5 td button.status.inactive {
+    color: #F00;
+    background-color: #FFE5E5;
 }

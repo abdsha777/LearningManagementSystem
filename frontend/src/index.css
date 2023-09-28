@@ -134,3 +134,55 @@ main{
 .filters input{
     background-color: #D6D6D6;
 }
+
+.btn {
+    padding: 15px 20px;
+    border-radius: 10px;
+    width: 140px;
+    height: 40px;
+    background-color: white;
+    font-size: 15px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #323030;
+    font-style: normal;
+    font-weight: 400;
+    ;
+}
+
+.btn-border-blue {
+    border: 1px solid #5DDCD6;
+    transition: 0.5s background-color;
+}
+
+.btn-border-blue:hover {
+    background-color: #5DDCD6;
+    color: white;
+}
+
+.btn-border {
+    border: 1px solid #868181;
+}
+
+.cancel-btn {
+    transition: 0.2s border;
+    transition: 0.3s color;
+}
+
+.cancel-btn:hover {
+    color: red;
+    border: 1px solid red;
+}
+
+.btn-filled {
+    background-color: #5DDCD6;
+    border: 0;
+    color: white;
+    font-weight: 500;
+    transition: 0.3s background-color;
+}
+
+.btn-filled:hover {
+    background-color: #5ddc90;
+}
