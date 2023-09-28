@@ -76,14 +76,14 @@ function TeacherCourseDetail() {
                     <div className="module-d">
                         <p>MODULE:</p>
                     </div>
-                    <button className="add-module-btn">
-                        <p>+ Add Module</p>
+                    <button className="btn btn-border-blue">
+                        + Add Module
                     </button>
-                    <button className="add-module-btn">
-                        <p>+ Final Test</p>
+                    <button className="btn btn-border-blue">
+                        Final Test
                     </button>
-                    <button className="update-course">
-                        <p>Update Course</p>
+                    <button className="update-course btn btn-filled">
+                        Update Course
                     </button>
                 </div>
                 <div className="module-details">
