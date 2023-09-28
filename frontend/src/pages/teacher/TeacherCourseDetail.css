@@ -22,11 +22,6 @@
   float: right;
 }
 
-.pie-chart img {
-  width: 280px;
-  margin: auto;
-}
-
 .course-right {
   display: grid;
   grid-template-columns: 40% 60%;
@@ -249,4 +244,14 @@
   display: flex;
   align-items: center;
   margin-left: 10px;
+}
+
+
+.left-content{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.pie-chart{
+  width: 80%;
 }

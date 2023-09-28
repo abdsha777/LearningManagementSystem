@@ -4,6 +4,7 @@ import courseImg from '../../assets/image.jpg'
 import pieChart from '../../assets/pie-chart.png'
 import { Chart as ChartJS, ArcElement, Tooltip, Legend } from "chart.js";
 import { Pie } from 'react-chartjs-2';
+import Doubts from '../../components/chat/Doubts';
 ChartJS.register(ArcElement, Tooltip, Legend);
 
 function TeacherCourseDetail() {
@@ -166,11 +167,14 @@ function TeacherCourseDetail() {
                     </div>
                 </div>
             </div>
-            <div className="pie-chart">
-                <Pie
-                    options={options}
-                    data={data}
-                />
+            <div className='left-content'>
+                <div className="pie-chart">
+                    <Pie
+                        options={options}
+                        data={data}
+                    />
+                </div>
+                <Doubts />
             </div>
         </div>
     )
