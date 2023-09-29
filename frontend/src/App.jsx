@@ -9,7 +9,7 @@ import StudentCourseDetail from './pages/student/StudentCourseDetail'
 
 
 function App() {
-
+  
   return (
     <>
       <BrowserRouter>

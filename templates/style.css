@@ -81,6 +81,7 @@ nav {
 main {
     display: grid;
     grid-template-columns: 1fr 5fr;
+    position: relative;
 }
 
 .sidebar {
@@ -309,4 +310,77 @@ main {
 
 .btn-filled:hover {
     background-color: #5ddc90;
+}
+
+
+
+/* menu  */
+.menu{
+    display: none;
+    flex-direction: column;
+    justify-content: space-evenly;
+    height: 100%;
+    margin-left: 25px;
+    padding: 15px 0;
+}
+.menu div{
+    padding: 1px;
+    background-color: black;
+    width: 30px;
+}
+
+.menu-items{
+    background-color: white;
+    position: absolute;
+    width: 100%;
+    padding: 10px;
+    display: none;
+}
+.menu-items.active{
+    display: block;
+}
+
+
+@media only screen and (max-width: 1100px) {
+    main {
+        display: block;
+    }
+
+    .sidebar {
+        display: none;
+    }
+    .nav{
+        border-radius: 15px 15px 0 0;
+    }
+    .main-content {
+        border-radius: 0 0 15px 15px;
+    }
+
+    .profile-info {
+        display: none;
+    }
+    .menu{
+        display: flex;
+    }
+}
+
+@media only screen and (max-width: 800px) {
+    .greetings{
+        display: none;
+    }
+    .logo {
+        margin: 0 auto;
+    }
+    .logo-img{
+        display: none;
+    }
+    .profile {
+        margin-right: 25px;
+        margin-left: 0;
+    }
+}
+@media only screen and (max-height: 800px) {
+    .menu {
+        padding: 10px 0;
+    }
 }
