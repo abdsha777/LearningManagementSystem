@@ -15,6 +15,7 @@ letter-spacing: 0.58px;
     display: flex;
     gap: 6px; /* Reduced gap */
     margin-bottom: 6px; /* Reduced margin */
+    margin-top: 10px;
 }
 
 .sub_heading input[type=text] {
@@ -60,6 +61,7 @@ letter-spacing: 0.58px;
     font-weight: 700;
     line-height: 29.124px; /* 100.428% */
     letter-spacing: 0.58px;
+    margin-top: 30px
 }
 
 /* Align module2 to the right */
