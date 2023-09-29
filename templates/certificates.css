@@ -14,10 +14,10 @@
 }
 .certificate-box{
     /* box-shadow: 6px 6px 8px #888888; */
-    border: 1px solid black;
+    border: 0px solid black;
     border-radius: 10px;
     padding: 10px;
-     
+    box-shadow: 1px 1px 6px #888888;
 }
 
 .certificate-image img{
@@ -48,4 +48,7 @@
 .certificate-date{
     color: #868181;
     font-size: 15px;
+}
+h3{
+    padding-top: 00px;
 }
