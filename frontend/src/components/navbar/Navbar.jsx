@@ -2,10 +2,15 @@ import React from 'react'
 import sir from '../../assets/sir.png'
 import './navbar.css'
 
-function Navbar() {
+function Navbar({showMenu}) {
     return (
         <header>
             <nav>
+                <div className="menu" onClick={showMenu}>
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                </div>
                 <div className="logo">
                     <div className="logo-img"></div>
                     <h2>LMS</h2>
