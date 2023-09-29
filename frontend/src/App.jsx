@@ -5,6 +5,8 @@ import Navigation from './forDeveloping/Navigation'
 import TeacherCourseDetail from './pages/teacher/TeacherCourseDetail'
 import StudentDashboard from './pages/student/StudentDashboard'
 import StudentCourseDetail from './pages/student/StudentCourseDetail'
+import TeacherViewTest from './pages/teacher/TeacherViewTest'
+import StudentTest from './pages/student/StudentTest'
 
 
 
@@ -19,7 +21,8 @@ function App() {
             <Route path='teacherCourseDetail' element={<TeacherCourseDetail />} />
             <Route path='studentDashboard' element={<StudentDashboard />} />
             <Route path='studentCourseDetail' element={<StudentCourseDetail />} />
-
+            <Route path='teacherViewTest' element={<TeacherViewTest />} />
+            <Route path='studentTest' element={<StudentTest />} />
           </Route>
         </Routes>
       </BrowserRouter>
