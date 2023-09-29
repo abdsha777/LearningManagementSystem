@@ -5,6 +5,7 @@ import Navigation from './forDeveloping/Navigation'
 import TeacherCourseDetail from './pages/teacher/TeacherCourseDetail'
 import StudentDashboard from './pages/student/StudentDashboard'
 import StudentCourseDetail from './pages/student/StudentCourseDetail'
+import TeacherUnitDetail from './pages/teacher/TeacherUnitDetail'
 
 
 
@@ -19,7 +20,7 @@ function App() {
             <Route path='teacherCourseDetail' element={<TeacherCourseDetail />} />
             <Route path='studentDashboard' element={<StudentDashboard />} />
             <Route path='studentCourseDetail' element={<StudentCourseDetail />} />
-
+            <Route path='teacherUnitDetail' element={<TeacherUnitDetail />} />
           </Route>
         </Routes>
       </BrowserRouter>
