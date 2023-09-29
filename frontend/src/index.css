@@ -138,8 +138,8 @@ main{
 .btn {
     padding: 15px 20px;
     border-radius: 10px;
-    width: 140px;
-    height: 40px;
+    /* width: 140px; */
+    /* height: 40px;  */
     background-color: white;
     font-size: 15px;
     display: flex;
@@ -148,7 +148,6 @@ main{
     color: #323030;
     font-style: normal;
     font-weight: 400;
-    ;
 }
 
 .btn-border-blue {
