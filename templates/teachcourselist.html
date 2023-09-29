@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>template</title>
     <link rel="stylesheet" href="style.css">
-    <link rel="stylesheet" href="Ruhi_Student_List.css">
+    <link rel="stylesheet" href="teachcourselist.css">
 </head>
 
 <body>
@@ -121,142 +121,60 @@
         </div>
         <!-- sidebar end -->
 
-
-        <!-- main content body end  -->
+        <!-- main content body  -->
         <div class="main-content">
             <!-- Add code here  -->
-            <div class="main_module">
-                <p class="heading">Students List</p>
-
-                <div class="module2">
-                    <button class="btn btn-border-blue">+ Add Students</button>
-                    <button class="btn btn-border-blue">Bulk Upload</button>
+            <div class="main-container">
+                <div class="head">
+                    <h1>My Course List</h1>
                 </div>
-                
-                <div class="sub_heading">
-                    <input type="text" value="" placeholder="Search Students">
-
-                    <input type="button" class="filter1" value="Filter >">
+                <div class="inputs">
+                    <input type="text" placeholder="Search courses" >
                 </div>
-                
-
-                <div class="module2">
-                    <button class="btn btn-filled big">Set Status</button>
-                </div>
-
-                <div class="module5">
+                <div class="table-start">
                     <table>
-                        <!-- <thead> -->
-                        <tr>
-                            <th>Student Id</th>
-                            <th>Student Name</th>
-                            <th>Faculty</th>
-                            <th>Year</th>
-                            <th>Total No of <br> Enrolled Courses</th>
-                            <th>Ongoing Course</th>
-                            <th>Completed Course</th>
-                            <th>Update</th>
-                            <th>View</th>
-                            <th class="status">Active</th>
-                        </tr>
-                        <!-- </thead>
-                                        <tbody> -->
-                        <tr>
-                            <td>132601</td>
-                            <td>Ifat khan</td>
-                            <td>BCA (SCI)</td>
-                            <td>TYBCA</td>
-                            <td>5</td>
-                            <td>2</td>
-                            <td>3</td>
-                            <td>
-                                <button>Update</button>
-                            </td>
-                            <td>
-                                <button>View</button>
-                            </td>
-                            <td>
-                                <button class="status">Active</button>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td>132602</td>
-                            <td>Ruhi khan</td>
-                            <td>BCA (SCI)</td>
-                            <td>TYBCA</td>
-                            <td>4</td>
-                            <td>2</td>
-                            <td>2</td>
-                            <td>
-                                <button>Update</button>
-                            </td>
-                            <td>
-                                <button>View</button>
-                            </td>
-                            <td>
-                                <button class="status">Active</button>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td>132603</td>
-                            <td>Shiff khan</td>
-                            <td>BCA (SCI)</td>
-                            <td>TYBCA</td>
-                            <td>3</td>
-                            <td>1</td>
-                            <td>2</td>
-                            <td>
-                                <button>Update</button>
-                            </td>
-                            <td>
-                                <button>View</button>
-                            </td>
-                            <td>
-                                <button class="status">Active</button>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td>132604</td>
-                            <td>Nilo khan</td>
-                            <td>BCA (SCI)</td>
-                            <td>TYBCA</td>
-                            <td>5</td>
-                            <td>2</td>
-                            <td>3</td>
-                            <td>
-                                <button>Update</button>
-                            </td>
-                            <td>
-                                <button>View</button>
-                            </td>
-                            <td>
-                                <button class="status inactive">InActive</button>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td>132605</td>
-                            <td>Aaifa khan</td>
-                            <td>BCA (SCI)</td>
-                            <td>TYBCA</td>
-                            <td>5</td>
-                            <td>2</td>
-                            <td>3</td>
-                            <td>
-                                <button>Update</button>
-                            </td>
-                            <td>
-                                <button>View</button>
-                            </td>
-                            <td>
-                                <button class="status inactive">InActive</button>
-                            </td>
-                        </tr>
-
-                        <!-- </tbody> -->
-
+                        <thead>
+                            <tr>
+                                <th>Course Name</th>
+                                <th>Uploaded On</th>
+                                <th>Total Enrollements</th>
+                                <th>total no of students Completed</th>
+                                <th>Set visibility</th>
+                                <th>Check Visibility</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td class="flex"><img src="./images/Rectangle 310.png"><h5>React Js</h5></td>
+                                <td><h5>29 AUG 2023</h5></td>
+                                <td><h5>50</h5></td>
+                                <td><h5>20</h5></td>
+                                <td><button>Set</button></td>
+                                <td><button>View</button></td>
+                            </tr>
+                            <tr>
+                                <td class="flex"><img src="./images/Rectangle 310.png"><h5>React Js</h5></td>
+                                <td><h5>29 AUG 2023</h5></td>
+                                <td><h5>50</h5></td>
+                                <td><h5>20</h5></td>
+                                <td><button>Set</button></td>
+                                <td><button>View</button></td>
+                            </tr>
+                            <tr>
+                                <td class="flex"><img src="./images/Rectangle 310.png" ><h5>React Js</h5></td>
+                                <td><h5>29 AUG 2023</h5></td>
+                                <td><h5>50</h5></td>
+                                <td><h5>20</h5></td>
+                                <td><button>Set</button></td>
+                                <td><button>View</button></td>
+                            </tr>
+                        </tbody>
                     </table>
                 </div>
             </div>
+
+        </div>
+        <!-- main content body end  -->
 
     </main>
 </body>
