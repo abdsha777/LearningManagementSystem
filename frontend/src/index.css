@@ -3,20 +3,20 @@
     src: url('./fonts/Inter-Regular.ttf');
 }
 
-*{
+* {
     box-sizing: border-box;
     margin: 0;
     padding: 0;
 }
 
-body{
+body {
     background: #5DDCD6;
     padding: 10px;
     font-family: 'Inter', sans-serif;
     height: 100vh;
 }
 
-main{
+main {
     display: grid;
     grid-template-columns: 1fr 5fr;
 }
@@ -24,7 +24,7 @@ main{
 
 /* main content goes here */
 
-.main-content{
+.main-content {
     width: 100%;
     height: 85vh;
     background-color: white;
@@ -32,14 +32,15 @@ main{
     overflow-y: scroll;
     padding: 30px 40px;
 }
-.main-content::-webkit-scrollbar{
+
+.main-content::-webkit-scrollbar {
     display: none;
 }
 
 
 /* form goes here */
 
-.form h1{
+.form h1 {
     font-size: 30px;
     color: #323030;
     font-style: normal;
@@ -48,36 +49,44 @@ main{
     margin-bottom: 40px;
 }
 
-.input-field{
+.input-field {
     display: flex;
     flex-direction: column;
     width: 40%;
     margin-bottom: 30px;
 }
-.input-field label{
+
+.input-field label {
     color: #323030;
     font-size: 18px;
     font-weight: 500;
     margin-bottom: 10px;
 }
-.input-field input,.input-field span {
+
+.input-field input,
+.input-field span {
     border: #a2a2a2 1px solid;
     border-radius: 3px;
     padding: 10px;
     background-color: #e0e0e0;
-    transition: 0.4s background-color ;
+    transition: 0.4s background-color;
 }
-.input-field input:focus,.input-field span:focus {
+
+.input-field input:focus,
+.input-field span:focus {
     outline: 0;
     background-color: #fff;
 }
-.input-field span{
+
+.input-field span {
     resize: none;
 }
-#drop{
+
+#drop {
     display: none;
 }
-.droplabel{
+
+.droplabel {
     cursor: pointer;
     padding: 10px;
     border: 2px solid #5DDCD6;
@@ -87,18 +96,22 @@ main{
     align-items: center;
     transition: 0.4s background-color;
 }
-.droplabel svg{
+
+.droplabel svg {
     width: 50px;
     height: 50px;
     transition: 0.4s transform;
 }
-.droplabel:hover{
+
+.droplabel:hover {
     background-color: #5DDCD6;
 }
-.droplabel:hover > svg{
+
+.droplabel:hover>svg {
     transform: scale(1.2);
 }
-.droplabel:hover > svg path{
+
+.droplabel:hover>svg path {
     fill: white;
 }
 
@@ -106,14 +119,15 @@ main{
 
 /* popup start here  */
 
-.filter-popup{
+.filter-popup {
     border: 0;
     border-radius: 20px;
     box-shadow: black 0px 3px 5px 0px;
     width: 300px;
     padding: 30px 60px;
 }
-.filter-popup h2{
+
+.filter-popup h2 {
     color: #323030;
     font-size: 30px;
     font-style: normal;
@@ -121,17 +135,20 @@ main{
     letter-spacing: 0.58px;
     margin-bottom: 20px;
 }
-.filters{
+
+.filters {
     display: grid;
     grid-template-columns: 1fr 1fr;
     gap: 10px;
     margin-bottom: 20px;
 }
-.filters label{
+
+.filters label {
     font-size: 14px;
     font-style: normal;
 }
-.filters input{
+
+.filters input {
     background-color: #D6D6D6;
 }
 
@@ -184,4 +201,85 @@ main{
 
 .btn-filled:hover {
     background-color: #5ddc90;
+}
+
+
+/* menu  */
+.menu {
+    display: none;
+    flex-direction: column;
+    justify-content: space-evenly;
+    height: 100%;
+    margin-left: 25px;
+    padding: 15px 0;
+}
+
+.menu div {
+    padding: 1px;
+    background-color: black;
+    width: 30px;
+}
+
+.menu-items {
+    background-color: white;
+    position: absolute;
+    width: 100%;
+    padding: 10px;
+    display: none;
+}
+
+.menu-items.active {
+    display: block;
+}
+
+
+@media only screen and (max-width: 1100px) {
+    main {
+        display: block;
+    }
+
+    .sidebar {
+        display: none;
+    }
+
+    .nav {
+        border-radius: 15px 15px 0 0;
+    }
+
+    .main-content {
+        border-radius: 0 0 15px 15px;
+    }
+
+    .profile-info {
+        display: none;
+    }
+
+    .menu {
+        display: flex;
+    }
+}
+
+@media only screen and (max-width: 800px) {
+    .greetings {
+        display: none;
+    }
+
+    .logo {
+        margin: 0 auto;
+    }
+
+    .logo-img {
+        display: none;
+    }
+
+    .profile {
+        margin-right: 25px;
+        margin-left: 0;
+    }
+}
+
+@media only screen and (max-height: 800px) {
+    .menu {
+        padding: 10px 0;
+    }
 }
