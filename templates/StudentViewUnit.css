@@ -29,7 +29,7 @@
   .button {
     display: flex;
     justify-content: space-between;
-    width: 650px;
+    width: 600px;
   }
   
   .download-btn{
@@ -38,8 +38,8 @@
     align-items: center;
   }
   .download-btn svg{
-    width: 90px;
-    height: 90px;
+    width: 30px;
+    height: 30px;
   }
   
   .box {
