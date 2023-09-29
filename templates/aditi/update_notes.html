@@ -1,0 +1,107 @@
+<html>
+    <head>
+        <link rel="stylesheet" href="Add.css">
+    </head>
+           <style>
+            body{
+                background-color: rgb(82, 80, 80);
+            }
+            .input-box{
+                padding: 10px;
+                align-items: center;
+                height: 200px;
+                width: 300px;
+                background-color: white;
+                border-radius: 15px;
+            }
+            .cancel_save {
+    padding-top: 20px;
+    display: flex;
+    gap: 60px;
+    align-items: center;
+}
+
+.btn3 {
+    padding: 15px 20px;
+    border-radius: 10px;
+    width: 100px;
+    height: 40px;
+    background-color: white;
+    font-size: 15px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #323030;
+    font-style: normal;
+    font-weight: 400;
+    
+}
+
+.btn-border-blue {
+    border: 1px solid #5DDCD6;
+    transition: 0.5s background-color;
+}
+
+.btn-border-blue:hover {
+    background-color: #5DDCD6;
+    color: white;
+}
+
+.btn-border {
+    border: 1px solid #868181;
+}
+
+.cancel-btn {
+    transition: 0.2s border;
+    transition: 0.3s color;
+}
+
+.cancel-btn:hover {
+    color: red;
+    border: 1px solid red;
+}
+.btn-filled {
+    background-color: #5DDCD6;
+    border: 0;
+    color: white;
+    font-weight: 500;
+    transition: 0.3s background-color;
+}
+
+.btn-filled:hover {
+    background-color: #5ddc90;
+}
+           </style>
+    <body>
+        <form action="">
+        <!-- updates notes  -->
+        <div class="input-box">
+            <!-- Upload -->
+            <p>Update Notes</p>
+            <div clas='bulkUploadContainer'>
+                <div class="parent">
+                    <div class="input">
+                        <input type="file" class="ip" id="fileip" />
+                    </div>
+                    <div class="label" for="fileip">
+                        <label for="fileip">
+                            <img src={uiLogo} alt="" className="uploadImgLogo" />
+                            <p class="text">
+                                click to uplaod
+                            </p>
+                        </label>
+                    </div>
+                </div>
+            </div>
+
+            <div class="cancel_save3">
+                <!-- cancel-save -->
+                <button class="btn3 btn-border cancel-btn">Cancel</button>
+                
+                <button class="btn3 btn-filled">Save</button>
+        
+            </div>
+        </div>
+    </form>
+    </body>
+</html>
