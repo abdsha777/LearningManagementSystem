@@ -1,6 +1,5 @@
 .profile-detail h1 {
     color: #323030;
-    font-family: Roboto;
     font-size: 29px;
     font-style: normal;
     font-weight: 700;
@@ -24,20 +23,17 @@
 
 .inner-detail .details h3 {
     color: #847E7E;
-    font-family: Roboto;
     font-size: 16px;
 }
 
 .inner-detail .details p {
     color: #323030;
-    font-family: Roboto;
     font-size: 16px;
 }
 
 
 .course {
-    color:black;
-    font-family: Roboto;
+    color: black;
     font-size: 32px;
     font-style: normal;
     font-weight: 500;
@@ -58,40 +54,40 @@
     padding: 10px;
 }
 
- .box-container .box img {
+.box-container .box img {
     border-radius: 20px;
     width: 100%;
 
 }
 
- .box-container .box h3 {
+.box-container .box h3 {
     padding-top: 5px;
     font-weight: bold;
     text-align: left;
 }
 
- .box-container .box h4 {
-    color:#000;
+.box-container .box h4 {
+    color: #000;
     font-style: normal;
     font-weight: 600;
     text-align: right;
- }
+}
 
- .box-container .box h5 {
+.box-container .box h5 {
     padding-top: 5px;
     font-weight: bold;
     text-align: left;
-    color:green;
+    color: green;
 }
 
 
- .box-container .box p {
+.box-container .box p {
     color: #777;
     font-size: 15px;
     line-height: 1.8;
 }
 
- .box-container .box .btn {
+.box-container .box .btn {
     margin-top: 10px;
     display: inline-block;
     background: #333;
@@ -103,11 +99,11 @@
 
 
 .corsname {
-   text-align: left;
+    text-align: left;
 }
 
 .course-info {
-    display:flex;
+    display: flex;
     justify-content: space-between;
 }
 
@@ -115,10 +111,22 @@
     padding-top: 5px;
 }
 
- .box-container .box h6 {
+.box-container .box h6 {
     font-size: large;
     font-style: normal;
     font-weight: 600;
     text-align: right;
-    color:green;
+    color: green;
+}
+
+.student-progress{
+    margin: 40px 0;
+}
+.student-progress h3{
+    color: #323030;
+    font-size: 26px;
+    margin-bottom: 20px;
+}
+.student-progress img{
+    width: 500px;
 }
