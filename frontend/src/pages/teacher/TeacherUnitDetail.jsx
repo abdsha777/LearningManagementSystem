@@ -29,9 +29,9 @@ function TeacherUnitDetail() {
           Notes
           <svg fill="#ffffff" width="800px" height="800px" viewBox="0 0 1024 1024" xmlns="http://www.w3.org/2000/svg"
             stroke="#ffffff">
-            <g id="SVGRepo_bgCarrier" stroke-width="0" />
+            <g id="SVGRepo_bgCarrier" strokeWidth="0" />
 
-            <g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round" />
+            <g id="SVGRepo_tracerCarrier" strokeLinecap="round" strokeLinejoin="round" />
 
             <g id="SVGRepo_iconCarrier">
               <path
@@ -45,7 +45,7 @@ function TeacherUnitDetail() {
         <p> Module Completed :</p>
         <p>
           <input type="checkbox" name="checkbox" id="toggle" />
-          <label for="toggle" className="switch"></label>
+          <label htmlFor="toggle" className="switch"></label>
         </p>
 
       </div>
