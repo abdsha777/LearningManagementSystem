@@ -8,6 +8,9 @@ import StudentCourseDetail from './pages/student/StudentCourseDetail'
 import TeacherUnitDetail from './pages/teacher/TeacherUnitDetail'
 import TeacherViewTest from './pages/teacher/TeacherViewTest'
 import StudentTest from './pages/student/StudentTest'
+import StudentUnitDetail from './pages/student/StudentUnitDetail'
+import AdminDashboard from './pages/admin/AdminDashboard'
+
 
 
 function App() {
@@ -22,9 +25,10 @@ function App() {
             <Route path='studentDashboard' element={<StudentDashboard />} />
             <Route path='studentCourseDetail' element={<StudentCourseDetail />} />
             <Route path='teacherUnitDetail' element={<TeacherUnitDetail />} />
+            <Route path='studentUnitDetail' element={<StudentUnitDetail />} />
             <Route path='teacherViewTest' element={<TeacherViewTest />} />
             <Route path='studentTest' element={<StudentTest />} />
-
+            <Route path='adminDashboard' element={<AdminDashboard />} />
           </Route>
         </Routes>
       </BrowserRouter>

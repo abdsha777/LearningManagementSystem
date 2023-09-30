@@ -31,6 +31,10 @@
   justify-content: space-between;
   width: 650px;
 }
+.download-btn svg{
+  width: 30px;
+  height: 30px;
+}
 
 .notes-btn {
   display: flex;
@@ -142,4 +146,26 @@
 .video-info small {
   color: #868181;
   font-style: normal;
+}
+@media only screen and (max-width: 900px) {
+  .videos {
+    display: block;
+    align-items: center;
+  }
+  .video-box {
+    margin-bottom: 20px;
+  }
+  .module {
+    width: 100%;
+    grid-template-columns: 1fr;
+  }
+  .button {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    width: 100%;
+    gap: 10px;
+  }
+  .btn {
+    margin-bottom: 20px;
+  }
 }
