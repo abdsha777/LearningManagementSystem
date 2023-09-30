@@ -87,10 +87,10 @@
     font-style: normal;
     font-weight: 300;
     line-height: 29.124px;
+    text-align: left;
 }
 
 .table-h-afridi td{
-    text-align: center;
     color: #323030;
     font-family: Inter;
     font-size: 18px;
@@ -132,8 +132,10 @@
 }
 
 /* mini laptop*/
-@media screen and (max-width:900px) {
-
+@media screen and (max-width:900px){
+/* @media screen and (max-width:900px-1200px){
+    mini ipad aur ipad air theek hora per samsung galaxy pixel kharab hora
+    */
     .over-afridi {
         display: flex;
         flex-wrap: wrap;
@@ -188,7 +190,7 @@
 }
 
 /* Mobile */
-@media screen and (max-width:500px) {
+@media screen and (max-width:500px){
 
     .over-afridi {
         /* width: 250px; */
@@ -196,7 +198,7 @@
         flex-wrap: wrap;
         justify-content: center;
         padding: 0px;
-        margin-bottom: 260px;
+        margin-bottom: 190px;
     }
 
     .green-afridi {
@@ -238,3 +240,13 @@
         margin: 0px;
     }
 }
+@media screen and (max-width:1400px){
+    /* @media screen and (max-width:900px-1200px){
+        mini ipad aur ipad air theek hora per samsung galaxy pixel kharab hora
+        */
+        .over-afridi {
+            margin-bottom: 190px;
+            display: flex;
+            flex-wrap: wrap;
+        }
+    }
