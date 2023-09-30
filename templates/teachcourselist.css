@@ -1,65 +1,108 @@
-.main-container{
-
+.certificate-heading {
+  color: #323030;
+  font-family: Roboto;
+  font-size: 32px;
+  font-weight: bold;
 }
 
-.head h1{
-    font-size: 20px;
-    margin: 20px 0 10px 0;
-}
-.inputs{
-    margin:15px 0 30px 0 ;
-}
-
-.table-start{
-    
-font-family: Inter;
-font-size: 18px;
-font-style: normal;
-font-weight: 300;
-line-height: 29.124px; /* 161.8% */
+.certificate-module {
+  padding-top: 20px;
+  border-radius: 10px;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 40px;
 }
 
-th{
-    color: #847E7E;
+.certificate-box {
+  border: 0px solid black;
+  border-radius: 10px;
+  padding: 10px;
+  box-shadow: 1px 1px 6px #888888;
 }
+
+
+.main-container {
+  
+}
+
+.head h1 {
+  font-size: 20px;
+  margin: 20px 0 10px 0;
+}
+
+.inputs {
+  margin: 15px 0 30px 0;
+}
+
+.table-start {
+  font-family: Inter;
+  font-size: 18px;
+  font-style: normal;
+  font-weight: 300;
+  line-height: 29.124px;
+}
+
+th {
+  color: #847e7e;
+}
+
 .inputs input {
-    width: 240px;
-    height: 45px;
-    flex-shrink: 0;
-    border-radius: 10px;
-    border: 1px solid rgba(0, 0, 0, 0.40);
-    background: #FFFCFE;
-    box-shadow: 0px 2px 2px 0px rgba(0, 0, 0, 0.25);
-    color: #323030;
-    font-family: Roboto;
-    font-size: 14px;
-    font-weight: 400;
-    padding-left: 12px;
-    line-height: 22px;
+  width: 100%;
+  height: 45px;
+  border-radius: 10px;
+  border: 1px solid rgba(0, 0, 0, 0.4);
+  background: #fffcfe;
+  box-shadow: 0px 2px 2px 0px rgba(0, 0, 0, 0.25);
+  color: #323030;
+  font-family: Roboto;
+  font-size: 14px;
+  font-weight: 400;
+  padding-left: 12px;
+  line-height: 22px;
 }
 
-
-
- th{
-    padding: 1px 0 18px 30px;
+th {
+  padding: 1px 0 18px 30px;
 }
 
-td{
-    padding: 1px 0 20px 40px
+td {
+  padding: 1px 0 20px 40px;
 }
 
-.flex{
-    display: flex;
-    justify-content: space-between;
-    color: #323030;
-font-family: Inter;
-font-size: 18px;
-font-style: normal;
-font-weight: 600;
-line-height: 29.124px; /* 161.8% */
+.flex {
+  display: flex;
+  justify-content: space-between;
+  color: #323030;
+  font-family: Inter;
+  font-size: 18px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: 29.124px;
 }
 
-td button{
-    padding:5px 20px ; 
-    border-radius: 50px;
+td button {
+  padding: 5px 20px;
+  border-radius: 50px;
+}
+
+@media only screen and (max-width: 768px) {
+  .certificate-module {
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+
+  .certificate-heading {
+    font-size: 24px;
+  }
+}
+@media  screen and (max-width:500px){
+  .certificate-heading{
+      flex-direction: column;
+  }
+  .certificate-heading input[type=text]{
+      width: 100%;
+  }
+  .table-start{
+      overflow-x: scroll;
+  }
 }
