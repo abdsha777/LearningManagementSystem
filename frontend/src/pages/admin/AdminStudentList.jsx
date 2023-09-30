@@ -3,26 +3,26 @@ import './AdminStudentList.css'
 
 function AdminStudentList() {
   return (
-    <div class="main_module">
-      <p class="heading">Students List</p>
+    <div className="main_module">
+      <p className="heading">Students List</p>
 
-      <div class="module2">
-        <button class="btn btn-border-blue">+ Add Students</button>
-        <button class="btn btn-border-blue">Bulk Upload</button>
+      <div className="module2">
+        <button className="btn btn-border-blue">+ Add Students</button>
+        <button className="btn btn-border-blue">Bulk Upload</button>
       </div>
 
-      <div class="sub_heading">
-        <input type="text" value="" placeholder="Search Students" />
+      <div className="sub_heading">
+        <input type="text" placeholder="Search Students" />
 
-        <input type="button" class="filter1" value="Filter >" />
+        <input type="button" className="filter1" value="Filter >" />
       </div>
 
 
-      <div class="module2">
-        <button class="btn btn-filled big">Set Status</button>
+      <div className="module2">
+        <button className="btn btn-filled big">Set Status</button>
       </div>
 
-      <div class="module5">
+      <div className="module5">
         <table>
           <thead>
             <tr>
@@ -35,7 +35,7 @@ function AdminStudentList() {
               <th>Completed Course</th>
               <th>Update</th>
               <th>View</th>
-              <th class="status">Active</th>
+              <th className="status">Active</th>
             </tr>
           </thead>
           <tbody>
@@ -54,7 +54,7 @@ function AdminStudentList() {
                 <button>View</button>
               </td>
               <td>
-                <button class="status">Active</button>
+                <button className="status">Active</button>
               </td>
             </tr>
             <tr>
@@ -72,7 +72,7 @@ function AdminStudentList() {
                 <button>View</button>
               </td>
               <td>
-                <button class="status">Active</button>
+                <button className="status">Active</button>
               </td>
             </tr>
             <tr>
@@ -90,7 +90,7 @@ function AdminStudentList() {
                 <button>View</button>
               </td>
               <td>
-                <button class="status">Active</button>
+                <button className="status">Active</button>
               </td>
             </tr>
             <tr>
@@ -108,7 +108,7 @@ function AdminStudentList() {
                 <button>View</button>
               </td>
               <td>
-                <button class="status inactive">InActive</button>
+                <button className="status inactive">InActive</button>
               </td>
             </tr>
             <tr>
@@ -126,7 +126,7 @@ function AdminStudentList() {
                 <button>View</button>
               </td>
               <td>
-                <button class="status inactive">InActive</button>
+                <button className="status inactive">InActive</button>
               </td>
             </tr>
 
