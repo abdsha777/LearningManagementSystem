@@ -25,6 +25,8 @@ function App() {
             <Route path='studentCourseDetail' element={<StudentCourseDetail />} />
             <Route path='teacherUnitDetail' element={<TeacherUnitDetail />} />
             <Route path='studentUnitDetail' element={<StudentUnitDetail />} />
+            <Route path='teacherViewTest' element={<TeacherViewTest />} />
+            <Route path='studentTest' element={<StudentTest />} />
           </Route>
         </Routes>
       </BrowserRouter>
