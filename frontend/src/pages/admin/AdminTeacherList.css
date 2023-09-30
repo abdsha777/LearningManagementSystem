@@ -407,6 +407,6 @@ main {
   border: 0;
 }
 .module5 td button.status.inactive {
-  color: #F00;
-  background-color: #FFE5E5;
-}
+    color: #F00;
+    background-color: #FFE5E5;
+  }
