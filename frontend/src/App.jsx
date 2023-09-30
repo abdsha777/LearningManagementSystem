@@ -11,6 +11,7 @@ import StudentTest from './pages/student/StudentTest'
 import StudentUnitDetail from './pages/student/StudentUnitDetail'
 import AdminDashboard from './pages/admin/AdminDashboard'
 import StudentVideo from './pages/student/StudentVideo'
+import TeacherDashboard from './pages/teacher/TeacherDashboard'
 
 
 
@@ -31,6 +32,7 @@ function App() {
             <Route path='studentTest' element={<StudentTest />} />
             <Route path='adminDashboard' element={<AdminDashboard />} />
             <Route path='studentVideo' element={<StudentVideo />} />
+            <Route path='teacherDashboard' element={<TeacherDashboard />} />
           </Route>
         </Routes>
       </BrowserRouter>
