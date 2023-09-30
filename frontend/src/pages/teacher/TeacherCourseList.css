@@ -42,7 +42,7 @@
     line-height: 29.124px;
   }
   
-  th {
+  .table-start th {
     color: #847e7e;
   }
   
@@ -61,11 +61,11 @@
     line-height: 22px;
   }
   
-  th {
+  .table-start th {
     padding: 1px 0 18px 30px;
   }
   
-  td {
+  .table-start td {
     padding: 1px 0 20px 40px;
   }
   
@@ -80,7 +80,7 @@
     line-height: 29.124px;
   }
   
-  td button {
+  .table-start td button {
     padding: 5px 20px;
     border-radius: 50px;
   }
