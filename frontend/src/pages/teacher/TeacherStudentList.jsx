@@ -129,6 +129,24 @@ function TeacherStudentList() {
                 <button class="status inactive">InActive</button>
               </td>
             </tr>
+            <tr>
+              <td>132605</td>
+              <td>Aaifa khan</td>
+              <td>BCA (SCI)</td>
+              <td>TYBCA</td>
+              <td>5</td>
+              <td>2</td>
+              <td>3</td>
+              <td>
+                <button>Update</button>
+              </td>
+              <td>
+                <button>View</button>
+              </td>
+              <td>
+                <button class="status inactive">InActive</button>
+              </td>
+            </tr>
 
           </tbody>
 
