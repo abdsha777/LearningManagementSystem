@@ -214,9 +214,8 @@ width: 100%;
   width: 80%;
 }
 .enroll-module-btn {
-  width: 159px;
-  height: 46px;
-  margin: 50px 0px;
+  width: 159px; 
+  margin: 20px 0px;
   font-size: 16px;
   font-style: normal;
   font-weight: 600;
