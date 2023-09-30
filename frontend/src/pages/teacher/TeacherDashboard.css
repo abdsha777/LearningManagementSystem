@@ -2,32 +2,30 @@
     display: inline;
     gap: 10px;
 }
-
-
-
 .perimg {
     color: #09adad;
     font-family: Inter;
     font-size: 36px;
     font-style: normal;
     font-weight: 700;
-    line-height: normal;
-    margin-left: 20px;
-    margin-top: 15px;
-
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
-
-
 .student-head {
     width: 240px;
     height: 80px;
-    flex-shrink: 0;
     border-radius: 15px;
-    background: rgba(255, 255, 255, 0.75);
     box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
     display: grid;
     grid-template-columns: 40% 60%;
     margin-bottom: 20px;
+}
+.student-head .text{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    height: 100%;
 }
 
 #main-text {
@@ -58,12 +56,12 @@
 
 .Topcontent {
     display: flex;
+    gap: 10px;
 }
 
 .graph {
     display: flex;
     align-items: center;
-    justify-content: center;
     width: fit-content;
 }
 
@@ -75,12 +73,16 @@
     .Topcontent {
         display: block;
         margin: 0%;
+        margin-bottom: 40px;
     }
 
     .Studentinfo {
         display: grid;
         grid-template-columns: 1fr 1fr 1fr;
-
+    }
+    .Studentinfo.admin {
+        grid-template-columns: 1fr 1fr ;
+        gap: 0px;
     }
 
     .student-head {
@@ -88,6 +90,7 @@
         height: 100px;
         display: flex;
         margin: auto;
+        padding: 5px;
     }
 
     .perimg {
@@ -96,8 +99,6 @@
         font-size: 20px;
         font-style: normal;
         font-weight: 700;
-        line-height: normal;
-        margin-left: 9px;
         margin-top: 9;
         margin-right: 9;
     }
@@ -112,11 +113,12 @@
         /* 291.24% */
         margin-top: 15px;
         margin-left: 9px;
+        text-align: center;
     }
 
     #num {
         font-size: 17px;
-        text-align: left;
+        text-align: center;
         margin-top: 10px;
     }
 
