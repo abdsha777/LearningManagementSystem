@@ -44,13 +44,7 @@ function StudentUnitDetail() {
           </svg>
         </button>
       </div>
-      <div className="completed-box">
-        <p> Module Completed :</p>
-        <p>
-          <input type="checkbox" name="checkbox" id="toggle" />
-          <label for="toggle" className="switch"></label>
-        </p>
-      </div>
+      
       <div className="video-component">
         <p className="heading">Videos :</p>
         <div className="videos">
