@@ -6,9 +6,10 @@
     font-weight: 700;
     line-height: 29.124px;
     letter-spacing: 0.58px;
-  }
+}
   
-  .sub_heading {
+
+.sub_heading {
     display: flex;
     gap: 6px;
     margin-bottom: 6px;

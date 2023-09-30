@@ -1,7 +1,3 @@
-.main-container{
-
-}
-
 .head h1{
     font-size: 20px;
     margin: 20px 0 10px 0;
@@ -19,7 +15,7 @@ font-weight: 300;
 line-height: 29.124px; /* 161.8% */
 }
 
-th{
+.table-start th{
     color: #847E7E;
 }
 .inputs input {
@@ -40,23 +36,23 @@ th{
 
 
 
- th{
+.table-start th{
     padding: 1px 0 18px 30px;
 }
 
-td{
+.table-start td{
     padding: 1px 0 20px 40px
 }
 
-.flex{
+.table-start .flex{
     display: flex;
     justify-content: space-between;
     color: #323030;
-font-family: Inter;
-font-size: 18px;
-font-style: normal;
-font-weight: 600;
-line-height: 29.124px; /* 161.8% */
+    font-family: Inter;
+    font-size: 18px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: 29.124px; /* 161.8% */
 }
 
 td button{

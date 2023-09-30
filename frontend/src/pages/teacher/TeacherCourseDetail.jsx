@@ -76,6 +76,7 @@ function TeacherCourseDetail() {
                     <div className="module-d">
                         <p>MODULE:</p>
                     </div>
+                    <div className='module-btn'>
                     <button className="btn btn-border-blue">
                         + Add Module
                     </button>
@@ -85,6 +86,7 @@ function TeacherCourseDetail() {
                     <button className="update-course btn btn-filled">
                         Update Course
                     </button>
+                    </div>
                 </div>
                 <div className="module-details">
                     <div className="module-box first">
@@ -96,7 +98,7 @@ function TeacherCourseDetail() {
                                 <div className="module-seq">
                                     <p>Module 1</p>
                                 </div>
-                                <div className="dot"><p>.</p></div>
+                               
                                 <div className="module-time">
                                     <p>13 Minutes</p>
                                 </div>
@@ -168,12 +170,15 @@ function TeacherCourseDetail() {
                 </div>
             </div>
             <div className='left-content'>
+            {/* <div className='pie-chart-title'><p>Course Progress</p></div> */}
                 <div className="pie-chart">
+               <div className='pie-chart-title'><p>Course Progress</p></div> 
                     <Pie
                         options={options}
                         data={data}
                     />
                 </div>
+               
                 <Doubts />
             </div>
         </div>

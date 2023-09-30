@@ -2,29 +2,29 @@
     color: #323030;
     font-size: 36px;
     margin-bottom: 20px;
-}
-
-.module2 {
+  }
+  
+  .module2 {
     display: flex;
     padding-bottom: 20px;
     gap: 20px;
-}
-
-.module2 button {
+  }
+  
+  .module2 button {
     height: 50px;
-}
-
-.module2 button.big {
+  }
+  
+  .module2 button.big {
     font-size: 21px;
-}
-
-.sub_heading {
+  }
+  
+  .sub_heading {
     display: flex;
     gap: 20px;
     margin-bottom: 20px;
-}
-
-.sub_heading input[type=text] {
+  }
+  
+  .sub_heading input[type=text] {
     width: 401px;
     height: 55px;
     flex-shrink: 0;
@@ -32,7 +32,7 @@
     border: 1px solid rgba(0, 0, 0, 0.40);
     background: #FFFCFE;
     box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
-
+  
     color: #323030;
     font-family: Roboto;
     font-size: 18px;
@@ -41,9 +41,9 @@
     padding-left: 20px;
     line-height: 29.124px;
     /* 161.8% */
-}
-
-.filter1 {
+  }
+  
+  .filter1 {
     width: 115px;
     height: 55px;
     flex-shrink: 0;
@@ -56,52 +56,52 @@
     font-size: 18px;
     cursor: pointer;
     /* 161.8% */
-}
-
-.sub_heading input[type=text]:focus {
+  }
+  
+  .sub_heading input[type=text]:focus {
     outline: none;
-}
-
-.module5 table {
+  }
+  
+  .module5 table {
     width: 100%;
-}
-.module5 table tbody{
+  }
+  .module5 table tbody{
     height: 100px;
     overflow-y: scroll;
-}
-
-.module5 th {
+  }
+  
+  .module5 th {
     color: #847E7E;
     font-size: 16px;
-}
-
-.module5 td {
+  }
+  
+  .module5 td {
     text-align: center;
     font-size: 16px;
     padding: 16px;
     color: #323030;
     font-weight: 600;
-}
-
-.module5 td button {
+  }
+  
+  .module5 td button {
     padding: 5px 20px;
     background-color: white;
     border-radius: 20px;
     font-weight: normal;
-}
-
-.module5 td button.status {
+  }
+  
+  .module5 td button.status {
     color: #0BFF06;
     font-size: 16px;
     font-weight: 600;
     background-color: #E9FFE9;
     border: 0;
-}
-.module5 td button.status.inactive {
+  }
+  .module5 td button.status.inactive {
     color: #F00;
     background-color: #FFE5E5;
-}
-@media  screen and (max-width:500px){
+  }
+  @media  screen and (max-width:500px){
     .sub_heading{
         flex-direction: column;
     }
@@ -111,4 +111,5 @@
     .module5{
         overflow-x: scroll;
     }
-}
+  }
+  

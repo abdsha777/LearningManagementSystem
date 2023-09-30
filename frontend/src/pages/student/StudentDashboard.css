@@ -48,7 +48,7 @@
     border-collapse: collapse;
     width: 100%;
 }
-
+/* 
 tr {
     width: 100px;
 }
@@ -57,7 +57,7 @@ td,
 th {
     text-align: center;
     padding: 30px;
-}
+} */
 
 /* bottom card grid of suggestion  */
 .card {
@@ -79,14 +79,9 @@ th {
     box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
 }
 
-img {
+/* img {
     width: 293.922px;
     height: 185.201px;
     border-radius: 15px;
     padding: 0;
-}
-
-.image {
-    padding: 0;
-    margin: 0;
-}
+} */
