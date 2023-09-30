@@ -5,7 +5,7 @@ function StudentVideo() {
     return (
 
         <div className='student-video-page'>
-            <div className="video-info">
+            <div className="video-info1">
 
                 <h4 id="video-no">Video No:</h4>
                 <p>1</p>
