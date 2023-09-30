@@ -17,6 +17,7 @@ function Navigation() {
         <Link to={"/adminDashboard"}>Admin Dashboard</Link>
         <Link to={"/studentVideo"}>Student Video</Link>
         <Link to={"/teacherCourses"}>Teacher My Courses</Link>
+        <Link to={"/teacherDashboard"}>Teacher Dashboard</Link>
       </div>
     </div>
   );
