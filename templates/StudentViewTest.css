@@ -1,0 +1,101 @@
+.vt_module{
+    display: flex;
+    flex-direction: column;
+
+    gap: 20px;
+}
+
+.vt_head{
+
+        color: #323030;
+        font-family: Roboto;
+        font-size: 29px;
+        font-style: normal;
+         /* 100.428% */
+        
+   
+         
+}
+/* subeading  */
+.con1{
+    display:flex;
+    gap: 10px;
+}
+.vt_subheading1{
+    color: #847E7E;
+    font-size: 16px;
+    font-style: normal;
+}
+.vit_subheading2{
+    color: #323030;
+    
+    font-size: 16px;
+    font-style: normal;
+}
+/* card */
+.con2{
+    display: flex;
+    gap: 10px;
+    flex-direction: column;
+    width: 780px;
+    /* height: 252px; */
+    /* flex-shrink: 0; */
+    border-radius: 15px;
+    background: #FFF;
+    padding: 20px;
+    
+    box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
+    
+}
+
+.question{
+    display: flex;
+    gap: 10px;
+}
+.q{
+    color: #847E7E;
+   
+    font-size: 16px;
+    font-style: normal;
+  
+}
+
+.qsh{
+    color: #323030;
+  
+    font-size: 16px;
+    font-style: normal;
+ 
+}
+.main-option{
+    display: flex;
+    flex-direction: column;
+    gap:10px;
+    padding: 0px 25px;
+}
+  
+.btn-filled{
+    background-color: #ffffff;
+    border: 0;
+    color: rgb(0, 0, 0);
+    font-weight: 500;
+    transition: 0.3s background-color;
+
+    padding: 15px 0px;
+    border-radius: 10px;
+    width: 140px;
+    height: 40px;
+   
+    font-size: 15px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    
+    font-style: normal;
+    font-weight: 400;
+}
+.btn-filled:hover{
+    background-color: #5ddc90;
+}
+
+
