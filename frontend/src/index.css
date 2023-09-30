@@ -231,6 +231,7 @@ main {
     opacity: 0;
     transition-delay: 50ms;
     border-radius: 5px;
+    z-index: 5;
 }
 .menu-items .sidebar-links{
     display: none;
