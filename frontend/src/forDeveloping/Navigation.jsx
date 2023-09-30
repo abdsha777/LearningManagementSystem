@@ -19,6 +19,7 @@ function Navigation() {
         <Link to={"/teacherCourses"}>Teacher My Courses</Link>
         <Link to={"/teacherDashboard"}>Teacher Dashboard</Link>
         <Link to={"/teacherCourseList"}>Teacher Course List</Link>
+        <Link to={"/teacherStudentList"}>Teacher Student List</Link>
       </div>
     </div>
   );
