@@ -165,6 +165,7 @@ main {
     font-style: normal;
     font-weight: 400;
     min-width: 150px;
+    min-height: 45px;
 }
 
 .btn-border-blue {
@@ -274,6 +275,10 @@ main {
 
     .menu {
         display: flex;
+    }
+    .btn{
+        padding: 10px;
+        min-width: 100px;
     }
 }
 
