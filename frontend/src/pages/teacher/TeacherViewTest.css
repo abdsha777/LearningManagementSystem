@@ -92,7 +92,6 @@
   padding-top: 90px;
 }
 
-
 .sb_m1 {
   width: 626px;
   color: #323030;
@@ -147,7 +146,6 @@
 }
 
 .crr {
-
   color: #847E7E;
   font-family: Roboto;
   font-size: 16px;
@@ -158,8 +156,6 @@
   padding-top: 100px;
   padding-left: 40px;
 }
-
-
 .sb_m2 {
   color: #323030;
   font-family: Inter;
@@ -172,39 +168,6 @@
   padding-top: 100px;
   /*padding-left: 10px;*/
 }
-
-
-
-/*.update_question {
-    width: 147px;
-    height: 46px;
-    flex-shrink: 0;
-    border-radius: 15px;
-    border: 2px solid #5DDCD6;
-    background: #5DDCD6;
-    box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
-  
-    color: #FEFEFE;
-    font-family: Roboto;
-    font-size: 16px;
-    font-style: normal;
-    font-weight: 600;
-    line-height: 29.124px; /* 182.025% */
-
-/* transition: background-color 0.3s;
-  
-  
-  
-   
-    display: flex;
-    flex-direction: row;
-    gap: 499px;
-  
-  }
-  
-  .Update_question:hover {
-    background-color: #5ddc90; /* Change to the desired hover color */
-
 .update1 {
 
   padding-left: 180px;
@@ -311,74 +274,12 @@
   padding-top: 90px;
 }
 
-
-
-/*.update_question1 {
-    width: 147px;
-    height: 46px;
-    flex-shrink: 0;
-    border-radius: 15px;
-    border: 2px solid #5DDCD6;
-    background: #5DDCD6;
-    box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
-  
-    color: #FEFEFE;
-    font-family: Roboto;
-    font-size: 16px;
-    font-style: normal;
-    font-weight: 600;
-    line-height: 29.124px; /* 182.025% */
-
-/*transition: background-color 0.3s;
-  
-  
-   
-    display: flex;
-    flex-direction: row;
-    gap: 499px;
-  
-  }
-  
-  .Update_question1:hover {
-    background-color: #5ddc90; /* Change to the desired hover color */
-
-
 .updatetest1 {
 
   padding-top: 30px;
 
 }
 
-/*.update_test {
-    width: 147px;
-    height: 46px;
-    flex-shrink: 0;
-    border-radius: 15px;
-    border: 2px solid #5DDCD6;
-    background: #5DDCD6;
-    box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
-  
-    color: #FEFEFE;
-    font-family: Roboto;
-    font-size: 16px;
-    font-style: normal;
-    font-weight: 600;
-    line-height: 29.124px; /* 182.025% */
-
-/*transition: background-color 0.3s;
-  
-  
-   
-    display: flex;
-    flex-direction: row;
-    gap: 499px;
-  
-    
-  }
-  
-  /*.Update_test:hover{
-    background-color: #5ddc90;
-  }*/
 .que2,
 .sb_m5 {
   display: inline;

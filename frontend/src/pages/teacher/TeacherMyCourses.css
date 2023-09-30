@@ -54,53 +54,6 @@
     padding-top: 20px;
 }
 
-.video-component {
-    padding-top: 10px;
-    margin-bottom: 20px;
-}
-
-.video-component .heading {
-    font-size: 25px;
-}
-
-.videos {
-    padding-top: 20px;
-    width: 100%;
-    border-radius: 10px;
-    display: grid;
-    grid-template-columns: 1fr 1fr 1fr;
-    gap: 50px;
-}
-
-.video-box img {
-    border-radius: 10px;
-    width: 100%;
-    margin-bottom: 10px;
-}
-
-.video-box {
-    box-shadow: 1px 1px 6px #888888;
-    border-radius: 10px;
-    padding: 10px;
-    
-}
-
-.video-info {
-    display: grid;
-    grid-template-columns: 1fr 0.5fr;
-}
-
-.video-info h1 {
-    color: #323030;
-    font-size: 20px;
-    font-weight: 500;
-    margin-bottom: 10px;
-}
-
-.video-info small {
-    color: #868181;
-    font-style: normal;
-}
 
 @media only screen and (max-width: 520px) {
     .course-tag {
@@ -123,42 +76,6 @@
     .bton {
         width: 115px;
         height: 40px;
-    }
-
-    .videos {
-        gap:20px;
-        grid-template-columns: 1fr;
-    }
-    .video-box{
-        display: flex;
-        align-items: center;
-    }
-    .video-img{
-        width:50px;
-        height:50px;
-        border: 1px solid black;
-        display:flex;
-        justify-content: center;
-        align-items: center;
-        overflow: hidden;
-    } 
-    .video-img img{
-        object-fit: cover;
-        height:100%;
-        width: auto;
-        margin: 0;
-    }
-    .video-info h1 {
-        color: #323030;
-        font-size: 15px;
-        font-weight: 500;
-        margin: 10px;
-    }
-    
-    .video-info small {
-        color: #868181;
-        font-style: normal;
-        margin-top: 50px;
     }
 }
 @media only screen and (max-width: 300px) {
