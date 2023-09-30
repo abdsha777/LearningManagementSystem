@@ -12,7 +12,7 @@ function Layout() {
         <>
             <Navbar showMenu={showMenu} />
             <main>
-                <Menu menu={menu}/>
+                <Menu menu={menu} showMenu={showMenu} />
                 <Sidebar />
                 <div className="main-content">
                     <Outlet />
