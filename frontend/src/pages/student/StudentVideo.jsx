@@ -1,4 +1,5 @@
 import React from 'react'
+import './StudentVideo.css'
 
 function StudentVideo() {
     return (
@@ -19,20 +20,17 @@ function StudentVideo() {
                     allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
                     allowfullscreen>
                 </iframe>
-
-
             </div>
+
             <div className="video-desc">
-                <br />
                 <h4> Description: </h4>
                 <p>React is a powerful JavaScript library that you can use to build user interfaces
                     for web and mobile applications (apps). In this course, you will explore
                     the fundamental concepts that underpin the React library and learn the basic skills
                     required to build a simple, fast, and scalable app.
                 </p>
-
             </div>
-
+            
             <div className="video-btns">
                 <button className="btn btn-border cancel-btn">Previous</button>
 

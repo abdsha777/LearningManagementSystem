@@ -10,6 +10,7 @@ import TeacherViewTest from './pages/teacher/TeacherViewTest'
 import StudentTest from './pages/student/StudentTest'
 import StudentUnitDetail from './pages/student/StudentUnitDetail'
 import AdminDashboard from './pages/admin/AdminDashboard'
+import StudentVideo from './pages/student/StudentVideo'
 
 
 
@@ -29,6 +30,7 @@ function App() {
             <Route path='teacherViewTest' element={<TeacherViewTest />} />
             <Route path='studentTest' element={<StudentTest />} />
             <Route path='adminDashboard' element={<AdminDashboard />} />
+            <Route path='studentVideo' element={<StudentVideo />} />
           </Route>
         </Routes>
       </BrowserRouter>
