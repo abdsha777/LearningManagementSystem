@@ -1,5 +1,6 @@
 .nav-links{
     display: flex;
+    width: 100%;
 }
 .nav-links a{
     text-decoration: none;
@@ -8,4 +9,11 @@
     border-bottom: 1px solid gray;
     margin-right: 20px;
     color: rgb(0, 158, 197);
+}
+
+@media only screen and (max-width: 1100px)  {
+    .nav-links{
+        flex-direction: column;
+        gap: 5px;
+    }
 }

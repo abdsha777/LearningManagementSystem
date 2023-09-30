@@ -144,3 +144,17 @@
     color: #868181;
     font-style: normal;
   }
+  @media only screen and (max-width: 900px){
+    .videos{
+      display: block;
+      align-items: center;
+      
+    }
+    .video-box{
+      margin-bottom: 20px;
+    }
+    .module{
+      width: 100%;
+      grid-template-columns: 1fr;
+    }
+  }
