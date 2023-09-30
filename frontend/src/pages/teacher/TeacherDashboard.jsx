@@ -2,9 +2,8 @@ import React from 'react'
 import './TeacherDashboard.css'
 import img from '../../assets/FigmaGraph.jpg'
 function TeacherDashboard() {
-  return (
-    <>
-    <div className="main-content">
+    return (
+        <div>
             <div className="Topcontent">
                 <div className="Studentinfo">
                     <div className="student-head">
@@ -18,7 +17,7 @@ function TeacherDashboard() {
                         </div>
 
                     </div>
-                   
+
                     <div className="student-head">
                         <div className="perimg">%</div>
                         <div>
@@ -29,7 +28,7 @@ function TeacherDashboard() {
                         </div>
                     </div>
 
-                   
+
                     <div className="student-head">
                         <div className="perimg">%</div>
                         <div>
@@ -42,7 +41,7 @@ function TeacherDashboard() {
 
                 </div>
                 <div className="graph">
-                    <img src={img} alt=""/>
+                    <img src={img} alt="" />
                 </div>
             </div>
             <div className="CourseTable">
@@ -78,10 +77,8 @@ function TeacherDashboard() {
                     </tbody>
                 </table>
             </div>
-
         </div>
-    </>
-  )
+    )
 }
 
 export default TeacherDashboard

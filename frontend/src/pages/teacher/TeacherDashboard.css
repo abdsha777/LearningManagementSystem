@@ -34,49 +34,41 @@
     color: #868181;
     font-family: Inter;
     font-size: 10px;
-    font-style: normal;
     font-weight: 500;
-    line-height: 29.124px;
     /* 291.24% */
     margin-top: 15px;
 }
 
-table {
+.CourseTable table {
     width: 100%;
 }
 
-th {
+.CourseTable th {
     width: 20%;
     color: #847E7E;
-    font-family: Inter;
     font-size: 18px;
-    font-style: normal;
     font-weight: 300;
-    line-height: 29.124px;
     text-align: left;
     /* 161.8% */
 }
 
-td {
+.CourseTable td {
     padding: 2% 0;
-
-}
-
-img {
-    border-radius: 15px;
-    background: url(<path-to-image>), cover no-repeat;
-    max-width: 100%;
-    max-height: 100%;
-    padding-left: 10%;
-    padding-bottom: 6%;
-    width: 821px;
-    height: 338px;
-   
 }
 
 .Topcontent {
     display: flex;
+}
 
+.graph {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: fit-content;
+}
+
+.graph img {
+    height: 100%;
 }
 
 @media only screen and (max-width: 500px) {
@@ -99,37 +91,46 @@ img {
     }
 
     .perimg {
-            color: #09adad;
-            font-family: Inter;
-            font-size: 20px;
-            font-style: normal;
-            font-weight: 700;
-            line-height: normal;
-            margin-left: 9px;
-            margin-top: 9;
-            margin-right: 9;
+        color: #09adad;
+        font-family: Inter;
+        font-size: 20px;
+        font-style: normal;
+        font-weight: 700;
+        line-height: normal;
+        margin-left: 9px;
+        margin-top: 9;
+        margin-right: 9;
     }
 
     #main-text {
         color: #868181;
-    font-family: Inter;
-    font-size: 10px;
-    font-style: normal;
-    font-weight: 500;
-    line-height:19.124px;
-    /* 291.24% */
-    margin-top: 15px;
-    margin-left: 9px;
+        font-family: Inter;
+        font-size: 10px;
+        font-style: normal;
+        font-weight: 500;
+        line-height: 19.124px;
+        /* 291.24% */
+        margin-top: 15px;
+        margin-left: 9px;
     }
-    #num{
+
+    #num {
         font-size: 17px;
         text-align: left;
         margin-top: 10px;
     }
-    img{
-        margin-top: 10px;
-        width: 500px;
-        height: 338px;
-        padding-left: 0%;
+
+    .graph img {
+        margin-top: 20px;
+        width: 100%;
+        height: auto;
+    }
+
+    .CourseTable th {
+        font-size: 14px;
+    }
+    .CourseTable td {
+        font-size: 12px;
+        text-align: center;
     }
 }
