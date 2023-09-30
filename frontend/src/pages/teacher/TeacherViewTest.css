@@ -1,4 +1,4 @@
-.TeacherViewTest {
+.viewtest_module1{
     width: 1182px;
     height: 905px;
     flex-shrink: 0;
@@ -6,9 +6,9 @@
     background: #FFF;
     padding-top: 18px;
     padding-left: 50px;
-}
-
-.viewtest_heading {
+  }
+  
+  .viewtest_heading {
     color: #323030;
     font-family: Roboto;
     font-size: 29px;
@@ -16,18 +16,18 @@
     font-weight: 700;
     line-height: 29.124px; /* 100.428% */
     letter-spacing: 0.58px;
-}
-
-.viewtest_subheading1 {  
+  }
+  
+  .viewtest_subheading1 {  
     color: #847E7E;
     font-size: 16px;
     font-style: normal;
     font-weight: 600;
-
+  
    
-}
-
-.viewtest_subheading2{
+  }
+  
+  .viewtest_subheading2{
     color: #323030;
     font-family: Inter;
     font-size: 16px;
@@ -36,14 +36,14 @@
     /* border: 2px solid red; */
     
     letter-spacing: 0.32px;
-}
-
-.viewtest_module2 {
+  }
+  
+  .viewtest_module2 {
     display: flex;
     gap: 10px;
-}
-
-.card1 {
+  }
+  
+  .card1 {
     display: flex;
     gap: 10px;
     flex-direction: column;
@@ -56,19 +56,19 @@
     padding-left: 33px;
     box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
     
-}
- .question{
+  }
+  .question{
     display: flex;
     flex-direction: row;
     gap: 20px;
- }
-
- .answer{
+  }
+  
+  .answer{
     display:flex;
     flex-direction:row ;
     gap: 20px;
- }
-.card2 {
+  }
+  .card2 {
     display: flex;
     gap: 10px;
     flex-direction: column;
@@ -80,35 +80,39 @@
     padding-top: 16px;
     padding-left: 33px;
     box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
-}
-
-
-.Update_test {
-    width: 147px;
-    height: 46px;  
-    flex-shrink: 0;
-    border-radius: 15px;
-    border: 2px solid #5DDCD6;
-    background: #5DDCD6;
-    box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
-
-    color: #FEFEFE;
-    font-family: Roboto;
-    font-size: 16px;
+  }
+  
+  
+  .update {
+  
+    padding-left: 300px;
+    padding-top: 90px;
+  }
+  .btn-filled {
+    background-color: #5DDCD6;
+    border: 0;
+    color: white;
+    font-weight: 500;
+    transition: 0.3s background-color;
+    padding: 15px 0px;
+    border-radius: 10px;
+    width: 140px;
+    height: 40px;
+    font-size: 15px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
     font-style: normal;
-    font-weight: 600;
-    line-height: 29.124px; /* 182.025% */
-
-    transition: background-color 0.3s;
-}
-
-.Update_test:hover {
-background-color: #4AB5AF; /* Change to the desired hover color */
-}
-
-
-
-.sb_m1 {
+    font-weight: 400;
+  }
+  
+  .btn-filled:hover {
+    background-color: #5ddc90;
+  }
+  
+  
+  
+  .sb_m1 {
     width: 626px;
     color: #323030;
     font-family: Inter;
@@ -118,10 +122,10 @@ background-color: #4AB5AF; /* Change to the desired hover color */
     line-height: 31.696px;  /*198.1% */
     letter-spacing: 0.32px;
       /*padding-right: 80px;*/  
-}
-
-
-.que1 {
+  }
+  
+  
+  .que1 {
     color: #847E7E;
     font-family: Roboto;
     font-size: 16px;
@@ -130,15 +134,15 @@ background-color: #4AB5AF; /* Change to the desired hover color */
     line-height: 29.124px; /* 182.025% */
     /* padding-top: 16px;
     padding-left: 33px; */
-}
-
-.main_options {
+  }
+  
+  .main_options {
     width: 25px;
     height: 25px;
     flex-shrink: 0;
     fill: #FFF;
     filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
-
+  
     width: 626px;
     color: #323030;
     font-family: Inter;
@@ -148,18 +152,18 @@ background-color: #4AB5AF; /* Change to the desired hover color */
     line-height: 31.696px; /* 198.1% */
     letter-spacing: 0.32px;
     padding-left: 40px;
-
-
-}
-
-.answer {
+  
+  
+  }
+  
+  .answer {
     display: flex;
     flex-direction: row;
     gap: 20px;
-}
-
-.crr {
-
+  }
+  
+  .crr {
+  
     color: #847E7E;
     font-family: Roboto;
     font-size: 16px;
@@ -168,10 +172,10 @@ background-color: #4AB5AF; /* Change to the desired hover color */
     line-height: 29.124px; /* 182.025% */
      padding-top: 100px;
     padding-left: 40px; 
-}
-
-
-.sb_m2 {
+  }
+  
+  
+  .sb_m2 {
     color: #323030;
     font-family: Inter;
     font-size: 16px;
@@ -181,11 +185,11 @@ background-color: #4AB5AF; /* Change to the desired hover color */
     letter-spacing: 0.32px;
     padding-top: 100px;
     /*padding-left: 10px;*/ 
-}
-
-
-
-.update_question {
+  }
+  
+  
+  
+  /*.update_question {
     width: 147px;
     height: 46px;
     flex-shrink: 0;
@@ -193,46 +197,73 @@ background-color: #4AB5AF; /* Change to the desired hover color */
     border: 2px solid #5DDCD6;
     background: #5DDCD6;
     box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
-
+  
     color: #FEFEFE;
     font-family: Roboto;
     font-size: 16px;
     font-style: normal;
     font-weight: 600;
     line-height: 29.124px; /* 182.025% */
-
-    transition: background-color 0.3s;
-
-
-
+  
+   /* transition: background-color 0.3s;
+  
+  
+  
    
     display: flex;
     flex-direction: row;
     gap: 499px;
-
-}
-
-.Update_question:hover {
-background-color: #4AB5AF; /* Change to the desired hover color */
-}
-
-.viewtest_module4 {
+  
+  }
+  
+  .Update_question:hover {
+    background-color: #5ddc90; /* Change to the desired hover color */
+  
+    .update1 {
+  
+        padding-left: 180px;
+        padding-top: 90px;
+    }
+    .btn-filled {
+        background-color: #5DDCD6;
+        border: 0;
+        color: white;
+        font-weight: 500;
+        transition: 0.3s background-color;
+        padding: 15px 0px;
+        border-radius: 10px;
+        width: 140px;
+        height: 40px;
+        font-size: 15px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        font-style: normal;
+        font-weight: 400;
+    }
+  
+    .btn-filled:hover {
+        background-color: #5ddc90;
+    }
+    
+  
+  .viewtest_module4 {
     display: flex;
     padding-top: 30px;
-}
-
-.viewtest_module5 {
+  }
+  
+  .viewtest_module5 {
     display: flex;
     padding-top: 30px;   
-}
-
-.question2 {
+  }
+  
+  .question2 {
     display: flex;
     flex-direction: row;
     gap: 20px;
- }
-
- .que2 {
+  }
+  
+  .que2 {
     color: #847E7E;
     font-family: Roboto;
     font-size: 16px;
@@ -241,9 +272,9 @@ background-color: #4AB5AF; /* Change to the desired hover color */
     line-height: 29.124px; /* 182.025% */
     /* padding-top: 16px;
     padding-left: 33px; */
-}
-
-.sb_m5 {
+  }
+  
+  .sb_m5 {
     width: 626px;
     color: #323030;
     font-family: Inter;
@@ -253,15 +284,15 @@ background-color: #4AB5AF; /* Change to the desired hover color */
     line-height: 31.696px;  /*198.1% */
     letter-spacing: 0.32px;
       /*padding-right: 80px;*/  
-}
-
-.main_options2 {
+  }
+  
+  .main_options2 {
     width: 25px;
     height: 25px;
     flex-shrink: 0;
     fill: #FFF;
     filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
-
+  
     width: 626px;
     color: #323030;
     font-family: Inter;
@@ -271,18 +302,18 @@ background-color: #4AB5AF; /* Change to the desired hover color */
     line-height: 31.696px; /* 198.1% */
     letter-spacing: 0.32px;
     padding-left: 40px;
-
-
-}
-
-.answer2 {
+  
+  
+  }
+  
+  .answer2 {
     display: flex;
     flex-direction: row;
     gap: 20px;
-}
-
-.crr1 {
-
+  }
+  
+  .crr1 {
+  
     color: #847E7E;
     font-family: Roboto;
     font-size: 16px;
@@ -291,9 +322,9 @@ background-color: #4AB5AF; /* Change to the desired hover color */
     line-height: 29.124px; /* 182.025% */
      padding-top: 100px;
     padding-left: 40px; 
-}
-
-.sb_m6 {
+  }
+  
+  .sb_m6 {
     color: #323030;
     font-family: Inter;
     font-size: 16px;
@@ -303,13 +334,17 @@ background-color: #4AB5AF; /* Change to the desired hover color */
     letter-spacing: 0.32px;
     padding-top: 100px;
     /*padding-left: 10px;*/ 
-}
-
-.update1 {}
-
-
-
-.update_question1 {
+  }
+  
+  .update1 {
+  
+    padding-left: 300px;
+    padding-top: 90px;
+  }
+  
+  
+  
+  /*.update_question1 {
     width: 147px;
     height: 46px;
     flex-shrink: 0;
@@ -317,33 +352,112 @@ background-color: #4AB5AF; /* Change to the desired hover color */
     border: 2px solid #5DDCD6;
     background: #5DDCD6;
     box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
-
+  
     color: #FEFEFE;
     font-family: Roboto;
     font-size: 16px;
     font-style: normal;
     font-weight: 600;
     line-height: 29.124px; /* 182.025% */
-
-    transition: background-color 0.3s;
-
-
+  
+    /*transition: background-color 0.3s;
+  
+  
    
     display: flex;
     flex-direction: row;
     gap: 499px;
-
-}
-
-.Update_question1:hover {
-background-color: #4AB5AF; /* Change to the desired hover color */
-}
-
-
-.que2, .sb_m5 {
-display: inline;
-}   
-.answer-and-updateb{
-display: flex;
-gap: 150px;
-}
+  
+  }
+  
+  .Update_question1:hover {
+    background-color: #5ddc90; /* Change to the desired hover color */
+  
+  
+    .btn-filled {
+        background-color: #5DDCD6;
+        border: 0;
+        color: white;
+        font-weight: 500;
+        transition: 0.3s background-color;
+        padding: 15px 0px;
+        border-radius: 10px;
+        width: 140px;
+        height: 40px;
+        font-size: 15px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        font-style: normal;
+        font-weight: 400;
+    }
+  
+    .btn-filled:hover {
+        background-color: #5ddc90;
+    }
+  
+  .updatetest1{
+  
+    padding-top: 30px;
+    
+  }
+  
+  /*.update_test {
+    width: 147px;
+    height: 46px;
+    flex-shrink: 0;
+    border-radius: 15px;
+    border: 2px solid #5DDCD6;
+    background: #5DDCD6;
+    box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
+  
+    color: #FEFEFE;
+    font-family: Roboto;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: 29.124px; /* 182.025% */
+  
+    /*transition: background-color 0.3s;
+  
+  
+   
+    display: flex;
+    flex-direction: row;
+    gap: 499px;
+  
+    
+  }
+  
+  /*.Update_test:hover{
+    background-color: #5ddc90;
+  }*/
+  
+  .btn-filled {
+    background-color: #5DDCD6;
+    border: 0;
+    color: white;
+    font-weight: 500;
+    transition: 0.3s background-color;
+    padding: 15px 0px;
+    border-radius: 10px;
+    width: 140px;
+    height: 40px;
+    font-size: 15px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-style: normal;
+    font-weight: 400;
+  }
+  
+  .btn-filled:hover {
+    background-color: #5ddc90;
+  }
+  .que2, .sb_m5 {
+  display: inline;
+  }   
+  .answer-and-updateb{
+  display: flex;
+  gap: 150px;
+  }
