@@ -8,8 +8,6 @@ import StudentCourseDetail from './pages/student/StudentCourseDetail'
 import TeacherUnitDetail from './pages/teacher/TeacherUnitDetail'
 
 
-import StudentUnitDetail from './pages/student/StudentUnitDetail'
-
 
 
 function App() {
