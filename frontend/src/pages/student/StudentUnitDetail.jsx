@@ -1,11 +1,12 @@
 import React from "react";
-import img from '../../assets/image.jpg';
+import image from '../../assets/image.jpg'
+
 function StudentUnitDetail() {
   return (
     <div>
       <div className="module">
-        <h3 className="heading">Module: </h3>
-        <h3 className="heading">1</h3>
+        <h3 className="heading">Module: 1</h3>
+        <h3 className="heading"></h3>
         <h2>Module Name:</h2>
         <p>Fundamentals of React JS</p>
         <h2>Duration:</h2>
@@ -30,12 +31,12 @@ function StudentUnitDetail() {
             xmlns="http://www.w3.org/2000/svg"
             stroke="#ffffff"
           >
-            <g id="SVGRepo_bgCarrier" stroke-width="0" />
+            <g id="SVGRepo_bgCarrier" strokeWidth="0" />
 
             <g
               id="SVGRepo_tracerCarrier"
-              stroke-linecap="round"
-              stroke-linejoin="round"
+              strokeLinecap="round"
+              strokeLinejoin="round"
             />
 
             <g id="SVGRepo_iconCarrier">
@@ -44,33 +45,33 @@ function StudentUnitDetail() {
           </svg>
         </button>
       </div>
-      
+
       <div className="video-component">
-        <p className="heading">Videos :</p>
+        <p className="heading">Web Development</p>
         <div className="videos">
           <div className="video-box">
-          <img src={img} alt="react video" />
+            <div className="video-img"><img src={image} alt="react video" /></div>
             <div className="video-info">
               <h1>Basic of JS</h1>
-              <h4>Complete</h4>
-              <small>Video 1</small>
             </div>
+            <small>Duration:16 Hours</small>
+
           </div>
           <div className="video-box">
-          <img src={img} alt="react video" />
+            <div className="video-img"><img src={image} alt="react video" /></div>
             <div className="video-info">
-              <h1>Fundamentals</h1>
-              <h4>Complete</h4>
-              <small>Video 2</small>
+              <h1>Basic of JS</h1>
             </div>
+            <small>Duration:16 Hours</small>
+
           </div>
           <div className="video-box">
-          <img src={img} alt="react video" />
+            <div className="video-img"><img src={image} alt="react video" /></div>
             <div className="video-info">
-              <h1>Module Test 1</h1>
-              <h4 className="incomplete">InComplete</h4>
-              <small>Video 3</small>
+              <h1>Basic of JS</h1>
             </div>
+            <small>Duration:16 Hours</small>
+
           </div>
         </div>
       </div>
