@@ -1,5 +1,5 @@
 import React from "react";
-import "./StudentCourseDetail.css";
+
 import courseImg from "../../assets/image.jpg";
 import pieChart from "../../assets/pie-chart.png";
 import { Chart as ChartJS, ArcElement, Tooltip, Legend } from "chart.js";

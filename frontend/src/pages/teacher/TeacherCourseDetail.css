@@ -4,7 +4,7 @@
   justify-content: baseline;
 }
 
-.right-content{
+.right-content {
   padding: 0 20px 0 0;
 }
 
@@ -39,7 +39,7 @@
 #Duration,
 #Faculty,
 #Teacher-name {
-  color: #847e7e
+  color: #847e7e;
 }
 
 .Description {
@@ -81,7 +81,12 @@
   gap: 10px;
   margin-bottom: 30px;
 }
-
+.module-btn{
+display: flex;
+align-items: center;
+gap:10px;
+width: 100%;
+}
 
 .update-course {
   margin-left: auto;
@@ -129,10 +134,8 @@
   flex-shrink: 0;
   border-radius: 15px;
   border: 1px solid #323030;
-  background: #FFF;
+  background: #fff;
   box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
-
-
 }
 
 .mod-text1 {
@@ -140,7 +143,7 @@
   font-size: 16px;
   font-style: normal;
   font-weight: 600;
-  line-height: 29.124px;
+  line-height: 22.124px;
   /* 182.025% */
   letter-spacing: 0.16px;
 }
@@ -183,12 +186,12 @@
   transition: 0.4s;
 }
 
-.toggle-btn:checked+.switch:after {
+.toggle-btn:checked + .switch:after {
   translate: 40px 0px;
   background-color: red;
 }
 
-.toggle-btn:checked+.switch {
+.toggle-btn:checked + .switch {
   transition: 0.3s;
   border: red 1px solid;
 }
@@ -196,18 +199,163 @@
 #toggle {
   display: none;
 }
-.toggle{
+.toggle {
   display: flex;
   align-items: center;
   margin-left: 10px;
 }
 
-
-.left-content{
+.left-content {
   display: flex;
   flex-direction: column;
   align-items: center;
 }
-.pie-chart{
+.pie-chart {
   width: 80%;
+}
+.enroll-module-btn {
+  width: 159px;
+  height: 46px;
+  margin: 50px 0px;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: 29.124px;
+  flex-shrink: 0;
+  border-radius: 15px;
+  border: 1px solid #323030;
+  background: #fff;
+  box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
+}
+.pie-chart{
+    
+  width:300px;
+  height: 410px;
+  flex-shrink: 0;
+ border-radius: 15px;
+ align-items: center;
+ gap:30px;
+ padding:15px 0px;
+ border: 1px solid #323030;
+background: #fff;
+box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
+}
+ .pie-chart p{
+  text-align: center;
+  width: 100%;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 600;
+  padding-bottom: 15px;
+} 
+/* responsive */
+@media only screen and (max-width: 1100px) {
+  .teacher-view-course {
+    display: flex;
+    flex-direction: column;
+    gap: 50px;
+    
+  }
+   /* .course-right{
+    font-size: 17px;
+    grid-template-columns: 45% 55%;
+  } */
+  /* .course-details {
+    flex-direction: column;
+    gap: 10px;
+  }
+  .course-img img {
+    width: 266px;
+    height: 150px;
+    margin:0px 0px;
+    align-content: center;
+    float: none;
+  }
+  .Description {
+    flex-direction: column;
+    gap: 1px;
+  }
+  .completed{
+    font-size: 17px;
+  } */ 
+  /* .btn{
+    font-size: 7px;
+  }  */
+  .module-d{
+    font-size: 17px;
+  }
+  .module-but{
+display: grid;
+grid-template-rows: auto;
+  }
+
+  .module-btn{
+    display: flex;
+    justify-content: center;
+    gap:10px
+  }
+  .mod-text1{
+    font-size:14px ;
+    
+  }
+  .module-time{
+  flex-direction: column;
+
+  }
+  .view-module-btn {
+    font-size:14px ;
+    width: 100px;
+    margin-right: 0px;
+  }
+  .module-box{
+    padding: 5px 10px;
+  }
+  /* .pie-chart p{
+    visibility: hidden;
+  } */
+  
+}
+@media only screen and (max-width: 700px) {
+ .course-right{
+    font-size: 17px;
+    grid-template-columns: 45% 55%;
+  }
+  /* .course-details {
+    flex-direction: column;
+    gap: 10px;
+  } */
+  .course-img img {
+    width: 250px;
+    height: 150px;
+    /* margin-right: 310px; */
+    align-content: center;
+    float: none;
+  }
+  .Description {
+    flex-direction: column;
+    gap: 5px;
+  }
+  .desc-deatail{
+    line-height: 22px;
+  }
+  .completed{
+    font-size: 17px;
+  }
+  
+}
+@media only screen and (max-width: 500px) {
+  .course-details {
+    flex-direction: column;
+    gap: 20px;
+    
+  }
+  .course-right{
+    font-size: 17px;
+    gap:10px;
+    grid-template-columns: 45% 55%;
+  }
+  .course-img img{
+    margin-right: 150px;
+
+  }
 }
