@@ -1,5 +1,4 @@
 import React from "react";
-import './StudentUnit.css';
 import img from '../../assets/image.jpg';
 function StudentUnitDetail() {
   return (
