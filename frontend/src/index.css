@@ -156,8 +156,6 @@ main {
 .btn {
     padding: 15px 20px;
     border-radius: 10px;
-    /* width: 140px; */
-    /* height: 40px;  */
     background-color: white;
     font-size: 15px;
     display: flex;
@@ -166,6 +164,8 @@ main {
     color: #323030;
     font-style: normal;
     font-weight: 400;
+    min-width: 150px;
+    min-height: 45px;
 }
 
 .btn-border-blue {
@@ -222,16 +222,33 @@ main {
 }
 
 .menu-items {
+    border-bottom: 1px solid gray;
     background-color: white;
     position: absolute;
     width: 100%;
-    padding: 10px;
+    height: 0;
+    padding: 0;
+    transition: opacity 100ms linear 0s;
+    opacity: 0;
+    transition-delay: 50ms;
+    border-radius: 5px;
+    z-index: 5;
+}
+.menu-items .sidebar-links{
     display: none;
 }
 
 .menu-items.active {
     display: block;
+    height: auto;
+    padding: 10px;
+    box-shadow: 0px 3px 7px 2px #474747;;
+    opacity: 1;
 }
+.menu-items.active .sidebar-links {
+    display: flex;
+}
+
 
 
 @media only screen and (max-width: 1100px) {
@@ -258,6 +275,10 @@ main {
 
     .menu {
         display: flex;
+    }
+    .btn{
+        padding: 10px;
+        min-width: 100px;
     }
 }
 
