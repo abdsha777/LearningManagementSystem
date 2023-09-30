@@ -354,6 +354,7 @@ main {
     }
     .main-content {
         border-radius: 0 0 15px 15px;
+        padding: 30px;
     }
 
     .profile-info {
@@ -377,6 +378,9 @@ main {
     .profile {
         margin-right: 25px;
         margin-left: 0;
+    }
+    .main-content {
+        padding: 20px;
     }
 }
 @media only screen and (max-height: 800px) {
