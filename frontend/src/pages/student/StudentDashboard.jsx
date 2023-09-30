@@ -1,6 +1,7 @@
 import React from 'react'
 import './StudentDashboard.css'
 import img from "../../assets/image.jpg"
+import ci from "../../assets/certificate_icon.jpg"
 
 function StudentDashboard() {
     return (
@@ -9,43 +10,54 @@ function StudentDashboard() {
                 <h1 align="left">Overview</h1>
             </div>
 
-            <div className="segg-container">
-                <div className="top-card">
-                    <div className="col-3">
-                        <div className="segg-text">
-                            <p>Onging Cource</p>
-                            <p>5</p>
-                        </div>
-                    </div>
+            <div className='over-afridi'>
+     <div className='green-afridi'>
+     <div className='green-icon'>
+     <img src='' /> 
+             </div>
+     <div className='text-in-green'>
+     <div className='greendiv-motive'>
+         <p>Ongoing course</p></div><div className='greendiv-head'>
+         <h3>5 </h3></div>
+         </div>
+        </div>
+     
+     <div className='green-afridi'>
+         <div className='green-icon'>
+         <img src='' /> 
+         </div>
+     <div className='text-in-green'>
+     <div className='greendiv-motive'>
+     <p>Completed Course</p></div><div className='greendiv-head'>
+         <h3>6</h3></div>
+         </div>
+     </div>
+    
+      <div className='green-afridi'>
+      <div className='green-icon'>
+            <img src='' /> 
+             </div>
+      <div className='text-in-green'>
+          <div className='greendiv-motive'>
+      <p>Certificates Earned</p> </div>
+         <h3>5</h3>
+         </div>
+          </div>
+</div>
 
-                    <div className="col-3">
-                        <div className="segg-text">
-                            <p>Complete Cource</p>
-                            <p>6</p>
-                        </div>
-                    </div>
-
-                    <div className="col-3">
-                        <div className="segg-text">
-                            <p>Certificate Earned</p>
-                            <p>3</p>
-                        </div>
-                    </div>
-
-                </div>
-            </div>
 
             <h1>Courses Your Taking</h1>
 
             <div className="display-info">
-                <table className="row-table " width="100%">
-
+                <table className="table-h-afridi" width="100%">
+                     <thead>
                     <tr>
                         <th>Course Name</th>
                         <th>Module Completed</th>
                         <th>Instructor</th>
                     </tr>
-
+                    </thead>
+                    <tbody>
                     <tr>
                         <td>React Js</td>
                         <td>2/10</td>
@@ -54,7 +66,7 @@ function StudentDashboard() {
 
                     <tr>
                         <td>C++</td>
-                        <td>20/10</td>
+                        <td>10/10</td>
                         <td>Farzana maam</td>
                     </tr>
 
@@ -63,6 +75,7 @@ function StudentDashboard() {
                         <td>9/10</td>
                         <td>Sumaiya tamboli</td>
                     </tr>
+                    </tbody>
                 </table>
             </div>
 

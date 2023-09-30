@@ -6,82 +6,201 @@
 }
 
 /* top ka card ka css */
-.segg-container {
-    display: flex;
-    padding-left: 70px;
-    gap: 350px;
-
-}
-
-.top-card {
-    display: flex;
-    justify-content: center;
-    margin: 0%;
+.over-afridi{
+    max-height: 80px;
+    display:flex;
+    background-color: #FEFEFE;
+    margin-top:20px;
+    margin-bottom: 20px;
+     gap: 40px;
+   }
+   
+   .green-afridi{
+    margin-left:70px;
+     width:240px;
+     height: 80px;
+     display: flex;
+     justify-content: center;
+     align-items: center;
+     background: rgba(93, 220, 214, 0.75);
+     /*box-shadow: 3px 3px rgb(74, 109, 109);*/
+     box-shadow: 2px 2px 0 1px rgb(180, 197, 197);
+     border:1px;
+     border-radius:15px;
+   }
+   
+   .text-in-green{
+    flex-direction: column;
+    width:60%;
+    text-align: left;
+    margin-top: 1opx;
     padding: 0%;
-    padding-left: 100px;
-    border-radius: 15px;
-    gap: 120px;
-}
-
-.col-3 {
-    display: flex;
-    width: 240px;
-    height: 80px;
-    /* idhar thu green box ka size change kar sakta  */
-    border-radius: 15px;
-    background: rgba(93, 220, 214, 0.75);
-}
-
-.segg-text {
-    color: #000;
-    font-family: Inter;
-    font-size: 14px;
-    font-style: normal;
-    padding-left: 100px;
-    /* here u can shift the content  */
-}
-
+    }
+    .text-in-green h3{
+     color: #FFF;
+     font-family: Inter;
+     font-size: 20px
+    }
+    .greendiv-motive{
+        color:black;
+        font-size: 15px;
+    }  
+    .green-icon{
+   /*   background-color:rgba(93, 220, 214, 0.75);
+      */
+      border: 15px;
+      width:40%;
+    }
+   
+    .img{
+     width:'50px';
+      height:'37px';
+      padding:0;
+    }
 /* table   */
 
 .display-info {
     padding: 20px;
     border-collapse: collapse;
     width: 100%;
+    margin-left: 50px;
 }
-/* 
-tr {
+
+
+  .table-h-afridi{
+    color: #847E7E;
+  font-family: Inter;
+  font-size: 18px;
+  font-style: normal;
+  font-weight: 300;
+  line-height: 29.124px; 
+  }
+  
+  tr {
     width: 100px;
-}
-
-td,
-th {
-    text-align: center;
+  }
+  
+  td {
+    text-align: left;
     padding: 30px;
-} */
-
+    color: #323030;
+      font-family: Inter;
+       font-size: 18px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: 29.124px; 
+   padding:left;
+  }
 /* bottom card grid of suggestion  */
 .card {
-    padding-left: 30px;
+    padding-left: 1px;
     display: flex;
     flex-direction: row;
+    justify-content: space-evenly ;
     max-width: 100%;
     margin: 20px;
-    gap: 150px;
+    gap:2vw;
 }
 
 .col-4 {
     width: 318px;
     height: 290px;
-
+   /* border: 1px solid;8*/
     border-radius: 15px;
     background: #FEFEFE;
     padding: 20px;
-    box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
+    box-shadow:5px 20px 20px 2px rgba(0, 0, 0, 0.25);
 }
 
-/* img {
+.image img{
     width: 293.922px;
     height: 185.201px;
     border-radius: 15px;
     padding: 0;
-} */
+    margin: 0;
+}
+
+/* mini laptop*/
+@media screen and (max-width:900px){
+
+    .over-afridi{
+          display: flex;
+          flex-wrap: wrap;
+         margin-bottom: 150px;
+    }
+   .green-afridi{
+       max-width: 100%;
+   }
+   .display-info{
+       overflow-x: scroll;
+       margin-left: 0px;  
+       display: flex;
+       flex-direction: column;
+       margin-top:10px;
+       box-shadow: 3px 3px 3px 4px rgb(210, 192, 192);
+       margin-bottom: 20px;
+      }
+      .table-h-afridi{
+        margin-left: 0px; 
+        }
+
+        .table-h-afridi th{
+            padding: 10px;
+            font-size: 15px;
+        }
+   .card{
+       display: flex;
+       flex-wrap: wrap;
+   }
+   .col-4{
+       margin-bottom: 0px;
+   }
+   .h1{
+       padding:0px;
+       margin:0px;
+   }
+}
+
+/* Mobile */
+@media screen and (max-width:500px){
+
+    .over-afridi{
+        width: 250px;
+          display: flex;
+          flex-wrap: wrap;
+          justify-content: center ;
+          padding: 0px;
+          margin-bottom: 260px;
+    }
+   .green-afridi{
+       max-width: 100%;
+   }
+   .display-info{
+       overflow-x: scroll;
+       margin-left: 0px;  
+       display: flex;
+       flex-direction: column;
+       margin-top:10px;
+       box-shadow: 3px 3px 3px 4px rgb(210, 192, 192);
+       margin-bottom: 20px;
+      }
+      .table-h-afridi{
+        margin-left: 0px; 
+        }
+
+        .table-h-afridi th{
+            padding: 10px;
+            font-size: 15px;
+        }
+   .card{
+       display: flex;
+       flex-wrap: wrap;
+   }
+   .col-4{
+       margin-bottom: 0px;
+   }
+   .h1{
+       padding:0px;
+       margin:0px;
+   }
+}
