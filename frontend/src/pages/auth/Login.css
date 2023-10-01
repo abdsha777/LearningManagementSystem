@@ -1,8 +1,10 @@
 .login {
     display: grid;
     grid-template-columns: 1fr 1fr;
-    height: 100%;
-
+    height: 100vh;
+    margin-top: -10px;
+    margin-right: -10px;
+    margin-left: -10px;
 }
 
 .login-right {
@@ -59,12 +61,12 @@
 
 }
 
-SMall {
+.login-form small {
     color: gray;
 
 }
 
-a {
+.login-form a {
     text-decoration: none;
 }
 
@@ -87,7 +89,7 @@ a {
     resize: none;
 }
 
-label {
+.login-form label {
     color: black;
     font-size: 18px;
     font-style: normal;
@@ -97,7 +99,7 @@ label {
 
 
 
-input {
+.login-form input {
     max-width: auto;
     width: 100%;
     height: 40px;
@@ -110,24 +112,17 @@ input {
     transition: 0.4s background-color;
 }
 
-input:focus {
+.login-form input:focus {
     background-color: white;
 
     padding-left: 20px;
     outline: none;
 }
-
-
-:placeholder-shown {
+.login-form input:placeholder-shown {
     color: #999292;
-    padding-left: 20px;
-
 }
 
-
 @media screen and (max-width:800px) {
-
-
     .ll-header-1 {
         display: flex;
         gap: 20px;
@@ -153,7 +148,6 @@ input:focus {
     .login {
         display: grid;
         grid-template-columns: 1fr;
-        height: 100%;
     }
 
     .login-left {
@@ -169,12 +163,9 @@ input:focus {
     .login-form {
         padding: 10%;
         height: 500px;
-
-
-
     }
 
-    h1 {
+    .login-form h1 {
         font-size: 25px;
     }
 
@@ -187,15 +178,12 @@ input:focus {
 }
 /* to hide the logo and name  */
 @media screen and (min-width:800px) {
-
     .ll-header-1,
     .ll-heading-1,
     .logo-1 {
         display: none;
 
     }
-
-
 }
 
 @media screen and (max-width:400px) {
@@ -208,7 +196,6 @@ input:focus {
         gap: 10px;
         align-items: none;
     }
-
 }
 
 @media screen and (max-width:300px) {
@@ -216,9 +203,6 @@ input:focus {
         font-size: 15px;
     }
 }
-
-
-
 .ll-header {
     display: flex;
     gap: 20px;
@@ -227,7 +211,7 @@ input:focus {
 
 }
 
-.logo {
+.login-logo {
     height: 40px;
     width: 40px;
     background-color: #d9d9d9;
