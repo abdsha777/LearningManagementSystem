@@ -19,6 +19,7 @@ import AdminTeacherList from './pages/admin/AdminTeacherList'
 import AdminStudentList from './pages/admin/AdminStudentList'
 import Certificates from './pages/student/Certificates'
 import StudentMyCourse from './pages/student/StudentMyCourse'
+import Login from './pages/auth/Login'
 
 
 
@@ -47,6 +48,7 @@ function App() {
             <Route path='adminStudentList' element={<AdminStudentList />} />
             <Route path='certificates' element={<Certificates />} />
             <Route path='studentMyCourse' element={<StudentMyCourse />} />
+            <Route path='login' element={<Login />} />
           </Route>
         </Routes>
       </BrowserRouter>

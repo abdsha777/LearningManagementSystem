@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react'
 import { Link, Outlet } from 'react-router-dom'
 import Navbar from '../navbar/Navbar'
-import Sidebar from '../sidebar/Sidebar'
+import Sidebar from '../sidebar/TeacherSidebar'
 import Menu from '../menu/Menu'
 function Layout() {
     const [menu,setMenu]=useState('')
