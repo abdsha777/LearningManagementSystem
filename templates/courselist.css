@@ -114,3 +114,9 @@ letter-spacing: 0.58px;
     flex-grow: 1; /* Allow the text to take up remaining space */
 }
 
+@media (max-width: 768px) {
+    .heading, .heading1 {
+        font-size: 18px; 
+        line-height: 26px; 
+    }
+}

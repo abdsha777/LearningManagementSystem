@@ -52,3 +52,16 @@
 h3{
     padding-top: 00px;
 }
+
+@media (max-width: 768px) {
+    .certificate-module {
+        grid-template-columns: 1fr; 
+        gap: 20px; 
+    }
+    
+    .certificate-details {
+        flex-direction: column; 
+        align-items: center; 
+        text-align: center; 
+    }
+}
