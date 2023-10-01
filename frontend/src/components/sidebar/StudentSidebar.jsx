@@ -5,7 +5,7 @@ import { Link, NavLink } from "react-router-dom";
 function Sidebar() {
   return (
     <div className="sidebar">
-      <NavLink href="#" className="sidebar-links active">
+      <NavLink to="#" className="sidebar-links active">
         <svg
           className="home-svg"
           width="800px"
@@ -34,7 +34,7 @@ function Sidebar() {
         </svg>
         Dashboard
       </NavLink>
-      <NavLink href="#" className="sidebar-links">
+      <NavLink to="#" className="sidebar-links">
         <svg
           className="course-svg"
           width="800px"
@@ -70,7 +70,7 @@ function Sidebar() {
         </svg>
         Courses
       </NavLink>
-      <NavLink href="#" className="sidebar-links">
+      <NavLink to="#" className="sidebar-links">
         <svg
           className="add-svg"
           width="800px"
@@ -104,7 +104,7 @@ function Sidebar() {
         </svg>
         My Courses
       </NavLink>
-      <NavLink href="#" className="sidebar-links">
+      <NavLink to="#" className="sidebar-links">
         <svg
           width="800px"
           height="800px"
