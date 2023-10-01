@@ -1,11 +1,11 @@
 import React from 'react'
 import './sidebar.css'
-import { Link } from 'react-router-dom'
+import { Link, NavLink } from 'react-router-dom'
 
 function Sidebar() {
     return (
         <div className="sidebar">
-            <a href="#" className="sidebar-links active">
+            <NavLink href="#" className="sidebar-links active">
                 <svg className="home-svg" width="800px" height="800px" viewBox="0 0 24 24"
                     xmlns="http://www.w3.org/2000/svg">
                     <g id="SVGRepo_bgCarrier" strokeWidth="0" />
@@ -20,8 +20,8 @@ function Sidebar() {
 
                 </svg>
                 Dashboard
-            </a>
-            <a href="#" className="sidebar-links">
+            </NavLink>
+            <NavLink href="#" className="sidebar-links">
                 <svg className="course-svg" width="800px" height="800px" viewBox="0 0 24 24" fill="none"
                     xmlns="http://www.w3.org/2000/svg">
 
@@ -39,8 +39,8 @@ function Sidebar() {
 
                 </svg>
                 My Courses
-            </a>
-            <a href="#" className="sidebar-links">
+            </NavLink>
+            <NavLink href="#" className="sidebar-links">
                 <svg className="add-svg" width="800px" height="800px" viewBox="0 0 24 24" fill="none"
                     xmlns="http://www.w3.org/2000/svg">
 
@@ -58,8 +58,8 @@ function Sidebar() {
 
                 </svg>
                 Add New Course
-            </a>
-            <a href="#" className="sidebar-links">
+            </NavLink>
+            <NavLink href="#" className="sidebar-links">
                 <svg className="student-svg" width="800px" height="800px" viewBox="0 0 64 64" xmlns="http://www.w3.org/2000/svg"
                     strokeWidth="3" stroke="#000000" fill="none">
                     <path
@@ -73,8 +73,8 @@ function Sidebar() {
                     <path d="M43.43,30.13a63,63,0,0,0-11.61-1,60.25,60.25,0,0,0-12.19,1" />
                 </svg>
                 Student List
-            </a>
-            <a href="#" className="sidebar-links">
+            </NavLink>
+            <NavLink href="#" className="sidebar-links">
                 <svg className="class-svg" width="800px" height="800px" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
 
                     <g id="SVGRepo_bgCarrier" strokeWidth="0" />
@@ -89,7 +89,7 @@ function Sidebar() {
 
                 </svg>
                 My Course List
-            </a>
+            </NavLink>
             <Link to=".." className="sidebar-links">
                 &larr; GO BACK
             </Link>
