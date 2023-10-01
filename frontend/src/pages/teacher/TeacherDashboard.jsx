@@ -1,7 +1,47 @@
 import React from 'react'
 import './TeacherDashboard.css'
 import img from '../../assets/FigmaGraph.jpg'
+import { Bar } from 'react-chartjs-2';
+import {
+    Chart as ChartJS,
+    CategoryScale,
+    LinearScale,
+    BarElement,
+    Title,
+    Tooltip,
+    Legend,
+} from 'chart.js';
+ChartJS.register(
+    CategoryScale,
+    LinearScale,
+    BarElement,
+    Title,
+    Tooltip,
+    Legend
+);
+
 function TeacherDashboard() {
+    const data = {
+        labels: ['React', 'Java', 'C++', "Python", 'React', 'Java', 'C++', "Python"],
+        datasets: [{
+            label: 'No Of Sudents',
+            data: [121, 222, 88, 200, 121, 222, 88, 200],
+            backgroundColor: ['#5DDCD6']
+        }]
+    }
+    const options = {
+        responsive: true,
+        plugins: {
+            legend: {
+                position: 'top',
+            },
+            title: {
+                display: true,
+                text: 'Students Enrolled'
+            }
+        },
+        maintainAspectRatio: false
+    }
     return (
         <div>
             <div className="Topcontent">
@@ -41,7 +81,10 @@ function TeacherDashboard() {
 
                 </div>
                 <div className="graph">
-                    <img src={img} alt="" />
+                    <Bar
+                        options={options}
+                        data={data}
+                    />
                 </div>
             </div>
             <div className="CourseTable">

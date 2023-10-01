@@ -1,6 +1,7 @@
 .Studentinfo {
     display: inline;
     gap: 10px;
+    margin-right: 20px;
 }
 .perimg {
     color: #09adad;
@@ -16,7 +17,7 @@
     width: 240px;
     height: 80px;
     border-radius: 15px;
-    box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
+    box-shadow: 0px 2px 6px 1px rgba(0, 0, 0, 0.25);
     display: grid;
     grid-template-columns: 40% 60%;
     margin-bottom: 20px;
@@ -31,10 +32,13 @@
 #main-text {
     color: #868181;
     font-family: Inter;
-    font-size: 10px;
+    font-size: 12px;
     font-weight: 500;
     /* 291.24% */
-    margin-top: 15px;
+    /* margin-top: 15px; */
+}
+#num{
+    font-size: 18px;
 }
 
 .CourseTable table {
@@ -62,7 +66,11 @@
 .graph {
     display: flex;
     align-items: center;
-    width: fit-content;
+    max-height: 100%;
+    width: 100%;
+    padding: 20px;
+    border-radius: 20px;
+    box-shadow: 0px 2px 6px 1px rgba(0, 0, 0, 0.25);
 }
 
 .graph img {
@@ -75,58 +83,29 @@
         margin: 0%;
         margin-bottom: 40px;
     }
-
-    .Studentinfo {
+    .Studentinfo{
         display: grid;
-        grid-template-columns: 1fr 1fr 1fr;
-    }
-    .Studentinfo.admin {
-        grid-template-columns: 1fr 1fr ;
+        grid-template-columns: 1fr;
         gap: 0px;
     }
 
+
     .student-head {
-        width: 100px;
-        height: 100px;
-        display: flex;
-        margin: auto;
-        padding: 5px;
+        width: 100%;
     }
 
-    .perimg {
-        color: #09adad;
-        font-family: Inter;
-        font-size: 20px;
-        font-style: normal;
-        font-weight: 700;
-        margin-top: 9;
-        margin-right: 9;
+    .graph {
+        padding: 0;
+        margin-top: 20px;
+        width: 100%;
+        height: 300px;
     }
-
-    #main-text {
-        color: #868181;
-        font-family: Inter;
-        font-size: 10px;
-        font-style: normal;
-        font-weight: 500;
-        line-height: 19.124px;
-        /* 291.24% */
-        margin-top: 15px;
-        margin-left: 9px;
-        text-align: center;
-    }
-
-    #num {
-        font-size: 17px;
-        text-align: center;
-        margin-top: 10px;
-    }
-
     .graph img {
         margin-top: 20px;
         width: 100%;
         height: auto;
     }
+
 
     .CourseTable th {
         font-size: 14px;
