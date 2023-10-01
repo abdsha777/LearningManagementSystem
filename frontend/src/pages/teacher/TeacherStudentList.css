@@ -1,12 +1,3 @@
-.TeacherStudentList {
-    width: 100%;
-    height: 85vh;
-    background-color: white;
-    border-radius: 0 0 25px 0;
-    overflow-y: scroll;
-    padding: 30px 40px;
-}
-
 .heading {
   color: #323030;
   font-size: 36px;
@@ -74,6 +65,10 @@
 .module5 table {
   width: 100%;
 }
+.module5 table tbody{
+  height: 100px;
+  overflow-y: scroll;
+}
 
 .module5 th {
   color: #847E7E;
@@ -105,4 +100,15 @@
 .module5 td button.status.inactive {
   color: #F00;
   background-color: #FFE5E5;
+}
+@media  screen and (max-width:500px){
+  .sub_heading{
+      flex-direction: column;
+  }
+  .sub_heading input[type=text]{
+      width: 100%;
+  }
+  .module5{
+    overflow-x: scroll;
+}
 }

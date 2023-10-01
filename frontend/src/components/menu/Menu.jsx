@@ -1,7 +1,7 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
 
-function Menu({menu}) {
+function Menu({menu,showMenu}) {
   return (
     <div className={"menu-items "+menu}>
                     <a href="#" className="sidebar-links active">
@@ -89,7 +89,7 @@ function Menu({menu}) {
                         </svg>
                         My Course List
                     </a>
-                    <Link to=".." className="sidebar-links">
+                    <Link to=".." className="sidebar-links" onClick={showMenu}>
                         &larr; GO BACK
                     </Link>
                 </div>

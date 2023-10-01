@@ -1,6 +1,7 @@
 import React from 'react'
 import './TeacherUnitDetail.css'
-import img from '../../assets/image.jpg'
+import image from '../../assets/image.jpg'
+
 
 function TeacherUnitDetail() {
   return (
@@ -29,9 +30,9 @@ function TeacherUnitDetail() {
           Notes
           <svg fill="#ffffff" width="800px" height="800px" viewBox="0 0 1024 1024" xmlns="http://www.w3.org/2000/svg"
             stroke="#ffffff">
-            <g id="SVGRepo_bgCarrier" stroke-width="0" />
+            <g id="SVGRepo_bgCarrier" strokeWidth="0" />
 
-            <g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round" />
+            <g id="SVGRepo_tracerCarrier" strokeLinecap="round" strokeLinejoin="round" />
 
             <g id="SVGRepo_iconCarrier">
               <path
@@ -45,36 +46,36 @@ function TeacherUnitDetail() {
         <p> Module Completed :</p>
         <p>
           <input type="checkbox" name="checkbox" id="toggle" />
-          <label for="toggle" className="switch"></label>
+          <label htmlFor="toggle" className="switch"></label>
         </p>
 
       </div>
       <div className="video-component">
-        <p className="heading">Videos :</p>
+        <p className="heading">Web Development</p>
         <div className="videos">
           <div className="video-box">
-            <img src={img} alt="react video" />
+            <div className="video-img"><img src={image} alt="react video" /></div>
             <div className="video-info">
               <h1>Basic of JS</h1>
-              <h4>Complete</h4>
-              <small>Video 1</small>
             </div>
+            <small>Duration:16 Hours</small>
+
           </div>
           <div className="video-box">
-            <img src={img} alt="react video" />
+            <div className="video-img"><img src={image} alt="react video" /></div>
             <div className="video-info">
               <h1>Basic of JS</h1>
-              <h4>Complete</h4>
-              <small>Video 2</small>
             </div>
+            <small>Duration:16 Hours</small>
+
           </div>
           <div className="video-box">
-            <img src={img} alt="react video" />
+            <div className="video-img"><img src={image} alt="react video" /></div>
             <div className="video-info">
               <h1>Basic of JS</h1>
-              <h4 className='incomplete'>InComplete</h4>
-              <small>Video 3</small>
             </div>
+            <small>Duration:16 Hours</small>
+
           </div>
         </div>
       </div>

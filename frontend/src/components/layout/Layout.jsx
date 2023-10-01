@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react'
 import { Link, Outlet } from 'react-router-dom'
 import Navbar from '../navbar/Navbar'
-import Sidebar from '../sidebar/Sidebar'
+import TeacherSidebar from '../sidebar/TeacherSidebar'
 import Menu from '../menu/Menu'
 function Layout() {
     const [menu,setMenu]=useState('')
@@ -12,8 +12,8 @@ function Layout() {
         <>
             <Navbar showMenu={showMenu} />
             <main>
-                <Menu menu={menu}/>
-                <Sidebar />
+                <Menu menu={menu} showMenu={showMenu} />
+                <TeacherSidebar />
                 <div className="main-content">
                     <Outlet />
                 </div>

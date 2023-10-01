@@ -1,5 +1,5 @@
 import React from "react";
-import "./StudentCourseDetail.css";
+
 import courseImg from "../../assets/image.jpg";
 import pieChart from "../../assets/pie-chart.png";
 import { Chart as ChartJS, ArcElement, Tooltip, Legend } from "chart.js";
@@ -64,31 +64,7 @@ function StudentCourseDetail() {
           </div>
         </div>
         <br />
-        <div className="course-complete">
-          <div className="completed">
-            <p>Course Completed:</p>
-          </div>
-          <div className="toggle">
-            <input
-              type="checkbox"
-              name="checkbox"
-              id="toggle"
-              className="toggle-btn"
-            />
-            <label htmlFor="toggle" className="switch"></label>
-          </div>
-        </div>
-        <br />
-        <div className="module-but">
-          <div className="module-d">
-            <p>MODULE:</p>
-          </div>
-          <button className="btn btn-border-blue">+ Add Module</button>
-          <button className="btn btn-border-blue">Final Test</button>
-          <button className="update-course btn btn-filled">
-            Update Course
-          </button>
-        </div>
+       
         <div className="module-details">
           <div className="module-box first">
             <div className="fun-react">

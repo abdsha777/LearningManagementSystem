@@ -309,3 +309,125 @@ main {
         padding: 10px 0;
     }
 }
+
+
+/* video box  */
+
+.video-component {
+    padding-top: 10px;
+    margin-bottom: 20px;
+}
+
+.video-component .heading {
+    font-size: 25px;
+}
+
+.videos {
+    padding-top: 20px;
+    width: 100%;
+    border-radius: 10px;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 50px;
+}
+
+.video-box img {
+    border-radius: 10px;
+    width: 100%;
+    margin-bottom: 10px;
+}
+
+.video-box {
+    box-shadow: 1px 1px 6px #888888;
+    border-radius: 10px;
+    padding: 10px;
+    
+}
+
+.video-info {
+    display: grid;
+    grid-template-columns: 1fr 0.5fr;
+    justify-content: space-between;
+}
+
+.video-info h1 {
+    color: #323030;
+    font-size: 20px;
+    font-weight: 500;
+    margin-bottom: 10px;
+}
+.video-info h4{
+    text-align: right;
+    color: #5DDCD6;;
+}
+.video-box.high .video-info h4{
+    color: #F30C0C;
+}
+.video-box.medium .video-info h4{
+    color: #ff7519;
+}
+.video-box.low .video-info h4{
+    color: #0CF368;
+}
+
+.video-info small {
+    color: #868181;
+    font-style: normal;
+}
+
+/* video box end  */
+
+@media only screen and (max-width: 520px) {
+    .videos {
+        gap:20px;
+        grid-template-columns: 1fr;
+    }
+    .video-box{
+        display: flex;
+        align-items: center;
+        /* box-shadow: 1px 1px 6px #5DDCD6; */
+    }
+    .video-box.low {
+        box-shadow: 1px 1px 6px #0CF368;
+    }
+    .video-box.medium {
+        box-shadow: 1px 1px 6px #ff7519;
+    }
+    .video-box.high {
+        box-shadow: 1px 1px 6px #F30C0C;
+    }
+    .video-img{
+        max-width:65px;
+        border-radius: 5px;
+        max-height:50px;
+        height: 100%;
+        /* border: 1px solid black; */
+        display:flex;
+        justify-content: center;
+        align-items: center;
+        overflow: hidden;
+    } 
+    .video-img img{
+        object-fit: cover;
+        height:100%;
+        width: auto;
+        margin: 0;
+    }
+    .video-info h1 {
+        color: #323030;
+        font-size: 15px;
+        font-weight: 500;
+        margin: 10px;
+    }
+    
+    .video-info small {
+        color: #868181;
+        font-style: normal;
+        margin-top: 50px;
+    }
+    .video-info h4{
+        display: none;
+        align-items: center;
+        font-size: 10px;
+    }
+}
