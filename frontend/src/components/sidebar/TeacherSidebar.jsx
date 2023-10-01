@@ -2,10 +2,10 @@ import React from 'react'
 import './sidebar.css'
 import { Link, NavLink } from 'react-router-dom'
 
-function Sidebar() {
+function TeacherSidebar() {
     return (
         <div className="sidebar">
-            <NavLink href="#" className="sidebar-links active">
+            <NavLink to="/" className="sidebar-links" >
                 <svg className="home-svg" width="800px" height="800px" viewBox="0 0 24 24"
                     xmlns="http://www.w3.org/2000/svg">
                     <g id="SVGRepo_bgCarrier" strokeWidth="0" />
@@ -21,7 +21,7 @@ function Sidebar() {
                 </svg>
                 Dashboard
             </NavLink>
-            <NavLink href="#" className="sidebar-links">
+            <NavLink to={'/'} className="sidebar-links">
                 <svg className="course-svg" width="800px" height="800px" viewBox="0 0 24 24" fill="none"
                     xmlns="http://www.w3.org/2000/svg">
 
@@ -40,7 +40,7 @@ function Sidebar() {
                 </svg>
                 My Courses
             </NavLink>
-            <NavLink href="#" className="sidebar-links">
+            <NavLink to={'/'} className="sidebar-links">
                 <svg className="add-svg" width="800px" height="800px" viewBox="0 0 24 24" fill="none"
                     xmlns="http://www.w3.org/2000/svg">
 
@@ -59,7 +59,7 @@ function Sidebar() {
                 </svg>
                 Add New Course
             </NavLink>
-            <NavLink href="#" className="sidebar-links">
+            <NavLink to={'/'} className="sidebar-links">
                 <svg className="student-svg" width="800px" height="800px" viewBox="0 0 64 64" xmlns="http://www.w3.org/2000/svg"
                     strokeWidth="3" stroke="#000000" fill="none">
                     <path
@@ -74,7 +74,7 @@ function Sidebar() {
                 </svg>
                 Student List
             </NavLink>
-            <NavLink href="#" className="sidebar-links">
+            <NavLink to={'/'} className="sidebar-links">
                 <svg className="class-svg" width="800px" height="800px" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
 
                     <g id="SVGRepo_bgCarrier" strokeWidth="0" />
@@ -97,4 +97,4 @@ function Sidebar() {
     )
 }
 
-export default Sidebar
+export default TeacherSidebar
