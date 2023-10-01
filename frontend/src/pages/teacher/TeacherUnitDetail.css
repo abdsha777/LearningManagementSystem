@@ -10,9 +10,10 @@
   margin-bottom: 30px;
 }
 
-.heading {
+.module .heading {
   margin-bottom: 10px;
-  font-size: 20px;
+  font-size: 30px;
+  font-weight: bold;
 }
 
 .module h2 {
@@ -30,6 +31,7 @@
   display: flex;
   justify-content: space-between;
   width: 650px;
+  margin-bottom: 30px;
 }
 .download-btn svg{
   width: 30px;
@@ -107,5 +109,8 @@
   .heading {
     margin-bottom: 10px;
     font-size: 18px;
+  }
+  .module .heading {
+    font-size: 24px;
   }
 }

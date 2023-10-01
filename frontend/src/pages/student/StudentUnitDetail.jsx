@@ -5,8 +5,8 @@ function StudentUnitDetail() {
   return (
     <div>
       <div className="module">
-        <h3 className="heading">Module: 1</h3>
-        <h3 className="heading"></h3>
+        <h3 className="heading">Module:</h3>
+        <h3 className="heading"> 1</h3>
         <h2>Module Name:</h2>
         <p>Fundamentals of React JS</p>
         <h2>Duration:</h2>
@@ -47,7 +47,7 @@ function StudentUnitDetail() {
       </div>
 
       <div className="video-component">
-        <p className="heading">Web Development</p>
+        <p className="heading">Videos</p>
         <div className="videos">
           <div className="video-box">
             <div className="video-img"><img src={image} alt="react video" /></div>
