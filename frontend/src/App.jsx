@@ -30,6 +30,7 @@ function App() {
     <>
       <BrowserRouter>
         <Routes>
+          <Route path='/login' element={<Login />} />
           <Route path='/' element={<Layout />}>
             <Route index element={<Navigation />}></Route>
             <Route path='teacherCourseDetail' element={<TeacherCourseDetail />} />
@@ -50,7 +51,6 @@ function App() {
             <Route path='adminStudentProfile' element={<AdminStudentProfile />} />
             <Route path='certificates' element={<Certificates />} />
             <Route path='studentMyCourse' element={<StudentMyCourse />} />
-            <Route path='login' element={<Login />} />
           </Route>
         </Routes>
       </BrowserRouter>
