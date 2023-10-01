@@ -1,12 +1,12 @@
 import React from 'react'
+import './Login.css'
 
 function Login() {
     return (
         <div className="login">
             <div className="login-left">
                 <div className="ll-header">
-                    <div className="logo">
-
+                    <div className="login-logo">
                     </div>
                     <div className="ll-heading">
                         AISC Learning Management System
