@@ -5,6 +5,7 @@ import pieChart from "../../assets/pie-chart.png";
 import { Chart as ChartJS, ArcElement, Tooltip, Legend } from "chart.js";
 import { Pie } from "react-chartjs-2";
 import Doubts from "../../components/chat/Doubts";
+import { Link } from "react-router-dom";
 ChartJS.register(ArcElement, Tooltip, Legend);
 
 function StudentCourseDetail() {
@@ -85,7 +86,9 @@ function StudentCourseDetail() {
             </div>
 
             <div className="view-btn">
-              <button className="view-module-btn">View Module</button>
+              <Link to='/unitDetail'>
+                <button className="view-module-btn">View Module</button>
+              </Link>
             </div>
           </div>
           <div className="module-box">
@@ -104,7 +107,9 @@ function StudentCourseDetail() {
             </div>
 
             <div className="view-btn">
-              <button className="view-module-btn">View Module</button>
+              <Link to='/unitDetail'>
+                <button className="view-module-btn">View Module</button>
+              </Link>
             </div>
           </div>
           <div className="module-box">
@@ -123,7 +128,9 @@ function StudentCourseDetail() {
             </div>
 
             <div className="view-btn">
-              <button className="view-module-btn">View Module</button>
+              <Link to='/unitDetail'>
+                <button className="view-module-btn">View Module</button>
+              </Link>
             </div>
           </div>
 
@@ -143,7 +150,9 @@ function StudentCourseDetail() {
             </div>
 
             <div className="view-btn">
-              <button className="view-module-btn">View Module</button>
+              <Link to='/test'>
+                <button className="view-module-btn">Start Test</button>
+              </Link>
             </div>
           </div>
         </div>

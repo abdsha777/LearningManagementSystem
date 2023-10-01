@@ -1,5 +1,6 @@
 import React from "react";
 import image from '../../assets/image.jpg'
+import { Link } from "react-router-dom";
 
 function StudentUnitDetail() {
   return (
@@ -49,14 +50,15 @@ function StudentUnitDetail() {
       <div className="video-component">
         <p className="heading">Videos</p>
         <div className="videos">
-          <div className="video-box">
-            <div className="video-img"><img src={image} alt="react video" /></div>
-            <div className="video-info">
-              <h1>Basic of JS</h1>
+          <Link to='/video' className='video-box-link'>
+            <div className="video-box">
+              <div className="video-img"><img src={image} alt="react video" /></div>
+              <div className="video-info">
+                <h1>Basic of JS</h1>
+              </div>
+              <small>Duration:16 Hours</small>
             </div>
-            <small>Duration:16 Hours</small>
-
-          </div>
+          </Link>
           <div className="video-box">
             <div className="video-img"><img src={image} alt="react video" /></div>
             <div className="video-info">

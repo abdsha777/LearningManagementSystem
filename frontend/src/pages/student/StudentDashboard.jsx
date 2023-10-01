@@ -1,6 +1,7 @@
 import React from 'react'
 import './StudentDashboard.css'
 import image from '../../assets/image.jpg'
+import { Link } from 'react-router-dom'
 
 function StudentDashboard() {
     return (
@@ -81,29 +82,39 @@ function StudentDashboard() {
           <h1>Suggestion</h1>
             <div className="video-component">
                 <div className="videos">
-                    <div className="video-box">
-                        <div className="video-img"><img src={image} alt="react video"/></div>
-                        <div className="video-info">
-                            <h1>Basic of JS</h1>
-                        </div>
-                        <small>Duration:16 Hours</small>
 
-                    </div>
-                    <div className="video-box">
-                        <div className="video-img"><img src={image} alt="react video"/></div>
-                        <div className="video-info">
-                            <h1>Basic of JS</h1>
-                        </div>
-                        <small>Duration:16 Hours</small>
+                    <Link to='courseDetail' className='video-box-link'>
+                        <div className="video-box">
+                            <div className="video-img"><img src={image} alt="react video"/></div>
+                            <div className="video-info">
+                                <h1>Basic of JS</h1>
+                            </div>
+                            <small>Duration:16 Hours</small>
 
-                    </div>
-                    <div className="video-box">
-                        <div className="video-img"><img src={image} alt="react video"/></div>
-                        <div className="video-info">
-                            <h1>Basic of JS</h1>
                         </div>
-                        <small>Duration:16 Hours</small>
-                    </div>
+                    </Link>
+
+                    <Link to='courseDetail' className='video-box-link'>
+                        <div className="video-box">
+                            <div className="video-img"><img src={image} alt="react video"/></div>
+                            <div className="video-info">
+                                <h1>Basic of JS</h1>
+                            </div>
+                            <small>Duration:16 Hours</small>
+
+                        </div>
+                    </Link>
+
+                    <Link to='courseDetail' className='video-box-link' >
+                        <div className="video-box">
+                            <div className="video-img"><img src={image} alt="react video"/></div>
+                            <div className="video-info">
+                                <h1>Basic of JS</h1>
+                            </div>
+                            <small>Duration:16 Hours</small>
+
+                        </div>
+                    </Link>
                 </div>
             </div>
 

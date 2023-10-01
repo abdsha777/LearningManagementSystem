@@ -21,37 +21,36 @@ import AdminStudentProfile from './pages/admin/AdminStudentProfile'
 import Certificates from './pages/student/Certificates'
 import StudentMyCourse from './pages/student/StudentMyCourse'
 import Login from './pages/auth/Login'
+import PrivateRoute from './components/private/PrivateRoute'
+import Dashboard from './components/dashboard/Dashboard'
 
 
 
 function App() {
-  
+
   return (
     <>
       <BrowserRouter>
         <Routes>
           <Route path='/login' element={<Login />} />
+
           <Route path='/' element={<Layout />}>
-            <Route index element={<Navigation />}></Route>
-            <Route path='teacherCourseDetail' element={<TeacherCourseDetail />} />
-            <Route path='studentDashboard' element={<StudentDashboard />} />
-            <Route path='studentCourseDetail' element={<StudentCourseDetail />} />
-            <Route path='teacherUnitDetail' element={<TeacherUnitDetail />} />
-            <Route path='studentUnitDetail' element={<StudentUnitDetail />} />
-            <Route path='teacherViewTest' element={<TeacherViewTest />} />
-            <Route path='studentTest' element={<StudentTest />} />
-            <Route path='adminDashboard' element={<AdminDashboard />} />
-            <Route path='studentVideo' element={<StudentVideo />} />
-            <Route path='teacherCourses' element={<TeacherMyCourses />} />
-            <Route path='teacherDashboard' element={<TeacherDashboard />} />
-            <Route path='teacherCourseList' element={<TeacherCourseList />} />
-            <Route path='teacherStudentList' element={<TeacherStudentList />} />
-            <Route path='adminTeacherList' element={<AdminTeacherList />} />
-            <Route path='adminStudentList' element={<AdminStudentList />} />
-            <Route path='adminStudentProfile' element={<AdminStudentProfile />} />
-            <Route path='certificates' element={<Certificates />} />
-            <Route path='studentMyCourse' element={<StudentMyCourse />} />
+
+            <Route element={<PrivateRoute />}>
+
+              <Route index element={<Dashboard />} />
+              <Route path='courses' element={<TeacherMyCourses />} />
+              <Route path='mycourse' element={<StudentMyCourse />} />
+              <Route path='certificate' element={<Certificates />} />
+              <Route path='courseDetail' element={<StudentCourseDetail />} />
+              <Route path='unitDetail' element={<StudentUnitDetail />} />
+              <Route path='video' element={<StudentVideo />} />
+              <Route path='test' element={<StudentTest />} />
+
+            </Route>
+
           </Route>
+
         </Routes>
       </BrowserRouter>
     </>
@@ -59,3 +58,27 @@ function App() {
 }
 
 export default App
+
+
+{/* <Route path='/login' element={<Login />} />
+<Route path='/' element={<Layout />}>
+  <Route index element={<Navigation />}></Route>
+  <Route path='teacherCourseDetail' element={<TeacherCourseDetail />} />
+  <Route path='studentDashboard' element={<StudentDashboard />} />
+  <Route path='studentCourseDetail' element={<StudentCourseDetail />} />
+  <Route path='teacherUnitDetail' element={<TeacherUnitDetail />} />
+  <Route path='studentUnitDetail' element={<StudentUnitDetail />} />
+  <Route path='teacherViewTest' element={<TeacherViewTest />} />
+  <Route path='studentTest' element={<StudentTest />} />
+  <Route path='adminDashboard' element={<AdminDashboard />} />
+  <Route path='studentVideo' element={<StudentVideo />} />
+  <Route path='teacherCourses' element={<TeacherMyCourses />} />
+  <Route path='teacherDashboard' element={<TeacherDashboard />} />
+  <Route path='teacherCourseList' element={<TeacherCourseList />} />
+  <Route path='teacherStudentList' element={<TeacherStudentList />} />
+  <Route path='adminTeacherList' element={<AdminTeacherList />} />
+  <Route path='adminStudentList' element={<AdminStudentList />} />
+  <Route path='adminStudentProfile' element={<AdminStudentProfile />} />
+  <Route path='certificates' element={<Certificates />} />
+  <Route path='studentMyCourse' element={<StudentMyCourse />} />
+</Route> */}

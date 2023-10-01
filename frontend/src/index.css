@@ -341,24 +341,30 @@ main {
     box-shadow: 1px 1px 6px #888888;
     border-radius: 10px;
     padding: 10px;
-    
 }
 
 .video-info {
     display: grid;
     grid-template-columns: 1fr 0.5fr;
     justify-content: space-between;
+    text-decoration: none;
 }
+.video-box-link  {
+    text-decoration: none;
+}
+
 
 .video-info h1 {
     color: #323030;
     font-size: 20px;
     font-weight: 500;
     margin-bottom: 10px;
+    text-decoration: none;
 }
 .video-info h4{
     text-align: right;
     color: #5DDCD6;;
+    text-decoration: none;
 }
 .video-box.high .video-info h4{
     color: #F30C0C;
@@ -373,8 +379,12 @@ main {
 .video-info small {
     color: #868181;
     font-style: normal;
+    text-decoration: none;
 }
-
+.video-box-link  small{
+    text-decoration: none;
+    color: #868181;
+}
 /* video box end  */
 
 @media only screen and (max-width: 520px) {

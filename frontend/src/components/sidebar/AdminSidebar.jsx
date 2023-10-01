@@ -2,7 +2,7 @@ import React from "react";
 import "./sidebar.css";
 import { Link, NavLink } from "react-router-dom";
 
-function Sidebar() {
+function AdminSidebar() {
   return (
     <div className="sidebar">
       <NavLink to="/" className="sidebar-links active">
@@ -57,33 +57,30 @@ function Sidebar() {
         Student List
       </NavLink>
       <NavLink to="/" className="sidebar-links">
-        <svg
-          fill="#000000"
-          version="1.1"
-          id="Capa_1"
-          xmlns="http://www.w3.org/2000/svg"
-          xmlns:xlink="http://www.w3.org/1999/xlink"
+      <svg
+          className="class-svg"
           width="800px"
           height="800px"
-          viewBox="0 0 937 937"
-          xml:space="preserve"
+          viewBox="0 0 24 24"
+          fill="none"
+          xmlns="http://www.w3.org/2000/svg"
         >
-          <g>
+          <g id="SVGRepo_bgCarrier" strokeWidth="0" />
+
+          <g
+            id="SVGRepo_tracerCarrier"
+            strokeLinecap="round"
+            strokeLinejoin="round"
+          />
+
+          <g id="SVGRepo_iconCarrier">
             <path
-              d="M513.1,360.85c5.601,0,11,0.9,16.2,2.4l97-118.9c6.2-7.6,17.7-9,25.2-2.6c7.3,6.1,8.3,17,2.2,24.4l-95.9,117.6
-		c6.5,9,10.4,20.101,10.4,32.101c0,22.3-13.4,41.6-32.5,50.199H912c13.8,0,25-11.199,25-25v-316.5c0-13.8-11.2-25-25-25H434
-		c-13.8,0-25,11.2-25,25v207.8l22.6,28.6h81.5V360.85z"
+              d="M8 6L21 6.00078M8 12L21 12.0008M8 18L21 18.0007M3 6.5H4V5.5H3V6.5ZM3 12.5H4V11.5H3V12.5ZM3 18.5H4V17.5H3V18.5Z"
+              stroke="#000000"
+              strokeWidth="2"
+              strokeLinecap="round"
+              strokeLinejoin="round"
             />
-            <circle cx="201.3" cy="121.85" r="102.4" />
-            <g>
-              <path
-                d="M306.3,892.55c0,13.801-11.2,25-25,25h-42c-13.8,0-25-11.199-25-25v-209.6c0-7.4-6-13.4-13.4-13.4l0,0
-			c-7.4,0-13.4,6-13.4,13.4v208.6c0,14.301-11.7,26-26,26h-41.1c-13.8,0-25-11.199-25-25l-0.2-506c0-6.8-5.5-12.399-12.4-12.399l0,0
-			c-6.8,0-12.4,5.5-12.4,12.399V581.15c0,13.8-11.2,25-25,25H25c-13.8,0-25-11.2-25-25v-266.8c0-31.7,25.7-57.3,57.3-57.3H285
-			c24.399,0,47.5,11.2,62.7,30.3l61.199,77.2l12.9,16.3c0,0,58,0,91.4,0.1c13.8,0,25,11.2,25,25v19.9c0,13.8-11.2,25-25,25H405
-			c-10.7,0-20.8-4.9-27.4-13.301l-45.6-58.6c-2.3-3-6-4.8-9.8-4.8H319.1c-6.8,0-12.399,5.5-12.399,12.399L306.3,892.55z"
-              />
-            </g>
           </g>
         </svg>
         Teacher List
@@ -124,4 +121,4 @@ function Sidebar() {
   );
 }
 
-export default Sidebar;
+export default AdminSidebar;
