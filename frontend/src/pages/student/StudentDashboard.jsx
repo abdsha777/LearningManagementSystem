@@ -78,8 +78,8 @@ function StudentDashboard() {
                 </table>
             </div>
 
+          <h1>Suggestion</h1>
             <div className="video-component">
-                <p className="heading">Suggestion</p>
                 <div className="videos">
                     <div className="video-box">
                         <div className="video-img"><img src={image} alt="react video"/></div>
