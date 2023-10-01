@@ -1,6 +1,6 @@
 .profile-detail h1 {
     color: #323030;
-    font-size: 29px;
+    font-size: 20px;
     font-style: normal;
     font-weight: 700;
     line-height: 29.124px;
@@ -23,12 +23,12 @@
 
 .inner-detail .details h3 {
     color: #847E7E;
-    font-size: 16px;
+    font-size: 10px;
 }
 
 .inner-detail .details p {
     color: #323030;
-    font-size: 16px;
+    font-size: 10px;
 }
 
 
@@ -128,5 +128,36 @@
     margin-bottom: 20px;
 }
 .student-progress img{
-    width: 500px;
+    width: 300px;
 }
+
+@media (max-width: 768px) {
+    .inner-detail .details {
+        width: 100%; 
+        margin-left: 1; 
+           
+    }
+
+    .box-container {
+        grid-template-columns: 1fr; 
+        gap: 20px; 
+    }
+
+    .box-container .box {
+        padding: 20px; 
+    }
+
+    .box-container .box h3,
+    .box-container .box h4,
+    .box-container .box h5 {
+        text-align: center; 
+    }
+
+    .student-progress img {
+        width: 100%; 
+    }
+}
+
+
+
+    
