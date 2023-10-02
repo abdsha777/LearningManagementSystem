@@ -4,7 +4,7 @@ import AuthContext from './AuthContext'
 function AuthProvider({ children }) {
     const contextData = {
         name: "Veena Ghandi",
-        role:"teacher",
+        role:"student",
         login:true
     }
     return (
