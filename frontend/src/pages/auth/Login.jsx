@@ -1,7 +1,10 @@
-import React from 'react'
+import React, { useContext, useState } from 'react'
 import './Login.css'
+import AuthContext from '../../context/AuthContext';
 
 function Login() {
+    const [password,setPassword] = useState("");
+    const {loginUser} = useContext(AuthContext);
     return (
         <div className="login">
             <div className="login-left">
@@ -34,12 +37,19 @@ function Login() {
                     </div>
                     <div className="input-box">
                         <label htmlFor="password">Password</label>
-                        <input type="password" id="password" placeholder="enter password" />
+                        <input type="password" id="password" placeholder="enter password"
+                            value={password}
+                            onChange={(e)=>setPassword(e.target.value)} 
+                        />
 
                     </div>
 
                     <div className="lbtn-fp">
-                        <button className="btn-filled-1">
+                        <button className="btn-filled-1"
+                            onClick={()=>{
+                                loginUser(password)
+                            }}
+                        >
                             LOGIN
                         </button>
 
