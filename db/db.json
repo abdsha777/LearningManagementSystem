@@ -1,14 +1,178 @@
 {
-  "students":[
+  "College": [
     {
-      "id":1,
-      "name":"abdulla",
-      "roll":11
+      "collage_id": 101,
+      "name": "AISC"
+    }
+  ],
+  "department": [
+    {
+      "department_id": 10,
+      "name": "bca",
+      "collage_id": 101
+    }
+  ],
+  "user": [
+    {
+      "user_id": 1,
+      "username": "Abdulla",
+      "password": "12345678",
+      "email": "Ab@gmail.com",
+      "role": "student",
+      "name": "Abdulla shaikh",
+      "is_active": "active",
+      "profile_image": "prf.png"
     },
     {
-      "id":2,
-      "name":"joy",
-      "roll":112
+      "user_id": 2,
+      "username": "kamil",
+      "password": "12345678",
+      "email": "kamil@gmail.com",
+      "role": "teacher",
+      "name": "Kamil khan",
+      "is_active": "active",
+      "profile_image": "prf.png"
+    }
+  ],
+  "Student Details": [
+    {
+      "student_id": 1,
+      "user_id": 1,
+      "faculty": "science",
+      "department_name": "bca",
+      "phone_number": 1234567890,
+      "class": "TY BCA"
+    }
+  ],
+  "Faculty": [
+    {
+      "faculty_id": 123,
+      "f_name": "science",
+      "collage_id": 101
+    }
+  ],
+  "Course_faculty": [
+    {
+      "faculty_id": 123,
+      "Course_faculty_id": 1000,
+      "course_id": 100
+    }
+  ],
+  "teacher_details": [
+    {
+      "teacher_id": 90,
+      "user_id": 2,
+      "department": "bca",
+      "faculty_id": 123,
+      "position": "Assitant Professor"
+    }
+  ],
+  "Course": [
+    {
+      "course_id": 100,
+      "title": "React JS",
+      "Description": "The React JS framework is an open-source javascript framework and library developed by Facebook",
+      "teacher_id": 90,
+      "duration": 12,
+      "course_image": "cr.png",
+      "is_complete": "active"
+    }
+  ],
+  "comment": [
+    {
+      "comment_id": 1,
+      "video_id": 1,
+      "user_id": 1,
+      "discussion_body": "plz tell the refer website",
+      "reply to ": 2
+    }
+  ],
+  "certificate": [
+    {
+      "certificate_id": 1,
+      "student_id": 1,
+      "course_id": 100,
+      "url": "https/drive,com"
+    }
+  ],
+  "Student_Test_record": [
+    {
+      "student_test_id": 1,
+      "course_id": 100,
+      "student_id": 1,
+      "test_id": 1,
+      "score": 12
+    }
+  ],
+  "Question(MCQ)": [
+    {
+      "Qusetion_id": 1,
+      "test_id": 1,
+      "Question": "Who as created react js ?",
+      "option_1": "google",
+      "option_2": "Facebook",
+      "option_3": "apple",
+      "option_4": "twitter",
+      "right_answer": "Facebook"
+    }
+  ],
+  "Test": [
+    {
+      "test_id": 1,
+      "moduole_id": 1,
+      "name": "react js on module no 1",
+      "final": "yes"
+    }
+  ],
+  "student_video_record": [
+    {
+      "student_video_record_id": 1,
+      "video_id": 1,
+      "student_id": 1,
+      "watdched": "yes"
+    }
+  ],
+  "video": [
+    {
+      "video_id": 1,
+      "moduole_id": 1,
+      "name": "react js basic",
+      "Description": "The React JS framework is an open-source javascript framework and library developed by Facebook",
+      "sequence": 1
+    }
+  ],
+  "course module": [
+    {
+      "moduole_id": 1,
+      "course_id": 100,
+      "title": "React JS of fundamentals",
+      "Description": "The React JS framework is an open-source javascript framework and library developed by Facebook",
+      "status": "active",
+      "sequence": 1,
+      "duration": 12
+    }
+  ],
+  "notes": [
+    {
+      "note-id": 1,
+      "moduole_id": 1,
+      "url": "https/drive,com"
+    }
+  ],
+  "enrollments": [
+    {
+      "enrollments_id": 1,
+      "user_id": 1,
+      "course_id": 100,
+      "status": "ongoing",
+      "certificate_id": null
+    }
+  ],
+  "student_module_status": [
+    {
+      "enrollments_id": 1,
+      "moduole_id": 1,
+      "status": "ongoing"
     }
   ]
 }
