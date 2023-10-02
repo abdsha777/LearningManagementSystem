@@ -108,7 +108,7 @@ function StudentDashboard() {
                         return(
                         <Link to='courseDetail/BasicOfJs/' className='video-box-link'> 
                         <div className="video-box">
-                            <div className="video-img"><img src={record.image} alt="react video" /></div>
+                            <div className="video-img" style={{backgroundImage:`url(${record.image})`}}></div>
                             <div className="video-info">
                             <h1>{record.coursename}</h1>
                             </div>
