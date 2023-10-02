@@ -25,7 +25,6 @@ function StudentDashboard() {
             .then(response => response.json())
             .then(data => setSuggestion(data))
             .catch(error => alert(error))
-        console.log(overview)
     }
     useEffect(() => {
         getCourseList();
@@ -89,7 +88,7 @@ function StudentDashboard() {
                         {
                             course.map((record, key) => {
                                 return (
-                                    <tr key={key + 1}>
+                                    <tr key={key}>
                                         <td>{record.course_name}</td>
                                         <td>{record.module_complete}</td>
                                         <td>{record.instructor}</td>
@@ -104,9 +103,9 @@ function StudentDashboard() {
             <h1>Suggestion</h1>
             <div className="video-component">
                 <div className="videos">
-                    { suggestion.map((record)=>{                    
+                    { suggestion.map((record,idx)=>{                    
                         return(
-                        <Link to='courseDetail/BasicOfJs/' className='video-box-link'> 
+                        <Link key={idx} to='courseDetail/BasicOfJs/' className='video-box-link'> 
                         <div className="video-box">
                             <div className="video-img" style={{backgroundImage:`url(${record.image})`}}></div>
                             <div className="video-info">

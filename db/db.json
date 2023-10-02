@@ -93,6 +93,12 @@
       "student_id": 1,
       "course_id": 100,
       "url": "https/drive,com"
+    },
+    {
+      "certificate_id": 2,
+      "student_id": 2,
+      "course_id": 110,
+      "url": "https/drive,com"
     }
   ],
   "Student_Test_record": [
