@@ -2,9 +2,9 @@
     display: grid;
     grid-template-columns: 1fr 1fr;
     height: 100vh;
-    margin-top: -10px;
-    margin-right: -10px;
-    margin-left: -10px;
+}
+body:has(.login){
+    padding: 0;
 }
 
 .login-right {

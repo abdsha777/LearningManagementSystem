@@ -6,7 +6,7 @@ function TeacherMyCourses() {
     <div>
         <div>
             <div className="course-tag">
-                <b>Course's</b>
+                <b>Find a Course</b>
                 <div className="search">
                     <div className="search-box"><input type="text" className="search-bar" placeholder="Search Course"/></div>
                     <div className="filter-button"><button className="bton">Filter</button></div>

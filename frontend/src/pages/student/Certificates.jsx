@@ -3,9 +3,9 @@ import './Certificates.css'
 import img from '../../assets/certificates.jpg'
 
 function Certificates() {
-  return (
-    <div className='certificate-main'>
-        <div className="certificate-heading">
+    return (
+        <div className='certificate-main'>
+            <div className="certificate-heading">
                 <p>Certificate</p>
             </div>
             <div className="certificate-module">
@@ -30,7 +30,7 @@ function Certificates() {
                             </h3>
                         </div>
                         <p className="certificate-date">12/02/2023</p>
-                    </div>  
+                    </div>
                 </div>
                 <div className="certificate-box">
                     <div className="certificate-image">
@@ -53,7 +53,7 @@ function Certificates() {
                             </h3>
                         </div>
                         <p className="certificate-date">12/02/2023</p>
-                    </div>  
+                    </div>
                 </div>
                 <div className="certificate-box">
                     <div className="certificate-image">
@@ -76,7 +76,7 @@ function Certificates() {
                             </h3>
                         </div>
                         <p className="certificate-date">12/02/2023</p>
-                    </div>  
+                    </div>
                 </div>
                 <div className="certificate-box">
                     <div className="certificate-image">
@@ -99,7 +99,7 @@ function Certificates() {
                             </h3>
                         </div>
                         <p className="certificate-date">12/02/2023</p>
-                    </div>  
+                    </div>
                 </div>
                 <div className="certificate-box">
                     <div className="certificate-image">
@@ -122,11 +122,11 @@ function Certificates() {
                             </h3>
                         </div>
                         <p className="certificate-date">12/02/2023</p>
-                    </div>  
+                    </div>
                 </div>
             </div>
-    </div>
-  )
+        </div>
+    )
 }
 
 export default Certificates
