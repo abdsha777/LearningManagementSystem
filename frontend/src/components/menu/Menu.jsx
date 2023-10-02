@@ -1,10 +1,11 @@
-import React from 'react'
+import React, { useContext } from 'react'
 import StudentMenu from './StudentMenu'
 import TeacherMenu from './TeacherMenu'
 import AdminMenu from './AdminMenu'
+import AuthContext from '../../context/AuthContext';
 
 function Menu({ menu, showMenu }) {
-    const role= 'student'
+    let {role} = useContext(AuthContext);
     if(role=='student'){
         return <StudentMenu menu={menu} showMenu={showMenu} />
     }else if(role=='teacher'){

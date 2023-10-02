@@ -1,5 +1,4 @@
 import React from 'react'
-import './TeacherDashboard.css'
 import img from '../../assets/FigmaGraph.jpg'
 import { Bar } from 'react-chartjs-2';
 import {

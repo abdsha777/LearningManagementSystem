@@ -50,7 +50,7 @@ function StudentUnitDetail() {
       <div className="video-component">
         <p className="heading">Videos</p>
         <div className="videos">
-          <Link to='/video' className='video-box-link'>
+          <Link to='video/1/' className='video-box-link'>
             <div className="video-box">
               <div className="video-img"><img src={image} alt="react video" /></div>
               <div className="video-info">
@@ -59,6 +59,7 @@ function StudentUnitDetail() {
               <small>Duration:16 Hours</small>
             </div>
           </Link>
+
           <div className="video-box">
             <div className="video-img"><img src={image} alt="react video" /></div>
             <div className="video-info">

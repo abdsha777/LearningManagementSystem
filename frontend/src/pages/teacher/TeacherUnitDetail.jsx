@@ -1,5 +1,4 @@
 import React from 'react'
-import './TeacherUnitDetail.css'
 import image from '../../assets/image.jpg'
 
 

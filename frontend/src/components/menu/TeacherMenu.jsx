@@ -2,6 +2,7 @@ import React from 'react'
 import { Link, NavLink } from "react-router-dom";
 
 function TeacherMenu({ menu, showMenu }) {
+    // onClick={showMenu}
     return (
         <div className={"menu-items " + menu}>
             <NavLink to="/" className="sidebar-links" onClick={showMenu}>
@@ -20,7 +21,7 @@ function TeacherMenu({ menu, showMenu }) {
                 </svg>
                 Dashboard
             </NavLink>
-            <NavLink to={'/'} className="sidebar-links" onClick={showMenu}>
+            <NavLink to={'mycourse/'} className="sidebar-links" onClick={showMenu}>
                 <svg className="course-svg" width="800px" height="800px" viewBox="0 0 24 24" fill="none"
                     xmlns="http://www.w3.org/2000/svg">
 
@@ -58,7 +59,7 @@ function TeacherMenu({ menu, showMenu }) {
                 </svg>
                 Add New Course
             </NavLink>
-            <NavLink to={'/'} className="sidebar-links" onClick={showMenu}>
+            <NavLink to={'teacherstudentlist/'} className="sidebar-links" onClick={showMenu}>
                 <svg className="student-svg" width="800px" height="800px" viewBox="0 0 64 64" xmlns="http://www.w3.org/2000/svg"
                     strokeWidth="3" stroke="#000000" fill="none">
                     <path
@@ -73,7 +74,7 @@ function TeacherMenu({ menu, showMenu }) {
                 </svg>
                 Student List
             </NavLink>
-            <NavLink to={'/'} className="sidebar-links" onClick={showMenu}>
+            <NavLink to={'courselist/'} className="sidebar-links" onClick={showMenu}>
                 <svg className="class-svg" width="800px" height="800px" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
 
                     <g id="SVGRepo_bgCarrier" strokeWidth="0" />

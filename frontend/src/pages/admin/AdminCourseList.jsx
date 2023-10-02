@@ -7,9 +7,9 @@ function AdminCourseList() {
             <p className="heading">Course List</p>
 
             <div className="sub_heading">
-                <input type="text" value="" placeholder="Search Courses" />
+                <input type="text" placeholder="Search Courses" />
 
-                <input type="button" className="filter1" value="Filter >" />
+                <button className="filter1">Filter </button>
             </div>
 
             <div className="module2">
@@ -33,7 +33,6 @@ function AdminCourseList() {
                         <tr>
                             <td>
                                 <div className="course-info">
-                                    <img src="./images/Rectangle 310.png" alt="Course Image" />
                                     React JS
                                 </div>
                             </td>
@@ -51,7 +50,6 @@ function AdminCourseList() {
                         <tr>
                             <td>
                                 <div className="course-info">
-                                    <img src="./images/Rectangle 310.png" alt="Course Image" />
                                     React JS
                                 </div>
                             </td>
@@ -69,7 +67,6 @@ function AdminCourseList() {
                         <tr>
                             <td>
                                 <div className="course-info">
-                                    <img src="./images/Rectangle 310.png" alt="Course Image" />
                                     React JS
                                 </div>
                             </td>
@@ -87,7 +84,6 @@ function AdminCourseList() {
                         <tr>
                             <td>
                                 <div className="course-info">
-                                    <img src="./images/Rectangle 233.png" alt="Course Image" />
                                     React JS
                                 </div>
                             </td>

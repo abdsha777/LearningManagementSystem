@@ -2,6 +2,7 @@ import React from 'react'
 import { Link, NavLink } from "react-router-dom";
 
 function AdminMenu({ menu, showMenu }) {
+    // onClick={showMenu}
     return (
         <div className={"menu-items " + menu}>
             <NavLink to="/" className="sidebar-links active" onClick={showMenu}>
@@ -33,7 +34,7 @@ function AdminMenu({ menu, showMenu }) {
                 </svg>
                 Dashboard
             </NavLink>
-            <NavLink to="/" className="sidebar-links" onClick={showMenu}>
+            <NavLink to="adminStudentlist/" className="sidebar-links" onClick={showMenu}>
                 <svg
                     className="student-svg"
                     width="800px"
@@ -55,7 +56,7 @@ function AdminMenu({ menu, showMenu }) {
                 </svg>
                 Student List
             </NavLink>
-            <NavLink to="/" className="sidebar-links" onClick={showMenu}>
+            <NavLink to="teacherlist/" className="sidebar-links" onClick={showMenu}>
                 <svg
                     className="class-svg"
                     width="800px"
@@ -84,7 +85,7 @@ function AdminMenu({ menu, showMenu }) {
                 </svg>
                 Teacher List
             </NavLink>
-            <NavLink to="/" className="sidebar-links" onClick={showMenu}>
+            <NavLink to="adminCourselist/" className="sidebar-links" onClick={showMenu}>
                 <svg
                     className="class-svg"
                     width="800px"

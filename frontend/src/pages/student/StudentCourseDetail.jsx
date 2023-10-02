@@ -86,7 +86,7 @@ function StudentCourseDetail() {
             </div>
 
             <div className="view-btn">
-              <Link to='/unitDetail'>
+              <Link to='unitDetail/1/'>
                 <button className="view-module-btn">View Module</button>
               </Link>
             </div>
@@ -107,7 +107,7 @@ function StudentCourseDetail() {
             </div>
 
             <div className="view-btn">
-              <Link to='/unitDetail'>
+              <Link to='unitDetail/2/'>
                 <button className="view-module-btn">View Module</button>
               </Link>
             </div>
@@ -128,7 +128,7 @@ function StudentCourseDetail() {
             </div>
 
             <div className="view-btn">
-              <Link to='/unitDetail'>
+              <Link to='unitDetail/3/'>
                 <button className="view-module-btn">View Module</button>
               </Link>
             </div>
@@ -150,7 +150,7 @@ function StudentCourseDetail() {
             </div>
 
             <div className="view-btn">
-              <Link to='/test'>
+              <Link to='finaltest/1/'>
                 <button className="view-module-btn">Start Test</button>
               </Link>
             </div>

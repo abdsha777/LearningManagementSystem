@@ -1,10 +1,11 @@
-import React from 'react'
+import React, { useContext } from 'react'
 import StudentSidebar from './StudentSidebar'
 import TeacherSidebar from './TeacherSidebar'
 import AdminSidebar from './AdminSidebar'
+import AuthContext from '../../context/AuthContext';
 
 function Sidebar() {
-    const role= 'student'
+    let {role} = useContext(AuthContext);
     if(role=='student'){
         return <StudentSidebar />
     }else if(role=='teacher'){

@@ -1,28 +1,32 @@
 import './App.css'
+// css files
+import './pages/teacher/TeacherCourseDetail.css'
+import './pages/teacher/TeacherUnitDetail.css'
+import './pages/teacher/TeacherDashboard.css'
+import './pages/teacher/TeacherStudentList.css'
+//css end
 import { BrowserRouter, Routes, Route } from 'react-router-dom'
 import Layout from './components/layout/Layout'
-import Navigation from './forDeveloping/Navigation'
-import TeacherCourseDetail from './pages/teacher/TeacherCourseDetail'
-import StudentDashboard from './pages/student/StudentDashboard'
 import StudentCourseDetail from './pages/student/StudentCourseDetail'
-import TeacherUnitDetail from './pages/teacher/TeacherUnitDetail'
-import TeacherViewTest from './pages/teacher/TeacherViewTest'
 import StudentTest from './pages/student/StudentTest'
 import StudentUnitDetail from './pages/student/StudentUnitDetail'
-import AdminDashboard from './pages/admin/AdminDashboard'
 import StudentVideo from './pages/student/StudentVideo'
 import TeacherMyCourses from './pages/teacher/TeacherMyCourses'
-import TeacherDashboard from './pages/teacher/TeacherDashboard'
-import TeacherCourseList from './pages/teacher/TeacherCourseList'
-import TeacherStudentList from './pages/teacher/TeacherStudentList'
-import AdminTeacherList from './pages/admin/AdminTeacherList'
-import AdminStudentList from './pages/admin/AdminStudentList'
-import AdminStudentProfile from './pages/admin/AdminStudentProfile'
 import Certificates from './pages/student/Certificates'
-import StudentMyCourse from './pages/student/StudentMyCourse'
 import Login from './pages/auth/Login'
 import PrivateRoute from './components/private/PrivateRoute'
 import Dashboard from './components/dashboard/Dashboard'
+import StudentPrivateRoute from './components/private/StudentPrivateRoute'
+import TeacherPrivateRoute from './components/private/TeacherPrivateRoute'
+import AuthProvider from './context/AuthProvider'
+import MyCourse from './components/myCourse/MyCourse'
+import TeacherStudentList from './pages/teacher/TeacherStudentList'
+import TeacherCourseList from './pages/teacher/TeacherCourseList'
+import StudentSearchCourse from './pages/student/StudentSearchCourse'
+import AdminPrivateRoute from './components/private/AdminPrivateRoute'
+import AdminTeacherList from './pages/admin/AdminTeacherList'
+import AdminStudentList from './pages/admin/AdminStudentList'
+import AdminCourseList from './pages/admin/AdminCourseList'
 
 
 
@@ -31,27 +35,52 @@ function App() {
   return (
     <>
       <BrowserRouter>
-        <Routes>
-          <Route path='/login' element={<Login />} />
+        <AuthProvider>
+          <Routes>
+            <Route path='/login' element={<Login />} />
 
-          <Route path='/' element={<Layout />}>
+            <Route path='/' element={<Layout />}>
 
-            <Route element={<PrivateRoute />}>
+              <Route element={<PrivateRoute />}>
 
-              <Route index element={<Dashboard />} />
-              <Route path='courses' element={<TeacherMyCourses />} />
-              <Route path='mycourse' element={<StudentMyCourse />} />
-              <Route path='certificate' element={<Certificates />} />
-              <Route path='courseDetail' element={<StudentCourseDetail />} />
-              <Route path='unitDetail' element={<StudentUnitDetail />} />
-              <Route path='video' element={<StudentVideo />} />
-              <Route path='test' element={<StudentTest />} />
+                <Route index element={<Dashboard />} />
+                <Route path='mycourse/' element={<MyCourse />} />
+
+                <Route element={<StudentPrivateRoute/>}>
+                  <Route path='courses/' element={<StudentSearchCourse />} />
+                  <Route path='certificate/' element={<Certificates />} />
+                  <Route path='courseDetail/:course/' element={<StudentCourseDetail />} />
+                  <Route path='courseDetail/:course/unitDetail/:id/' element={<StudentUnitDetail />} />
+                  <Route
+                    path='courseDetail/:course/unitDetail/:unitId/video/:videoId/'
+                    element={<StudentVideo />} 
+                  />
+                  <Route
+                    path='courseDetail/:course/unitDetail/:unitId/test/:testId/'
+                    element={<StudentTest />}
+                  />
+                  <Route
+                    path='courseDetail/:course/finaltest/:testId/'
+                    element={<StudentTest />}
+                  />
+                </Route>
+
+                <Route element={<TeacherPrivateRoute />}>
+                  <Route path='courselist/' element={<TeacherCourseList />} />
+                  <Route path='teacherstudentlist/' element={<TeacherStudentList />} />
+                </Route>
+                <Route element={<AdminPrivateRoute />}>
+                  <Route path='teacherlist/' element={<AdminTeacherList />} />
+                  <Route path='adminStudentlist/' element={<AdminStudentList />} />
+                  <Route path='adminCourselist/' element={<AdminCourseList/>} />
+                </Route>
+
+              </Route>
 
             </Route>
 
-          </Route>
-
-        </Routes>
+          </Routes>
+        </AuthProvider>
       </BrowserRouter>
     </>
   )

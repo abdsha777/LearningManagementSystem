@@ -1,11 +1,18 @@
 import React from 'react'
-import './TeacherMyCourses.css'
 import image from '../../assets/image.jpg'
-function TeacherMyCourses() {
+
+function StudentSearchCourse() {
   return (
     <div>
-        <div>
-            <h1>My Course</h1>
+            <div className="course-tag">
+                <b>Find a Course</b>
+                <div className="search">
+                    <div className="search-box"><input type="text" className="search-bar" placeholder="Search Course"/></div>
+                    <div className="filter-button"><button className="bton">Filter</button></div>
+                </div>
+            </div>
+
+
             <div className="video-component">
                 <p className="heading">Web Development</p>
                 <div className="videos">
@@ -65,8 +72,7 @@ function TeacherMyCourses() {
             </div>
 
         </div>
-    </div>
   )
 }
 
-export default TeacherMyCourses
+export default StudentSearchCourse

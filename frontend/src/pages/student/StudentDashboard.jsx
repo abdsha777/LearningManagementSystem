@@ -83,7 +83,7 @@ function StudentDashboard() {
             <div className="video-component">
                 <div className="videos">
 
-                    <Link to='courseDetail' className='video-box-link'>
+                    <Link to='courseDetail/BasicOfJs/' className='video-box-link'>
                         <div className="video-box">
                             <div className="video-img"><img src={image} alt="react video"/></div>
                             <div className="video-info">
@@ -94,7 +94,7 @@ function StudentDashboard() {
                         </div>
                     </Link>
 
-                    <Link to='courseDetail' className='video-box-link'>
+                    <Link to='courseDetail/ReactRouter/' className='video-box-link'>
                         <div className="video-box">
                             <div className="video-img"><img src={image} alt="react video"/></div>
                             <div className="video-info">
@@ -105,7 +105,7 @@ function StudentDashboard() {
                         </div>
                     </Link>
 
-                    <Link to='courseDetail' className='video-box-link' >
+                    <Link to='courseDetail/Java/' className='video-box-link' >
                         <div className="video-box">
                             <div className="video-img"><img src={image} alt="react video"/></div>
                             <div className="video-info">
