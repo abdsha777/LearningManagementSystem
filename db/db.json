@@ -174,5 +174,34 @@
       "moduole_id": 1,
       "status": "ongoing"
     }
-  ]
+  ], 
+  "student_module":[
+  {
+    
+    "module_name":" React Js",
+    "duration":"Duration :16 hrs",
+    "image":"https://kinsta.com/wp-content/uploads/2022/06/what-is-react-js-feature-image.png"
+  },
+  {
+    
+    "module_name":" React Js",
+    "duration":"Duration :17 hrs",
+    "image":"https://kinsta.com/wp-content/uploads/2022/06/what-is-react-js-feature-image.png"
+  },
+  {
+    
+    "module_name":" React Js",
+    "duration":"Duration :18 hrs",
+    "image":"https://kinsta.com/wp-content/uploads/2022/06/what-is-react-js-feature-image.png"
+  }
+  ],
+  "StudentCourse":
+[
+  {
+    "course_name": "Web Develeopment"
+  },
+  {
+    "course_name": "JS"
+  }
+]
 }
