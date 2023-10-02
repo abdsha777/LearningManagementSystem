@@ -55,9 +55,7 @@
   font-size: 15px;
 }
 
-h3 {
-  padding-top: 00px;
-}
+
 
 @media (max-width: 768px) {
   .certificate-module {

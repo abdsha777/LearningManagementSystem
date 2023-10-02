@@ -465,6 +465,7 @@ nav{
     text-align: right;
     color: #5DDCD6;;
     text-decoration: none;
+    display: flex;
 }
 .video-box.high .video-info h4{
     color: #F30C0C;
@@ -484,6 +485,11 @@ nav{
 .video-box-link  small{
     text-decoration: none;
     color: #868181;
+}
+
+.video-info h4 svg{
+    height: 20px;
+    width: 20px;
 }
 /* video box end  */
 

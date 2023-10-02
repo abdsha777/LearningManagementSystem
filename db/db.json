@@ -87,18 +87,30 @@
       "reply to ": 2
     }
   ],
-  "certificate": [
+  "certificates": [
     {
       "certificate_id": 1,
+      "cname":"React",
       "student_id": 1,
       "course_id": 100,
-      "url": "https/drive,com"
+      "url": "https://cdn-ghkoj.nitrocdn.com/kjYfdEBKRwdYwvHQyjaYBdTGFpFGjqYW/assets/images/optimized/rev-d7afa6f/sertifier.com/blog/wp-content/uploads/2020/10/certificate-text-samples.jpg",
+      "date": "11/22/3333"
     },
     {
       "certificate_id": 2,
+      "cname":"Java",
       "student_id": 2,
       "course_id": 110,
-      "url": "https/drive,com"
+      "url": "https://d1csarkz8obe9u.cloudfront.net/posterpreviews/certificate-of-appreciation-design-template-7289b7fef37b1bda2dc3527df90bfe87_screen.jpg?ts=1631442106",
+      "date": "14/02/1800"
+    },
+    {
+      "certificate_id": 3,
+      "cname":"C++",
+      "student_id": 3,
+      "course_id": 110,
+      "url": "https://piktochart.com/wp-content/uploads/2022/11/large-158.jpg",
+      "date": "14/02/1901"
     }
   ],
   "Student_Test_record": [
