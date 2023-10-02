@@ -1,9 +1,37 @@
-import React from 'react'
+import React, { useEffect, useState } from 'react'
 import './StudentDashboard.css'
 import image from '../../assets/image.jpg'
 import { Link } from 'react-router-dom'
 
 function StudentDashboard() {
+    const [course, setCourse] = useState([]);
+    const [overview, setOverview] = useState([]);
+    const [suggestion, setSuggestion] = useState([]);
+    const getCourseList = () => {
+        fetch(" http://localhost:7000/studentdashboard")
+            .then(response => response.json())
+            .then(data => setCourse(data))
+            .catch(error => alert(error))
+    }
+    const getOverviewList = () => {
+        fetch("http://localhost:7000/studentdashboardoverview")
+            .then(response => response.json())
+            .then(data => setOverview(data[0]))
+            .catch(error => alert(error))
+        console.log(overview)
+    }
+    const getCourseSuggestion = () => {
+        fetch("http://localhost:7000/studentdashboardsuggestion")
+            .then(response => response.json())
+            .then(data => setSuggestion(data))
+            .catch(error => alert(error))
+        console.log(overview)
+    }
+    useEffect(() => {
+        getCourseList();
+        getOverviewList();
+        getCourseSuggestion();
+    }, [])
     return (
         <div>
             <div className="header-sd">
@@ -18,7 +46,7 @@ function StudentDashboard() {
                     <div className='text-in-green'>
                         <div className='greendiv-motive'>
                             <p>Ongoing course</p></div><div className='greendiv-head'>
-                            <h3>5 </h3></div>
+                            <h3>{overview.ongoing_course} </h3></div>
                     </div>
                 </div>
 
@@ -29,7 +57,7 @@ function StudentDashboard() {
                     <div className='text-in-green'>
                         <div className='greendiv-motive'>
                             <p>Completed Course</p></div><div className='greendiv-head'>
-                            <h3>6</h3></div>
+                            <h3>{overview.completed_course}</h3></div>
                     </div>
                 </div>
 
@@ -40,7 +68,7 @@ function StudentDashboard() {
                     <div className='text-in-green'>
                         <div className='greendiv-motive'>
                             <p>Certificates Earned</p> </div>
-                        <h3>5</h3>
+                        <h3>{overview.earned_certificate}</h3>
                     </div>
                 </div>
             </div>
@@ -58,63 +86,38 @@ function StudentDashboard() {
                         </tr>
                     </thead>
                     <tbody>
-                        <tr>
-                            <td>React Js</td>
-                            <td>2/10</td>
-                            <td>kamil khan</td>
-                        </tr>
-
-                        <tr>
-                            <td>C++</td>
-                            <td>10/10</td>
-                            <td>Farzana maam</td>
-                        </tr>
-
-                        <tr>
-                            <td>Web technology</td>
-                            <td>9/10</td>
-                            <td>Sumaiya tamboli</td>
-                        </tr>
+                        {
+                            course.map((record, key) => {
+                                return (
+                                    <tr key={key + 1}>
+                                        <td>{record.course_name}</td>
+                                        <td>{record.module_complete}</td>
+                                        <td>{record.instructor}</td>
+                                    </tr>
+                                )
+                            })
+                        }
                     </tbody>
                 </table>
             </div>
 
-          <h1>Suggestion</h1>
+            <h1>Suggestion</h1>
             <div className="video-component">
                 <div className="videos">
-
-                    <Link to='courseDetail/BasicOfJs/' className='video-box-link'>
+                    { suggestion.map((record)=>{                    
+                        return(
+                        <Link to='courseDetail/BasicOfJs/' className='video-box-link'> 
                         <div className="video-box">
-                            <div className="video-img"><img src={image} alt="react video"/></div>
+                            <div className="video-img"><img src={record.image} alt="react video" /></div>
                             <div className="video-info">
-                                <h1>Basic of JS</h1>
+                            <h1>{record.coursename}</h1>
                             </div>
-                            <small>Duration:16 Hours</small>
-
+                            <small>Duration:{record.duration} Hours</small>
                         </div>
                     </Link>
 
-                    <Link to='courseDetail/ReactRouter/' className='video-box-link'>
-                        <div className="video-box">
-                            <div className="video-img"><img src={image} alt="react video"/></div>
-                            <div className="video-info">
-                                <h1>Basic of JS</h1>
-                            </div>
-                            <small>Duration:16 Hours</small>
+                    )})}
 
-                        </div>
-                    </Link>
-
-                    <Link to='courseDetail/Java/' className='video-box-link' >
-                        <div className="video-box">
-                            <div className="video-img"><img src={image} alt="react video"/></div>
-                            <div className="video-info">
-                                <h1>Basic of JS</h1>
-                            </div>
-                            <small>Duration:16 Hours</small>
-
-                        </div>
-                    </Link>
                 </div>
             </div>
 
