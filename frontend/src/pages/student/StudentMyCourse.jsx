@@ -1,67 +1,57 @@
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import image from '../../assets/image.jpg'
 
 function StudentMyCourse() {
-
+    const [courses, setCourses] = useState([])
+    function getCourses() {
+        fetch('http://localhost:7000/Course')
+            .then(req => req.json())
+            .then(data => setCourses(data))
+            .catch(error => console.log(error))
+    }
+    useEffect(() => {
+        getCourses();
+    }, [])
     return (
         <div>
             <div className="video-component">
-                <p className="heading">Enrolled Course</p>
+                <h1>Enrolled Course</h1>
                 <div className="videos">
-                    <div className="video-box high">
-                        <div className="video-img" style={{ backgroundImage: `url(${image})` }}></div>
-                        <div className="video-info">
-                            <h1>Basic of JS</h1>
-                            <h4>InComplete</h4>
-                        </div>
-                        <small>3 Month left</small>
-                    </div>
-                    <div className="video-box high">
-                        <div className="video-img" style={{ backgroundImage: `url(${image})` }}></div>
-                        <div className="video-info">
-                            <h1>Basic of JS</h1>
-                            <h4>InComplete</h4>
-                        </div>
-                        <small>3 Month left</small>
-                    </div>
-                    <div className="video-box high">
-                        <div className="video-img" style={{ backgroundImage: `url(${image})` }}></div>
-                        <div className="video-info">
-                            <h1>Basic of JS</h1>
-                            <h4>InComplete</h4>
-                        </div>
-                        <small>3 Month left</small>
-                    </div>
+
+                    {
+                        courses.filter(c => !c.is_complete).map((c, idx) => {
+                            return (
+                                <div className="video-box high" key={idx}>
+                                    <div className="video-img" style={{ backgroundImage: `url(${c.course_image})` }}></div>
+                                    <div className="video-info">
+                                        <h1>{c.title}</h1>
+                                        <h4 className='incomplete'>InComplete</h4>
+                                    </div>
+                                    <small>{c.month_left} Month left</small>
+                                </div>
+                            )
+                        })
+                    }
 
                 </div>
             </div>
             <div className="video-component">
-                <p className="heading">Completed Course</p>
+                <h1>Completed Course</h1>
                 <div className="videos">
-                    <div className="video-box">
-                        <div className="video-img" style={{ backgroundImage: `url(${image})` }}></div>
-                        <div className="video-info">
-                            <h1>Basic of JS</h1>
-                            <h4>Completed</h4>
-                        </div>
-                        <small>3 Month left</small>
-                    </div>
-                    <div className="video-box">
-                        <div className="video-img" style={{ backgroundImage: `url(${image})` }}></div>
-                        <div className="video-info">
-                            <h1>Basic of JS</h1>
-                            <h4>Completed</h4>
-                        </div>
-                        <small>3 Month left</small>
-                    </div>
-                    <div className="video-box">
-                        <div className="video-img" style={{ backgroundImage: `url(${image})` }}></div>
-                        <div className="video-info">
-                            <h1>Basic of JS</h1>
-                            <h4>Completed</h4>
-                        </div>
-                        <small>3 Month left</small>
-                    </div>
+                    {
+                        courses.filter(c => c.is_complete).map((c, idx) => {
+                            return (
+                                <div className="video-box" key={idx}>
+                                    <div className="video-img" style={{ backgroundImage: `url(${c.course_image})` }}></div>
+                                    <div className="video-info">
+                                        <h1>{c.title}</h1>
+                                        <h4>Completed</h4>
+                                    </div>
+                                    <small>{c.duration} hours</small>
+                                </div>
+                            )
+                        })
+                    }
                 </div>
             </div>
         </div>

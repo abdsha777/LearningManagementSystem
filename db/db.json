@@ -69,13 +69,53 @@
   ],
   "Course": [
     {
-      "course_id": 100,
+      "id": 1,
       "title": "React JS",
       "Description": "The React JS framework is an open-source javascript framework and library developed by Facebook",
       "teacher_id": 90,
       "duration": 12,
-      "course_image": "cr.png",
-      "is_complete": "active"
+      "course_image": "https://process.fs.teachablecdn.com/ADNupMnWyR7kCWRvm76Laz/resize=width:705/https://www.filepicker.io/api/file/fGWjtyQtG4JE7UXgaPAN",
+      "is_complete": true
+    },
+    {
+      "id": 4,
+      "title": "C Programming",
+      "Description": "The React JS framework is an open-source javascript framework and library developed by Facebook",
+      "teacher_id": 90,
+      "duration": 12,
+      "course_image": "https://nareshit.com/wp-content/uploads/2018/08/C-Programming-online-training-nareshit.jpg",
+      
+      "is_complete": true
+    },
+    {
+      "id": 2,
+      "title": "JavaScript",
+      "Description": "javascript is gooood",
+      "teacher_id": 90,
+      "duration": 12,
+      "course_image": "https://www.freecodecamp.org/news/content/images/2021/06/javascriptfull.png",
+      "month_left":1,
+      "is_complete": false
+    },
+    {
+      "course_id": 3,
+      "title": "MongoDb",
+      "Description": "Thasdas",
+      "teacher_id": 90,
+      "duration": 12,
+      "course_image": "https://user-images.githubusercontent.com/40702606/118755471-cf58b300-b860-11eb-979a-16d263b320a8.png",
+      "month_left":2,
+      "is_complete": false
+    },
+    {
+      "course_id": 3,
+      "title": "Python",
+      "Description": "Thasdas",
+      "teacher_id": 90,
+      "duration": 12,
+      "course_image": "https://www.freecodecamp.org/news/content/images/2022/02/Banner-10.png",
+      "month_left":3,
+      "is_complete": false
     }
   ],
   "comment": [
