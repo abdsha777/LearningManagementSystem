@@ -513,23 +513,17 @@ nav{
         box-shadow: 1px 1px 6px #F30C0C;
     }
     .video-img{
-        max-width:65px;
+        width:50px;
         border-radius: 5px;
-        max-height:50px;
-        height: 100%;
+        height:50px;
+        min-height: auto;
         /* border: 1px solid black; */
         display:flex;
         justify-content: center;
         align-items: center;
         overflow: hidden;
-        min-height: 60px;
+        margin-bottom: 0;
     } 
-    .video-img img{
-        object-fit: cover;
-        height:100%;
-        width: auto;
-        margin: 0;
-    }
     .video-box-link  h1 {
         color: #323030;
         font-size: 15px;
@@ -547,4 +541,11 @@ nav{
         align-items: center;
         font-size: 10px;
     }
+}
+
+@media only screen and (max-width: 375px) {
+    .video-img{
+        width:30px;
+        height:30px;
+    } 
 }

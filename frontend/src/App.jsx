@@ -27,7 +27,7 @@ import AdminPrivateRoute from './components/private/AdminPrivateRoute'
 import AdminTeacherList from './pages/admin/AdminTeacherList'
 import AdminStudentList from './pages/admin/AdminStudentList'
 import AdminCourseList from './pages/admin/AdminCourseList'
-
+import TeacherStudentProfile from './pages/teacher/TeacherStudentProfile'
 
 
 function App() {
@@ -45,6 +45,7 @@ function App() {
 
                 <Route index element={<Dashboard />} />
                 <Route path='mycourse/' element={<MyCourse />} />
+                <Route path='profile/' element={<TeacherStudentProfile />} />
 
                 <Route element={<StudentPrivateRoute/>}>
                   <Route path='courses/' element={<StudentSearchCourse />} />
