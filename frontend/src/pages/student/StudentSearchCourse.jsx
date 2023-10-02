@@ -41,7 +41,7 @@ function StudentSearchCourse() {
                                     return (
                                        
                                             <div className="video-box">
-                                                <div className="video-img"><img src={rec.image} alt="react video" /></div>
+                                                <div className="video-img" style={{backgroundImage:`url(${rec.image})`}}></div>
                                                 <div className="video-info">
                                                     <h1>{rec.module_name}</h1>
                                                 </div>
