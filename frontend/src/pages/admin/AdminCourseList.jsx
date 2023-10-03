@@ -1,8 +1,17 @@
-import React from 'react';
+import React, { useEffect,useState } from 'react';
 import './AdminCourseList.css';
 
 function AdminCourseList() {
-    
+    const [courses, setCourses] = useState([])
+    const getCourseList=()=>{
+        fetch("http://localhost:7000/Admin_course_list")
+        .then(response=>response.json())
+        .then(data=>setCourses(data))
+    }
+
+    useEffect(()=>{
+        getCourseList();
+    },[])
     return (
         <div className="main_module">
             <p className="heading">Course List</p>
@@ -31,16 +40,19 @@ function AdminCourseList() {
                         </tr>
                     </thead>
                     <tbody>
-                        <tr>
+                        {
+                            courses.map((record,key)=>{
+                                return(
+                                    <tr key={key}>
                             <td>
                                 <div className="course-info">
-                                    React JS
-                                </div>
+                                    {record.course_name}
+                                     </div>
                             </td>
-                            <td>Kamil Khan</td>
-                            <td>29-AUG-2023</td>
-                            <td>50</td>
-                            <td>20</td>
+                            <td>{record.teacher_name}</td>
+                            <td>{record.uploaded_on}</td>
+                            <td>{record.total_enrolment}</td>
+                            <td>{record.total_student_completed}</td>
                             <td>
                                 <button>Set</button>
                             </td>
@@ -48,57 +60,9 @@ function AdminCourseList() {
                                 <button>View</button>
                             </td>
                         </tr>
-                        <tr>
-                            <td>
-                                <div className="course-info">
-                                    React JS
-                                </div>
-                            </td>
-                            <td>Kamil Khan</td>
-                            <td>29-AUG-2023</td>
-                            <td>50</td>
-                            <td>20</td>
-                            <td>
-                                <button>Set</button>
-                            </td>
-                            <td>
-                                <button>View</button>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td>
-                                <div className="course-info">
-                                    React JS
-                                </div>
-                            </td>
-                            <td>Kamil Khan</td>
-                            <td>29-AUG-2023</td>
-                            <td>50</td>
-                            <td>20</td>
-                            <td>
-                                <button>Set</button>
-                            </td>
-                            <td>
-                                <button>View</button>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td>
-                                <div className="course-info">
-                                    React JS
-                                </div>
-                            </td>
-                            <td>Kamil Khan</td>
-                            <td>29-AUG-2023</td>
-                            <td>50</td>
-                            <td>20</td>
-                            <td>
-                                <button>Set</button>
-                            </td>
-                            <td>
-                                <button>View</button>
-                            </td>
-                        </tr>
+                                )
+                            })
+                        }
                     </tbody>
                 </table>
             </div>
