@@ -36,16 +36,16 @@ function StudentTest() {
                     <div className="qsh">What is react?</div>
                 </div>
                  <div className="main-option">
-                    <div className="om"><input type="radio" id="option1" name="q1" value="HTML" />
+                    <div className="om"><input type="radio" id="option1" name="q2" value="HTML" />
                     <label htmlFor="option1">A:Style</label></div>
 
-                    <div className="om"><input type="radio" id="option2" name="q1" value="HTML" />
+                    <div className="om"><input type="radio" id="option2" name="q2" value="HTML" />
                     <label htmlFor="option2">A:Style</label></div>
 
-                    <div className="om"><input type="radio" id="option3" name="q1" value="HTML" />
+                    <div className="om"><input type="radio" id="option3" name="q2" value="HTML" />
                     <label htmlFor="option3">A:Style</label></div>
 
-                   <div className="om"> <input type="radio" id="option4" name="q1" value="HTML" />
+                   <div className="om"> <input type="radio" id="option4" name="q2" value="HTML" />
                     <label htmlFor="option4">A:Style</label></div>
                  </div>
             </div>
