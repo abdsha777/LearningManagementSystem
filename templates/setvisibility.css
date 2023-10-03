@@ -1,0 +1,153 @@
+body{
+    background-color: lightslategray;
+}
+.main { 
+    width: 400px;
+    height: 400px;
+    margin: 25px 400px 30px;
+    background-color: aqua;
+    display: flex;
+}
+.container{
+    margin: auto;
+    padding: 40px;
+    border-radius: 25px;
+    background-color: white;
+}
+h2{
+    margin: 25px 75px 40px 15px;
+}
+b {
+    font-size: 24px;
+    margin: 5px 40px 20px 60px;
+}
+#ct1,#ct2,#ct3{
+    display: none;
+}
+.form{
+    display: flex;
+    align-items: center;
+}
+.check{
+    float: right;
+    width: 43px;
+    height: 23px;
+    border-style:solid;
+    border-radius: 20px;
+    border-width: thin;
+    border-color: aqua;
+    background-color: white;
+}
+.toggle1{
+    margin: 25px 4px 5px 0px;
+    width: 60px;
+    height: 50px;
+    cursor: pointer;
+    position: relative;
+    transition: 0.2s;
+}
+.toggle2{
+    margin:25px 1px 0px;
+    background-color: black;
+    width: 60px;
+    height: 30px;
+    border-color: aqua;
+    border-radius: 20px;
+    border-width: thin;
+    cursor: pointer;
+    position: relative;
+    transition: 0.2s;
+}
+.toggle3{
+    margin:25px 1px 0px;
+    background-color:black;
+    width: 60px;
+    height: 30px;
+    border-color: aqua;
+    border-radius: 20px;
+    border-width: thin;
+    cursor: pointer;
+    position: relative;
+    transition: 0.2s;
+}
+.toggle1::before{
+    position: absolute;
+    content: '';
+    background-color: aqua;
+    width: 20px;
+    height: 20px;
+    border-radius: 200px;
+    margin: 1px;
+    transition: 0.2s;
+}
+.toggle2::before{
+    position: absolute;
+    content: '';
+    background-color: aqua;
+    width: 20px;
+    height: 20px;
+    border-radius: 200px;
+    margin: 1px;
+    transition: 0.2s;
+}
+.toggle3::before{
+    position: absolute;
+    content: '';
+    background-color: aqua;
+    width: 20px;
+    height: 20px;
+    border-radius: 200px;
+    margin: 1px;
+    transition: 0.2s;
+}
+input:checked + .toggle1::before{
+    transform: translateX(20px);
+}
+input:checked +.toggle2::before{
+    transform: translateX(20px);
+}
+input:checked +.toggle3::before{
+    transform: translateX(20px);
+}
+.btn{
+    padding: 15px 20px;
+    border-radius: 10px;
+    width: 140px;
+    height: 40px;
+    background-color: white;
+    font-size: 15px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #323030;
+    font-style: normal;
+    font-weight: 400;
+}
+.btn-border{
+    border: 1px solid #868181;
+}
+.cancel-btn{
+    transition: 0.2s border;
+    transition: 0.3s color;
+    margin: 10px;
+}
+.cancel-btn:hover{
+    color:lightblue;
+    border: 1px solid lightblue;
+}
+.btn-filled{
+    background-color: #5DDCD6;
+    border: 0;
+    color: white;
+    font-weight: 500;
+    transition: 0.3s background-color;
+    float: right;
+    
+}
+.btn-filled:hover{
+    background-color: #5ddc90;
+}
+.filter-btn{
+    display: flex;
+    align-items: center;
+}

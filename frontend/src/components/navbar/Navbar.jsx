@@ -1,22 +1,32 @@
-import React from 'react'
+import React, { useContext } from 'react'
 import sir from '../../assets/sir.png'
 import './navbar.css'
+import AuthContext from '../../context/AuthContext';
+import { Link } from 'react-router-dom';
 
-function Navbar() {
+function Navbar({showMenu}) {
+    let {name,role} = useContext(AuthContext);
     return (
         <header>
             <nav>
+                <div className="menu" onClick={showMenu}>
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                </div>
                 <div className="logo">
                     <div className="logo-img"></div>
                     <h2>LMS</h2>
                 </div>
-                <h1 className="greetings">Welcome Kamil Khan</h1>
+                <h1 className="greetings">Welcome {name}</h1>
 
                 <div className="profile">
-                    <img src={sir} alt="sir" />
+                    <Link to="/profile/">
+                        <img src={sir} alt="sir" />
+                    </Link>
                     <div className="profile-info">
-                        <h2>Kamil Khan</h2>
-                        <p>Teacher</p>
+                        <h2>{name}</h2>
+                        <p>{role}</p>
                     </div>
                 </div>
             </nav>

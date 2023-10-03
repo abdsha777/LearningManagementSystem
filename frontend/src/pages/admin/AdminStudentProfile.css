@@ -1,0 +1,132 @@
+.profile-detail h1 {
+    color: #323030;
+    font-size: 29px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 29.124px;
+    /* 100.428% */
+    letter-spacing: 0.58px;
+    margin-bottom: 20px;
+}
+
+.inner-detail {
+    display: flex;
+}
+
+.inner-detail .details {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    width: 300px;
+    gap: 10px;
+    margin-left: 20px;
+}
+
+.inner-detail .details h3 {
+    color: #847E7E;
+    font-size: 16px;
+}
+
+.inner-detail .details p {
+    color: #323030;
+    font-size: 16px;
+}
+
+
+.course {
+    color: black;
+    font-size: 32px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 29.124px;
+}
+
+.box-container {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 40px;
+}
+
+.box-container .box {
+    box-shadow: 6px 6px 8px #888888;
+    border-radius: 20px;
+    background: #fff;
+    text-align: center;
+    padding: 10px;
+}
+
+.box-container .box img {
+    border-radius: 20px;
+    width: 100%;
+
+}
+
+.box-container .box h3 {
+    padding-top: 5px;
+    font-weight: bold;
+    text-align: left;
+}
+
+.box-container .box h4 {
+    color: #000;
+    font-style: normal;
+    font-weight: 600;
+    text-align: right;
+}
+
+.box-container .box h5 {
+    padding-top: 5px;
+    font-weight: bold;
+    text-align: left;
+    color: green;
+}
+
+
+.box-container .box p {
+    color: #777;
+    font-size: 15px;
+    line-height: 1.8;
+}
+
+.box-container .box .btn {
+    margin-top: 10px;
+    display: inline-block;
+    background: #333;
+    color: #fff;
+    font-size: 17px;
+    border-radius: 5px;
+    padding: 8px 25px;
+}
+
+
+.corsname {
+    text-align: left;
+}
+
+.course-info {
+    display: flex;
+    justify-content: space-between;
+}
+
+.course-info h4 {
+    padding-top: 5px;
+}
+
+.box-container .box h6 {
+    font-size: large;
+    font-style: normal;
+    font-weight: 600;
+    text-align: right;
+    color: green;
+}
+
+.student-progress{
+    margin: 40px 0;
+}
+.student-progress h3{
+    color: #323030;
+    font-size: 26px;
+    margin-bottom: 20px;
+}
+.student-progress img{
+    width: 500px;
+}

@@ -1,19 +1,25 @@
-import React from 'react'
-import { Outlet } from 'react-router-dom'
+import React, { useEffect, useState } from 'react'
+import { Link, Outlet } from 'react-router-dom'
 import Navbar from '../navbar/Navbar'
+import Menu from '../menu/Menu'
 import Sidebar from '../sidebar/Sidebar'
 function Layout() {
-  return (
-    <>
-      <Navbar />
-      <main>
-        <Sidebar />
-        <div className="main-content">
-          <Outlet />
-        </div>
-      </main>
-    </>
-  )
+    const [menu,setMenu]=useState('')
+    function showMenu(){
+        setMenu(menu=="active"?"":"active")
+    }
+    return (
+        <>
+            <Navbar showMenu={showMenu} />
+            <main>
+                <Menu menu={menu} showMenu={showMenu} />
+                <Sidebar />
+                <div className="main-content">
+                    <Outlet />
+                </div>
+            </main>
+        </>
+    )
 }
 
 export default Layout
