@@ -342,6 +342,33 @@
       "duration":20
     }
   ],
+  "Unit_module":[
+    {
+      "no":1,
+      "name":"Fundamentals of React JS",
+      "description":"React is a powerful JavaScript library that you can use to build user interfaces for web and mobile applications (apps). In this course, you will explore the fundamental concepts that underpin the React library and learn the basic skills required to build a simple, fast, and scalable app.",
+      "duration":20
+      
+    }
+  ],
+  "Unit_video":[
+    {
+      "module_name":" React Js",
+      "duration":16,
+      "image":"https://kinsta.com/wp-content/uploads/2022/06/what-is-react-js-feature-image.png"
+    },
+    {
+      
+      "module_name":" React Js",
+      "duration":19,
+      "image":"https://kinsta.com/wp-content/uploads/2022/06/what-is-react-js-feature-image.png"
+    },
+    {
+      "module_name":" React Js",
+      "duration":18,
+      "image":"https://kinsta.com/wp-content/uploads/2022/06/what-is-react-js-feature-image.png"
+     } 
+      ],
   "video_details":[
     {
       "no":1,
