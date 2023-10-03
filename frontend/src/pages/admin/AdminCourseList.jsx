@@ -2,6 +2,7 @@ import React from 'react';
 import './AdminCourseList.css';
 
 function AdminCourseList() {
+    
     return (
         <div className="main_module">
             <p className="heading">Course List</p>

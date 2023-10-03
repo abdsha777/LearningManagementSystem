@@ -391,25 +391,33 @@
       "name":"React JS",
       "upload":"29-AUG-2023",
       "tenroll":90,
-      "student_complete":25
+      "student_complete":25,
+      "uploaded_by":"Kamil Khan",
+      "faculty":"Everyone"
     },
     {
       "name":"JavaScript",
       "upload":"9-AUG-2023",
       "tenroll":60,
-      "student_complete":100
+      "student_complete":100,
+      "uploaded_by":"Kamil Khan",
+      "faculty":"Everyone"
     },
     {
       "name":"JS",
       "upload":"2-AUG-2023",
       "tenroll":50,
-      "student_complete":10
+      "student_complete":10,
+      "uploaded_by":"Kamil Khan",
+      "faculty":"Everyone"
     },
     {
       "name":"Angular",
       "upload":"20-AUG-2023",
       "tenroll":20,
-      "student_complete":40
+      "student_complete":40,
+      "uploaded_by":"Kamil Khan",
+      "faculty":"Everyone"
       }
     ],
   "Teacher_mycourse_course":[
@@ -491,6 +499,14 @@
       "faculty":"BCA(Sci)",
       "no_of_course":5,
       "status":"Active"
+    }
+  ],
+  "Admin_overview":[
+    {
+      "no_of_students":500,
+      "total_course":10,
+      "total_teacher":100,
+      "enroll_student":1000
     }
   ]
 
