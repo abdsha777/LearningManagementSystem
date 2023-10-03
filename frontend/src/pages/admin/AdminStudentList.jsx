@@ -1,7 +1,17 @@
-import React from 'react'
+import React,{useState,useEffect} from 'react'
 import './AdminStudentList.css'
 
 function AdminStudentList() {
+  const [student, setStudent] = useState([]);
+  const getStudentList = () => {
+    fetch(" http://localhost:7000/Admin_Teacher_student")
+      .then(response => response.json())
+      .then(data => setStudent(data))
+      .catch(error => alert(error))
+  }
+  useEffect(()=>{
+    getStudentList();
+  },[])
   return (
     <div className="main_module">
       <p className="heading">Students List</p>
@@ -39,97 +49,30 @@ function AdminStudentList() {
             </tr>
           </thead>
           <tbody>
-            <tr>
-              <td>132601</td>
-              <td>Ifat khan</td>
-              <td>BCA (SCI)</td>
-              <td>TYBCA</td>
-              <td>5</td>
-              <td>2</td>
-              <td>3</td>
-              <td>
-                <button>Update</button>
-              </td>
-              <td>
-                <button>View</button>
-              </td>
-              <td>
-                <button className="status">Active</button>
-              </td>
-            </tr>
-            <tr>
-              <td>132602</td>
-              <td>Ruhi khan</td>
-              <td>BCA (SCI)</td>
-              <td>TYBCA</td>
-              <td>4</td>
-              <td>2</td>
-              <td>2</td>
-              <td>
-                <button>Update</button>
-              </td>
-              <td>
-                <button>View</button>
-              </td>
-              <td>
-                <button className="status">Active</button>
-              </td>
-            </tr>
-            <tr>
-              <td>132603</td>
-              <td>Shiff khan</td>
-              <td>BCA (SCI)</td>
-              <td>TYBCA</td>
-              <td>3</td>
-              <td>1</td>
-              <td>2</td>
-              <td>
-                <button>Update</button>
-              </td>
-              <td>
-                <button>View</button>
-              </td>
-              <td>
-                <button className="status">Active</button>
-              </td>
-            </tr>
-            <tr>
-              <td>132604</td>
-              <td>Nilo khan</td>
-              <td>BCA (SCI)</td>
-              <td>TYBCA</td>
-              <td>5</td>
-              <td>2</td>
-              <td>3</td>
-              <td>
-                <button>Update</button>
-              </td>
-              <td>
-                <button>View</button>
-              </td>
-              <td>
-                <button className="status inactive">InActive</button>
-              </td>
-            </tr>
-            <tr>
-              <td>132605</td>
-              <td>Aaifa khan</td>
-              <td>BCA (SCI)</td>
-              <td>TYBCA</td>
-              <td>5</td>
-              <td>2</td>
-              <td>3</td>
-              <td>
-                <button>Update</button>
-              </td>
-              <td>
-                <button>View</button>
-              </td>
-              <td>
-                <button className="status inactive">InActive</button>
-              </td>
-            </tr>
-
+          {
+              student.map((record, key) => {
+                return (
+                  <tr key={key}>
+                    <td>{record.id}</td>
+                    <td>{record.name}</td>
+                    <td>{record.faculty}</td>
+                    <td>{record.year}</td>
+                    <td>{record.enroll}</td>
+                    <td>{record.ongoing}</td>
+                    <td>{record.completed}</td>
+                    <td>
+                      <button>Update</button>
+                    </td>
+                    <td>
+                      <button>View</button>
+                    </td>
+                    <td>
+                      <button className="status">{record.status}</button>
+                    </td>
+                  </tr>
+                )
+              })
+            }
           </tbody>
 
         </table>
