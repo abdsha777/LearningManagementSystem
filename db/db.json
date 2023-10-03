@@ -508,6 +508,44 @@
       "total_teacher":100,
       "enroll_student":1000
     }
+  ],
+  "Admin_course_list":[
+    {
+      "course_name":"React js",
+      "teacher_name":"Kamil Khan",
+      "uploaded_on":"29-AUG-2023",
+      "total_enrolment":70,
+      "total_student_completed":30
+    },
+    {
+      
+        "course_name":"React js",
+        "teacher_name":"Kamil Khan",
+        "uploaded_on":"29-AUG-2023",
+        "total_enrolment":70,
+        "total_student_completed":30
+    },
+    {
+      "course_name":"React js",
+      "teacher_name":"Kamil Khan",
+      "uploaded_on":"29-AUG-2023",
+      "total_enrolment":70,
+      "total_student_completed":30
+    },
+    {
+      "course_name":"React js",
+      "teacher_name":"Kamil Khan",
+      "uploaded_on":"29-AUG-2023",
+      "total_enrolment":70,
+      "total_student_completed":30
+    },
+    {
+      "course_name":"React js",
+      "teacher_name":"Kamil Khan",
+      "uploaded_on":"29-AUG-2023",
+      "total_enrolment":70,
+      "total_student_completed":30
+    }
   ]
 
 }
