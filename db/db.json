@@ -476,6 +476,22 @@
       "completed":9,
       "status":"Inactive"
     }
+  ],
+  "Admin_Teacher":[
+    {
+      "id":134658,
+      "name":"Kamil Khan",
+      "faculty":"BCA(Sci)",
+      "no_of_course":3,
+      "status":"Active"
+    },
+    {
+      "id":132348,
+      "name":"Mohsin Tamboli",
+      "faculty":"BCA(Sci)",
+      "no_of_course":5,
+      "status":"Active"
+    }
   ]
 
 }

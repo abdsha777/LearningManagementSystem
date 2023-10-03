@@ -1,7 +1,18 @@
-import React from "react";
+import React,{useState,useEffect} from "react";
 import './AdminTeacherList.css';
 
 function AdminTeacherList() {
+  const [teacher, setTeacher] = useState([]);
+  const getTeacherList = () => {
+    fetch(" http://localhost:7000/Admin_Teacher")
+      .then(response => response.json())
+      .then(data => setTeacher(data))
+      .catch(error => alert(error))
+  }
+  useEffect(()=>{
+    getTeacherList();
+  },[])
+
   return (
     <div className="main_module">
       <p className="heading">Teachers List</p>
@@ -30,82 +41,27 @@ function AdminTeacherList() {
             </tr>
           </thead>
           <tbody>
-            <tr>
-              <td>132601</td>
-              <td>Kamil khan</td>
-              <td>BCA (SCI)</td>
-              <td>5</td>
-              <td>
-                <button>Update</button>
-              </td>
-              <td>
-                <button>View</button>
-              </td>
-              <td>
-                <button className="status">Active</button>
-              </td>
-            </tr>
-            <tr>
-              <td>132602</td>
-              <td>Mohsin Tamboli</td>
-              <td>BCA (SCI)</td>
-              <td>4</td>
-              <td>
-                <button>Update</button>
-              </td>
-              <td>
-                <button>View</button>
-              </td>
-              <td>
-                <button className="status">Active</button>
-              </td>
-            </tr>
-            <tr>
-              <td>132603</td>
-              <td>Farzana Nadaf</td>
-              <td>BCA (SCI)</td>
-              <td>3</td>
-              <td>
-                <button>Update</button>
-              </td>
-              <td>
-                <button>View</button>
-              </td>
-              <td>
-                <button className="status">Active</button>
-              </td>
-            </tr>
-            <tr>
-              <td>132604</td>
-              <td>Suhail Sayyed</td>
-              <td>BCA (SCI)</td>
-              <td>5</td>
-              <td>
-                <button>Update</button>
-              </td>
-              <td>
-                <button>View</button>
-              </td>
-              <td>
-                <button className="status inactive">InActive</button>
-              </td>
-            </tr>
-            <tr>
-              <td>132605</td>
-              <td>Summaiya Tamboli</td>
-              <td>BCA (SCI)</td>
-              <td>5</td>
-              <td>
-                <button>Update</button>
-              </td>
-              <td>
-                <button>View</button>
-              </td>
-              <td>
-                <button className="status inactive">InActive</button>
-              </td>
-            </tr>
-            {/* Table data */}
+          {
+              teacher.map((record, key) => {
+                return (
+                  <tr key={key}>
+                    <td>{record.id}</td>
+                    <td>{record.name}</td>
+                    <td>{record.faculty}</td>
+                    <td>{record.no_of_course}</td>
+                    <td>
+                      <button>Update</button>
+                    </td>
+                    <td>
+                      <button>View</button>
+                    </td>
+                    <td>
+                      <button className="status">{record.status}</button>
+                    </td>
+                  </tr>
+                )
+              })
+            }
           </tbody>
         </table>
       </div>
