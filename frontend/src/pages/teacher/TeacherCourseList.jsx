@@ -42,7 +42,7 @@ function TeacherCourseList() {
                                             <h5>{record.name}</h5>
                                         </td>
                                         <td><h5>{record.upload}</h5></td>
-                                        <td><h5>{record.enroll}</h5></td>
+                                        <td><h5>{record.tenroll}</h5></td>
                                         <td><h5>{record.student_complete}</h5></td>
                                         <td><button>Set</button></td>
                                         <td><button>View</button></td>
