@@ -1,4 +1,4 @@
-import React from 'react'
+import React,{useState,useEffect} from 'react'
 import img from '../../assets/FigmaGraph.jpg'
 import { Bar } from 'react-chartjs-2';
 import {
@@ -20,6 +20,25 @@ ChartJS.register(
 );
 
 function TeacherDashboard() {
+    const [course,setCourse]=useState([]);
+    const [overview,setOverview]=useState([]);
+
+    const getCourseList=()=>{
+        fetch(" http://localhost:7000/Teacher_course")
+        .then(response=>response.json())
+        .then(data=>setCourse(data))
+        .catch(error=>alert(error))
+    }
+    const getOverview=()=>{
+        fetch(" http://localhost:7000/Teacher_overview")
+        .then(response=>response.json())
+        .then(data=>setOverview(data[0]))
+        .catch(error=>alert(error))
+    }
+    useEffect(()=>{
+        getCourseList();
+        getOverview();
+    },[])
     const data = {
         labels: ['React', 'Java', 'C++', "Python", 'React', 'Java', 'C++', "Python"],
         datasets: [{
@@ -51,7 +70,7 @@ function TeacherDashboard() {
                         <div>
                             <div className="text">
                                 <h3 id="main-text">Total No. of Student</h3>
-                                <h4 id="num">500</h4>
+                                <h4 id="num">{overview.no_of_students}</h4>
                             </div>
                         </div>
 
@@ -62,7 +81,7 @@ function TeacherDashboard() {
                         <div>
                             <div className="text">
                                 <h3 id="main-text">Total Course Uploaded</h3>
-                                <h4 id="num">5</h4>
+                                <h4 id="num">{overview.total_course}</h4>
                             </div>
                         </div>
                     </div>
@@ -73,7 +92,7 @@ function TeacherDashboard() {
                         <div>
                             <div className="text">
                                 <h3 id="main-text">Total Student Enrolled</h3>
-                                <h4 id="num">1000</h4>
+                                <h4 id="num">{overview.enroll_student}</h4>
                             </div>
                         </div>
                     </div>
@@ -98,24 +117,19 @@ function TeacherDashboard() {
                         </tr>
                     </thead>
                     <tbody>
-                        <tr>
-                            <td>React JS</td>
-                            <td>29-AUG-2023</td>
-                            <td>50</td>
-                            <td>20</td>
-                        </tr>
-                        <tr>
-                            <td>React JS</td>
-                            <td>29-AUG-2023</td>
-                            <td>50</td>
-                            <td>20</td>
-                        </tr>
-                        <tr>
-                            <td>React JS</td>
-                            <td>29-AUG-2023</td>
-                            <td>50</td>
-                            <td>20</td>
-                        </tr>
+                        {
+                            course.map((record,key)=>{
+                                return(
+                                    <tr key={key}>
+                            <td>{record.name}</td>
+                            <td>{record.upload}</td>
+                            <td>{record.tenroll}</td>
+                            <td>{record.student_complete}</td>
+                            </tr>  
+                                )
+                            })
+                             
+                        }
                     </tbody>
                 </table>
             </div>

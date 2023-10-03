@@ -378,6 +378,40 @@
       "description":"React is a powerful JavaScript library that you can use to build user interfaces for web and mobile applications (apps). In this course, you will explore the fundamental concepts that underpin the React library and learn the basic skills required to build a simple, fast, and scalable app."
     }
   ],
+ 
+  "Teacher_overview":[
+    {
+      "no_of_students":500,
+      "total_course":10,
+      "enroll_student":1000
+    }
+  ],
+  "Teacher_course":[
+    {
+      "name":"React JS",
+      "upload":"29-AUG-2023",
+      "tenroll":90,
+      "student_complete":25
+    },
+    {
+      "name":"JavaScript",
+      "upload":"9-AUG-2023",
+      "tenroll":60,
+      "student_complete":100
+    },
+    {
+      "name":"JS",
+      "upload":"2-AUG-2023",
+      "tenroll":50,
+      "student_complete":10
+    },
+    {
+      "name":"Angular",
+      "upload":"20-AUG-2023",
+      "tenroll":20,
+      "student_complete":40
+      }
+    ],
   "Teacher_mycourse_course":[
     {
       "course_name": "Web Development"
