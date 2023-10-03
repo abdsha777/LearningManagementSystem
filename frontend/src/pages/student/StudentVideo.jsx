@@ -1,21 +1,31 @@
-import React from 'react'
+import React, { useEffect, useState } from 'react'
 import './StudentVideo.css'
 
 function StudentVideo() {
+    const [video,setVideo]=useState([]);
+    const getVideoList=()=>{
+        fetch("http://localhost:7000/video_details")
+        .then(response=>response.json())
+        .then(data=>setVideo(data[0]))
+        .catch(error=>alert(error))
+    }
+    useEffect(()=>{
+        getVideoList();
+    },[]);
     return (
 
         <div className='student-video-page'>
             <div className="video-info1">
 
                 <h4 id="video-no">Video No:</h4>
-                <p>1</p>
+                <p>{video.no}</p>
                 <h4>Video Name:</h4>
-                <p>Basic Of JS</p>
+                <p>{video.name}</p>
                 <h4>Status:</h4>
-                <p>Completed</p>
+                <p>{video.status}</p>
             </div>
             <div className="video">
-                <iframe src="https://www.youtube.com/embed/QFaFIcGhPoM?si=AKd3ieGL4pAVNduq"
+                <iframe src={video.link}
                     title="YouTube video player" frameBorder="0"
                     allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
                     allowFullScreen>
@@ -24,10 +34,7 @@ function StudentVideo() {
 
             <div className="video-desc">
                 <h4> Description: </h4>
-                <p>React is a powerful JavaScript library that you can use to build user interfaces
-                    for web and mobile applications (apps). In this course, you will explore
-                    the fundamental concepts that underpin the React library and learn the basic skills
-                    required to build a simple, fast, and scalable app.
+                <p> {video.description}
                 </p>
             </div>
             
