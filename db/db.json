@@ -437,5 +437,41 @@
       "duration":18,
       "image":"https://kinsta.com/wp-content/uploads/2022/06/what-is-react-js-feature-image.png"
     }
+  ],
+  "Teacher_student":[
+    {
+      "id":134659,
+      "name":"Taiba Tamboli",
+      "faculty":"BCA(Sci)",
+      "year":"TYBCA",
+      "enroll":10,
+      "ongoing":5,
+      "completed":9
+    }, 
+    {
+      "id":134660,
+      "name":"Afiya Shaikh",
+      "faculty":"BCA(Sci)",
+      "year":"TYBCA",
+      "enroll":10,
+      "ongoing":5,
+      "completed":9
+    }, {
+      "id":136723,
+      "name":"Ayesha Chhagala",
+      "faculty":"BCA(Sci)",
+      "year":"TYBCA",
+      "enroll":9,
+      "ongoing":2,
+      "completed":5
+    },{
+      "id":136529,
+      "name":"Nikhat Shaikh",
+      "faculty":"BCA(Sci)",
+      "year":"TYBCA",
+      "enroll":9,
+      "ongoing":2,
+      "completed":5
+    }
   ]
 }
