@@ -3,7 +3,7 @@ import React,{useState,useEffect} from 'react'
 function TeacherStudentList() {
   const [student, setStudent] = useState([]);
   const getStudentList = () => {
-    fetch(" http://localhost:7000/Teacher_student")
+    fetch(" http://localhost:7000/Admin_Teacher_student")
       .then(response => response.json())
       .then(data => setStudent(data))
       .catch(error => alert(error))

@@ -24,7 +24,7 @@ function TeacherDashboard() {
     const [overview,setOverview]=useState([]);
 
     const getCourseList=()=>{
-        fetch(" http://localhost:7000/Teacher_course")
+        fetch(" http://localhost:7000/Admin_Teacher_course")
         .then(response=>response.json())
         .then(data=>setCourse(data))
         .catch(error=>alert(error))

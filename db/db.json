@@ -386,7 +386,7 @@
       "enroll_student":1000
     }
   ],
-  "Teacher_course":[
+  "Admin_Teacher_course":[
     {
       "name":"React JS",
       "upload":"29-AUG-2023",
@@ -438,7 +438,7 @@
       "image":"https://kinsta.com/wp-content/uploads/2022/06/what-is-react-js-feature-image.png"
     }
   ],
-  "Teacher_student":[
+  "Admin_Teacher_student":[
     {
       "id":134659,
       "name":"Taiba Tamboli",
@@ -474,4 +474,5 @@
       "completed":5
     }
   ]
+
 }
