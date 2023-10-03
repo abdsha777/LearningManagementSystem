@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useEffect, useState } from 'react'
 import img from '../../assets/FigmaGraph.jpg'
 import { Bar } from 'react-chartjs-2';
 import {
@@ -20,6 +20,26 @@ ChartJS.register(
 );
 
 function AdminDashboard() {
+    const [course, setCourse] = useState([])
+    const [overView, setOverview] = useState([])
+
+    const getCourseList = () => {
+        fetch("http://localhost:7000/Admin_Teacher_course")
+            .then(response => response.json())
+            .then(data => setCourse(data))
+            .catch(error => alert(error))
+    }
+    const getOverviewList = () => {
+        fetch("http://localhost:7000/Admin_overview")
+            .then(response => response.json())
+            .then(data => setOverview(data[0]))
+            .catch(error => alert(error))
+    }
+
+    useEffect(() => {
+        getCourseList();
+        getOverviewList();
+    }, [])
     const data = {
         labels: ['React', 'Java', 'C++', "Python", 'React', 'Java', 'C++', "Python"],
         datasets: [{
@@ -51,7 +71,7 @@ function AdminDashboard() {
                         <div>
                             <div className="text">
                                 <h3 id="main-text">Total No. of Student</h3>
-                                <h4 id="num">500</h4>
+                                <h4 id="num">{overView.no_of_students}</h4>
                             </div>
                         </div>
 
@@ -61,8 +81,18 @@ function AdminDashboard() {
                         <div className="perimg">%</div>
                         <div>
                             <div className="text">
+                                <h3 id="main-text">Total No. of Teachers</h3>
+                                <h4 id="num">{overView.total_teacher}</h4>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div className="student-head">
+                        <div className="perimg">%</div>
+                        <div>
+                            <div className="text">
                                 <h3 id="main-text">Total Course Uploaded</h3>
-                                <h4 id="num">5</h4>
+                                <h4 id="num">{overView.total_course}</h4>
                             </div>
                         </div>
                     </div>
@@ -73,20 +103,12 @@ function AdminDashboard() {
                         <div>
                             <div className="text">
                                 <h3 id="main-text">Total Student Enrolled</h3>
-                                <h4 id="num">1000</h4>
+                                <h4 id="num">{overView.enroll_student}</h4>
                             </div>
                         </div>
                     </div>
 
-                    <div className="student-head">
-                        <div className="perimg">%</div>
-                        <div>
-                            <div className="text">
-                                <h3 id="main-text">Total Student Enrolled</h3>
-                                <h4 id="num">1000</h4>
-                            </div>
-                        </div>
-                    </div>
+
 
                 </div>
                 <div className="graph">
@@ -105,27 +127,26 @@ function AdminDashboard() {
                             <th>Uploaded On</th>
                             <th>Total Enrollments</th>
                             <th>Total No. of Student Completed</th>
+                            <th>Uploaded By</th>
+                            <th>Faculty (viewed by)</th>
                         </tr>
                     </thead>
                     <tbody>
-                        <tr>
-                            <td>React JS</td>
-                            <td>29-AUG-2023</td>
-                            <td>50</td>
-                            <td>20</td>
-                        </tr>
-                        <tr>
-                            <td>React JS</td>
-                            <td>29-AUG-2023</td>
-                            <td>50</td>
-                            <td>20</td>
-                        </tr>
-                        <tr>
-                            <td>React JS</td>
-                            <td>29-AUG-2023</td>
-                            <td>50</td>
-                            <td>20</td>
-                        </tr>
+                        {
+                            course.map((record, key) => {
+                                return (
+                                    <tr key={key}>
+                                        <td>{record.name}</td>
+                                        <td>{record.upload}</td>
+                                        <td>{record.tenroll}</td>
+                                        <td>{record.student_complete}</td>
+                                        <td>{record.uploaded_by}</td>
+                                        <td>{record.faculty}</td>
+                                    </tr>
+                                )
+                            })
+                        }
+
                     </tbody>
                 </table>
             </div>

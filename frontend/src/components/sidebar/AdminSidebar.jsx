@@ -5,7 +5,7 @@ import { Link, NavLink } from "react-router-dom";
 function AdminSidebar() {
   return (
     <div className="sidebar">
-      <NavLink to="/"   className="sidebar-links active">
+      <NavLink to="/"   className="sidebar-links">
         <svg
           className="home-svg"
           width="800px"
