@@ -1,24 +1,41 @@
-import React from "react";
+import React,{useEffect, useState} from "react";
 import image from '../../assets/image.jpg'
 import { Link } from "react-router-dom";
 
 function StudentUnitDetail() {
+  const[unitModule,setUnitModule]=useState([])
+  const[unitVideo,setUnitVideo]=useState([])
+
+  const getModuleList=()=>{
+    fetch("http://localhost:7000/Unit_module")
+    .then(response=>response.json())
+    .then(data=>setUnitModule(data[0]))
+    .catch(error=>alert(error))
+  }
+  const getVideoList=()=>{
+    fetch("http://localhost:7000/Unit_video")
+    .then(response=>response.json())
+    .then(data=>setUnitVideo(data))
+    .catch(error=>alert(error))
+  }
+
+  useEffect(()=>{
+    getModuleList();
+    getVideoList();
+  },[])
+
   return (
     <div>
       <div className="module">
         <h3 className="heading">Module:</h3>
-        <h3 className="heading"> 1</h3>
+        <h3 className="heading">{unitModule.no}</h3>
         <h2>Module Name:</h2>
-        <p>Fundamentals of React JS</p>
+        <p>{unitModule.name}</p>
         <h2>Duration:</h2>
-        <p>13 Mintues</p>
+        <p>{unitModule.duration}</p>
         <h2>Description:</h2>
         <p>
-          React is a powerful JavaScript library that you can use to build user
-          interfaces for web and mobile applications (apps). In this course, you
-          will explore the fundamental concepts that underpin the React library
-          and learn the basic skills required to build a simple, fast, and
-          scalable app.
+        {unitModule.description}
         </p>
       </div>
       <div className="button">
@@ -50,30 +67,22 @@ function StudentUnitDetail() {
       <div className="video-component">
         <p className="heading">Videos</p>
         <div className="videos">
-          <Link to='video/1/' className='video-box-link'>
+          {
+            unitVideo.map((record)=>{
+              return(
+                <Link to='video/1/' className='video-box-link'>
             <div className="video-box">
-              <div className="video-img" style={{ backgroundImage: `url(${image})` }} ></div>
+              <div className="video-img" style={{ backgroundImage: `url(${record.image})` }} ></div>
               <div className="video-info">
-                <h1>Basic of JS</h1>
+                <h1>{record.module_name}</h1>
               </div>
-              <small>Duration:16 Hours</small>
+              <small>Duration:{record.duration} Hours</small>
             </div>
           </Link>
-
-          <div className="video-box">
-            <div className="video-img" style={{ backgroundImage: `url(${image})` }} ></div>
-            <div className="video-info">
-              <h1>Basic of JS</h1>
-            </div>
-            <small>Duration:16 Hours</small>
-          </div>
-          <div className="video-box">
-            <div className="video-img" style={{ backgroundImage: `url(${image})` }} ></div>
-            <div className="video-info">
-              <h1>Basic of JS</h1>
-            </div>
-            <small>Duration:16 Hours</small>
-          </div>
+              )
+            })
+          }
+          
         </div>
       </div>
     </div>
