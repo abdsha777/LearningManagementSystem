@@ -28,6 +28,8 @@ import AdminTeacherList from './pages/admin/AdminTeacherList'
 import AdminStudentList from './pages/admin/AdminStudentList'
 import AdminCourseList from './pages/admin/AdminCourseList'
 import TeacherStudentProfile from './pages/teacher/TeacherStudentProfile'
+import DoubtMessages from './components/chat/DoubtMessages'
+import AllDoubts from './components/chat/AllDoubts'
 
 
 function App() {
@@ -50,7 +52,10 @@ function App() {
                 <Route element={<StudentPrivateRoute/>}>
                   <Route path='courses/' element={<StudentSearchCourse />} />
                   <Route path='certificate/' element={<Certificates />} />
-                  <Route path='courseDetail/:course/' element={<StudentCourseDetail />} />
+                  <Route path='courseDetail/:course/' element={<StudentCourseDetail />}>
+                    <Route path='' element={<AllDoubts />} />
+                    <Route path='doubt/:id/' element={<DoubtMessages />} />
+                  </Route>
                   <Route path='courseDetail/:course/unitDetail/:id/' element={<StudentUnitDetail />} />
                   <Route
                     path='courseDetail/:course/unitDetail/:unitId/video/:videoId/'

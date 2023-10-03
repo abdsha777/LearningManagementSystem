@@ -3,8 +3,8 @@ import AuthContext from './AuthContext'
 import {useNavigate} from 'react-router-dom'
 
 function AuthProvider({ children }) {
-    const [login,setLogin]=useState(false);
-    const [role,setRole] = useState("");
+    const [login,setLogin]=useState(true);
+    const [role,setRole] = useState("student");
     const nav = useNavigate();
     function loginUser(pass){
         setRole(pass)

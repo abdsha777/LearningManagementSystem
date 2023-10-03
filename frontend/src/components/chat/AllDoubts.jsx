@@ -1,11 +1,12 @@
 import React from 'react'
 import studentImg from '../../assets/shehzad.png';
+import { Link } from 'react-router-dom';
 
 function AllDoubts() {
     return (
         <div className="doubts">
             {/* id doubt has solved class the solved appears */}
-            <div className="doubt solved">
+            <Link to="doubt/1/" className="doubt solved">
                 <img src={studentImg} alt="" />
                 <div className="doubt-info">
                     <p className="name">Shehzad</p>
@@ -15,9 +16,9 @@ function AllDoubts() {
                 <div className="solved-mark">
                     <p>solved</p>
                 </div>
-            </div>
+            </Link>
 
-            <div className="doubt ">
+            <Link to="doubt/2/" className="doubt ">
                 <img src={studentImg} alt="" />
                 <div className="doubt-info">
                     <p className="name">Shehzad</p>
@@ -27,8 +28,8 @@ function AllDoubts() {
                 <div className="solved-mark">
                     <p>solved</p>
                 </div>
-            </div>
-            <div className="doubt">
+            </Link>
+            <Link to="doubt/3/" className="doubt">
                 <img src={studentImg} alt="" />
                 <div className="doubt-info">
                     <p className="name">Shehzad</p>
@@ -38,7 +39,7 @@ function AllDoubts() {
                 <div className="solved-mark">
                     <p>solved</p>
                 </div>
-            </div>
+            </Link>
 
         </div>
     )

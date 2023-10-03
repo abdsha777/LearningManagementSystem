@@ -5,7 +5,11 @@
     border-radius: 15px;
     margin-top: 20px;
     padding: 15px;
-    overflow-y: scroll;
+    overflow-y: hidden;
+    position: relative;
+}
+.doubt-body *{
+    text-decoration: none;
 }
 .doubt-body::-webkit-scrollbar{
     display: none;
@@ -15,6 +19,7 @@
     color: #000;
     font-size: 36px;
     margin-bottom: 10px;
+    /* position: fixed; */
 }
 
 .doubt{
@@ -65,6 +70,9 @@
     background-color: #d8ffd8;
 }
 
+.doubt-messages{
+    position: relative;
+}
 .doubt-messages img{
     width: 40px;    
     height: 40px;
@@ -97,5 +105,88 @@
     display: flex;
     border-radius: 10px;
     box-shadow: 0px 2px 4px 1px gray;
+    margin-bottom: 20px;
+}
+.question-body svg{
+    margin-right: 10px;
+    min-width: 45px;
+    max-width: 45px;
+}
+.messages{
+    overflow-y: scroll;
+    max-height: 240px;
+}
+.messages::-webkit-scrollbar{
+    width: 10px;
+    color: black;
 }
 
+.message{
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 10px;
+}
+.message img{
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+}
+.message img:first-child{
+    margin-right: 10px;
+}
+.message img:last-child{
+    margin-left: 10px;
+}
+.message.me img:last-child{
+    display: none;
+}
+.message.others img:first-child{
+    display: none;
+}
+
+.message-body{
+    width: 100%;
+    border-radius: 10px;
+    padding: 10px;
+    background-color: rgb(221, 221, 221);
+}
+.message-body small{
+    color: #515151;
+    font-size: 12px;
+    font-weight: 300;
+}
+
+.message-field{
+    width: 100%;
+    display: flex;
+    margin-bottom: 10px;
+}
+.message-field input{
+    border-radius: 10px;
+    border: 1px solid rgb(170, 170, 170);
+    width: 100%;
+    margin-right: 10px;
+    padding: 10px;
+    transition: 500ms outline;
+}
+.message-field input:focus{
+    outline: 1px solid #5DDCD6;
+}
+.message-field button{
+    background-color: white;
+    border: 0;
+}
+.message-field svg{
+    width: 30px;
+    height: 30px;
+    transition: 0.5s transform;
+}
+.message-field svg path{
+    fill: #5DDCD6;
+}
+.message-field button:hover svg{
+    transform: scale(1.1);
+}
+.message-field button:hover svg path{
+    fill-rule: evenodd;
+}
