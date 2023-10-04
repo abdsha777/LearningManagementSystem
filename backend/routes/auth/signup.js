@@ -8,33 +8,38 @@ const signature = "SIGNATURE";
 
 const router = express.Router()
 
-router.post('/login',[
+router.post('/signup',[
     body('email').isEmail(),
-    body('password').isLength({min:1})
+    body('password').isLength({min:1}),
+    body('name').isLength({min:1}),
+    body('role').isIn(['student','teacher','admin'])
 ],async (req,res)=>{
     const errors = validationResult(req);
     if (!errors.isEmpty()) {
         return res.status(400).json({ errors: errors.array() });
     }
     try {
-        const {email,password} = req.body;
-        let user = await User.findOne({email})
+        const {email,name,password,role} = req.body;
+        let user = await User.findOne({email:email})
 
-        if(!user){
-            return res.status(400).send("user does not exists!")
+        if(user){
+            res.status(400).send("user already exists!")
         }
 
-        const passCompare = await bcrypt.compare(password,user.password)
-        
-        if(!passCompare){
-            return res.status(400).send("Invalid Credentials")
-        }
+        const salt = await bcrypt.genSalt(5);
+        const securePassword = await  bcrypt.hash(password ,salt);
 
+        user = await User.create({
+            email:email,    
+            password:securePassword,
+            name:name,
+            role:role
+        })
         const data = {
             user:{
                 id:user.id,
                 name:user.name,
-                role:user.role
+                role
             }
         }
         const authToken = jwt.sign(data,signature);
