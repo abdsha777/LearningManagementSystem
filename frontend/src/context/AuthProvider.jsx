@@ -6,10 +6,28 @@ function AuthProvider({ children }) {
     const [login,setLogin]=useState(true);
     const [role,setRole] = useState("student");
     const nav = useNavigate();
-    function loginUser(pass){
-        setRole(pass)
-        setLogin(true);
+    const [token,setToken] = useState(localStorage.getItem('token'))
+    const [user,setUser] = useState(null)
+
+    if(user!=null){
         nav('/')
+    }
+    async function loginUser(email,password){
+        const init={
+            method: 'POST',
+            body:JSON.stringify({
+                email:email,
+                password:password
+            }),
+            headers:{
+                'Content-Type':'application/json'
+            }
+        }
+        fetch("http://localhost:5000/auth/login/",init)
+        .then(res=>res.json())
+        .then(data=>setToken(data))
+        .catch(error=>console.log(error))
+        
     }
     const contextData = {
         loginUser:loginUser,

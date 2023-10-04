@@ -3,6 +3,7 @@ import './Login.css'
 import AuthContext from '../../context/AuthContext';
 
 function Login() {
+    const [email,setEmail] = useState("");
     const [password,setPassword] = useState("");
     const {loginUser} = useContext(AuthContext);
     return (
@@ -31,13 +32,16 @@ function Login() {
                 <div className="login-form">
                     <h1>LOGIN</h1>
                     <div className="input-box">
-                        <label htmlFor="username">Username</label>
-                        <input type="text" id="username" placeholder="enter username" />
+                        <label htmlFor="email">Email</label>
+                        <input type="text" id="email" placeholder="Enter email..." 
+                            value={email}
+                            onChange={(e)=>setEmail(e.target.value)}
+                        />
 
                     </div>
                     <div className="input-box">
                         <label htmlFor="password">Password</label>
-                        <input type="password" id="password" placeholder="enter password"
+                        <input type="password" id="password" placeholder="Enter password..."
                             value={password}
                             onChange={(e)=>setPassword(e.target.value)} 
                         />
@@ -47,7 +51,7 @@ function Login() {
                     <div className="lbtn-fp">
                         <button className="btn-filled-1"
                             onClick={()=>{
-                                loginUser(password)
+                                loginUser(email,password)
                             }}
                         >
                             LOGIN

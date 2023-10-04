@@ -30,6 +30,7 @@ import AdminCourseList from './pages/admin/AdminCourseList'
 import TeacherStudentProfile from './pages/teacher/TeacherStudentProfile'
 import DoubtMessages from './components/chat/DoubtMessages'
 import AllDoubts from './components/chat/AllDoubts'
+import LandingPage from './components/landing/LandingPage'
 
 
 function App() {
@@ -40,7 +41,7 @@ function App() {
         <AuthProvider>
           <Routes>
             <Route path='/login' element={<Login />} />
-
+            <Route path='/home' element={<LandingPage />} />
             <Route path='/' element={<Layout />}>
 
               <Route element={<PrivateRoute />}>

@@ -12,9 +12,10 @@ router.post('/login',[
     body('email').isEmail(),
     body('password').isLength({min:1})
 ],async (req,res)=>{
+    // return res.json(req.body)
     const errors = validationResult(req);
     if (!errors.isEmpty()) {
-        return res.status(400).json({ errors: errors.array() });
+        return res.status(400).json({ errors: errors.array(),a:req.body.email });
     }
     try {
         const {email,password} = req.body;

@@ -1,4 +1,5 @@
 const express = require('express')
+var cors = require('cors')
 const connectToMongo = require("./db");
 
 connectToMongo();
@@ -6,7 +7,8 @@ connectToMongo();
 const app = express();
 const port = 5000;
 
-//use json
+//using middleware
+app.use(cors())
 app.use(express.json())
 
 // routes
