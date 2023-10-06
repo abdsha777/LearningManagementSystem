@@ -1,39 +1,47 @@
 import React, { useState } from 'react'
 import AuthContext from './AuthContext'
 import {useNavigate} from 'react-router-dom'
+import jwt_decode from "jwt-decode";
 
 function AuthProvider({ children }) {
-    const [login,setLogin]=useState(true);
+    const [login,setLogin]=useState(false);
     const [role,setRole] = useState("student");
     const nav = useNavigate();
-    const [token,setToken] = useState(localStorage.getItem('token'))
+    const [token,setToken] = useState(null)
     const [user,setUser] = useState(null)
 
-    if(user!=null){
-        nav('/')
-    }
     async function loginUser(email,password){
-        const init={
-            method: 'POST',
-            body:JSON.stringify({
-                email:email,
-                password:password
-            }),
-            headers:{
-                'Content-Type':'application/json'
+        try {
+            const init={
+                method: 'POST',
+                body:JSON.stringify({
+                    email:email,
+                    password:password
+                }),
+                headers:{
+                    'Content-Type':'application/json'
+                }
             }
+            var res = await fetch("http://localhost:5000/auth/login/",init)
+            if (!res.ok) {
+                throw new Error('Login failed');
+            }
+            var data = await res.json();
+            setToken(data)
+            var decoded = await jwt_decode(data);
+            console.log(decoded);
+            setUser(decoded.user)
+            setLogin(true)
+            nav('/')
+        } catch (error) {
+            console.log(error)
         }
-        fetch("http://localhost:5000/auth/login/",init)
-        .then(res=>res.json())
-        .then(data=>setToken(data))
-        .catch(error=>console.log(error))
-        
     }
     const contextData = {
         loginUser:loginUser,
-        name: "Veena Ghandi",
-        role:role,
-        login:login,
+        name: user==null?"User":user.name,
+        role: user==null?"student":user.role,
+        login: login,
     }
     return (
         <AuthContext.Provider value={contextData} >
