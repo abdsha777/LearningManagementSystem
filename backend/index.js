@@ -18,7 +18,7 @@ app.use('/api/auth', require('./routes/auth/login.js'))
 //users with single user
 app.use('/api/users', require('./routes/users/users.js'))
 // course
-app.use('/api/course', require('./routes/users/users.js'))
+app.use('/api/course', require('./routes/course/course.js'))
 
 
 app.listen(port, () => {

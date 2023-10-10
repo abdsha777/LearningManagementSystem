@@ -39,7 +39,7 @@ router.get('/students',fetchuser,isAdmin,async (req,res)=>{
 router.get('/mystudents',fetchuser,isAdminOrTeacher,async (req,res)=>{
     try {
         const courses = await Course.find({teacherId:req.user.id})
-        const courseIds = courses.map(course => course._id)
+        const courseIds = courses.map(course => course.id)
 
         const enrolledStudents = await Enrollment.find({
             courseId:{$in:courseIds},
