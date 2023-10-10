@@ -5,7 +5,7 @@ import jwt_decode from "jwt-decode";
 
 function AuthProvider({ children }) {
     const [login,setLogin]=useState(true);
-    const [role,setRole] = useState("student");
+    const [role,setRole] = useState("teacher");
     const nav = useNavigate();
     const [token,setToken] = useState(null)
     const [user,setUser] = useState(null)
