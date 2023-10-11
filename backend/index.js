@@ -5,8 +5,7 @@ const connectToMongo = require("./db");
 connectToMongo();
 
 const app = express();
-const port = 5000;
-
+const port  = process.env.PORT || 5000;
 //using middleware
 app.use(cors())
 app.use(express.json())
@@ -19,7 +18,8 @@ app.use('/api/auth', require('./routes/auth/login.js'))
 app.use('/api/users', require('./routes/users/users.js'))
 // course
 app.use('/api/course', require('./routes/course/course.js'))
-
+// enroll
+app.use('/api/enroll', require('./routes/enrollment/enrollment.js'))
 
 app.listen(port, () => {
     console.log(`express running on http://localhost:${port}`)
@@ -37,6 +37,8 @@ app.get('/',(req,res)=>{
             teachers:"http://localhost:5000/api/users/teachers/ (admin)",
             students:"http://localhost:5000/api/users/students/ (admin,teacher)",
         },
-
+        enrollment:{
+            enroll:"http://localhost:5000/api/enroll/"
+        }
     })
 })
