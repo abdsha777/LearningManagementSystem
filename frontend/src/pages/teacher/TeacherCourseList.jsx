@@ -2,13 +2,14 @@ import React,{useState,useEffect} from 'react';
 import './teachercourselist.css';
 
 function TeacherCourseList() {
+    const dbJson = "https://jsonserver-6gyk.onrender.com";
     const [course, setCourse] = useState([]);
 
     const getCourseList = () => {
-        fetch(" http://localhost:7000/Admin_Teacher_course")
+        fetch(`${dbJson}/Admin_Teacher_course`)
             .then(response => response.json())
             .then(data => setCourse(data))
-            .catch(error => alert(error))
+            .catch(error => console.log(error))
     }
     useEffect(() => {
         getCourseList();

@@ -2,9 +2,10 @@ import React, { useEffect, useState } from 'react'
 import image from '../../assets/image.jpg'
 
 function StudentMyCourse() {
+    const dbJson = "https://jsonserver-6gyk.onrender.com";
     const [courses, setCourses] = useState([])
     function getCourses() {
-        fetch('http://localhost:7000/Course')
+        fetch(`${dbJson}/Course`)
             .then(req => req.json())
             .then(data => setCourses(data))
             .catch(error => console.log(error))

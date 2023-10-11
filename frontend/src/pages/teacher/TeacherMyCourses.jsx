@@ -1,21 +1,21 @@
 import React,{useEffect, useState} from 'react'
 import './TeacherMyCourses.css'
-import image from '../../assets/image.jpg'
 function TeacherMyCourses() {
+    const dbJson = "https://jsonserver-6gyk.onrender.com";
     const[course,setCourse]=useState([])
     const[module,setModule]=useState([])
 
     const getCoureList=()=>{
-        fetch(" http://localhost:7000/Teacher_mycourse_course")
+        fetch(`${dbJson}/Teacher_mycourse_course`)
         .then(response=>response.json())
         .then(data=>setCourse(data))
-        .catch(error=>alert(error))
+        .catch(error=>console.log(error))
     }
     const getModuleList=()=>{
-        fetch(" http://localhost:7000/Teacher_mycourse_module")
+        fetch(`${dbJson}/Teacher_mycourse_module`)
         .then(response=>response.json())
         .then(data=>setModule(data))
-        .catch(error=>alert(error))
+        .catch(error=>console.log(error))
     }
     useEffect(()=>{
         getCoureList();

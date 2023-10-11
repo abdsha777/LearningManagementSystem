@@ -1,9 +1,10 @@
 import React,{useState,useEffect} from 'react'
 
 function TeacherStudentList() {
-  const [student, setStudent] = useState([]);
+    const dbJson = "https://jsonserver-6gyk.onrender.com";
+    const [student, setStudent] = useState([]);
   const getStudentList = () => {
-    fetch(" http://localhost:7000/Admin_Teacher_student")
+    fetch(`${dbJson}/Admin_Teacher_student`)
       .then(response => response.json())
       .then(data => setStudent(data))
       .catch(error => alert(error))

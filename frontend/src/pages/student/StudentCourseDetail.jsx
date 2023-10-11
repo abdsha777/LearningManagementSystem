@@ -1,29 +1,30 @@
-import React, { useState,useEffect } from "react";
+import React, { useState, useEffect } from "react";
 import Doubts from "../../components/chat/Doubts";
 import { Link } from "react-router-dom";
 import { Chart as ChartJS, ArcElement, Tooltip, Legend } from "chart.js";
 
 function StudentCourseDetail() {
-  let size=1;
-  const [course,setCourse]=useState([]);
-  const [Module,setModule]=useState([]);
+  const dbJson = "https://jsonserver-6gyk.onrender.com";
+  let size = 1;
+  const [course, setCourse] = useState([]);
+  const [Module, setModule] = useState([]);
   const getCourseList = () => {
-    fetch(" http://localhost:7000/Student_Course_Detail")
-        .then(response => response.json())
-        .then(data => setCourse(data[0]))
-        .catch(error => alert(error))
+    fetch(`${dbJson}/Student_Course_Detail`)
+      .then(response => response.json())
+      .then(data => setCourse(data[0]))
+      .catch(error => console.log(error))
   }
-  const getModuleList=()=>{
-    fetch(" http://localhost:7000/Modules")
-    .then(response => response.json())
-    .then(data => setModule(data))
-    .catch(error => alert(error))
-    size=Module.length;
+  const getModuleList = () => {
+    fetch(`${dbJson}/Modules`)
+      .then(response => response.json())
+      .then(data => setModule(data))
+      .catch(error => console.log(error))
+    size = Module.length;
   }
-  useEffect(()=>{
+  useEffect(() => {
     getCourseList();
     getModuleList();
-  },[])
+  }, [])
   return (
     <div className="teacher-view-course">
       <div className="right-content">
@@ -35,7 +36,7 @@ function StudentCourseDetail() {
             <p id="Teacher-name">Teacher Name:</p><p id="Kamil-Khan">{course.teacher_name}</p>
           </div>
           <div className="course-img">
-          <img src={course.image} />
+            <img src={course.image} />
           </div>
         </div>
         <br />
@@ -45,50 +46,51 @@ function StudentCourseDetail() {
           </div>
           <div className="desc-deatail">
             <p>
-             {course.Description}
+              {course.Description}
             </p>
           </div>
         </div>
         <br />
-       
+
         <div className="module-details">
           {
-            Module.map((record,key)=>{
-             return(
-             <div className={`${"module-box"} ${key==0? 'first' : ''} ${size==key-2 ? 'last':''}`} key={key}>
-              <div className="fun-react">
-                <div className="mod-text1">
-                  <p>{record.name}</p>
-                </div>
-                <div className="module-time">
-                  <div className="module-seq">
-                    <p>Module {record.no}</p>
+            Module.map((record, key) => {
+              return (
+                <div className={`${"module-box"} ${key == 0 ? 'first' : ''} ${size == key - 2 ? 'last' : ''}`} key={key}>
+                  <div className="fun-react">
+                    <div className="mod-text1">
+                      <p>{record.name}</p>
+                    </div>
+                    <div className="module-time">
+                      <div className="module-seq">
+                        <p>Module {record.no}</p>
+                      </div>
+                      <div className="dot">
+                        <p>.</p>
+                      </div>
+                      <div className="module-time">
+                        <p>{record.duration} Minutes</p>
+                      </div>
+                    </div>
                   </div>
-                  <div className="dot">
-                    <p>.</p>
-                  </div>
-                  <div className="module-time">
-                    <p>{record.duration} Minutes</p>
-                  </div>
-                </div>
-              </div>
 
-              <div className="view-btn">
-                <Link to='unitDetail/1/'>
-                  <button className="view-module-btn">View Module</button>
-                </Link>
-              </div>
-            </div>
-            )})
-            
+                  <div className="view-btn">
+                    <Link to='unitDetail/1/'>
+                      <button className="view-module-btn">View Module</button>
+                    </Link>
+                  </div>
+                </div>
+              )
+            })
+
           }
         </div>
         <div className="enroll-btn">
-        <button className="enroll-module-btn btn btn-filled">Enroll</button>
+          <button className="enroll-module-btn btn btn-filled">Enroll</button>
         </div>
       </div>
       <div className="left-content">
-        
+
         <Doubts />
       </div>
     </div>

@@ -2,20 +2,21 @@ import React, { useEffect, useState } from 'react'
 import image from '../../assets/image.jpg'
 
 function StudentSearchCourse() {
+    const dbJson = "https://jsonserver-6gyk.onrender.com";
     const [module, setModule] = useState([]);
     const [course, setCourse] = useState([]);
 
     const getModuleList = () => {
-        fetch("http://localhost:7000/student_module")
+        fetch(`${dbJson}/student_module`)
             .then(response => response.json())
             .then(data => setModule(data))
-            .catch(error => alert(error))
+            .catch(error => console.log(error))
     }
     const getCourseList = () => {
-        fetch("http://localhost:7000/StudentCourse")
+        fetch(`${dbJson}/StudentCourse`)
             .then(response => response.json())
             .then(data => setCourse(data))
-            .catch(error => alert(error))
+            .catch(error => console.log(error))
     }
     useEffect(()=>{
         getModuleList();

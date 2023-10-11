@@ -20,17 +20,18 @@ ChartJS.register(
 );
 
 function TeacherDashboard() {
+    const dbJson = "https://jsonserver-6gyk.onrender.com";
     const [course,setCourse]=useState([]);
     const [overview,setOverview]=useState([]);
 
     const getCourseList=()=>{
-        fetch(" http://localhost:7000/Admin_Teacher_course")
+        fetch(`${dbJson}/Admin_Teacher_course`)
         .then(response=>response.json())
         .then(data=>setCourse(data))
         .catch(error=>console.log(error))
     }
     const getOverview=()=>{
-        fetch(" http://localhost:7000/Teacher_overview")
+        fetch(`${dbJson}/Teacher_overview`)
         .then(response=>response.json())
         .then(data=>setOverview(data[0]))
         .catch(error=>console.log(error))

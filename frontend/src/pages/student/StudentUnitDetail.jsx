@@ -3,20 +3,21 @@ import image from '../../assets/image.jpg'
 import { Link } from "react-router-dom";
 
 function StudentUnitDetail() {
-  const[unitModule,setUnitModule]=useState([])
+    const dbJson = "https://jsonserver-6gyk.onrender.com";
+    const[unitModule,setUnitModule]=useState([])
   const[unitVideo,setUnitVideo]=useState([])
 
   const getModuleList=()=>{
-    fetch("http://localhost:7000/Unit_module")
+    fetch(`${dbJson}/Unit_module`)
     .then(response=>response.json())
     .then(data=>setUnitModule(data[0]))
-    .catch(error=>alert(error))
+    .catch(error=>console.log(error))
   }
   const getVideoList=()=>{
-    fetch("http://localhost:7000/Unit_video")
+    fetch(`${dbJson}/Unit_video`)
     .then(response=>response.json())
     .then(data=>setUnitVideo(data))
-    .catch(error=>alert(error))
+    .catch(error=>console.log(error))
   }
 
   useEffect(()=>{

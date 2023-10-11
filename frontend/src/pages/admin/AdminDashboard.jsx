@@ -20,21 +20,22 @@ ChartJS.register(
 );
 
 function AdminDashboard() {
+    const dbJson = "https://jsonserver-6gyk.onrender.com";
     
     const [course, setCourse] = useState([])
     const [overView, setOverview] = useState([])
 
     const getCourseList = () => {
-        fetch("http://localhost:7000/Admin_Teacher_course")
+        fetch(`${dbJson}/Admin_Teacher_course`)
             .then(response => response.json())
             .then(data => setCourse(data))
-            .catch(error => alert(error))
+            .catch(error => console.log(error))
     }
     const getOverviewList = () => {
-        fetch("http://localhost:7000/Admin_overview")
+        fetch(`${dbJson}/Admin_overview`)
             .then(response => response.json())
             .then(data => setOverview(data[0]))
-            .catch(error => alert(error))
+            .catch(error => console.log(error))
     }
 
     useEffect(() => {

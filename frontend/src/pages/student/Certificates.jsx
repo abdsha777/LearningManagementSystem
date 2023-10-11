@@ -1,12 +1,12 @@
 import React, { useEffect } from 'react'
 import './Certificates.css'
-import img from '../../assets/certificates.jpg'
 import { useState } from 'react'
 
 function Certificates() {
+    const dbJson = "https://jsonserver-6gyk.onrender.com";
     const [certificates, setCertificates] = useState([]);
     function getCertificate(){
-        fetch('http://localhost:7000/certificates')
+        fetch(`${dbJson}/certificates`)
         .then(res => res.json())
         .then(data => setCertificates(data))
         .catch(error => console.log(error))

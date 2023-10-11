@@ -1,17 +1,18 @@
-import React,{useState,useEffect} from "react";
+import React, { useState, useEffect } from "react";
 import './AdminTeacherList.css';
 
 function AdminTeacherList() {
+  const dbJson = "https://jsonserver-6gyk.onrender.com";
   const [teacher, setTeacher] = useState([]);
   const getTeacherList = () => {
-    fetch(" http://localhost:7000/Admin_Teacher")
+    fetch(`${dbJson}/Admin_Teacher`)
       .then(response => response.json())
       .then(data => setTeacher(data))
-      .catch(error => alert(error))
+      .catch(error => console.log(error))
   }
-  useEffect(()=>{
+  useEffect(() => {
     getTeacherList();
-  },[])
+  }, [])
 
   return (
     <div className="main_module">
@@ -41,7 +42,7 @@ function AdminTeacherList() {
             </tr>
           </thead>
           <tbody>
-          {
+            {
               teacher.map((record, key) => {
                 return (
                   <tr key={key}>

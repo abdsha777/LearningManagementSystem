@@ -2,9 +2,10 @@ import React, { useEffect, useState } from 'react'
 import './StudentVideo.css'
 
 function StudentVideo() {
+    const dbJson = "https://jsonserver-6gyk.onrender.com";
     const [video,setVideo]=useState([]);
     const getVideoList=()=>{
-        fetch("http://localhost:7000/video_details")
+        fetch(`${dbJson}/video_details`)
         .then(response=>response.json())
         .then(data=>setVideo(data[0]))
         .catch(error=>alert(error))
