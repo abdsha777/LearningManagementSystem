@@ -4,12 +4,12 @@ import {useNavigate} from 'react-router-dom'
 import jwt_decode from "jwt-decode";
 
 function AuthProvider({ children }) {
-    const [login,setLogin]=useState(true);
+    const [login,setLogin]=useState(false);
     const [role,setRole] = useState("teacher");
     const nav = useNavigate();
     const [token,setToken] = useState(null)
     const [user,setUser] = useState(null)
-
+    const backend = "https://lms-fh7w.onrender.com";
     async function loginUser(email,password){
         try {
             const init={
@@ -22,7 +22,7 @@ function AuthProvider({ children }) {
                     'Content-Type':'application/json'
                 }
             }
-            var res = await fetch("http://localhost:5000/auth/login/",init)
+            var res = await fetch(`${backend}/api/auth/login`,init)
             if (!res.ok) {
                 throw new Error('Login failed');
             }
