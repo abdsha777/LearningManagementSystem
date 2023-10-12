@@ -2,10 +2,13 @@ import React, { useState, useEffect } from "react";
 import './AdminTeacherList.css';
 
 function AdminTeacherList() {
-  const dbJson = "https://jsonserver-6gyk.onrender.com";
+  //const dbJson = "https://jsonserver-6gyk.onrender.com";
+
+  const endpoint = "http://localhost:7000/Teacher";
+
   const [teacher, setTeacher] = useState([]);
   const getTeacherList = () => {
-    fetch(`${dbJson}/Admin_Teacher`)
+    fetch(`${endpoint}/Admin_Teacher`)
       .then(response => response.json())
       .then(data => setTeacher(data))
       .catch(error => console.log(error))
