@@ -1,0 +1,122 @@
+.vt_module {
+  display: flex;
+  flex-direction: column;
+
+  gap: 20px;
+}
+
+.vt_head {
+
+  color: #323030;
+  font-family: Roboto;
+  font-size: 29px;
+  font-style: normal;
+  /* 100.428% */
+
+
+
+}
+
+/* subeading  */
+.con1 {
+  display: flex;
+  gap: 10px;
+}
+
+.vt_subheading1 {
+  color: #847E7E;
+  font-size: 16px;
+  font-style: normal;
+}
+
+.vit_subheading2 {
+  color: #323030;
+
+  font-size: 16px;
+  font-style: normal;
+}
+
+/* card */
+.con2 {
+  display: flex;
+  gap: 10px;
+  flex-direction: column;
+  max-width: 700px;
+  width: 100%;
+  min-width: 100%;
+  /* height: 252px; */
+  /* flex-shrink: 0; */
+  border-radius: 15px;
+  background: #FFF;
+  padding: 20px;
+
+  box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
+
+}
+
+.question {
+  display: flex;
+  gap: 10px;
+}
+
+.q {
+  color: #847E7E;
+
+  font-size: 16px;
+  font-style: normal;
+
+}
+
+.qsh {
+  color: #323030;
+
+  font-size: 16px;
+  font-style: normal;
+
+}
+
+.main-option {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  padding: 0px 25px;
+}
+
+.ans-btn {
+  display: flex;
+  gap: auto;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+}
+
+.cor-ans-div {
+  display: flex;
+
+  gap: 5px;
+
+  align-items: center;
+  text-align: center;
+}
+
+.cor {
+  color: #847E7E;
+
+  font-size: 12px;
+  font-style: normal;
+
+}
+
+.cor-ans {
+  color: #323030;
+  font-size: 12px;
+  font-style: normal;
+}
+
+@media only screen and (max-width: 500px) {
+  .ans-btn{
+    flex-direction: column;
+    gap: 10px;
+    align-items: start;
+  }
+}

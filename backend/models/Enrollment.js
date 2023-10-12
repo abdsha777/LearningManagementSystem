@@ -26,7 +26,8 @@ const enrollmentSchema = mongoose.Schema({
     },
     certificateId:{
         type: mongoose.SchemaTypes.ObjectId,
-        ref:'Certificate'
+        ref:'Certificate',
+        default:null
     }
 })
 

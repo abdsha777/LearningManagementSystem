@@ -1,0 +1,116 @@
+.module {
+  /* background-color: red; */
+  margin-top: 0%;
+  width: 650px;
+  display: grid;
+  grid-template-columns: 2fr 7fr;
+  grid-gap: 10px;
+  text-align: left;
+  font-size: 14px;
+  margin-bottom: 30px;
+}
+
+.module .heading {
+  margin-bottom: 10px;
+  font-size: 30px;
+  font-weight: bold;
+}
+
+.module h2 {
+  color: #868181;
+  font-style: normal;
+  font-size: 18px;
+}
+.module p {
+  color: #323030;
+  font-family: Inter;
+  font-size: 16px;
+}
+
+.button {
+  display: flex;
+  justify-content: space-between;
+  width: 650px;
+  margin-bottom: 30px;
+}
+.download-btn svg{
+  width: 30px;
+  height: 30px;
+}
+.notes-btn {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.notes-btn svg {
+  width: 30px;
+  height: 30px;
+}
+
+.box {
+  margin-top: 50px;
+  font-weight: bold;
+  display: flex;
+}
+
+.completed-box {
+  display: flex;
+  align-items: center;
+  padding: 20px 0;
+}
+
+.switch {
+  position: relative;
+  display: inline-block;
+  width: 80px;
+  height: 35px;
+  border-radius: 20px;
+  border: 2px solid #5ddcd6;
+  margin-left: 20px;
+}
+
+.switch::after {
+  content: "";
+  position: absolute;
+  top: 3px;
+  left: 5px;
+  width: 25px;
+  height: 25px;
+  border-radius: 50%;
+  background-color: #5ddcd6;
+  transition: 0.4s;
+}
+
+.completed-box input[type="checkbox"]:checked + .switch:after {
+  translate: 40px 0px;
+}
+
+.completed-box input[type="checkbox"]:checked + .switch {
+  background-color: #868181;
+  border: 2px solid #868181;
+  transition: 0.3s;
+}
+
+#toggle {
+  display: none;
+}
+
+@media only screen and (max-width: 900px) {
+  .module {
+    width: 100%;
+    grid-template-columns: 1fr;
+  }
+  .button {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    width: 100%;
+    gap: 10px;
+  }
+  .heading {
+    margin-bottom: 10px;
+    font-size: 18px;
+  }
+  .module .heading {
+    font-size: 24px;
+  }
+}

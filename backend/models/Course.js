@@ -15,7 +15,10 @@ const courseSchema = mongoose.Schema({
         type: mongoose.SchemaTypes.ObjectId,
         ref:'User'
     },
-    duration:Number,
+    duration:{
+        type:Number,
+        required:true
+    },
     courseImg:{
         type:String
     },
