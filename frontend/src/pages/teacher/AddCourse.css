@@ -4,11 +4,10 @@
     flex-direction: column;
 }
 .input-box {
-    padding: 10px 0px;
     display: flex;
     flex-direction: column;
     gap: 5px;
-    padding-left: 23px;
+    margin: 10px 0;
 }
 
 
@@ -35,11 +34,10 @@
 .input-box input {
     width: 290px;
     height: 40px;
-    border-radius: 18px;
     background: #d9d9d9;
 
     border: #a2a2a2 1px solid;
-    border-radius: 18px;
+    border-radius: 10px;
     padding: 10px 20px;
     transition: 0.4s background-color;
 }
@@ -59,15 +57,12 @@
 
 .input-box select {
     padding-left: 20px;
-
     width: 290px;
     height: 40px;
-    border-radius: 18px;
     background: #d9d9d9;
     border: #a2a2a2 1px solid;
-    border-radius: 18px;
+    border-radius: 10px;
     transition: 0.4s background-color;
-
 }
 
 .input-box select:focus {
@@ -86,10 +81,9 @@
 
     background: #d9d9d9;
     border: none;
-    border-radius: 18px;
     outline: none;
     border: #a2a2a2 1px solid;
-    border-radius: 18px;
+    border-radius: 10px;
     padding: 10px 20px;
     transition: 0.4s background-color;
 
@@ -107,7 +101,7 @@
     background-color: white;
     outline: none;
     border: #a2a2a2 1px solid;
-    border-radius: 18px;
+    border-radius: 10px;
 
 }
 
