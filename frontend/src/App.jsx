@@ -4,6 +4,7 @@ import './pages/teacher/TeacherCourseDetail.css'
 import './pages/teacher/TeacherUnitDetail.css'
 import './pages/teacher/TeacherDashboard.css'
 import './pages/teacher/TeacherStudentList.css'
+import './pages/teacher/AddCourse.css'
 //css end
 import { BrowserRouter, Routes, Route } from 'react-router-dom'
 import Layout from './components/layout/Layout'
@@ -32,6 +33,7 @@ import DoubtMessages from './components/chat/DoubtMessages'
 import AllDoubts from './components/chat/AllDoubts'
 import LandingPage from './components/landing/LandingPage'
 import AddCourse from './pages/teacher/AddCourse'
+import AdminAddStudent from './pages/admin/AdminAddStudent'
 
 
 function App() {
@@ -77,11 +79,15 @@ function App() {
                   <Route path='addCourse/' element={<AddCourse />} />
                   <Route path='courselist/' element={<TeacherCourseList />} />
                   <Route path='teacherstudentlist/' element={<TeacherStudentList />} />
+                  <Route path='teacherstudentlist/add/' element={<AdminAddStudent />} />
+                  <Route path='teacherstudentlist/update/:id/' element={<AdminAddStudent />} />
                 </Route>
                 <Route element={<AdminPrivateRoute />}>
                   <Route path='teacherlist/' element={<AdminTeacherList />} />
                   <Route path='adminStudentlist/' element={<AdminStudentList />} />
                   <Route path='adminCourselist/' element={<AdminCourseList/>} />
+                  <Route path='adminstudentlist/add/' element={<AdminAddStudent />} />
+                  <Route path='adminstudentlist/update/:id/' element={<AdminAddStudent />} />
                 </Route>
 
               </Route>
