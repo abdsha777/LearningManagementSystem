@@ -110,12 +110,12 @@
     display: flex;
     gap: 20px;
     align-items: center;
-    padding-left: 23px;
+    /* padding-left: 23px; */
 }
 .cancel_save {
     padding-top: 20px;
     display: flex;
     gap: 100px;
     align-items: center;
-    padding-left: 23px;
+    /* padding-left: 23px; */
 }
