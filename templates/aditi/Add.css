@@ -25,6 +25,7 @@
     display: flex;
     flex-direction: column;
     gap: 5px;
+    padding-left: 23px;
 
 }
 
@@ -186,6 +187,7 @@ textarea:focus {
     display: flex;
     gap: 20px;
     align-items: center;
+    padding-left: 23px;
 }
 
 /* cancel and save wala div */
@@ -194,6 +196,7 @@ textarea:focus {
     display: flex;
     gap: 100px;
     align-items: center;
+    padding-left: 23px;
 }
 
 /* bulk upload wala ka css */
