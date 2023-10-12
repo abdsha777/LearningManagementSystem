@@ -9,7 +9,8 @@ function AuthProvider({ children }) {
     const nav = useNavigate();
     const [token,setToken] = useState(null)
     const [user,setUser] = useState(null)
-    const backend = "https://lms-fh7w.onrender.com";
+    // const backend = "https://lms-fh7w.onrender.com";
+    const backend = "http://localhost:5000";
     async function loginUser(email,password){
         try {
             const init={

@@ -31,6 +31,7 @@ import TeacherStudentProfile from './pages/teacher/TeacherStudentProfile'
 import DoubtMessages from './components/chat/DoubtMessages'
 import AllDoubts from './components/chat/AllDoubts'
 import LandingPage from './components/landing/LandingPage'
+import AddCourse from './pages/teacher/AddCourse'
 
 
 function App() {
@@ -73,6 +74,7 @@ function App() {
                 </Route>
 
                 <Route element={<TeacherPrivateRoute />}>
+                  <Route path='addCourse/' element={<AddCourse />} />
                   <Route path='courselist/' element={<TeacherCourseList />} />
                   <Route path='teacherstudentlist/' element={<TeacherStudentList />} />
                 </Route>
