@@ -1,0 +1,380 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: "roboto", sans-serif;
+}
+
+.add {
+    display: flex;
+    gap: 15px;
+    flex-direction: column;
+}
+
+
+.heading {
+    padding-bottom: 20px;
+}
+
+.subheading {
+    padding-bottom: 15px;
+}
+
+.input-box {
+    padding: 10px 0px;
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+    padding-left: 23px;
+
+}
+
+.input-box span {
+    resize: none;
+}
+
+label {
+    color: black;
+    font-size: 18px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: 29.12px;
+}
+
+p {
+    color: black;
+    font-size: 18px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: 29.12px;
+}
+
+input {
+    width: 290px;
+    height: 40px;
+    border-radius: 18px;
+    background: #d9d9d9;
+
+    border: #a2a2a2 1px solid;
+    border-radius: 18px;
+    padding: 10px 20px;
+    transition: 0.4s background-color;
+}
+
+input:focus {
+    background-color: white;
+
+    padding-left: 20px;
+    outline: none;
+}
+
+
+:placeholder-shown {
+    color: #999292;
+    padding-left: 20px;
+}
+
+select {
+    padding-left: 20px;
+
+    width: 290px;
+    height: 40px;
+    border-radius: 18px;
+    background: #d9d9d9;
+    border: #a2a2a2 1px solid;
+    border-radius: 18px;
+    transition: 0.4s background-color;
+
+}
+
+select:focus {
+    background-color: white;
+
+    padding-left: 20px;
+    outline: none;
+}
+
+/* option:focus{
+    padding-bottom: 5px;
+}  in progress*/
+textarea {
+    width: 500px;
+    height: 70px;
+
+    background: #d9d9d9;
+    border: none;
+    border-radius: 18px;
+    outline: none;
+    border: #a2a2a2 1px solid;
+    border-radius: 18px;
+    padding: 10px 20px;
+    transition: 0.4s background-color;
+
+}
+
+textarea::placeholder {
+    color: #999292;
+    padding-top: 10px;
+
+}
+
+textarea:focus {
+    padding-top: 15px;
+    padding-left: 20px;
+    background-color: white;
+    outline: none;
+    border: #a2a2a2 1px solid;
+    border-radius: 18px;
+
+}
+
+/* button style */
+.btn {
+    padding: 15px 20px;
+    border-radius: 10px;
+    width: 140px;
+    height: 40px;
+    background-color: white;
+    font-size: 15px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #323030;
+    font-style: normal;
+    font-weight: 400;
+
+}
+
+.btn-border-blue {
+    border: 1px solid #5DDCD6;
+    transition: 0.5s background-color;
+}
+
+.btn-border-blue:hover {
+    background-color: #5DDCD6;
+    color: white;
+}
+
+.btn-border {
+    border: 1px solid #868181;
+}
+
+.cancel-btn {
+    transition: 0.2s border;
+    transition: 0.3s color;
+}
+
+.cancel-btn:hover {
+    color: red;
+    border: 1px solid red;
+}
+
+.btn-filled {
+    background-color: #5DDCD6;
+    border: 0;
+    color: white;
+    font-weight: 500;
+    transition: 0.3s background-color;
+}
+
+.btn-filled:hover {
+    background-color: #5ddc90;
+}
+
+/* add new module wala div */
+.module_btn {
+    padding-top: 20px;
+    display: flex;
+    gap: 20px;
+    align-items: center;
+    padding-left: 23px;
+}
+
+/* cancel and save wala div */
+.cancel_save {
+    padding-top: 20px;
+    display: flex;
+    gap: 100px;
+    align-items: center;
+    padding-left: 23px;
+}
+
+/* bulk upload wala ka css */
+
+
+
+
+
+.bulkUploadContainer {
+    /* border: 2px dashed darkblue; */
+    /* justify-content: center;    */
+    display: flex;
+
+}
+
+.input {
+    position: absolute;
+    width: 270px;
+    height: 70px;
+    border-radius: 18px;
+    opacity: 0;
+    border: 2px dashed gold;
+
+}
+
+.parent {
+    /* border: 2px solid red; */
+    width: 270px;
+    height: 70px;
+    position: relative;
+    justify-content: center;
+}
+
+.label {
+
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    color: #000000;
+    font-family: Roboto;
+    font-size: 18px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: 29.124px;
+    text-align: center;
+
+    border-radius: 18px;
+    background: #D9D9D9;
+    margin-top: 10px;
+    border: #a2a2a2 1px solid;
+    border-radius: 18px;
+
+}
+
+.ip {
+    border: 2px solid rgb(0, 0, 0);
+    width: 270px;
+    height: 70px;
+}
+
+.text {
+    color: #999292 !important;
+    padding-bottom: 20px;
+    padding-right: 15px;
+
+}
+
+.uploadImgLogo {
+    /* border: 2px solid black; */
+    height: 100px;
+    width: 100%;
+    margin-top: 0;
+}
+
+
+
+/* test page ka csss */
+
+.test_option_feilds {
+    padding: 20px;
+}
+
+.question {
+    color: #000;
+
+    font-size: 18px;
+    font-style: normal;
+    padding: 10px 0px;
+    display: flex;
+    gap: 10px;
+    align-items: center;
+
+
+
+}
+
+input[type=number] {
+    width: 70px;
+    height: 40px;
+    border-radius: 18px;
+    background: #d9d9d9;
+
+    border: #a2a2a2 1px solid;
+    border-radius: 18px;
+    padding: 10px 20px;
+    transition: 0.4s background-color;
+}
+
+
+
+/* MODULE PAGE KA CSS 
+ */
+
+.con-ntv {
+    padding: 10px 0px;
+    display: flex;
+
+    gap: 10px;
+}
+
+
+/* video page ka css  */
+.module_components {
+    padding: 0px 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.btn2 {
+
+    padding: 15px 20px;
+    border-radius: 10px;
+    width: 220px;
+    height: 40px;
+    background-color: white;
+    font-size: 15px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #323030;
+    font-style: normal;
+    font-weight: 400;
+
+
+}
+
+/* updates notes ka css 
+  */
+
+.input-box3 {
+    padding: 10px;
+    align-items: center;
+    height: 200px;
+    width: 300px;
+    background-color: white;
+    border-radius: 15px;
+}
+
+.cancel_save3 {
+    padding-top: 20px;
+    display: flex;
+    gap: 60px;
+    align-items: center;
+}
+
+.btn3 {
+    padding: 15px 20px;
+    border-radius: 10px;
+    width: 100px;
+    height: 40px;
+    background-color: white;
+    font-size: 15px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #323030;
+    font-style: normal;
+    font-weight: 400;
+
+}

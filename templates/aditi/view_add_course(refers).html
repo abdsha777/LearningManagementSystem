@@ -1,0 +1,261 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="Add.css">
+    <style>
+    </style>
+</head>
+
+<body>
+    <form action="">
+        <div class="add">
+            <div class="main">
+                <div class="heading">
+                    <h1>Add New Course</h1>
+                </div>
+
+                <div class="add_form">
+                    <div class="input-box">
+                        <!-- add new user -->
+                        <label for="cname">Course Name</label>
+                        <input type="text" id="cname" placeholder="Name">
+
+
+                    </div>
+
+                    <div class="input-box">
+                        <!-- Duration -->
+                        <label for="duration">Duration</label>
+                        <input type="number" id="duration" placeholder="Duration">
+
+
+                    </div>
+
+                    <div class="input-box">
+                        <!-- Faculty -->
+                        <p>Faculty</p>
+                        <select name="" id="">
+                            <option value="">Arts</option>
+                            <option value="">Scince</option>
+                            <option value="">commerce</option>
+                        </select>
+
+                    </div>
+
+                    <div class="input-box">
+                        <!-- Category -->
+                        <p>Category</p>
+                        <select name="" id="">
+                            <option value="">Full Stack Developer</option>
+                            <option value="">Physicology</option>
+                            <option value="">Business Understanding</option>
+                        </select>
+                    </div>
+
+                    <div class="input-box">
+                        <!-- Description -->
+                        <label for="desc">Description</label>
+                        <textarea placeholder="enter Description"></textarea>
+
+                    </div>
+
+                    <div class="input-box">
+                        <!-- Upload -->
+                        <p>Update Course Image/Thumbail OF course</p>
+                        <div clas='bulkUploadContainer'>
+                            <div class="parent">
+                                <div class="input">
+                                    <input type="file" class="ip" id="fileip" />
+                                </div>
+                                <div class="label" for="fileip">
+                                    <label for="fileip">
+                                        <img src={uiLogo} alt="" className="uploadImgLogo" />
+                                        <p class="text">
+                                            click to uplaod
+                                        </p>
+                                    </label>
+                                </div>
+                            </div>
+                        </div>
+
+
+                    </div>
+
+                </div>
+
+                <div class="module_btn">
+                    <!-- to aadd new module -->
+                    <p> Module:</p>
+                    <button class="btn btn-border-blue">+ Add Module</button>
+                </div>
+
+            </div>
+
+            <div class="add_module_block">
+                <div class="add_mod">
+                    <!-- heading of module  -->
+                    <h2 class="subheading">Module No 1</h2>
+
+                    <!-- module name  -->
+                    <div class="input-box">
+                        <label for="name">Module Name</label>
+                        <input type="text" id="mname" placeholder="Enter Module Name">
+                    </div>
+
+                    <!-- Duration -->
+                    <div class="input-box">
+                        <label for="duration">Duration</label>
+                        <input type="number" id="duration" placeholder="Duration">
+                    </div>
+
+                    <!-- Description -->
+                    <div class="input-box">
+
+                        <label for="desc">Description</label>
+                        <textarea placeholder="enter Description"></textarea>
+
+                    </div>
+                    <!-- add components (notes,videos,test)  -->
+
+                    <div class="con-ntv">
+                        <!-- Add video  -->
+                        <button class="btn btn-border-blue">+ Add Video</button>
+
+                        <!-- Add notes  -->
+                        <button class="btn btn-border-blue">+ Add Notes</button>
+
+                        <!-- Add Test  -->
+                        <button class="btn btn-border-blue">+ Add test</button>
+                    </div>
+                    <div class="module_components">
+                        <div class="add_video">
+
+                            <h2 class="subheading">Video No 1</h2>
+
+                            <!-- video name  -->
+                            <div class="input-box">
+                                <label for="vname">Video Name</label>
+                                <input type="text" id="vname" placeholder="Enter Video Name">
+                            </div>
+
+                            <!-- url -->
+                            <div class="input-box">
+                                <label for="lname">Link (Url) </label>
+                                <input type="text" id="lname" placeholder="Enter Link / Url">
+                            </div>
+
+
+
+                            <!-- Description -->
+                            <div class="input-box">
+
+                                <label for="desc">Description</label>
+                                <textarea placeholder="enter Description"></textarea>
+
+                            </div>
+
+
+                            <!-- Add video  -->
+                            <button class="btn2 btn-border-blue">+ Add one more Video</button>
+                        </div>
+                        <!-- add notes  -->
+                        <div class="input-box">
+                            <!-- Upload -->
+                            <p>Add Notes</p>
+                            <div clas='bulkUploadContainer'>
+                                <div class="parent">
+                                    <div class="input">
+                                        <input type="file" class="ip" id="fileip" />
+                                    </div>
+                                    <div class="label" for="fileip">
+                                        <label for="fileip">
+                                            <img src={uiLogo} alt="" className="uploadImgLogo" />
+                                            <p class="text">
+                                                click to uplaod
+                                            </p>
+                                        </label>
+                                    </div>
+                                </div>
+                            </div>
+
+
+                        </div>
+
+                        <div class="m-test">
+                            <h2 class="heading">Test Form</h2>
+                    
+                    
+                            <!-- test name  -->
+                            <div class="input-box">
+                                <p>Test Name</p>
+                                <input type="text" name="" id="" placeholder="Enter Course Name">
+                            </div>
+                    
+                              <!-- questions  -->
+                              <div class="question">
+                                <p>How many questions you want?: </p>
+                                <input type="number" name="" id="" placeholder="">
+                            </div>
+                    
+                    
+                            <div class="input-box">
+                                <p>Q.1</p>
+                                <input type="text" name="" id="" placeholder="Question">
+                            </div>
+                    
+                    
+                    
+                                  <!-- options ka html start here  -->
+                    
+                            <div class="test_option_feilds">
+                                <div class="input-box">
+                                    <p>Option 1:</p>
+                                    <input type="text" name="" id="" placeholder="Enter option 1">
+                                </div>
+                                <div class="input-box">
+                                    <p>Option 2:</p>
+                                    <input type="text" name="" id="" placeholder="Enter option 2">
+                                </div>
+                                <div class="input-box">
+                                    <p>Option 3:</p>
+                                    <input type="text" name="" id="" placeholder="Enter option 3">
+                                </div>
+                                <div class="input-box">
+                                    <p>Option 4:</p>
+                                    <input type="text" name="" id="" placeholder="Enter option 4">
+                                </div>
+                                <!-- correct option  -->
+                                <div class="input-box">
+                                    <p>Correct Option:</p>
+                                    <input type="text" name="" id="" placeholder="Enter option">
+                                </div>
+                            </div>
+                    
+                            <!-- add one more question  -->
+                            <button class="btn2 btn-border-blue">+ Add one more Question</button>
+                        </div>
+                    </div>
+
+
+
+
+
+                </div>
+            </div>
+            <div class="cancel_save">
+                <!-- cancel-save -->
+                <button class="btn btn-border cancel-btn">Cancel</button>
+
+                <button class="btn btn-filled">Save</button>
+
+            </div>
+        </div>
+
+    </form>
+</body>
+
+</html>
