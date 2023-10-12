@@ -1,18 +1,25 @@
 import React, { useState, useEffect } from 'react'
 import './AdminStudentList.css'
+import { Link } from 'react-router-dom';
 
 function AdminStudentList() {
+<<<<<<< HEAD
   const dbJson = "https://jsonserver-6gyk.onrender.com";
 
   
 
+=======
+  // const dbJson = "https://jsonserver-6gyk.onrender.com";
+  const dbJson = "http://localhost:7000";
+>>>>>>> f71c557df709328323e8261dc13522b0cb81d987
   const [student, setStudent] = useState([]);
   const getStudentList = () => {
     fetch(`${db.json}/Admin_Teacher_student`)
       .then(response => response.json())
       .then(data => setStudent(data))
-      .catch(error => alert(error))
+      .catch(error => console.log(error))
   }
+<<<<<<< HEAD
 
   
 useEffect(() => {
@@ -22,6 +29,19 @@ useEffect(() => {
 return (
   <div className="main_module">
     <p className="heading">Students List</p>
+=======
+  useEffect(()=>{
+    getStudentList();
+  },[])
+  return (
+    <div className="main_module">
+      <h1>Students List</h1>
+
+      <div className="module2">
+        <button className="btn btn-border-blue"><Link to={"add/"}>+ Add Students</Link></button>
+        <button className="btn btn-border-blue">Bulk Upload</button>
+      </div>
+>>>>>>> f71c557df709328323e8261dc13522b0cb81d987
 
     <div className="module2">
       <button className="btn btn-border-blue">+ Add Students</button>

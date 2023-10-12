@@ -1,23 +1,25 @@
 import React,{useState,useEffect} from 'react'
+import { Link } from 'react-router-dom';
 
 function TeacherStudentList() {
-    const dbJson = "https://jsonserver-6gyk.onrender.com";
+    // const dbJson = "https://jsonserver-6gyk.onrender.com";
+    const dbJson = "http://localhost:7000";
     const [student, setStudent] = useState([]);
   const getStudentList = () => {
     fetch(`${dbJson}/Admin_Teacher_student`)
       .then(response => response.json())
       .then(data => setStudent(data))
-      .catch(error => alert(error))
+      .catch(error => console.log(error))
   }
   useEffect(()=>{
     getStudentList();
   },[])
   return (
     <div className="main_module">
-      <p className="heading">Students List</p>
+      <h1>Students List</h1>
 
       <div className="module2">
-        <button className="btn btn-border-blue">+ Add Students</button>
+        <button className="btn btn-border-blue"><Link to={"add/"}>+ Add Students</Link></button>
         <button className="btn btn-border-blue">Bulk Upload</button>
       </div>
 
