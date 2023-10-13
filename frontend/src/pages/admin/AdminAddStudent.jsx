@@ -1,6 +1,41 @@
-import React from 'react'
+import React, { useState } from 'react'
+
 
 function AdminAddStudent() {
+
+    const endpoint = "http://localhost:7000/Admin_Teacher_student";
+    const [student, setStudent] = useState([]);
+    const getStudentList = () => {
+        fetch(`${endpoint}`)
+            .then(response => response.json())
+            .then(data => setStudent(data))
+            .catch(error => console.log(error))
+    }
+
+    const Add = () => {
+        const [student, setStudent] = useState({});
+
+        const handleInputChange = (event) => {
+            const { name, value } = event.target;
+
+            setStudent((prevstudent) => ({
+                ...prevstudent,
+                [name]: value,
+            }));
+        };
+
+        const addRecord = (event) => {
+            event.preventDefault();
+            fetch(`${endpoint}`, {
+                method: "POST"
+            })
+
+                .then(response => response.json())
+                .then(data => setStudent(data))
+                .catch(error => console.log(error))
+        }
+    }
+
     return (
         <div>
             <div className="main">
@@ -11,7 +46,9 @@ function AdminAddStudent() {
                 <div className="add_form">
                     <div className="input-box">
                         <label htmlFor="cname">Student Name</label>
-                        <input type="text" id="cname" placeholder="Name" />
+                        <input type="text" id="cname" placeholder="Name" value={student.name} onChange={() => {
+                            handleInputChange(event)
+                        }} />
                     </div>
                     <div className="input-box">
                         <p>Faculty</p>
@@ -24,7 +61,9 @@ function AdminAddStudent() {
                     </div>
                     <div className="input-box">
                         <label htmlFor="cname">Year</label>
-                        <input type="text" id="cname" placeholder="Year" />
+                        <input type="text" id="cname" placeholder="Year" value={student.name} onChange={() => {
+                            handleInputChange(event)
+                        }} />
                     </div>
 
                 </div>

@@ -27,13 +27,13 @@ import StudentSearchCourse from './pages/student/StudentSearchCourse'
 import AdminPrivateRoute from './components/private/AdminPrivateRoute'
 import AdminTeacherList from './pages/admin/AdminTeacherList'
 import AdminStudentList from './pages/admin/AdminStudentList'
+import AdminAddStudent from './pages/admin/AdminAddStudent'
 import AdminCourseList from './pages/admin/AdminCourseList'
 import TeacherStudentProfile from './pages/teacher/TeacherStudentProfile'
 import DoubtMessages from './components/chat/DoubtMessages'
 import AllDoubts from './components/chat/AllDoubts'
 import LandingPage from './components/landing/LandingPage'
 import AddCourse from './pages/teacher/AddCourse'
-import AdminAddStudent from './pages/admin/AdminAddStudent'
 
 
 function App() {
