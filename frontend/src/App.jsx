@@ -80,15 +80,15 @@ function App() {
                   <Route path='addCourse/' element={<AddCourse />} />
                   <Route path='courselist/' element={<TeacherCourseList />} />
                   <Route path='teacherstudentlist/' element={<TeacherStudentList />} />
-                  <Route path='teacherstudentlist/add/' element={<AdminAddStudent />} />
-                  <Route path='teacherstudentlist/update/:id/' element={<AdminAddStudent />} />
+                  <Route path='teacherStudentList/add/' element={<AdminAddStudent />} />
+                  <Route path='teacherStudentList/update/:id/' element={<AdminAddStudent />} />
                 </Route>
                 <Route element={<AdminPrivateRoute />}>
                   <Route path='teacherlist/' element={<AdminTeacherList />} />
-                  <Route path='adminStudentlist/' element={<AdminStudentList />} />
+                  <Route path='adminStudentList/' element={<AdminStudentList />} />
                   <Route path='adminCourselist/' element={<AdminCourseList/>} />
-                  <Route path='adminstudentlist/add/' element={<AdminAddStudent />} />
-                  <Route path='adminstudentlist/update/:id/' element={<AdminAddStudent />} />
+                  <Route path='adminStudentList/add/' element={<AdminAddStudent />} />
+                  <Route path='adminStudentList/update/:id/' element={<AdminAddStudent />} />
                   <Route path='teacherlist/add/' element={<AdminAddTeacher />} />
                   <Route path='teacherlist/update/:id/' element={<AdminAddTeacher />} />
                 </Route>

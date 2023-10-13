@@ -484,13 +484,32 @@
     {
       "name": "abdulla",
       "faculty": "science",
-      "year": "ttyyybbca",
+      "year": "ACBYT",
       "id": 136724
     },
     {
-      "name": "y",
-      "year": "tt",
-      "id": 136725
+      "name": "afiyaaaaaaa",
+      "year": "pybca",
+      "id": 136725,
+      "faculty": "science"
+    },
+    {
+      "name": "ayeshaaaaaaaaaa",
+      "faculty": "arts",
+      "year": "oybca",
+      "id": 136726
+    },
+    {
+      "name": "testing",
+      "faculty": "arts",
+      "year": "2nd",
+      "id": 136727
+    },
+    {
+      "name": "test2",
+      "faculty": "commerce",
+      "year": "Tybca",
+      "id": 136728
     }
   ],
   "Admin_Teacher": [

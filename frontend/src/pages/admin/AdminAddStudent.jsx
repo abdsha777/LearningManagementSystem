@@ -1,11 +1,14 @@
-import React, { useEffect, useState } from "react";
+import React, { useContext, useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import { useNavigate } from "react-router-dom";
+import AuthContext from "../../context/AuthContext";
 function AdminAddStudent() {
   const endpoint = "http://localhost:7000";
   const [student, setStudent] = useState({});
   const { id } = useParams();
+  const { role } = useContext(AuthContext);
   const nav = useNavigate();
+  const navPath = role=="admin"?"/adminStudentlist":"/teacherStudentlist";
   const getStudentList = () => {
     fetch(`${endpoint}/Admin_Teacher_student/` + id)
       .then((response) => response.json())
@@ -28,8 +31,7 @@ function AdminAddStudent() {
     }
     fetch(`${endpoint}/Admin_Teacher_student/` + id, init)
     .then((response) => response.json())
-    .then((data) => nav("/adminStudentlist"))
-    // .then((data) => console.log(data))
+    .then((data) => nav(navPath))
     .catch((err) => console.log(err));
   }
   function addStudent() {
@@ -42,8 +44,7 @@ function AdminAddStudent() {
     }
     fetch(`${endpoint}/Admin_Teacher_student/`, init)
     .then((response) => response.json())
-    .then((data) => nav("/adminStudentlist"))
-    // .then((data) => console.log(data))
+    .then((data) => nav(navPath))
     .catch((err) => console.log(err));
   }
 
