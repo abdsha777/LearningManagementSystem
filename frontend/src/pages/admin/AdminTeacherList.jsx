@@ -4,7 +4,9 @@ import { Link } from "react-router-dom";
 
 function AdminTeacherList() {
   // const dbJson = "https://jsonserver-6gyk.onrender.com";
-  const dbJson = "http://localhost:7000";
+
+  const endpoint = "http://localhost:7000/Admin_Teacher";
+  
   const [teacher, setTeacher] = useState([]);
   const getTeacherList = () => {
     fetch(`${endpoint}/Admin_Teacher`)
