@@ -34,6 +34,7 @@ import AllDoubts from './components/chat/AllDoubts'
 import LandingPage from './components/landing/LandingPage'
 import AddCourse from './pages/teacher/AddCourse'
 import AdminAddStudent from './pages/admin/AdminAddStudent'
+import AdminAddTeacher from './pages/admin/AdminAddTeacher'
 
 
 function App() {
@@ -88,6 +89,8 @@ function App() {
                   <Route path='adminCourselist/' element={<AdminCourseList/>} />
                   <Route path='adminstudentlist/add/' element={<AdminAddStudent />} />
                   <Route path='adminstudentlist/update/:id/' element={<AdminAddStudent />} />
+                  <Route path='teacherlist/add/' element={<AdminAddTeacher />} />
+                  <Route path='teacherlist/update/:id/' element={<AdminAddTeacher />} />
                 </Route>
 
               </Route>

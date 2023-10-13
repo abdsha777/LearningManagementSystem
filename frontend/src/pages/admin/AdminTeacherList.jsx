@@ -1,8 +1,10 @@
 import React, { useState, useEffect } from "react";
 import './AdminTeacherList.css';
+import { Link } from "react-router-dom";
 
 function AdminTeacherList() {
-  const dbJson = "https://jsonserver-6gyk.onrender.com";
+  // const dbJson = "https://jsonserver-6gyk.onrender.com";
+  const dbJson = "http://localhost:7000";
   const [teacher, setTeacher] = useState([]);
   const getTeacherList = () => {
     fetch(`${dbJson}/Admin_Teacher`)
@@ -18,7 +20,7 @@ function AdminTeacherList() {
     <div className="main_module">
       <p className="heading">Teachers List</p>
       <div className="module2">
-        <button className="btn btn-border-blue">+ Add Teachers</button>
+        <Link to={"add/"}className="btn btn-border-blue">+ Add Teacher</Link>
         <button className="btn btn-border-blue">Bulk Upload</button>
       </div>
       <div className="sub_heading">
