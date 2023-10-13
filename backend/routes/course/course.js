@@ -66,7 +66,7 @@ router.post('/create/', fetchuser, isAdminOrTeacher, [
     }
 })
 
-router.get('/mycourse/', fetchuser,isAdminOrTeacher ,async (req, res) => {
+router.get('/teachermycourse/', fetchuser,isAdminOrTeacher ,async (req, res) => {
     try {
         const searchTitle = req.query.title || '';
 
