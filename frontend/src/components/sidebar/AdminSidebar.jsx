@@ -112,7 +112,7 @@ function AdminSidebar() {
             />
           </g>
         </svg>
-        My Course List
+        Course List
       </NavLink>
       <Link to=".." className="sidebar-links">
         &larr; GO BACK

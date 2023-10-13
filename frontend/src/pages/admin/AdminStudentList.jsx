@@ -17,7 +17,7 @@ function AdminStudentList() {
   },[])
   return (
     <div className="main_module">
-      <h1>Students List</h1>
+      <h1 className="list-heading">Students List</h1>
 
       <div className="module2">
         <button className="btn btn-border-blue"><Link to={"add/"}>+ Add Students</Link></button>
@@ -64,7 +64,7 @@ function AdminStudentList() {
                     <td>{record.ongoing}</td>
                     <td>{record.completed}</td>
                     <td>
-                      <button>Update</button>
+                      <Link to={'update/'+record.id} ><button>Update</button></Link>
                     </td>
                     <td>
                       <button>View</button>
