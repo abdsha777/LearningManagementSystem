@@ -20,6 +20,10 @@ app.use('/api/users', require('./routes/users/users.js'))
 app.use('/api/course', require('./routes/course/course.js'))
 // enroll
 app.use('/api/enroll', require('./routes/enrollment/enrollment.js'))
+// overview
+app.use('/api/overview/admin', require('./routes/overview/adminOverview.js'))
+app.use('/api/overview/teacher', require('./routes/overview/teacherOverview.js'))
+app.use('/api/overview/student', require('./routes/overview/StudentOverview.js'))
 
 app.listen(port, () => {
     console.log(`express running on http://localhost:${port}`)
@@ -39,6 +43,16 @@ app.get('/',(req,res)=>{
         },
         enrollment:{
             enroll:"http://localhost:5000/api/enroll/"
+        },
+        course:{
+            allCourse:"http://localhost:5000/api/course/",
+            CreateCourse:"http://localhost:5000/api/course/create/",
+            teacherMyCourse:"http://localhost:5000/api/course/teachermycourse/ (teacher)",
+        },
+        overview:{
+            admin:"http://localhost:5000/api/overview/admin/ (admin)",
+            teacher:"http://localhost:5000/api/overview/teacher/ (teacher)",
+            student:"http://localhost:5000/api/overview/teacher/",
         }
     })
 })
