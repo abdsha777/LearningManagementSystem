@@ -1,4 +1,5 @@
-import React from 'react'
+import React, { useEffect, useState } from 'react'
+import { useNavigate, useParams } from 'react-router-dom';
 
 function AdminAddTeacher() {
     const endpoint = "http://localhost:7000";
@@ -27,7 +28,7 @@ function AdminAddTeacher() {
         }
         fetch(`${endpoint}/Admin_Teacher/` + id, init)
             .then((response) => response.json())
-            .then((data) => nav("/adminTeacherlist"))
+            .then((data) => nav("/teacherlist"))
             // .then((data) => console.log(data))
             .catch((err) => console.log(err));
     }
@@ -41,7 +42,7 @@ function AdminAddTeacher() {
         }
         fetch(`${endpoint}/Admin_Teacher/`, init)
             .then((response) => response.json())
-            .then((data) => nav("/adminTeacherlist"))
+            .then((data) => nav("/teacherlist"))
             // .then((data) => console.log(data))
             .catch((err) => console.log(err));
     }
@@ -60,11 +61,11 @@ function AdminAddTeacher() {
                 <div className="add_form">
                     <div className="input-box">
                         <label htmlFor="cname">Teacher Name</label>
-                        <input type="text" id="cname" placeholder="name" value={teacher.name || ""} onChange={handleChange} />
+                        <input type="text" id="cname" placeholder="name" name='name' value={teacher.name || ""} onChange={handleChange} />
                     </div>
                     <div className="input-box">
                         <label htmlFor="faculty">Faculty</label>
-                        <input type="text" id="faculty" placeholder="faculty" value={teacher.faculty || ""} onChange={handleChange} />
+                        <input type="text" id="faculty" placeholder="faculty" name='faculty' value={teacher.faculty || ""} onChange={handleChange} />
                     </div>
                 </div>
 
@@ -82,11 +83,9 @@ function AdminAddTeacher() {
                     id ? (
                         <button className="btn btn-filled" onClick={updateTeacher}>Update</button>
                     ) : (
-                        <button className="btn btn-filled" onClick={addTeacher}>Update</button>
+                        <button className="btn btn-filled" onClick={addTeacher}>Add</button>
                     )
                 }
-
-                <button className="btn btn-filled">Save</button>
 
             </div>
         </div >

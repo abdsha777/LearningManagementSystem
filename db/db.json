@@ -526,6 +526,16 @@
       "faculty": "BCA(Sci)",
       "no_of_course": 5,
       "status": "Active"
+    },
+    {
+      "name": "aa",
+      "faculty": "aa",
+      "id": 134659
+    },
+    {
+      "name": "aa",
+      "faculty": "aaa",
+      "id": 134660
     }
   ],
   "Admin_overview": [
