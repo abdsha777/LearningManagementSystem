@@ -16,7 +16,7 @@ function AdminCourseList() {
     },[])
     return (
         <div className="main_module">
-            <p className="heading">Course List</p>
+            <h1 className="list-heading">Course List</h1>
 
             <div className="sub_heading">
                 <input type="text" placeholder="Search Courses" />

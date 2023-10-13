@@ -17,7 +17,7 @@ function AdminStudentList() {
   },[])
   return (
     <div className="main_module">
-      <h1>Students List</h1>
+      <h1 className="list-heading">Students List</h1>
 
       <div className="module2">
         <button className="btn btn-border-blue"><Link to={"add/"}>+ Add Students</Link></button>

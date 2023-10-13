@@ -18,7 +18,7 @@ function AdminTeacherList() {
 
   return (
     <div className="main_module">
-      <p className="heading">Teachers List</p>
+      <h1 className="list-heading">Teachers List</h1>
       <div className="module2">
         <Link to={"add/"}className="btn btn-border-blue">+ Add Teacher</Link>
         <button className="btn btn-border-blue">Bulk Upload</button>
