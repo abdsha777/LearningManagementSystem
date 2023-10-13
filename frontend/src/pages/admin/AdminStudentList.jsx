@@ -64,7 +64,7 @@ function AdminStudentList() {
                     <td>{record.ongoing}</td>
                     <td>{record.completed}</td>
                     <td>
-                      <button>Update</button>
+                      <Link to={'update/'+record.id} ><button>Update</button></Link>
                     </td>
                     <td>
                       <button>View</button>
