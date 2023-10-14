@@ -4,6 +4,7 @@ import './pages/teacher/TeacherCourseDetail.css'
 import './pages/teacher/TeacherUnitDetail.css'
 import './pages/teacher/TeacherDashboard.css'
 import './pages/teacher/TeacherStudentList.css'
+import './pages/teacher/AddCourse.css'
 //css end
 import { BrowserRouter, Routes, Route } from 'react-router-dom'
 import Layout from './components/layout/Layout'
@@ -31,6 +32,9 @@ import TeacherStudentProfile from './pages/teacher/TeacherStudentProfile'
 import DoubtMessages from './components/chat/DoubtMessages'
 import AllDoubts from './components/chat/AllDoubts'
 import LandingPage from './components/landing/LandingPage'
+import AddCourse from './pages/teacher/AddCourse'
+import AdminAddStudent from './pages/admin/AdminAddStudent'
+import AdminAddTeacher from './pages/admin/AdminAddTeacher'
 
 
 function App() {
@@ -73,13 +77,20 @@ function App() {
                 </Route>
 
                 <Route element={<TeacherPrivateRoute />}>
+                  <Route path='addCourse/' element={<AddCourse />} />
                   <Route path='courselist/' element={<TeacherCourseList />} />
                   <Route path='teacherstudentlist/' element={<TeacherStudentList />} />
+                  <Route path='teacherStudentList/add/' element={<AdminAddStudent />} />
+                  <Route path='teacherStudentList/update/:id/' element={<AdminAddStudent />} />
                 </Route>
                 <Route element={<AdminPrivateRoute />}>
                   <Route path='teacherlist/' element={<AdminTeacherList />} />
-                  <Route path='adminStudentlist/' element={<AdminStudentList />} />
+                  <Route path='adminStudentList/' element={<AdminStudentList />} />
                   <Route path='adminCourselist/' element={<AdminCourseList/>} />
+                  <Route path='adminStudentList/add/' element={<AdminAddStudent />} />
+                  <Route path='adminStudentList/update/:id/' element={<AdminAddStudent />} />
+                  <Route path='teacherlist/add/' element={<AdminAddTeacher />} />
+                  <Route path='teacherlist/update/:id/' element={<AdminAddTeacher />} />
                 </Route>
 
               </Route>

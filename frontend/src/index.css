@@ -233,9 +233,12 @@ nav{
     font-weight: 400;
     min-width: 150px;
     min-height: 45px;
-    
+    text-decoration: none;
 }
-
+.btn a{
+    text-decoration: none;
+    color: #323030;
+}
 .btn-border-blue {
     border: 1px solid #5DDCD6;
     transition: 0.5s background-color;
@@ -243,6 +246,9 @@ nav{
 
 .btn-border-blue:hover {
     background-color: #5DDCD6;
+    color: white;
+}
+.btn-border-blue:hover >a{
     color: white;
 }
 
@@ -424,18 +430,19 @@ nav{
 
 .video-img{
     border-radius: 10px;
-    max-height: 150px;
+    /* max-height: 150px; */
     overflow: hidden;
     width: 100%;
     display: flex;
     justify-content: center;
     position: relative;
-    min-height: 200px;
+    /* min-height: 200px; */
     /* background-image: url('./assets/image.jpg'); */
     margin-bottom: 10px;
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
+    aspect-ratio: 16/9;
 }
 
 .video-box {

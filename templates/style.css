@@ -184,7 +184,7 @@ main {
 
 /* form goes here */
 
-.form h1 {
+/*.form h1 {
     font-size: 30px;
     color: #323030;
     font-style: normal;
@@ -387,4 +387,80 @@ main {
     .menu {
         padding: 10px 0;
     }
+}
+
+
+.form h1 {
+    font-size: 30px;
+    color: #323030;
+    font-style: normal;
+    font-weight: 700;
+    letter-spacing: 0.58px;
+    margin-bottom: 40px;
+}
+
+.input-field {
+    display: flex;
+    flex-direction: column;
+    width: 40%;
+    margin-bottom: 30px;
+}
+
+.input-field label {
+    color: #323030;
+    font-size: 18px;
+    font-weight: 500;
+    margin-bottom: 10px;
+}
+
+.input-field input,
+.input-field span {
+    border: #a2a2a2 1px solid;
+    border-radius: 3px;
+    padding: 10px;
+    background-color: #e0e0e0;
+    transition: 0.4s background-color;
+}
+
+.input-field input:focus,
+.input-field span:focus {
+    outline: 0;
+    background-color: #fff;
+}
+
+.input-field span {
+    resize: none;
+}
+
+#drop {
+    display: none;
+}
+
+.droplabel {
+    cursor: pointer;
+    padding: 10px;
+    border: 2px solid #5DDCD6;
+    border-radius: 5px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: 0.4s background-color;
+}
+
+.droplabel svg {
+    width: 50px;
+    height: 50px;
+    transition: 0.4s transform;
+}
+
+.droplabel:hover {
+    background-color: #5DDCD6;
+}
+
+.droplabel:hover>svg {
+    transform: scale(1.2);
+}
+
+.droplabel:hover>svg path {
+    fill: white;
 }
