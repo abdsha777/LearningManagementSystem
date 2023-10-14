@@ -11,7 +11,7 @@ function AuthProvider({ children }) {
     const [user,setUser] = useState(null)
     // const backend = "https://lms-fh7w.onrender.com";
     const backend = "http://localhost:5000";
-
+    const [loading,setLoading] = useState(false);
     useEffect(() => {
         // Check if the token is available in localStorage
         const storedToken = localStorage.getItem('token');
@@ -27,6 +27,7 @@ function AuthProvider({ children }) {
 
     async function loginUser(email,password){
         try {
+            if(loading) return;
             const init={
                 method: 'POST',
                 body:JSON.stringify({
@@ -37,6 +38,7 @@ function AuthProvider({ children }) {
                     'Content-Type':'application/json'
                 }
             }
+            setLoading(true)
             var res = await fetch(`${backend}/api/auth/login`,init)
             if (!res.ok) {
                 throw new Error('Login failed');
@@ -48,6 +50,7 @@ function AuthProvider({ children }) {
             console.log(decoded);
             setUser(decoded.user)
             setLogin(true)
+            setLoading(false)
             nav('/')
         } catch (error) {
             console.log(error)
