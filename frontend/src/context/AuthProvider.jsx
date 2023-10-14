@@ -64,6 +64,7 @@ function AuthProvider({ children }) {
         loginUser:loginUser,
         name: user==null?"User":user.name,
         role: user==null?role:user.role,
+        token:token,
         login: login,
         logoutUser:logoutUser
     }
