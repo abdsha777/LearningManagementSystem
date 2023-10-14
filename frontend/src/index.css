@@ -233,6 +233,7 @@ nav{
     font-weight: 400;
     min-width: 150px;
     min-height: 45px;
+    
 }
 
 .btn-border-blue {
@@ -274,7 +275,9 @@ nav{
 
 /* menu  */
 .menu {
-    
+    display: none;
+    flex-direction: column;
+    justify-content: space-evenly;
     height: 100%;
     margin-left: 25px;
     padding: 15px 0;
