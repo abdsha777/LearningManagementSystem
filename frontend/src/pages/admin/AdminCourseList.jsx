@@ -2,7 +2,8 @@ import React, { useEffect,useState } from 'react';
 import './AdminCourseList.css';
 
 function AdminCourseList() {
-    const dbJson = "https://jsonserver-6gyk.onrender.com";
+    // const dbJson = "https://jsonserver-6gyk.onrender.com";
+    const dbJson = "http://localhost:7000";
     const [courses, setCourses] = useState([])
     const getCourseList=()=>{
         fetch(`${dbJson}/Admin_course_list`)
@@ -38,7 +39,7 @@ function AdminCourseList() {
                             <th>Total Enrollments</th>
                             <th>Total No of Students<br />Completed</th>
                             <th>Set<br />Visibility</th>
-                            <th>View</th>
+                            {/* <th>View</th> */}
                         </tr>
                     </thead>
                     <tbody>
@@ -58,9 +59,9 @@ function AdminCourseList() {
                             <td>
                                 <button>Set</button>
                             </td>
-                            <td>
+                            {/* <td>
                                 <button>View</button>
-                            </td>
+                            </td> */}
                         </tr>
                                 )
                             })

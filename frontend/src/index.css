@@ -430,18 +430,19 @@ nav{
 
 .video-img{
     border-radius: 10px;
-    max-height: 150px;
+    /* max-height: 150px; */
     overflow: hidden;
     width: 100%;
     display: flex;
     justify-content: center;
     position: relative;
-    min-height: 200px;
+    /* min-height: 200px; */
     /* background-image: url('./assets/image.jpg'); */
     margin-bottom: 10px;
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
+    aspect-ratio: 16/9;
 }
 
 .video-box {
