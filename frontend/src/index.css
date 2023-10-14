@@ -274,9 +274,7 @@ nav{
 
 /* menu  */
 .menu {
-    display: none;
-    flex-direction: column;
-    justify-content: space-evenly;
+    
     height: 100%;
     margin-left: 25px;
     padding: 15px 0;

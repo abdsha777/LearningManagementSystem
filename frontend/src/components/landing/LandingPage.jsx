@@ -1,5 +1,27 @@
 import React from 'react'
 import './LandingPage.css'
+import img1 from '../../assets/landing/logo.png';
+import content_img from '../../assets/landing/content-img.png';
+import content_img1 from '../../assets/landing/content-img-1.png';
+import content_img2 from '../../assets/landing/content-img-2.png';
+import hero_1 from '../../assets/landing/hero-1.png';
+import hero_2 from '../../assets/landing/hero-2.png';
+import hero_3 from '../../assets/landing/hero-3.png';
+import serv_1 from '../../assets/landing/serv-1.png';
+import serv_2 from '../../assets/landing/serv-2.png';
+import serv_3 from '../../assets/landing/serv-3.png';
+import cor_1 from '../../assets/landing/cor-1.png';
+import cor_2 from '../../assets/landing/cor-2.png';
+import cor_3 from '../../assets/landing/cor-3.png';
+import cor_4 from '../../assets/landing/cor-4.png';
+import vec from '../../assets/landing/vec.png';
+import vec_2 from '../../assets/landing/vec-2.png';
+import time from '../../assets/landing/Time.png';
+import test from '../../assets/landing/test.png';
+import rating from '../../assets/landing/rating.png';
+
+
+
 
 function LandingPage() {
     return (
@@ -7,13 +29,13 @@ function LandingPage() {
             {/* <!-- header and navbar hero-1-section start  --> */}
             <section class="landing-page">
                 <header>
-                    <nav class="navbar">
-                        <div class="logo">
-                            <img src="assets/img/logo.png" />
+                    <nav class="navbar1">
+                        <div class="logo1">
+                            <img src={img1} />
                         </div>
                         <div class="menu">
                             <ul>
-                                <a href="#"><li>Home</li></a>
+                                <p href="#"><li>Home</li></p>
                                 <a href="#aboutus"><li>About</li></a>
                                 <a href="#service"><li>Services</li></a>
                                 <a href="#course"><li>Courses</li></a>
@@ -32,12 +54,12 @@ function LandingPage() {
                                     <button class="btn-1">Sign-up Now</button>
                                 </div>
                                 <div class="conten-img">
-                                    <img src="assets/img/content-img.png" class="img-1" />
-                                    <img src="assets/img/content-img-1.png" class="content-img-2" />
+                                    <img src={content_img} class="img-1" />
+                                    <img src={content_img1} class="content-img-2" />
                                 </div>
                             </div>
                             <div class="hero-1-img">
-                                <img src="assets/img/hero-1.png" />
+                                <img src={hero_1} />
                             </div>
                         </div>
                     </section>
@@ -48,7 +70,7 @@ function LandingPage() {
             <section class="hero-2">
                 <div class="hero-2-container">
                     <div class="hero-2-img">
-                        <img src="assets/img/hero-2.png" />
+                        <img src={hero_2} />
                     </div>
                     <div class="hero-2-content">
                         <h1>Build The SkillsTo Drive Your Career.</h1>
@@ -59,9 +81,7 @@ function LandingPage() {
                         <div class="hero-2-btn">
                             <button class="btn-2">Start for free</button>
                         </div>
-                        <div class="conten-img-2">
-                            <img src="assets/img/content-img-2.png" class="content-img-2-2" />
-                        </div>
+                        
                     </div>
                 </div>
             </section>
@@ -81,7 +101,7 @@ function LandingPage() {
                         </div>
                     </div>
                     <div class="hero-3-img">
-                        <img src="assets/img/hero-3.png" />
+                        <img src={hero_3} />
                     </div>
                 </div>
             </section>
@@ -101,7 +121,7 @@ function LandingPage() {
                     <div class="cards-box">
                         <div class="card">
                             <div class="card-img-1">
-                                <img src="assets/img/serv-2.png" />
+                                <img src={serv_2} />
                             </div>
                             <div class="card-contnt">
                                 <h3>Notification & Email</h3>
@@ -110,7 +130,7 @@ function LandingPage() {
                         </div>
                         <div class="card">
                             <div class="card-img-2">
-                                <img src="assets/img/serv-3.png" />
+                                <img src={serv_3} />
                             </div>
                             <div class="card-contnt">
                                 <h3>Certification</h3>
@@ -119,7 +139,7 @@ function LandingPage() {
                         </div>
                         <div class="card">
                             <div class="card-img-3">
-                                <img src="assets/img/serv-1.png" />
+                                <img src={serv_1} />
                             </div>
                             <div class="card-contnt">
                                 <h3>Azam Campus</h3>
@@ -143,7 +163,7 @@ function LandingPage() {
                     <div class="boxes">
                         <div class="box">
                             <div class="box-img">
-                                <img src="assets/img/cor-1.png" />
+                                <img src={cor_1} />
                             </div>
                             <div class="box-cont">
                                 <p><i class="fa-solid fa-clock"></i> 1hr 30 min</p>
@@ -152,7 +172,7 @@ function LandingPage() {
                         </div>
                         <div class="box">
                             <div class="box-img">
-                                <img src="assets/img/cor-2.png" />
+                                <img src={cor_2} />
                             </div>
                             <div class="box-cont">
                                 <p><i class="fa-solid fa-clock"></i>  1hr 30 min</p>
@@ -161,7 +181,7 @@ function LandingPage() {
                         </div>
                         <div class="box">
                             <div class="box-img">
-                                <img src="assets/img/cor-3.png" />
+                                <img src={cor_3} />
                             </div>
                             <div class="box-cont">
                                 <p><i class="fa-solid fa-clock"></i>  1hr 30 min</p>
@@ -170,7 +190,7 @@ function LandingPage() {
                         </div>
                         <div class="box">
                             <div class="box-img">
-                                <img src="assets/img/cor-4.png" />
+                                <img src={cor_4} />
                             </div>
                             <div class="box-cont">
                                 <p><i class="fa-solid fa-clock"></i> 1hr 30 min</p>
@@ -191,11 +211,11 @@ function LandingPage() {
                     <div class="carosel">
                         <div class="carosel-body">
                             <div class="swip-img">
-                                <img src="assets/img/vec.png" />
+                                <img src={vec} />
                             </div>
                             <div class="carosel-card-1">
                                 <div class="carosel-img">
-                                    <img src="assets/img/test.png" />
+                                    <img src={test} />
                                 </div>
                                 <div class="carosel-prghrp">
                                     <p>
@@ -204,13 +224,13 @@ function LandingPage() {
                                     </p>
                                     <div class="carosel-head">
                                         <h2>MR.KAMIL KHAN</h2>
-                                        <img src="assets/img/rating.png" />
+                                        <img src={rating} />
                                     </div>
                                 </div>
                             </div>
                             <div class="carosel-card-2">
                                 <div class="carosel-img">
-                                    <img src="assets/img/test.png" />
+                                    <img src={test} />
                                 </div>
                                 <div class="carosel-prghrp">
                                     <p>
@@ -219,13 +239,13 @@ function LandingPage() {
                                     </p>
                                     <div class="carosel-head">
                                         <h2>MR.KAMIL KHAN</h2>
-                                        <img src="assets/img/rating.png" />
+                                        <img src={rating} />
                                     </div>
                                 </div>
                             </div>
                             <div class="carosel-card-3">
                                 <div class="carosel-img">
-                                    <img src="assets/img/test.png" />
+                                    <img src={test} />
                                 </div>
                                 <div class="carosel-prghrp">
                                     <p>
@@ -234,26 +254,26 @@ function LandingPage() {
                                     </p>
                                     <div class="carosel-head">
                                         <h2>MR.KAMIL KHAN</h2>
-                                        <img src="assets/img/rating.png" />
+                                        <img src={rating} />
                                     </div>
                                 </div>
                             </div>
                             <div class="swip-img">
-                                <img src="assets/img/vec-2.png" />
+                                <img src={vec_2}/>
                             </div>
                         </div>
                     </div>
                 </div>
             </section>
             {/* <!-- hero-6-section end -->
-            <!-- footer-section start --> */}
+            <!-- footer-section start --    > */}
             <section class="footer">
                 <footer>
                     <div class="footer-container">
                         <div class="foot-col-1">
                             <div class="col-1-contnt">
                                 <div class="logo">
-                                    <img src="assets/img/logo.png" />
+                                    <img src={img1} />
                                 </div>
                                 <h2>About Us</h2>
                                 <p>
