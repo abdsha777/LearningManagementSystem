@@ -1,5 +1,6 @@
-import React from 'react'
+import React, { useContext } from 'react'
 import { Link, NavLink } from "react-router-dom";
+import AuthContext from '../../context/AuthContext';
 
 function StudentMenu({ menu, showMenu }) {
   const { logoutUser } = useContext(AuthContext);

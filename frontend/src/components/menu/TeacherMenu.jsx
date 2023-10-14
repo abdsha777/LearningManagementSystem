@@ -1,8 +1,9 @@
-import React from 'react'
+import React, { useContext } from 'react'
 import { Link, NavLink } from "react-router-dom";
+import AuthContext from '../../context/AuthContext';
 
 function TeacherMenu({ menu, showMenu }) {
-    const { logoutUser } = useContext(AuthContext);
+    const { logoutUser } = useContext(AuthContext)
     // onClick={showMenu}
     return (
         <div className={"menu-items " + menu}>
