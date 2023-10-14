@@ -1,8 +1,10 @@
-import React from 'react'
+import React, { useContext } from 'react'
 import './sidebar.css'
 import { Link, NavLink } from 'react-router-dom'
+import AuthContext from '../../context/AuthContext';
 
 function TeacherSidebar() {
+    const {logoutUser} = useContext(AuthContext);
     return (
         <div className="sidebar">
             <NavLink to="/" className="sidebar-links" >
@@ -93,6 +95,8 @@ function TeacherSidebar() {
             <Link to=".." className="sidebar-links">
                 &larr; GO BACK
             </Link>
+            
+            <button className="sidebar-links" onClick={logoutUser}>LOGOUT</button>
         </div>
     )
 }

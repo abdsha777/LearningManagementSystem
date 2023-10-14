@@ -2,6 +2,7 @@ import React from 'react'
 import { Link, NavLink } from "react-router-dom";
 
 function StudentMenu({ menu, showMenu }) {
+  const { logoutUser } = useContext(AuthContext);
   return (
     <div className={"menu-items " + menu}>
       <NavLink to="/" className="sidebar-links" onClick={showMenu}>
@@ -142,6 +143,7 @@ function StudentMenu({ menu, showMenu }) {
       <Link to=".." className="sidebar-links" onClick={showMenu}>
         &larr; GO BACK
       </Link>
+      <button className="sidebar-links" onClick={logoutUser}>LOGOUT</button>
     </div>
   )
 }
