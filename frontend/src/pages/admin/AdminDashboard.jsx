@@ -135,14 +135,15 @@ function AdminDashboard() {
                     <tbody>
                         {
                             course.map((record, key) => {
-                                let date = new Date(record.createdAt)
+                                let date = new Date(record.date )
+                                console.log(record)
                                 return (
                                     <tr key={key}>
                                         <td>{record.title}</td>
                                         <td>{`${date.getDay()}/${date.getMonth()}/${date.getFullYear()}`}</td>
-                                        <td>---</td>
-                                        <td>---</td>
-                                        <td>{record.teacherId}</td>
+                                        <td>{record.enrolledStudents}</td>
+                                        <td>{record.completedStudents}</td>
+                                        <td>{record.teacher}</td>
                                     </tr>
                                 )
                             })
