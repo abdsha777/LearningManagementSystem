@@ -1,20 +1,23 @@
-import React,{useState,useEffect} from 'react'
+import React, { useState, useEffect, useContext } from 'react'
 import './AdminStudentList.css'
 import { Link } from 'react-router-dom';
+import AuthContext from '../../context/AuthContext';
 
 function AdminStudentList() {
   // const dbJson = "https://jsonserver-6gyk.onrender.com";
-  const dbJson = "http://localhost:7000";
+  // const dbJson = "http://localhost:7000";
+  const backend = "http://localhost:5000";
   const [student, setStudent] = useState([]);
+  const { token } = useContext(AuthContext);
   const getStudentList = () => {
-    fetch(`${dbJson}/Admin_Teacher_student`)
+    fetch(`${backend}/api/users/students/`,{headers:{token}})
       .then(response => response.json())
       .then(data => setStudent(data))
       .catch(error => console.log(error))
   }
-  useEffect(()=>{
+  useEffect(() => {
     getStudentList();
-  },[])
+  }, [])
   return (
     <div className="main_module">
       <h1 className="list-heading">Students List</h1>
@@ -39,7 +42,7 @@ function AdminStudentList() {
         <table>
           <thead>
             <tr>
-              <th>Student Id</th>
+              {/* <th>Student Id</th> */}
               <th>Student Name</th>
               <th>Faculty</th>
               <th>Year</th>
@@ -52,11 +55,11 @@ function AdminStudentList() {
             </tr>
           </thead>
           <tbody>
-          {
+            {
               student.map((record, key) => {
                 return (
                   <tr key={key}>
-                    <td>{record.id}</td>
+                    {/* <td>{record.id}</td> */}
                     <td>{record.name}</td>
                     <td>{record.faculty}</td>
                     <td>{record.year}</td>
@@ -64,7 +67,7 @@ function AdminStudentList() {
                     <td>{record.ongoing}</td>
                     <td>{record.completed}</td>
                     <td>
-                      <Link to={'update/'+record.id} ><button>Update</button></Link>
+                      <Link to={'update/' + record.id} ><button>Update</button></Link>
                     </td>
                     <td>
                       <button>View</button>

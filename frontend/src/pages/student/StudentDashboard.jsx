@@ -3,12 +3,13 @@ import './StudentDashboard.css'
 import { Link } from 'react-router-dom'
 
 function StudentDashboard() {
-    const dbJson = "https://jsonserver-6gyk.onrender.com";
+    // const dbJson = "https://jsonserver-6gyk.onrender.com";
+    const dbJson = "http://localhost:7000";
     const [course, setCourse] = useState([]);
     const [overview, setOverview] = useState([]);
     const [suggestion, setSuggestion] = useState([]);
     const getCourseList = () => {
-        fetch(` ${dbJson}/studentdashboard`)
+        fetch(`${dbJson}/studentdashboard`)
             .then(response => response.json())
             .then(data => setCourse(data))
             .catch(error => console.log(error))
@@ -18,7 +19,7 @@ function StudentDashboard() {
             .then(response => response.json())
             .then(data => setOverview(data[0]))
             .catch(error =>console.log(error))
-        console.log(overview)
+        // console.log(overview)
     }
     const getCourseSuggestion = () => {
         fetch(`${dbJson}/studentdashboardsuggestion`)

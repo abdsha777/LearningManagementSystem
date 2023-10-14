@@ -136,7 +136,6 @@ function AdminDashboard() {
                         {
                             course.map((record, key) => {
                                 let date = new Date(record.date )
-                                console.log(record)
                                 return (
                                     <tr key={key}>
                                         <td>{record.title}</td>
