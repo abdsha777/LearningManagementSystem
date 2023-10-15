@@ -1,4 +1,5 @@
 import './App.css'
+import 'reactjs-popup/dist/index.css';
 // css files
 import './pages/teacher/TeacherCourseDetail.css'
 import './pages/teacher/TeacherUnitDetail.css'
