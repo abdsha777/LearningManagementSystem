@@ -1,8 +1,10 @@
-import React from 'react'
+import React, { useContext } from 'react'
 import './sidebar.css'
 import { Link, NavLink } from 'react-router-dom'
+import AuthContext from '../../context/AuthContext';
 
 function TeacherSidebar() {
+    const {logoutUser} = useContext(AuthContext);
     return (
         <div className="sidebar">
             <NavLink to="/" className="sidebar-links" >
@@ -40,7 +42,7 @@ function TeacherSidebar() {
                 </svg>
                 My Courses
             </NavLink>
-            <NavLink to={'/'} className="sidebar-links">
+            <NavLink to={'addCourse/'} className="sidebar-links">
                 <svg className="add-svg" width="800px" height="800px" viewBox="0 0 24 24" fill="none"
                     xmlns="http://www.w3.org/2000/svg">
 
@@ -93,6 +95,8 @@ function TeacherSidebar() {
             <Link to=".." className="sidebar-links">
                 &larr; GO BACK
             </Link>
+            
+            <button className="sidebar-links" onClick={logoutUser}>LOGOUT</button>
         </div>
     )
 }
