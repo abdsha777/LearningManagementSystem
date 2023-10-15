@@ -50,7 +50,9 @@ ul a {
     transform: scale(1.1);
     transition: all ease-in 0.2s;
 }
-
+.hero-1{
+    background:#fff;
+}
 
 .hero-1-container {
     border-radius: 0px 0px 300px 0px;
@@ -168,15 +170,19 @@ ul a {
     display: grid;
     grid-template-rows: 500px;
     grid-template-columns: auto auto;
-    margin: 50px 100px;
+    margin: 0px 0px;
+    height:550px;
+    background-color: #fff;
 }
 
 .hero-2-img img {
     width: 90%;
+    margin-top:30px;
+    margin-left:80px;
 }
 
 .hero-2-content {
-    margin: 100px 0px;
+    margin: 100px 0px 0px 50px;
 }
 
 .hero-2-content h1 {
@@ -276,18 +282,19 @@ ul a {
 
 .hero-3-img {
     position: relative;
-    right: 70px;
-    bottom: 180px;
+    right: 100px;
+    bottom: 150px;
 }
 
 .hero-4 {
-    margin-top: 50px;
+    margin-top: 0px;
 }
 
 .hero-4-container {
     width: 100%;
-    height: 500px;
+    height: 650px;
     text-align: center;
+    background-color: #fff;
 }
 
 .hero-cont-hed h1 {
@@ -319,6 +326,7 @@ ul a {
     height: 350px;
     flex-shrink: 0;
     margin: 0 100px;
+    flex-direction: column;
 }
 
 .card .card-img-1 img {
@@ -350,7 +358,6 @@ ul a {
 
 
 .hero-5 {
-    margin: 100px 0 0 0;
     display: grid;
 }
 
@@ -423,14 +430,12 @@ ul a {
     font-family: Inter;
 }
 
-.hero-6 {
-    margin: 50px 0 0 0;
-}
 
 .hero-6-container {
     text-align: center;
-    height: 500px;
+    height: 600px;
     width: 100%;
+    background-color: #fff;
 }
 
 .hero-6-cont-hed h1 {
@@ -506,21 +511,15 @@ ul a {
     font-family: Roboto;
 }
 
-.footer {
-    margin: 100px 0 0 0;
-
-}
-
 .footer-container {
     background: #7DE3DE;
     box-shadow: 3px 14px 34px 0px rgba(0, 0, 0, 0.25);
     width: 100%;
     height: 400px;
-    margin: 100px 0 0 0;
 }
 
 .col-1-contnt {
-    margin-top: 20px;
+    margin-top: 70px;
 }
 
 .col-1-contnt .logo img {
@@ -530,7 +529,7 @@ ul a {
 
 .foot-col-1 {
     display: flex;
-    margin: 0px 130px 0 130px;
+    margin: 0px 100px 0 100px;
 }
 
 .col-1-contnt h2 {
@@ -582,7 +581,7 @@ ul a {
 }
 
 .col-3-contnt {
-    margin: 127px 0 0 130px;
+    margin: 127px 0 0 100px;
     display: flex;
     flex-direction: column;
 }
