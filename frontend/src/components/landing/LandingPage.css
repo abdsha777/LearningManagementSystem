@@ -1,16 +1,16 @@
 
-.navbar {
+.navbar1 {
     width: 100%;
     height: auto;
     background-color: #fff;
     box-shadow: 6px 6px 7px 0px rgba(0, 0, 0, 0.25);
     display: flex;
-    justify-content: space-around;
+    justify-content: space-between;
+    padding: 0px 50px;
 }
 
-.logo {}
 
-.logo img {
+.logo1 img {
     margin-top: 6px;
     width: 70%;
 }
@@ -150,7 +150,7 @@ ul a {
     margin-right: 100px;
     object-fit: cover;
     position: absolute;
-    top: 40px;
+    top: 80px;
     right: 0;
 }
 
