@@ -597,7 +597,7 @@ nav{
     gap: 10px;
 }
 
-.ss-checkbox input{
+.ss-checkbox input[type=checkbox]{
     -webkit-appearance: none;
     -moz-appearance: none;
     appearance: none;
@@ -609,9 +609,18 @@ nav{
     width: 12px;
     height: 12px;
     border-radius: 2px;
+    margin-left: auto;
+    margin-right: 20px;
 }
-.ss-checkbox input:checked{
+.ss-checkbox input[type=checkbox]:checked{
     background-color: #5DDCD6;
+}
+.ss-checkbox select{
+    padding: 5px;
+    /* appearance: none; */
+}
+.ss-checkbox option{
+    line-height: 110%;
 }
 
 .c-h-i,.c-h,.rd-a{

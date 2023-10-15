@@ -1,19 +1,26 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useContext } from "react";
 import './AdminTeacherList.css';
 import { Link } from "react-router-dom";
 import Popup from 'reactjs-popup'
+import AuthContext from "../../context/AuthContext";
+import StudentFilter from "../../components/popups/StudentFilter";
 
 function AdminTeacherList() {
   // const dbJson = "https://jsonserver-6gyk.onrender.com";
 
-  const endpoint = "http://localhost:7000";
+  // const endpoint = "http://localhost:7000";
+  const backend = "https://lms-fh7w.onrender.com";
 
   const [teacher, setTeacher] = useState([]);
+  const { token } = useContext(AuthContext);
+  const [loading, setLoading] = useState(true);
+
   const getTeacherList = () => {
-    fetch(`${endpoint}/Admin_Teacher`)
+    fetch(`${backend}/api/users/teachers/`, { headers: { token } })
       .then(response => response.json())
       .then(data => setTeacher(data))
       .catch(error => console.log(error))
+    setLoading(false)
   }
 
   useEffect(() => {
@@ -73,49 +80,53 @@ function AdminTeacherList() {
       </div>
       <div className="sub_heading">
         <input type="text" placeholder="Search Students" />
-        <button className="filter1">Filter </button>
+        <StudentFilter />
       </div>
       <div className="module2">
         {/* <button className="btn btn-filled big">Set Status</button> */}
         <TeacherSetStatus />
       </div>
       <div className="module5">
-        <table>
-          <thead>
-            <tr>
-              <th>Teacher Id</th>
-              <th>Teacher Name</th>
-              <th>Faculty</th>
-              <th>Total No of Course Uploaded</th>
-              <th>Update</th>
-              <th>View</th>
-              <th className="status">Active</th>
-            </tr>
-          </thead>
-          <tbody>
-            {
-              teacher.map((record, key) => {
-                return (
-                  <tr key={key}>
-                    <td>{record.id}</td>
-                    <td>{record.name}</td>
-                    <td>{record.faculty}</td>
-                    <td>{record.no_of_course}</td>
-                    <td>
-                      <button>Update</button>
-                    </td>
-                    <td>
-                      <button>View</button>
-                    </td>
-                    <td>
-                      <button className="status">{record.status}</button>
-                    </td>
-                  </tr>
-                )
-              })
-            }
-          </tbody>
-        </table>
+        {
+          loading ? (
+            <h1>Loading...</h1>
+          ) : (
+            <table>
+              <thead>
+                <tr>
+                  <th>Teacher Name</th>
+                  <th>Faculty</th>
+                  <th>Total No of Course Uploaded</th>
+                  <th>Update</th>
+                  <th>View</th>
+                  <th className="status">Active</th>
+                </tr>
+              </thead>
+              <tbody>
+                {
+                  teacher.map((record, key) => {
+                    return (
+                      <tr key={key}>
+                        <td>{record.name}</td>
+                        <td>{record.faculty}</td>
+                        <td>{record.no_of_course}</td>
+                        <td>
+                          <button>Update</button>
+                        </td>
+                        <td>
+                          <button>View</button>
+                        </td>
+                        <td>
+                          <button className="status">{record.status}</button>
+                        </td>
+                      </tr>
+                    )
+                  })
+                }
+              </tbody>
+            </table>
+          )
+        }
       </div>
     </div>
   );

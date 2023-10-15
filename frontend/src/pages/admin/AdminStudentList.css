@@ -56,6 +56,11 @@
     font-size: 18px;
     cursor: pointer;
     /* 161.8% */
+    transition: background-color 0.2s;
+  }
+  .filter1:hover{
+    background-color: #5DDCD6;
+    color: white;
   }
   
   .sub_heading input[type=text]:focus {

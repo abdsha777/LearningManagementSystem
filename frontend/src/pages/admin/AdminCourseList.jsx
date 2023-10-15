@@ -1,5 +1,6 @@
 import React, { useEffect,useState } from 'react';
 import './AdminCourseList.css';
+import StudentFilter from '../../components/popups/StudentFilter';
 
 function AdminCourseList() {
     // const dbJson = "https://jsonserver-6gyk.onrender.com";
@@ -21,8 +22,8 @@ function AdminCourseList() {
 
             <div className="sub_heading">
                 <input type="text" placeholder="Search Courses" />
-
-                <button className="filter1">Filter </button>
+                
+                <StudentFilter />
             </div>
 
             <div className="module2">

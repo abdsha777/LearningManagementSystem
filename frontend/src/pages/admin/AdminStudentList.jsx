@@ -3,18 +3,22 @@ import './AdminStudentList.css'
 import { Link } from 'react-router-dom';
 import AuthContext from '../../context/AuthContext';
 import Popup from "reactjs-popup";
+import StudentFilter from '../../components/popups/StudentFilter';
 
 function AdminStudentList() {
   // const dbJson = "https://jsonserver-6gyk.onrender.com";
   // const dbJson = "http://localhost:7000";
-  const backend = "http://localhost:5000";
+  // const backend = "http://localhost:5000";
+  const backend = "https://lms-fh7w.onrender.com";
   const [student, setStudent] = useState([]);
   const { token } = useContext(AuthContext);
-  const getStudentList = () => {
+  const [loading,setLoading] = useState(true);
+  const getStudentList = async() => {
     fetch(`${backend}/api/users/students/`, { headers: { token } })
       .then(response => response.json())
       .then(data => setStudent(data))
       .catch(error => console.log(error))
+    setLoading(false)
   }
   useEffect(() => {
     getStudentList();
@@ -75,7 +79,7 @@ function AdminStudentList() {
       <div className="sub_heading">
         <input type="text" placeholder="Search Students" />
 
-        <input type="button" className="filter1" value="Filter >" />
+        <StudentFilter />
       </div>
 
 
@@ -86,49 +90,54 @@ function AdminStudentList() {
       </div>
 
       <div className="module5">
-        <table>
-          <thead>
-            <tr>
-              {/* <th>Student Id</th> */}
-              <th>Student Name</th>
-              <th>Faculty</th>
-              <th>Year</th>
-              <th>Total No of <br /> Enrolled Courses</th>
-              <th>Ongoing Course</th>
-              <th>Completed Course</th>
-              <th>Update</th>
-              <th>View</th>
-              <th className="status">Active</th>
-            </tr>
-          </thead>
-          <tbody>
-            {
-              student.map((record, key) => {
-                return (
-                  <tr key={key}>
-                    {/* <td>{record.id}</td> */}
-                    <td>{record.name}</td>
-                    <td>{record.faculty}</td>
-                    <td>{record.year}</td>
-                    <td>{record.enroll}</td>
-                    <td>{record.ongoing}</td>
-                    <td>{record.completed}</td>
-                    <td>
-                      <Link to={'update/' + record.id} ><button>Update</button></Link>
-                    </td>
-                    <td>
-                      <button>View</button>
-                    </td>
-                    <td>
-                      <button className="status">{record.status}</button>
-                    </td>
-                  </tr>
-                )
-              })
-            }
-          </tbody>
+        { loading?(
+          <h1>Loading...</h1>
+          ):(
+          <table>
+            <thead>
+              <tr>
+                {/* <th>Student Id</th> */}
+                <th>Student Name</th>
+                <th>Faculty</th>
+                <th>Year</th>
+                <th>Total No of <br /> Enrolled Courses</th>
+                <th>Ongoing Course</th>
+                <th>Completed Course</th>
+                <th>Update</th>
+                <th>View</th>
+                <th className="status">Active</th>
+              </tr>
+            </thead>
+            <tbody>
+              {
+                student.map((record, key) => {
+                  return (
+                    <tr key={key}>
+                      {/* <td>{record.id}</td> */}
+                      <td>{record.name}</td>
+                      <td>{record.faculty}</td>
+                      <td>{record.year}</td>
+                      <td>{record.enroll}</td>
+                      <td>{record.ongoing}</td>
+                      <td>{record.completed}</td>
+                      <td>
+                        <Link to={'update/' + record.id} ><button>Update</button></Link>
+                      </td>
+                      <td>
+                        <button>View</button>
+                      </td>
+                      <td>
+                        <button className="status">{record.status}</button>
+                      </td>
+                    </tr>
+                  )
+                })
+              }
+            </tbody>
 
-        </table>
+          </table>
+          )
+        } 
       </div>
     </div>
   )
