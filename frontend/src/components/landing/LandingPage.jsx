@@ -111,6 +111,7 @@ function LandingPage() {
             <section class="hero-4" id="service">
                 <div class="hero-4-container">
                     <div class="hero-cont-hed">
+                    <br/><br/>
                         <h1>OUR SERVICES</h1>
                         <p>
                             Proin ac lobortis arcu, a vestibulum augue. Vivamus ipsum neque,
@@ -206,6 +207,7 @@ function LandingPage() {
             <section class="hero-6" id="testi">
                 <div class="hero-6-container">
                     <div class="hero-6-cont-hed">
+                        <br/><br/>
                         <h1>Testimonials</h1>
                     </div>
                     <div class="carosel">
