@@ -20,22 +20,28 @@ ChartJS.register(
 );
 
 function AdminDashboard() {
-    // const dbJson = "https://jsonserver-6gyk.onrender.com";
-    const backend = "http://localhost:5000";
+    // const backend = "https://jsonserver-6gyk.onrender.com";
+    const backend = " http://localhost:7000";
+    // const backend = "http://localhost:5000";
     const {token} = useContext(AuthContext);
     const [course, setCourse] = useState([])
     const [overView, setOverview] = useState([])
-    const getCourseList = () => {
-        fetch(`${backend}/api/overview/admin/`,{headers:{token:token}})
+    const getOverviewList = () => {
+        // fetch(`${backend}/api/overview/admin/`,{headers:{token:token}})
+        fetch(`${backend}/Admin_overview`,{headers:{token:token}})
             .then(response => response.json())
             .then(data => setOverview(data))
             .catch(error => console.log(error))
+            // console.log(overView)
     }
-    const getOverviewList = () => {
-        fetch(`${backend}/api/course/`,{headers:{token:token}})
+    const getCourseList = () => {
+        // fetch(`${backend}/api/course/`,{headers:{token:token}})
+        fetch(`${backend}/Admin_course_list`,{headers:{token:token}})
             .then(response => response.json())
-            .then(data => setCourse(data['courses']))
+            .then(data => setCourse(data))
+            // .then(data => setCourse(data['courses']))
             .catch(error => console.log(error))
+        // console.log(course)
     }
 
     useEffect(() => {
@@ -43,10 +49,12 @@ function AdminDashboard() {
         getOverviewList();
     }, [])
     const data = {
-        labels: overView.courseData?.map(e=>e.courseName),
+        labels: ['react','Java','C++'],
+        // labels: overView.courseData?.map(e=>e.courseName),
         datasets: [{
             label: 'No Of Sudents',
-            data: overView.courseData?.map(e=>e.studentCount),
+            // data: overView.courseData?.map(e=>e.studentCount),
+            data: [22,33,100],
             backgroundColor: ['#5DDCD6']
         }]
     }
@@ -139,7 +147,8 @@ function AdminDashboard() {
                                 return (
                                     <tr key={key}>
                                         <td>{record.title}</td>
-                                        <td>{`${date.getDay()}/${date.getMonth()}/${date.getFullYear()}`}</td>
+                                        {/* <td>{`${date.getDay()}/${date.getMonth()}/${date.getFullYear()}`}</td> */}
+                                        <td>{record.date}</td>
                                         <td>{record.enrolledStudents}</td>
                                         <td>{record.completedStudents}</td>
                                         <td>{record.teacher}</td>

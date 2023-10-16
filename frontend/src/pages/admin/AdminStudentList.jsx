@@ -7,14 +7,15 @@ import StudentFilter from '../../components/popups/StudentFilter';
 
 function AdminStudentList() {
   // const dbJson = "https://jsonserver-6gyk.onrender.com";
-  // const dbJson = "http://localhost:7000";
+  const backend = "http://localhost:7000";
   // const backend = "http://localhost:5000";
-  const backend = "https://lms-fh7w.onrender.com";
+  // const backend = "https://lms-fh7w.onrender.com";
   const [student, setStudent] = useState([]);
   const { token } = useContext(AuthContext);
   const [loading,setLoading] = useState(true);
   const getStudentList = async() => {
-    fetch(`${backend}/api/users/students/`, { headers: { token } })
+    // fetch(`${backend}/api/users/students/`, { headers: { token } })
+    fetch(`${backend}/Admin_Teacher_student`, { headers: { token } })
       .then(response => response.json())
       .then(data => setStudent(data))
       .catch(error => console.log(error))
