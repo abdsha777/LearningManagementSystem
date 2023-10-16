@@ -33,7 +33,7 @@ function LandingPage() {
                         <div class="logo1">
                             <img src={img1} />
                         </div>
-                        <div class="menu">
+                        <div class="menu1">
                             <ul>
                                 <p href="#"><li>Home</li></p>
                                 <a href="#aboutus"><li>About</li></a>
@@ -43,7 +43,7 @@ function LandingPage() {
                             </ul>
                         </div>
                         <div class="navBtn">
-                            <button class="btn-sign">Sign-Up Now</button>
+                            <button class="btn-sign">Login Now</button>
                         </div>
                     </nav>
                     <section class="hero-1">
@@ -75,8 +75,7 @@ function LandingPage() {
                     <div class="hero-2-content">
                         <h1>Build The SkillsTo Drive Your Career.</h1>
                         <p>
-                            Amet minim mollit non deserunt ullamco est sit aliqua dolor do amet
-                            sint. Velit officia consequat.
+                        Learn from the best. Our instructors are industry leaders, experts, and educators dedicated to your success.
                         </p>
                         <div class="hero-2-btn">
                             <button class="btn-2">Start for free</button>
@@ -93,8 +92,7 @@ function LandingPage() {
                     <div class="hero-3-content">
                         <h1>Find more E - Learning Experiance</h1>
                         <p>
-                            Grursus mal suada faci lisis Lorem ipsum ametion consectetur elit.
-                            Vesti at bulum the dumm ipsumm ipsum that .
+                        Tailor your learning experience to your pace and preferences. Mix and match courses, and track your progress with ease.
                         </p>
                         <div class="hero-3-btn">
                             <button class="btn-3">Sign-up Now</button>
@@ -114,13 +112,11 @@ function LandingPage() {
                     <br/><br/>
                         <h1>OUR SERVICES</h1>
                         <p>
-                            Proin ac lobortis arcu, a vestibulum augue. Vivamus ipsum neque,
-                            facilisis vel mollis vitae, mollis nec ante. Quisque aliquam dictum
-                            condim.
+                        Connect with peers, join study groups, and collaborate on projects.<br/> Learning is better when you do it together.
                         </p>
                     </div>
                     <div class="cards-box">
-                        <div class="card">
+                        <div class="card1">
                             <div class="card-img-1">
                                 <img src={serv_2} />
                             </div>
@@ -129,7 +125,7 @@ function LandingPage() {
                                 <p>24/7 Notification and remainder you</p>
                             </div>
                         </div>
-                        <div class="card">
+                        <div class="card1">
                             <div class="card-img-2">
                                 <img src={serv_3} />
                             </div>
@@ -138,7 +134,7 @@ function LandingPage() {
                                 <p>learn and get certificate and or benifits</p>
                             </div>
                         </div>
-                        <div class="card">
+                        <div class="card1">
                             <div class="card-img-3">
                                 <img src={serv_1} />
                             </div>
@@ -158,7 +154,7 @@ function LandingPage() {
                     <div class="hero-5-cont-hed">
                         <h1>OUR COURSES</h1>
                         <p>
-                            Proin ac lobortis arcu, a vestibulum augue. Vivamus ipsum neque.
+                        Access your courses on-the-go. Learn whenever, wherever, and however you want.
                         </p>
                     </div>
                     <div class="boxes">
@@ -279,9 +275,10 @@ function LandingPage() {
                                 </div>
                                 <h2>About Us</h2>
                                 <p>
-                                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut et
-                                    lobortis diam. Duis tellus enim, vestibulum eget varius id,
-                                    vulputate et mi. Nullam feugiat, diam quis interdum varius
+                                Welcome to LMS, where learning meets innovation. 
+                                Our state-of-the-art Learning Management System is designed to 
+                                empower individuals and organizations with a dynamic platform for
+                                 education and skill development. 
                                 </p>
                                 <div class="foot-btn">
                                     <button class="f-btn">SignUp Now</button>
