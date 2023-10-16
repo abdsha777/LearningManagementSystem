@@ -10,7 +10,7 @@ function AuthProvider({ children }) {
     const [token,setToken] = useState(null)
     const [user,setUser] = useState(null)
     const backend = "https://lms-fh7w.onrender.com";
-   // const backend = "http://localhost:5000";
+    // const backend = "http://localhost:5000";
     const [loading,setLoading] = useState(false);
     useEffect(() => {
         // Check if the token is available in localStorage

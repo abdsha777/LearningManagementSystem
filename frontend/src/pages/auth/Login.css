@@ -3,8 +3,11 @@
     grid-template-columns: 1fr 1fr;
     height: 100vh;
 }
-body:has(.login){
+
+body:has(.login) {
     padding: 0;
+    max-height: 100vh;
+    overflow: hidden;
 }
 
 .login-right {
@@ -118,6 +121,7 @@ body:has(.login){
     padding-left: 20px;
     outline: none;
 }
+
 .login-form input:placeholder-shown {
     color: #999292;
 }
@@ -176,8 +180,10 @@ body:has(.login){
        margin-right: auto;
     } */
 }
+
 /* to hide the logo and name  */
 @media screen and (min-width:800px) {
+
     .ll-header-1,
     .ll-heading-1,
     .logo-1 {
@@ -203,6 +209,7 @@ body:has(.login){
         font-size: 15px;
     }
 }
+
 .ll-header {
     display: flex;
     gap: 20px;
@@ -223,4 +230,140 @@ body:has(.login){
     color: #fff;
     font-size: 20px;
 
+}
+
+/* logos  */
+
+.tag-line{
+    color: white;
+    font-size: 30px;
+    width: 400px;
+    position: absolute;
+    top: 50%;
+    right: 46%;
+}
+.box-out {
+    height: 450px;
+    aspect-ratio: 1;
+    /* width: 300px; */
+    /* background-color: rgb(0, 32, 57); */
+    animation: spin 20s linear infinite;
+    position: absolute;
+    top: 22%;
+    right: 48%;
+    z-index: -1;
+}
+
+.in-box {
+    height: 100%;
+    aspect-ratio: 1;
+    /* background-color: rgba(0, 102, 180,0.1); */
+    position: absolute;
+}
+
+.b2 {
+    transform: rotateZ(45deg);
+
+}
+
+.b3 {
+    transform: rotateZ(90deg);
+}
+
+.b4 {
+    transform: rotateZ(135deg);
+}
+
+.b5 {
+    transform: rotateZ(180deg);
+}
+
+.b6 {
+    transform: rotateZ(225deg);
+}
+
+.b7 {
+    transform: rotateZ(270deg);
+}
+
+.b8 {
+    transform: rotateZ(315deg);
+}
+
+.in-box svg {
+    height: 100px;
+    width: 100px;
+    animation: spin-rev 20s linear infinite;
+}
+.fix {
+    position: absolute;
+}
+.fix2 {
+    transform: rotateZ(-45deg);
+}
+
+.fix3 {
+    transform: rotateZ(-90deg);
+}
+
+.fix4 {
+    transform: rotateZ(-135deg);
+}
+
+.fix5 {
+    transform: rotateZ(-180deg);
+}
+
+.fix6 {
+    transform: rotateZ(-225deg);
+}
+
+.fix7 {
+    transform: rotateZ(-270deg);
+}
+
+.fix8 {
+    transform: rotateZ(-315deg);
+}
+
+@media only screen and (max-width: 600px) {
+    .box {
+        height: 300px;
+        aspect-ratio: 1;
+        /* background-color: rgb(0, 32, 57); */
+        position: relative;
+        animation: spin 8s linear infinite;
+        /* transform: rotateZ(11360deg);
+transition: 100s linear; */
+    }
+
+    .in-box {
+        height: 50px;
+        aspect-ratio: 1;
+        background-color: rgb(0, 102, 180, 0.5);
+        position: absolute;
+        border-radius: 50%;
+    }
+}
+
+@keyframes spin {
+    0% {
+        transform: rotateZ(0deg);
+        ;
+    }
+
+    100% {
+        transform: rotateZ(360deg);
+    }
+}
+
+@keyframes spin-rev {
+    0% {
+        transform: rotateZ(360deg);
+        ;
+    }
+
+    100% {
+        transform: rotateZ(0deg);
+    }
 }

@@ -11,6 +11,7 @@ function AdminCourseList() {
         .then(response=>response.json())
         .then(data=>setCourses(data))
         .catch(e=>console.log(e))
+        console.log(courses)
     }
 
     useEffect(()=>{
@@ -50,13 +51,13 @@ function AdminCourseList() {
                                     <tr key={key}>
                             <td>
                                 <div className="course-info">
-                                    {record.course_name}
+                                    {record.title}
                                      </div>
                             </td>
-                            <td>{record.teacher_name}</td>
-                            <td>{record.uploaded_on}</td>
-                            <td>{record.total_enrolment}</td>
-                            <td>{record.total_student_completed}</td>
+                            <td>{record.teacher}</td>
+                            <td>{record.date}</td>
+                            <td>{record.enrolledStudents}</td>
+                            <td>{record.completedStudents}</td>
                             <td>
                                 <button>Set</button>
                             </td>

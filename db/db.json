@@ -538,49 +538,48 @@
       "id": 134660
     }
   ],
-  "Admin_overview": [
-    {
-      "no_of_students": 500,
-      "total_course": 10,
-      "total_teacher": 100,
-      "enroll_student": 1000
+  "Admin_overview": {
+      "totalStudents": 500,
+      "totalCourses": 10,
+      "totalTeachers": 100,
+      "totalEnrollments": 1000
     }
-  ],
+  ,
   "Admin_course_list": [
     {
-      "course_name": "React js",
-      "teacher_name": "Kamil Khan",
-      "uploaded_on": "29-AUG-2023",
-      "total_enrolment": 70,
-      "total_student_completed": 30
+      "title": "React js",
+      "teacher": "Kamil Khan",
+      "date": "29-AUG-2023",
+      "enrolledStudents": 70,
+      "completedStudents": 30
     },
     {
-      "course_name": "React js",
-      "teacher_name": "Kamil Khan",
-      "uploaded_on": "29-AUG-2023",
-      "total_enrolment": 70,
-      "total_student_completed": 30
+      "title": "React js",
+      "teacher": "Kamil Khan",
+      "date": "29-AUG-2023",
+      "enrolledStudents": 70,
+      "completedStudents": 30
     },
     {
-      "course_name": "React js",
-      "teacher_name": "Kamil Khan",
-      "uploaded_on": "29-AUG-2023",
-      "total_enrolment": 70,
-      "total_student_completed": 30
+      "title": "React js",
+      "teacher": "Kamil Khan",
+      "date": "29-AUG-2023",
+      "enrolledStudents": 70,
+      "completedStudents": 30
     },
     {
-      "course_name": "React js",
-      "teacher_name": "Kamil Khan",
-      "uploaded_on": "29-AUG-2023",
-      "total_enrolment": 70,
-      "total_student_completed": 30
+      "title": "React js",
+      "teacher": "Kamil Khan",
+      "date": "29-AUG-2023",
+      "enrolledStudents": 70,
+      "completedStudents": 30
     },
     {
-      "course_name": "React js",
-      "teacher_name": "Kamil Khan",
-      "uploaded_on": "29-AUG-2023",
-      "total_enrolment": 70,
-      "total_student_completed": 30
+      "title": "React js",
+      "teacher": "Kamil Khan",
+      "date": "29-AUG-2023",
+      "enrolledStudents": 70,
+      "completedStudents": 30
     }
   ]
 }

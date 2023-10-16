@@ -6,17 +6,18 @@ import AuthContext from "../../context/AuthContext";
 import StudentFilter from "../../components/popups/StudentFilter";
 
 function AdminTeacherList() {
-  // const dbJson = "https://jsonserver-6gyk.onrender.com";
+  // const backend = "https://jsonserver-6gyk.onrender.com";
 
-  // const endpoint = "http://localhost:7000";
-  const backend = "https://lms-fh7w.onrender.com";
+  const backend = "http://localhost:7000";
+  // const backend = "https://lms-fh7w.onrender.com";
 
   const [teacher, setTeacher] = useState([]);
   const { token } = useContext(AuthContext);
   const [loading, setLoading] = useState(true);
 
   const getTeacherList = () => {
-    fetch(`${backend}/api/users/teachers/`, { headers: { token } })
+    // fetch(`${backend}/api/users/teachers/`, { headers: { token } })
+    fetch(`${backend}/Admin_Teacher`, { headers: { token } })
       .then(response => response.json())
       .then(data => setTeacher(data))
       .catch(error => console.log(error))
