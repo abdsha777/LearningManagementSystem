@@ -7,7 +7,7 @@
 body:has(.login) {
     padding: 0;
     max-height: 100vh;
-    /* overflow: hidden; */
+    overflow: hidden;
 }
 
 .login-right {
