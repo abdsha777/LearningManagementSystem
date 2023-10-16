@@ -1,7 +1,7 @@
 
 .navbar1 {
     width: 100%;
-    height: auto;
+    height: 100%;
     background-color: #fff;
     box-shadow: 6px 6px 7px 0px rgba(0, 0, 0, 0.25);
     display: flex;
@@ -29,9 +29,6 @@ ul a {
     text-decoration: none;
 }
 
-.navBtn {
-    margin-top: 10px;
-}
 
 .navBtn .btn-sign {
     padding: 15px 35px;
@@ -231,12 +228,11 @@ ul a {
 
 
 .hero-3-container {
-    display: grid;
-    grid-template-rows: 1200px;
-    grid-template-columns: auto auto;
+    display: flex;
     padding: 100px 130px;
     background-image: linear-gradient(180deg, #5DDCD6 28.49%, rgba(122, 109, 177, 0.15) 100.28%, #62CCC5 100.29%);
     height: 550px;
+    position: relative;
 }
 
 .hero-3-content h1 {
@@ -281,9 +277,9 @@ ul a {
 
 
 .hero-3-img {
-    position: relative;
+    position: absolute;
     right: 100px;
-    bottom: 150px;
+    top: -50px;
 }
 
 .hero-4 {
@@ -297,6 +293,10 @@ ul a {
     background-color: #fff;
 }
 
+.hero-cont-hed{
+   
+}   
+
 .hero-cont-hed h1 {
     font-size: 50px;
     font-family: Roboto;
@@ -304,11 +304,10 @@ ul a {
 
 .hero-cont-hed p {
     font-size: 25px;
-    padding: 0 400px;
-    text-align: center;
     margin: 20px 0;
     font-weight: 100;
     font-family: Inter;
+    text-align: center;
 }
 
 .cards-box {
@@ -317,7 +316,7 @@ ul a {
     align-items: center;
 }
 
-.card {
+.card1 {
     border-radius: 50px;
     border: 1px solid #000;
     background: #FFF;
@@ -538,9 +537,9 @@ ul a {
 }
 
 .col-1-contnt p {
-    font-size: 20px;
+    font-size: 19px;
     width: 400px;
-    margin: 27px 0 30px 0;
+    margin: 10px 0 20px 0;
     font-family: Inter;
 }
 
@@ -785,6 +784,7 @@ ul a {
     .hero-4-container {
         height: 1300px;
     }
+
 
     .hero-cont-hed h1 {
         font-size: 30px;
@@ -1091,4 +1091,78 @@ ul a {
         height: 1435px;
        
     }
+}
+
+@media only screen and (min-width: 768px) and (max-width: 992px){
+
+    .navbar1 {
+        width: 100%;
+        height: 100%;
+        background-color: #fff;
+        box-shadow: 6px 6px 7px 0px rgba(0, 0, 0, 0.25);
+        display: flex;
+        justify-content: space-between;
+        padding: 0px 50px;
+    }
+    
+    
+    .logo1 img {
+        margin-top: 6px;
+        width: 70%;
+    }
+    
+    ul {
+        display: flex;
+        gap: 30px;
+        list-style: none;
+        font-size: 15px;
+        margin: 22px 0;
+    
+    }
+    
+    
+    .navBtn .btn-sign {
+        padding: 10px 25px;
+    }
+    
+
+    .hero-1-content {
+        margin: 50px 100px;
+    }
+    
+    .hero-1-content h1 {
+        font-size: 40px;
+        display: grid;
+        grid-template-columns: 300px;
+    }
+    
+    .hero-1-btn {
+        margin-top: 40px;
+    }
+    
+    .hero-1-container {
+        border-radius: 0px 0px 300px 0px;
+        background: #34C1B8;
+        width: 100%;
+        height: 500px;
+        display: flex;
+    }
+
+    .hero-1-img{
+        position: relative;
+        top: 0;
+    }
+
+    .conten-img{
+        left: 270px;
+        top: 220px;
+    }
+
+    .hero-2-container {
+        display: flex;
+        margin: 0px 0px;
+        height: 550px;
+        background-color: #fff;
+    }
+  
 }
