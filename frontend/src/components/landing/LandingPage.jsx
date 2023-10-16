@@ -1,4 +1,5 @@
 import React from 'react'
+import {Link} from 'react-router-dom'
 import './LandingPage.css'
 import img1 from '../../assets/landing/logo.png';
 import content_img from '../../assets/landing/content-img.png';
@@ -43,7 +44,7 @@ function LandingPage() {
                             </ul>
                         </div>
                         <div class="navBtn">
-                            <button class="btn-sign">Login Now</button>
+                            <Link to='/login'><button class="btn-sign">Login Now</button></Link>
                         </div>
                     </nav>
                     <section class="hero-1">
@@ -51,7 +52,7 @@ function LandingPage() {
                             <div class="hero-1-content">
                                 <h1>All -in-one Study courses to easy learn and get certified</h1>
                                 <div class="hero-1-btn">
-                                    <button class="btn-1">Login Now</button>
+                                    <Link to='/login'><button class="btn-1">Login Now</button></Link>
                                 </div>
                                 <div class="conten-img">
                                     <img src={content_img} class="img-1" />
@@ -78,7 +79,7 @@ function LandingPage() {
                         Learn from the best. Our instructors are industry leaders, experts, and educators dedicated to your success.
                         </p>
                         <div class="hero-2-btn">
-                            <button class="btn-2">Login Now</button>
+                            <Link to='/login'><button class="btn-2">Login Now</button></Link>
                         </div>
                         
                     </div>
