@@ -51,7 +51,7 @@ function LandingPage() {
                             <div class="hero-1-content">
                                 <h1>All -in-one Study courses to easy learn and get certified</h1>
                                 <div class="hero-1-btn">
-                                    <button class="btn-1">Sign-up Now</button>
+                                    <button class="btn-1">Login Now</button>
                                 </div>
                                 <div class="conten-img">
                                     <img src={content_img} class="img-1" />
@@ -78,7 +78,7 @@ function LandingPage() {
                         Learn from the best. Our instructors are industry leaders, experts, and educators dedicated to your success.
                         </p>
                         <div class="hero-2-btn">
-                            <button class="btn-2">Start for free</button>
+                            <button class="btn-2">Login Now</button>
                         </div>
                         
                     </div>
@@ -95,7 +95,7 @@ function LandingPage() {
                         Tailor your learning experience to your pace and preferences. Mix and match courses, and track your progress with ease.
                         </p>
                         <div class="hero-3-btn">
-                            <button class="btn-3">Sign-up Now</button>
+                            <button class="btn-3">Login Now</button>
                         </div>
                     </div>
                     <div class="hero-3-img">
@@ -281,7 +281,7 @@ function LandingPage() {
                                  education and skill development. 
                                 </p>
                                 <div class="foot-btn">
-                                    <button class="f-btn">SignUp Now</button>
+                                    <button class="f-btn">Login Now</button>
                                 </div>
                             </div>
                             <div class="col-2-contnt">
