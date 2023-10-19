@@ -4,7 +4,9 @@ import { Link } from "react-router-dom";
 import { Chart as ChartJS, ArcElement, Tooltip, Legend } from "chart.js";
 
 function StudentCourseDetail() {
-  const dbJson = "https://jsonserver-6gyk.onrender.com";
+  // const dbJson = "https://jsonserver-6gyk.onrender.com";
+  const dbJson = " http://localhost:7000";
+
   let size = 1;
   const [course, setCourse] = useState([]);
   const [Module, setModule] = useState([]);

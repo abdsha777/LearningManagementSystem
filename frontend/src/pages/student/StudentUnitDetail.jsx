@@ -3,7 +3,8 @@ import image from '../../assets/image.jpg'
 import { Link } from "react-router-dom";
 
 function StudentUnitDetail() {
-    const dbJson = "https://jsonserver-6gyk.onrender.com";
+    // const dbJson = "https://jsonserver-6gyk.onrender.com";
+    const dbJson = " http://localhost:7000";
     const[unitModule,setUnitModule]=useState([])
   const[unitVideo,setUnitVideo]=useState([])
 
