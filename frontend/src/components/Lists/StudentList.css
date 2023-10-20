@@ -1,0 +1,344 @@
+.studentListNew{
+    height: 100%;
+}
+.listHeading{
+    display: flex;
+    align-items: center;
+    margin-bottom: 25px;
+}
+
+.listHeading h1{
+    color: #5DDCD6;
+    text-align: center;
+    font-size: 64px;
+    width: 100%;
+}
+
+.listHeading button{
+    padding: 0 40px;
+    background-color: #5DDCD6;
+    border: 0;
+    border-radius: 10px;
+    font-size: 60px;
+    line-height: 0.9;
+}
+
+.searchSection{
+    display: flex;
+    margin-bottom: 25px;
+}
+
+.searchSection input{
+    width: 100%;
+    border-radius: 24px; 
+    border: 1px solid #5DDCD6;
+    box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
+    margin-right: 40px;
+    padding: 10px 40px;
+    font-size: 32px;
+}
+.searchSection input:focus{
+    outline: 0;
+    border: 1px solid #555;
+}
+.searchSection input::placeholder{
+    color: lightgray;
+}
+
+.searchSection button{
+    border-radius: 24px;
+    background: #D1FFFD;
+    box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
+    color: #555;
+    font-size: 32px;
+    padding: 10px 40px;
+    border: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: 0.3s background-color;
+}
+.searchSection button:hover{
+    background-color: #5DDCD6;
+}
+
+.searchSection button svg{
+    margin-right: 10px;
+}
+
+/* list section  */
+
+.listSection{
+    display: grid;
+    grid-template-columns: 25% 75%;
+    /* gap: 40px; */
+}
+
+.filterBox{
+    /* border: 1px solid black; */
+    border-radius: 24px;
+    box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    max-height: 400px;
+}
+
+.filterHead{
+    padding: 10px 30px;
+    background: #D1FFFD;
+}
+
+.filterBody{
+    display: flex;
+    flex-direction: column;
+    min-height: 35vh;
+    max-height: 35vh;
+    overflow-y: scroll;
+}
+.filterBody::-webkit-scrollbar{
+    width: 3px;
+    opacity: 0.5;
+    border: 0;
+}
+.filterBody::-webkit-scrollbar-thumb{
+    background-color: #5DDCD6;
+}
+.filterBody::-webkit-scrollbar-track{
+    display: none;
+
+}
+
+.filter{
+    border: 1px solid #CFCFCF;
+    padding: 10px 30px;
+}
+
+.filterInfo{
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 10px;
+}
+.filterInfo h4{
+    color: #555;
+    font-size: 20px;
+    font-weight: 700;
+}
+.filterInfo button{
+    color: #5DDCD6;
+    font-size: 14px;
+    background-color: transparent;
+    border: 0;
+}
+.filterInfo button:hover{
+    text-decoration: underline;
+}
+
+.filterDropDown{
+    border-radius: 10px;
+    background: #D1FFFD;
+    padding: 10px 20px;
+    width: 100%;
+    appearance: none;
+    background-image: url("data:image/svg+xml;utf8,<svg fill='black' height='24' viewBox='0 0 24 24' width='24' xmlns='http://www.w3.org/2000/svg'><path d='M7 10l5 5 5-5z'/><path d='M0 0h24v24H0z' fill='none'/></svg>");
+    background-repeat: no-repeat;
+    background-position-x: 100%;
+    background-position-y: 50%;
+
+    color: #737373;
+    font-size: 16px;
+    border: 0;
+}
+.filterDropDown option{
+    padding: 10px 20px;
+}
+
+.filterBottom{
+    padding: 10px 30px;
+    background-color: #D1FFFD;
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+}
+.filterBottom button{
+    padding: 10px 20px;
+    color: #5DDCD6;
+    font-size: 24px;
+    width: 100%;
+    background-color: white;
+    border-radius: 10px;
+    border: 1px solid #000;
+}
+.filterBottom button:nth-child(2){
+    color: black;
+    background-color: #5DDCD6;
+    border: 0;
+}
+
+
+/* list table */
+
+
+
+.listBox{
+    /* border: 1px solid black; */
+    margin-left: 40px;
+    border-radius: 24px;
+    overflow: hidden;
+    box-shadow: 0px 2px 4px 0px rgba(0, 0, 0, 0.25);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    max-height: 400px; /* Set the max height to 400px */
+    overflow-y: auto;
+    position: relative;
+}
+.listBox::-webkit-scrollbar{
+    width: 5px;
+}
+.listBox::-webkit-scrollbar-thumb{
+    background-color: #5DDCD6;
+}
+
+.listTable{
+    width: 100%;
+    margin: 0;   
+    padding: 0;
+    border-collapse: collapse;
+    max-height: 300px;
+    overflow-y: scroll;
+}
+
+.listTable thead tr{
+    width: 100%;
+    background-color: #D1FFFD;
+    justify-content: space-between;
+    position: sticky;
+}
+
+.listTable thead th{
+    padding: 10px 5px;
+    text-align: left;
+}
+
+
+.listTable tbody tr{
+    display: table-row;
+    background-color: black;
+    padding-bottom: 10px;
+}
+
+.listTable tbody td{
+    background-color: #f0fffe;
+    padding: 10px 5px;
+}
+
+.studentDetails{
+    display: flex;
+}
+.studentDetails h3{
+    color: #555;
+    font-size: 24px;
+}
+.studentDetails .img{
+    background-color: #5DDCD6;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+}
+.status{
+    background-color: #7DFF92;
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+}
+
+
+.listBulkActions{
+    background: #D1FFFD;
+    padding: 10px 30px;
+    margin-top: auto;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    position: sticky;
+    bottom: 0;
+}
+
+.listBulkActions label{
+    font-size: 20px;
+}
+.listBulkActions button{
+    display: flex;
+    width: 173px;
+    height: 50px;
+    padding: 10px 0px;
+    justify-content: center;
+    align-items: center;
+    background-color: white;
+    border-radius: 10px;
+    color: #71E0DB;
+    font-size: 24px;
+}
+.listBulkActions .bulkApply{
+    background-color: #5DDCD6;
+    color: #000;
+    border: 0;
+}
+
+.listSection input[type=checkbox]{
+    appearance: none;
+    padding: 6px;
+    background-color: white;
+    border: 1px solid black;
+    margin: 0 10px;
+    border-radius: 3px;
+}
+.listSection input[type=checkbox]:checked{
+    background-color: #5DDCD6;
+}
+
+
+
+@media (max-width:800px){
+    .listHeading h1{
+        font-size: 42px;
+    }
+    .listHeading button{
+        font-size: 42px;
+        padding: 0 30px;
+    }
+
+    .listSection{
+        grid-template-columns: 1fr;    
+    }
+}
+
+
+@media (max-width:480px){
+    .listHeading {
+        flex-direction: column;
+    }
+    .listHeading button{
+        width: 100%;
+        padding: 5px 0px;
+    }
+
+    .searchSection input{
+        margin: 0;
+        font-size: 24px;
+        padding: 5px 20px;
+    }
+    .searchSection button{
+        font-size: 10px;
+        padding: 5px 10px;
+        /* margin: 10px; */
+    }
+    .searchSection button svg{
+        height: 10px;
+        margin: 0;
+    }
+    .searchSection{
+        gap: 10px;
+    }
+}
