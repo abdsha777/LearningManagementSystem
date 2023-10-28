@@ -3,13 +3,15 @@ const fetchuser = require('../../middleware/fetchuser')
 const Course = require('../../models/Course')
 const isAdminOrTeacher = require('../../middleware/isAdminOrTeacher')
 const { body, validationResult } = require('express-validator');
+const User = require('../../models/User');
+const Enrollment = require('../../models/Enrollment');
 
 const router = express.Router()
 
 router.get('/', fetchuser, async (req, res) => {
     try {
-        const page = parseInt(req.query.page) || 1; // Get the requested page (default to page 1)
-        const limit = parseInt(req.query.limit) || 10; // Set a default limit or use a query parameter
+        const page = parseInt(req.query.page) || 1;
+        const limit = parseInt(req.query.limit) || 10;
         const searchTitle = req.query.title || '';
 
         const startIndex = (page - 1) * limit;
@@ -17,19 +19,50 @@ router.get('/', fetchuser, async (req, res) => {
 
         const query = {};
         if (searchTitle) {
-            query.title = { $regex: searchTitle, $options: 'i' }; // Case-insensitive search by title
+            query.title = { $regex: searchTitle, $options: 'i' };
         }
 
         const coursesCount = await Course.countDocuments(query);
         const totalPages = Math.ceil(coursesCount / limit);
 
-        const courses = await Course.find(query).skip(startIndex).limit(limit);
+        const courses = await Course.find(query)
+            .skip(startIndex)
+            .limit(limit);
+
+        // Retrieve additional information for each course
+        const courseDetails = await Promise.all(
+            courses.map(async (course) => {
+                // Query the teacher's name
+                const teacher = await User.findById(course.teacherId);
+
+                // Query the number of enrolled students
+                const enrolledStudentsCount = await Enrollment.countDocuments({
+                    courseId: course.id,
+                });
+
+                // Query the number of students who have completed the course
+                const completedStudentsCount = await Enrollment.countDocuments({
+                    courseId: course.id,
+                    status: 'completed',
+                });
+
+                return {
+                    id: course.id,
+                    title: course.title,
+                    description: course.description,
+                    teacher: teacher.name,
+                    enrolledStudents: enrolledStudentsCount,
+                    completedStudents: completedStudentsCount, // Add the number of students who have completed the course
+                    date: course.createdAt, // Add the course date (adjust as needed)
+                };
+            })
+        );
 
         const result = {
-            courses: courses,
+            courses: courseDetails,
             currentPage: page,
             totalPages: totalPages,
-            totalCourses: coursesCount, // Add totalCourses to indicate the total number of courses available
+            totalCourses: coursesCount,
         };
 
         res.json(result);
@@ -66,7 +99,7 @@ router.post('/create/', fetchuser, isAdminOrTeacher, [
     }
 })
 
-router.get('/teachermycourse/', fetchuser,isAdminOrTeacher ,async (req, res) => {
+router.get('/teachermycourse/', fetchuser, isAdminOrTeacher, async (req, res) => {
     try {
         const searchTitle = req.query.title || '';
 

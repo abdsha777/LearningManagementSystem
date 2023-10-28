@@ -1,5 +1,6 @@
 import React, { useEffect,useState } from 'react';
 import './AdminCourseList.css';
+import StudentFilter from '../../components/popups/StudentFilter';
 
 function AdminCourseList() {
     // const dbJson = "https://jsonserver-6gyk.onrender.com";
@@ -10,6 +11,7 @@ function AdminCourseList() {
         .then(response=>response.json())
         .then(data=>setCourses(data))
         .catch(e=>console.log(e))
+        console.log(courses)
     }
 
     useEffect(()=>{
@@ -21,8 +23,8 @@ function AdminCourseList() {
 
             <div className="sub_heading">
                 <input type="text" placeholder="Search Courses" />
-
-                <button className="filter1">Filter </button>
+                
+                <StudentFilter />
             </div>
 
             <div className="module2">
@@ -49,13 +51,13 @@ function AdminCourseList() {
                                     <tr key={key}>
                             <td>
                                 <div className="course-info">
-                                    {record.course_name}
+                                    {record.title}
                                      </div>
                             </td>
-                            <td>{record.teacher_name}</td>
-                            <td>{record.uploaded_on}</td>
-                            <td>{record.total_enrolment}</td>
-                            <td>{record.total_student_completed}</td>
+                            <td>{record.teacher}</td>
+                            <td>{record.date}</td>
+                            <td>{record.enrolledStudents}</td>
+                            <td>{record.completedStudents}</td>
                             <td>
                                 <button>Set</button>
                             </td>

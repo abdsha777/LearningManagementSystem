@@ -116,9 +116,9 @@ function AdminSidebar() {
         </svg>
         Course List
       </NavLink>
-      <Link to=".." className="sidebar-links">
+      {/* <Link to=".." className="sidebar-links">
         &larr; GO BACK
-      </Link>
+      </Link> */}
       <button className="sidebar-links" onClick={logoutUser}>LOGOUT</button>
     </div>
   );

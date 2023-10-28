@@ -69,10 +69,6 @@ function AdminAddTeacher() {
                     </div>
                 </div>
 
-                <div className="module_btn">
-                    <p> Module:</p>
-                    <button className="btn btn-border-blue">+ Add Module</button>
-                </div>
 
             </div>
 

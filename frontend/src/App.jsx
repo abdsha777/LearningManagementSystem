@@ -1,4 +1,5 @@
 import './App.css'
+import 'reactjs-popup/dist/index.css';
 // css files
 import './pages/teacher/TeacherCourseDetail.css'
 import './pages/teacher/TeacherUnitDetail.css'
@@ -45,7 +46,7 @@ function App() {
         <AuthProvider>
           <Routes>
             <Route path='/login' element={<Login />} />
-            {/* <Route path='/home' element={<LandingPage />} /> */}
+            <Route path='/home' element={<LandingPage />} />
             <Route path='/' element={<Layout />}>
 
               <Route element={<PrivateRoute />}>

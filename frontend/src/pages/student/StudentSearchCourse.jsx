@@ -2,7 +2,8 @@ import React, { useEffect, useState } from 'react'
 import image from '../../assets/image.jpg'
 
 function StudentSearchCourse() {
-    const dbJson = "https://jsonserver-6gyk.onrender.com";
+    // const dbJson = "https://jsonserver-6gyk.onrender.com";
+    const dbJson = "http://localhost:7000";
     const [module, setModule] = useState([]);
     const [course, setCourse] = useState([]);
 

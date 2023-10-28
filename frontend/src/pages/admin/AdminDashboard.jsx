@@ -1,5 +1,4 @@
-import React, { useEffect, useState } from 'react'
-import img from '../../assets/FigmaGraph.jpg'
+import React, { useContext, useEffect, useState } from 'react'
 import { Bar } from 'react-chartjs-2';
 import {
     Chart as ChartJS,
@@ -10,6 +9,7 @@ import {
     Tooltip,
     Legend,
 } from 'chart.js';
+import AuthContext from '../../context/AuthContext';
 ChartJS.register(
     CategoryScale,
     LinearScale,
@@ -20,22 +20,28 @@ ChartJS.register(
 );
 
 function AdminDashboard() {
-    const dbJson = "https://jsonserver-6gyk.onrender.com";
-    
+    // const backend = "https://jsonserver-6gyk.onrender.com";
+    const backend = " http://localhost:7000";
+    // const backend = "http://localhost:5000";
+    const {token} = useContext(AuthContext);
     const [course, setCourse] = useState([])
     const [overView, setOverview] = useState([])
-
+    const getOverviewList = () => {
+        // fetch(`${backend}/api/overview/admin/`,{headers:{token:token}})
+        fetch(`${backend}/Admin_overview`,{headers:{token:token}})
+            .then(response => response.json())
+            .then(data => setOverview(data))
+            .catch(error => console.log(error))
+            // console.log(overView)
+    }
     const getCourseList = () => {
-        fetch(`${dbJson}/Admin_Teacher_course`)
+        // fetch(`${backend}/api/course/`,{headers:{token:token}})
+        fetch(`${backend}/Admin_course_list`,{headers:{token:token}})
             .then(response => response.json())
             .then(data => setCourse(data))
+            // .then(data => setCourse(data['courses']))
             .catch(error => console.log(error))
-    }
-    const getOverviewList = () => {
-        fetch(`${dbJson}/Admin_overview`)
-            .then(response => response.json())
-            .then(data => setOverview(data[0]))
-            .catch(error => console.log(error))
+        // console.log(course)
     }
 
     useEffect(() => {
@@ -43,10 +49,12 @@ function AdminDashboard() {
         getOverviewList();
     }, [])
     const data = {
-        labels: ['React', 'Java', 'C++', "Python", 'React', 'Java', 'C++', "Python"],
+        labels: ['react','Java','C++'],
+        // labels: overView.courseData?.map(e=>e.courseName),
         datasets: [{
             label: 'No Of Sudents',
-            data: [121, 222, 88, 200, 121, 222, 88, 200],
+            // data: overView.courseData?.map(e=>e.studentCount),
+            data: [22,33,100],
             backgroundColor: ['#5DDCD6']
         }]
     }
@@ -73,7 +81,7 @@ function AdminDashboard() {
                         <div>
                             <div className="text">
                                 <h3 id="main-text">Total No. of Student</h3>
-                                <h4 id="num">{overView.no_of_students}</h4>
+                                <h4 id="num">{overView.totalStudents}</h4>
                             </div>
                         </div>
 
@@ -84,7 +92,7 @@ function AdminDashboard() {
                         <div>
                             <div className="text">
                                 <h3 id="main-text">Total No. of Teachers</h3>
-                                <h4 id="num">{overView.total_teacher}</h4>
+                                <h4 id="num">{overView.totalTeachers}</h4>
                             </div>
                         </div>
                     </div>
@@ -94,7 +102,7 @@ function AdminDashboard() {
                         <div>
                             <div className="text">
                                 <h3 id="main-text">Total Course Uploaded</h3>
-                                <h4 id="num">{overView.total_course}</h4>
+                                <h4 id="num">{overView.totalCourses}</h4>
                             </div>
                         </div>
                     </div>
@@ -105,7 +113,7 @@ function AdminDashboard() {
                         <div>
                             <div className="text">
                                 <h3 id="main-text">Total Student Enrolled</h3>
-                                <h4 id="num">{overView.enroll_student}</h4>
+                                <h4 id="num">{overView.totalEnrollments}</h4>
                             </div>
                         </div>
                     </div>
@@ -130,20 +138,20 @@ function AdminDashboard() {
                             <th>Total Enrollments</th>
                             <th>Total No. of Student Completed</th>
                             <th>Uploaded By</th>
-                            <th>Faculty (viewed by)</th>
                         </tr>
                     </thead>
                     <tbody>
                         {
                             course.map((record, key) => {
+                                let date = new Date(record.date )
                                 return (
                                     <tr key={key}>
-                                        <td>{record.name}</td>
-                                        <td>{record.upload}</td>
-                                        <td>{record.tenroll}</td>
-                                        <td>{record.student_complete}</td>
-                                        <td>{record.uploaded_by}</td>
-                                        <td>{record.faculty}</td>
+                                        <td>{record.title}</td>
+                                        {/* <td>{`${date.getDay()}/${date.getMonth()}/${date.getFullYear()}`}</td> */}
+                                        <td>{record.date}</td>
+                                        <td>{record.enrolledStudents}</td>
+                                        <td>{record.completedStudents}</td>
+                                        <td>{record.teacher}</td>
                                     </tr>
                                 )
                             })
