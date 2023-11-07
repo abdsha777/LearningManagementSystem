@@ -29,10 +29,10 @@ function StudentList() {
                                 <h4>Class</h4>
                                 <button>Reset</button>
                             </div>
-                            <select className='filterDropDown' name="class">
-                                <option value="FYBCA" selected>FYBCA</option>
+                            <select className='filterDropDown' name="class" defaultValue={"FYBCA"}>
+                                <option value="FYBCA" >FYBCA</option>
                                 <option value="SYBCA" >SYBCA</option>
-                                <option value="TYBCA">TYBCA</option>
+                                <option value="TYBCA" >TYBCA</option>
                             </select>
                         </div>
                     </div>
