@@ -2,7 +2,8 @@ import React, { useEffect, useState } from 'react'
 import './StudentVideo.css'
 
 function StudentVideo() {
-    const dbJson = "https://jsonserver-6gyk.onrender.com";
+    // const dbJson = "https://jsonserver-6gyk.onrender.com";
+    const dbJson = "http://localhost:7000";
     const [video,setVideo]=useState([]);
     const getVideoList=()=>{
         fetch(`${dbJson}/video_details`)
