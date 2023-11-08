@@ -1,12 +1,13 @@
 import React from 'react'
 import './StudentList.css'
+import { Link } from 'react-router-dom';
 
 function StudentList() {
     return (
         <div className='studentListNew'>
             <div className="listHeading">
                 <h1>STUDENT LIST</h1>
-                <button>+</button>
+                <Link to={'add'}><button>+</button></Link>
             </div>
             <div className="searchSection">
                 <input type="text" name="query" placeholder='Search by name...' />
