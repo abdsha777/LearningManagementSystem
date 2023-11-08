@@ -301,6 +301,7 @@
 
 
 @media (max-width:800px){
+
     .listHeading h1{
         font-size: 42px;
     }
@@ -311,6 +312,50 @@
 
     .listSection{
         grid-template-columns: 1fr;    
+        gap: 40px;
+    }
+
+    .listBox{
+        margin: 0;
+    }
+    .listTable tr th:nth-child(3),.listTable tr th:nth-child(4),.listTable tr th:nth-child(5),
+    .listTable tr td:nth-child(3),.listTable tr td:nth-child(4),.listTable tr td:nth-child(5){
+        display: none;
+    }
+
+    .listTable tr td ,.listTable tr th {
+        padding: 15px 10px;
+    }
+
+    .studentDetails .img{
+        height: 30px;
+        width: 30px;
+    }
+    .studentDetails small{
+        font-size: 10px;
+    }
+    .studentDetails h3{
+        font-size: 12px;
+    }
+
+    .listTable .status{
+        margin: 0;
+    }
+
+    .listBulkActions{
+        padding: 10px 10px;
+        gap: 5px;
+    }
+
+    .listBulkActions label{
+        font-size: 16px;
+        display: flex;
+        align-items: center;
+    }
+
+    .listBulkActions button{
+        padding: 5px;
+        font-size: 16px;
     }
 }
 
@@ -328,11 +373,13 @@
         margin: 0;
         font-size: 24px;
         padding: 5px 20px;
+        border-radius: 10px;
     }
     .searchSection button{
         font-size: 10px;
         padding: 5px 10px;
         /* margin: 10px; */
+        border-radius: 10px;
     }
     .searchSection button svg{
         height: 10px;
