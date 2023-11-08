@@ -1,6 +1,6 @@
-.studentListNew{
-    height: 100%;
-}
+/* .studentListNew{
+
+} */
 .listHeading{
     display: flex;
     align-items: center;
@@ -361,6 +361,9 @@
 
 
 @media (max-width:480px){
+    .listBox{
+        margin-bottom: 20px;
+    }
     .listHeading {
         flex-direction: column;
     }
@@ -388,4 +391,22 @@
     .searchSection{
         gap: 10px;
     }
+    .listBulkActions label{
+        font-size: 14px;
+    }
+
+    .listBulkActions button{
+        font-size: 14px;
+    }
+
+    .filterBottom button{
+        font-size: 16px;
+    }
+}
+
+@media (max-width:350px){
+    .studentDetails h3{
+        font-size: 10px;
+    }
+
 }
