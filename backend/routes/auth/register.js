@@ -6,6 +6,7 @@ const { body, validationResult } = require('express-validator');
 const isAdmin = require('../../middleware/isAdmin');
 const isAdminOrTeacher = require('../../middleware/isAdminOrTeacher');
 const fetchuser = require('../../middleware/fetchuser');
+const StudentDetail = require('../../models/StudentDetail');
 
 const signature = "SIGNATURE";
 
@@ -13,21 +14,21 @@ const router = express.Router()
 
 router.post('/register',fetchuser,isAdmin,[
     body('email').isEmail(),
-    body('password').isLength({min:1}),
     body('name').isLength({min:1}),
-    body('role').isIn(['student','teacher','admin'])
+    body('role').isIn(['teacher','admin'])
 ],async (req,res)=>{
     const errors = validationResult(req);
     if (!errors.isEmpty()) {
         return res.status(400).json({ errors: errors.array() });
     }
     try {
-        const {email,name,password,role} = req.body;
+        const {email,name,role} = req.body;
         let user = await User.findOne({email:email})
 
         if(user){
             return res.status(400).send("user already exists!")
         }
+        const password = name.split(" ")[0]+ Math.floor(Math.random()*1000)
 
         const salt = await bcrypt.genSalt(5);
         const securePassword = await  bcrypt.hash(password ,salt);
@@ -41,7 +42,9 @@ router.post('/register',fetchuser,isAdmin,[
         res.json({
             id:user.id,
             name:user.name,
-            role
+            role,
+            email,
+            password
         })
         
     } catch (error) {
@@ -52,18 +55,17 @@ router.post('/register',fetchuser,isAdmin,[
 
 router.post('/registerStudent',fetchuser,isAdminOrTeacher,[
     body('email').isEmail(),
-    body('password').isLength({min:1}),
     body('name').isLength({min:1}),
-    body('role','Only Students can be registered').isIn(['student'])
+    body('class').isLength({min:1})
 ],async (req,res)=>{
     const errors = validationResult(req);
     if (!errors.isEmpty()) {
         return res.status(400).json({ errors: errors.array() });
     }
     try {
-        const {email,name,password,role} = req.body;
+        const {email,name, phoneNumber } = req.body;
         let user = await User.findOne({email:email})
-
+        const password = name.split(" ")[0]+ Math.floor(Math.random()*1000)
         if(user){
             return res.status(400).send("user already exists!")
         }
@@ -75,12 +77,21 @@ router.post('/registerStudent',fetchuser,isAdminOrTeacher,[
             email:email,    
             password:securePassword,
             name:name,
-            role:role
+            role:"student"
+        })
+        let studentDetail = await StudentDetail.create({
+            userId:user.id,
+            class:req.body.class,
+            phoneNumber:phoneNumber
         })
         res.json({
             id:user.id,
             name:user.name,
-            role:role
+            role:"student",
+            class:studentDetail.class,
+            phoneNumber:phoneNumber,
+            email,
+            password
         })
         
     } catch (error) {

@@ -510,6 +510,13 @@
       "faculty": "commerce",
       "year": "Tybca",
       "id": 136728
+    },
+    {
+      "name": "abdulla",
+      "email": "a@a.com",
+      "faculty": "science",
+      "class": "hh",
+      "id": 136729
     }
   ],
   "Admin_Teacher": [
@@ -539,12 +546,11 @@
     }
   ],
   "Admin_overview": {
-      "totalStudents": 500,
-      "totalCourses": 10,
-      "totalTeachers": 100,
-      "totalEnrollments": 1000
-    }
-  ,
+    "totalStudents": 500,
+    "totalCourses": 10,
+    "totalTeachers": 100,
+    "totalEnrollments": 1000
+  },
   "Admin_course_list": [
     {
       "title": "React js",

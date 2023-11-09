@@ -5,6 +5,7 @@ const isAdminOrTeacher = require('../../middleware/isAdminOrTeacher')
 const Course = require('../../models/Course')
 const Enrollment = require('../../models/Enrollment')
 const User = require('../../models/User')
+const StudentDetail = require('../../models/StudentDetail')
 
 const router = express.Router()
 
@@ -26,10 +27,48 @@ router.get('/teachers',fetchuser,isAdmin,async (req,res)=>{
         res.status(500).json({ error: 'Server error' });
     }
 })
+
 router.get('/students',fetchuser,isAdmin,async (req,res)=>{
     try {
         const students = await User.find({role:'student'});
-        res.json(students);
+
+        const studentDetails = await StudentDetail.find({
+            userId: { $in: students.map(s => s.id) }
+        })
+
+        const enrollmentCounts = await Enrollment.aggregate([
+            {
+                $match: {
+                    userId: { $in: students.map(student => student.id) }
+                }
+            },
+            {
+                $group: {
+                    _id: '$userId',
+                    totalEnrolled: { $sum: 1 },
+                    totalCompleted: {
+                        $sum: {
+                            $cond: [{ $eq: ['$status', 'completed'] }, 1, 0]
+                        }
+                    }
+                }
+            }
+        ]);
+
+        const studentInfo = students.map(student => {
+            const detail = studentDetails.find(detail => detail.userId.equals(student._id));
+            const enrollmentCount = enrollmentCounts.find(count => count._id.equals(student._id));
+            return {
+                id:student.id,
+                name: student.name,
+                active: student.active,
+                class: detail ? detail.class : null,
+                totalEnrolled: enrollmentCount ? enrollmentCount.totalEnrolled : 0,
+                totalCompleted: enrollmentCount ? enrollmentCount.totalCompleted : 0
+            };
+        });
+
+        res.json(studentInfo);
     } catch (error) {
         console.error(error);
         res.status(500).json({ error: 'Server error' });
