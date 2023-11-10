@@ -115,7 +115,7 @@
 .cancel_save {
     padding-top: 20px;
     display: flex;
-    gap: 100px;
+    gap: 40px;
     align-items: center;
     /* padding-left: 23px; */
 }

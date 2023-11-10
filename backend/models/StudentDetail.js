@@ -6,7 +6,7 @@ const studentDetailSchema = mongoose.Schema({
         ref:'User'
     },
     class: String,
-    PhoneNumber: Number
+    phoneNumber: String
 })
 
 module.exports = mongoose.model("StudentDetail",studentDetailSchema)

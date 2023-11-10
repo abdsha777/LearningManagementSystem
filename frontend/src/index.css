@@ -473,7 +473,7 @@ nav{
     text-align: right;
     color: #5DDCD6;;
     text-decoration: none;
-    display: flex;
+    /* display: flex; */
 }
 .video-box.high .video-info h4{
     color: #F30C0C;

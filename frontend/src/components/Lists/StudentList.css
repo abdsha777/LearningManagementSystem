@@ -1,6 +1,6 @@
-.studentListNew{
-    height: 100%;
-}
+/* .studentListNew{
+
+} */
 .listHeading{
     display: flex;
     align-items: center;
@@ -10,7 +10,7 @@
 .listHeading h1{
     color: #5DDCD6;
     text-align: center;
-    font-size: 64px;
+    font-size: 48px;
     width: 100%;
 }
 
@@ -252,6 +252,9 @@
     height: 30px;
     border-radius: 50%;
 }
+.status.deactive{
+    background-color: rgb(248, 95, 95);
+}
 
 
 .listBulkActions{
@@ -301,6 +304,7 @@
 
 
 @media (max-width:800px){
+
     .listHeading h1{
         font-size: 42px;
     }
@@ -311,28 +315,76 @@
 
     .listSection{
         grid-template-columns: 1fr;    
+        gap: 40px;
+    }
+
+    .listBox{
+        margin: 0;
+    }
+    .listTable tr th:nth-child(3),.listTable tr th:nth-child(4),.listTable tr th:nth-child(5),
+    .listTable tr td:nth-child(3),.listTable tr td:nth-child(4),.listTable tr td:nth-child(5){
+        display: none;
+    }
+
+    .listTable tr td ,.listTable tr th {
+        padding: 15px 10px;
+    }
+
+    .studentDetails .img{
+        height: 30px;
+        width: 30px;
+    }
+    .studentDetails small{
+        font-size: 10px;
+    }
+    .studentDetails h3{
+        font-size: 12px;
+    }
+
+    .listTable .status{
+        margin: 0;
+    }
+
+    .listBulkActions{
+        padding: 10px 10px;
+        gap: 5px;
+    }
+
+    .listBulkActions label{
+        font-size: 16px;
+        display: flex;
+        align-items: center;
+    }
+
+    .listBulkActions button{
+        padding: 5px;
+        font-size: 16px;
     }
 }
 
 
 @media (max-width:480px){
+    .listBox{
+        margin-bottom: 20px;
+    }
     .listHeading {
         flex-direction: column;
     }
     .listHeading button{
         width: 100%;
-        padding: 5px 0px;
     }
 
     .searchSection input{
         margin: 0;
         font-size: 24px;
         padding: 5px 20px;
+        border-radius: 10px;
     }
     .searchSection button{
         font-size: 10px;
         padding: 5px 10px;
         /* margin: 10px; */
+        border-radius: 10px;
     }
     .searchSection button svg{
         height: 10px;
@@ -341,4 +393,22 @@
     .searchSection{
         gap: 10px;
     }
+    .listBulkActions label{
+        font-size: 14px;
+    }
+
+    .listBulkActions button{
+        font-size: 14px;
+    }
+
+    .filterBottom button{
+        font-size: 16px;
+    }
+}
+
+@media (max-width:350px){
+    .studentDetails h3{
+        font-size: 10px;
+    }
+
 }
