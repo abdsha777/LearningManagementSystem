@@ -1,26 +1,26 @@
 @import url('https://fonts.googleapis.com/css2?family=Inter&display=swap');
 
-
-
-.video-info{
+.video-container{
     display: grid;
-    grid-template-columns: 1fr 1fr;
-    width: 350px;
-    gap: 10px;
-    margin-bottom: 30px;
+    grid-template-columns: 1fr 0.5fr;
+    margin-left: 0%;
+    margin-top: 10px;
+}
+.video-modules{
+    background-color: greenyellow;
+  margin-left: 20px;
+    width: 250px;
+    height: 250px;
 }
 
-.video-info h4{
-    color:  #323030;
-    font-size: 18px;
-    font-weight: 500;
-}
+
 .video-info p{
     color: #323030;
-    font-family: Roboto;
-    font-size: 25px;
+    font-family: inter;
+    font-size: 40px;
     font-style: normal;
     font-weight: 600;
+    margin-bottom: 20px;
 }
 #video-no{
     font-weight: 1000;
@@ -28,17 +28,18 @@
     font-size: 20px;
 }
 .video{
-    width:100%;
     flex-shrink: 0;
     display:flex;
     justify-content: center;
     position: relative;
     margin-bottom: 30px;
+    margin-left: 0%
 }
 .video iframe{
     border-radius:10px ;
-    width:650px ; 
+    width:800px ; 
     height:405px;
+    margin-left: 0%;
 }
 .video img{
     width:746px;
@@ -59,6 +60,7 @@
     letter-spacing: 0.32px;
     display:flex;
     margin-bottom: 40px;
+    width: 800px;
 }
 .video-desc h4{
     color:#847E7E ;

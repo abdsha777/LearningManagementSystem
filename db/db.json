@@ -485,31 +485,46 @@
       "name": "abdulla",
       "faculty": "science",
       "year": "ACBYT",
+      "enroll": 10,
+      "ongoing": 5,
+      "completed": 9,
       "id": 136724
     },
     {
-      "name": "afiyaaaaaaa",
+      "name": "ruhi",
       "year": "pybca",
       "id": 136725,
+      "enroll": 10,
+      "ongoing": 5,
+      "completed": 9,
       "faculty": "science"
     },
     {
-      "name": "ayeshaaaaaaaaaa",
+      "name": "Shifa",
       "faculty": "arts",
       "year": "oybca",
-      "id": 136726
+      "id": 136726,
+      "enroll": 10,
+      "ongoing": 5,
+      "completed": 9
     },
     {
-      "name": "testing",
+      "name": "aditi",
       "faculty": "arts",
       "year": "2nd",
-      "id": 136727
+      "id": 136727,
+      "enroll": 10,
+      "ongoing": 5,
+      "completed": 9
     },
     {
-      "name": "test2",
+      "name": "afridi",
       "faculty": "commerce",
       "year": "Tybca",
-      "id": 136728
+      "id": 136728,
+      "enroll": 10,
+      "ongoing": 5,
+      "completed": 9
     },
     {
       "name": "abdulla",
