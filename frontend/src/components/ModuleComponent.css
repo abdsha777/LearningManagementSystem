@@ -1,34 +1,25 @@
 * {
-    margin: 0%;
-    padding: 0px;
+    margin: 0;
+    padding: 0;
     box-sizing: border-box;
 }
 
-.body {
-    background: #E9E9E9;
-    font-family: Inter;
+body{
+    padding: 50px 150px;
 }
 
-.accordion {
-    width: 914px;
-    height: 65px;
-    margin: 60px auto;
+.accordion{
+    width: 100%;
 }
-
 .accordion_label {
     display: flex;
     justify-content: space-between;
-    /* background: #1F1F1F;
-    color: #FFF; */
-    width: 914px;
-    height: 65px;
-    flex-shrink: 0;
+    width: 100%;
     font-family: Inter;
     font-size: 24px;
     font-style: normal;
     font-weight: 500;
     line-height: 95.023%;
-    position: relative;
     cursor: pointer;
     padding: 20px 40px;
     border-top: 1px;
@@ -66,25 +57,22 @@
     fill: white;
 }
 
-.accordion_label2 {
-    background: #D1F5F4;
-    padding: 20px 40px;
 
-}
-
-.accordion_label3 {
-    background: #D1F5F4;
-    padding: 20px 40px;
-    border-radius: 0px 0px 10px 10px;
-}
-
-.section1_content {
-    display: inline-block;
+.section_content {
+    display: block;
+    margin-bottom: 10px;
     background: #E9E9E9;
-    width: 914px;
+    width: 100%;
     max-height: 0;
-    transition: all .4s;
+    transition: all .4s linear,margin-bottom .1s linear;
     overflow: hidden;
+    padding: 0 40px;
+}
+
+.accordion_input:checked~ .section_content{
+    max-height: 100vh;
+    padding: 20px 40px;
+    margin-bottom: 0;
 }
 
 .section1_content1 {
@@ -94,11 +82,10 @@
     /* display: grid;
     grid-template-columns: 20% 40% 45%;
      */
+    margin-bottom: 5px;
 }
-
-#section1_duration {
-    padding-left: 620px;
-
+.section1_topic{
+    cursor: pointer;
 }
 
 .section1_icon_topic {
@@ -106,16 +93,8 @@
     gap: 10px
 }
 
-/* #section1_topic{
-    padding-left: 25px;
-} */
 .accordion_input {
     display: none;
-}
-
-.accordion_input:checked~.section1_content {
-    max-height: 100vh;
-    padding: 20px 40px;
 }
 
 .accordion_input:checked~.accordion_label3 label span {
@@ -124,42 +103,15 @@
 
 }
 
-@media (max-width: 400px) {
+@media (max-width: 800px) {
     
-    .accordion {
-       
-        width: 650px;
-        height: 65px;
-    }
-
-    .accordion_label {
-        width: 650px;
-        height: 65px;
-       
-    }
-    .section1_content{
-        width: 650px;
-    }
 
     .accordion_module p{
         display: none;
     }
-    #section1_duration{
+    .section1_duration{
         display: none;
-    }
-    #section1_topic{
-        margin-right: 410px; 
-       
     }
     
 
-}
-@media (max-width: 600px){
-    .accordion {
-       
-        width: 1200px;
-        height: 65px;
-        
-    
-    }
 }
