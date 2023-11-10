@@ -46,3 +46,11 @@
     font-size: 24px;
     margin-top: 10px;
 }
+
+.message h1{
+    color:white;
+    background-color: black;
+    padding: 10px;
+    border-radius: 5px;
+    font-size: 20px;
+}

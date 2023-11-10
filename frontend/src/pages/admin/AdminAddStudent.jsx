@@ -1,5 +1,5 @@
 import React, { useContext, useEffect, useState } from "react";
-import { useParams } from "react-router-dom";
+import { useParams, Link } from "react-router-dom";
 import { useNavigate } from "react-router-dom";
 
 import AuthContext from "../../context/AuthContext";
@@ -7,15 +7,18 @@ import './AdminAddStudent.css';
 
 
 function AdminAddStudent() {
-    const endpoint = "http://localhost:7000";
+    // const endpoint = "http://localhost:7000";
+    const endpoint = "http://localhost:5000";
     const [student, setStudent] = useState({});
     const { id } = useParams();
     const { role } = useContext(AuthContext);
     const nav = useNavigate();
-    const navPath = role == "admin" ? "/adminStudentlist" : "/teacherStudentlist";
+    const navPath = role == "admin" ? "/adminStudentlist/" : "/teacherStudentlist/";
+    const { token } = useContext(AuthContext);
+    const [message, setMessage] = useState(null)
 
     const getStudent = () => {
-        fetch(`${endpoint}/Admin_Teacher_student/` + id)
+        fetch(`${endpoint}/api/users/student/${id}/`,{headers:{token}})
             .then((response) => response.json())
             .then((data) => setStudent(data))
             .catch((error) => console.log);
@@ -29,31 +32,40 @@ function AdminAddStudent() {
     };
 
     function updateStudent() {
+        console.log(student)
         const init = {
             method: "PUT",
             headers: {
                 "Content-Type": "application/json",
+                token
             },
             body: JSON.stringify(student),
         }
-        fetch(`${endpoint}/Admin_Teacher_student/` + id, init)
+        fetch(`${endpoint}/api/users/student/${id}`, init)
             .then((response) => response.json())
             .then((data) => nav(navPath))
             .catch((err) => console.log(err));
     }
 
-    function addStudent() {
+    async function addStudent() {
         const init = {
             method: "POST",
             headers: {
                 "Content-Type": "application/json",
+                token
             },
             body: JSON.stringify(student),
         }
-        fetch(`${endpoint}/Admin_Teacher_student/`, init)
-            .then((response) => response.json())
-            .then((data) => nav(navPath))
-            .catch((err) => console.log(err));
+        const res = await fetch(endpoint + "/api/auth/registerstudent/", init)
+        console.log(res)
+        if (res.ok) {
+            const data = await res.json();
+            setStudent({})
+            setMessage("Registration Successful! email/pass: " + data.email + "/" + data.password)
+
+        } else {
+            setMessage("Invalid Details")
+        }
     }
 
     useEffect(() => {
@@ -90,6 +102,17 @@ function AdminAddStudent() {
     return (
         <div>
             <div className="main">
+                <div className="backlink">
+                    <Link to={navPath}>&larr; back</Link>
+                </div>
+                {
+                    message && (
+                        <div className="message">
+                            <h1>{message}</h1>
+                        </div>
+                    )
+                }
+
                 <div>
                     <h2>{id ? "Update" : "Add"} Student</h2>
                 </div>
@@ -105,6 +128,7 @@ function AdminAddStudent() {
                             name="name"
                             value={student.name || ""}
                             onChange={handleChange}
+                            required
                         />
                     </div>
 
@@ -121,15 +145,6 @@ function AdminAddStudent() {
                     </div>
 
                     <div className="input-box">
-                        <label htmlFor="faculty">Faculty</label>
-                        <select name="faculty" id="faculty" value={student.faculty || ""} onChange={handleChange}>
-                            <option value="---">---</option>
-                            <option value="arts">Arts</option>
-                            <option value="science">Scince</option>
-                            <option value="commerce">commerce</option>
-                        </select>
-                    </div>
-                    <div className="input-box">
                         <label htmlFor="class">Class</label>
                         <input
                             type="text"
@@ -140,6 +155,34 @@ function AdminAddStudent() {
                             onChange={handleChange}
                         />
                     </div>
+                    <div className="input-box">
+                        <label htmlFor="phoneNumber">Phone Number</label>
+                        <input
+                            type="text"
+                            id="phoneNumber"
+                            name="phoneNumber"
+                            placeholder="Phone Number"
+                            value={student.phoneNumber || ""}
+                            onChange={handleChange}
+                        />
+                    </div>
+                    {
+                        id && (
+                            <>
+                                <div className="input-box">
+                                    <label htmlFor="phoneNumber">Is Active</label>
+                                    <input
+                                        type="checkbox"
+                                        id="phoneNumber"
+                                        name="active"
+                                        placeholder="Phone Number"
+                                        checked={student.active || false}
+                                        onChange={()=>setStudent({...student,active: !student.active})}
+                                    />
+                                </div>
+                            </>
+                        )
+                    }
                 </div>
             </div>
 

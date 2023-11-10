@@ -1,5 +1,5 @@
 import React, { useContext } from 'react'
-import sir from '../../assets/user.png'
+import sir from '../../assets/user.jpg'
 import './navbar.css'
 import AuthContext from '../../context/AuthContext';
 import { Link } from 'react-router-dom';

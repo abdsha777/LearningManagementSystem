@@ -30,7 +30,7 @@
 
 .searchSection input{
     width: 100%;
-    border-radius: 24px; 
+    border-radius: 10px; 
     border: 1px solid #5DDCD6;
     box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
     margin-right: 40px;
@@ -46,7 +46,7 @@
 }
 
 .searchSection button{
-    border-radius: 24px;
+    border-radius: 10px;
     background: #D1FFFD;
     box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
     color: #555;
@@ -75,7 +75,7 @@
 }
 
 .filterBox{
-    border-radius: 24px;
+    border-radius: 10px;
     box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
     overflow: hidden;
     display: flex;
@@ -182,8 +182,8 @@
 
 .listBox{
     /* border: 1px solid black; */
-    margin-left: 40px;
-    border-radius: 24px;
+    margin-left: 25px;
+    border-radius: 10px;
     overflow: hidden;
     box-shadow: 0px 2px 4px 0px rgba(0, 0, 0, 0.25);
     display: flex;
@@ -245,6 +245,12 @@
     width: 40px;
     height: 40px;
     border-radius: 50%;
+    overflow: hidden;
+    border: 1px solid #5DDCD6;
+}
+.studentDetails .img img{
+    width: 100%;
+    object-fit: cover;
 }
 .status{
     background-color: #7DFF92;

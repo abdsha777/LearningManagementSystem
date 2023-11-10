@@ -6,6 +6,7 @@ const Course = require('../../models/Course')
 const Enrollment = require('../../models/Enrollment')
 const User = require('../../models/User')
 const StudentDetail = require('../../models/StudentDetail')
+const { body, validationResult } = require('express-validator');
 
 const router = express.Router()
 
@@ -89,5 +90,65 @@ router.get('/mystudents',fetchuser,isAdminOrTeacher,async (req,res)=>{
         res.status(500).json({ error: 'Server error' });
     }
 })
+
+router.get('/student/:id',fetchuser,isAdminOrTeacher,async(req,res)=>{
+    try {
+        const id = req.params.id;
+        const student = await User.findOne({_id:id})
+        const studentDetail = await StudentDetail.findOne({userId: id})
+        const studentInfo = {
+            id: student.id,
+            name: student.name,
+            email: student.email,
+            class: studentDetail.class,
+            phoneNumber: studentDetail.phoneNumber,
+            active:student.active
+        }
+        return res.json(studentInfo);
+    } catch (error) {
+        console.error(error);
+        res.status(500).json({ error: 'Server error' });
+    }
+})
+
+router.put('/student/:id',fetchuser,isAdminOrTeacher,[
+    body('email').isEmail(),
+    body('name').isLength({min:1}),
+    body('class').isLength({min:1}),
+    body('phoneNumber').isLength({min:10}),
+    body('active').isBoolean()
+],async(req,res)=>{
+    const errors = validationResult(req);
+    if (!errors.isEmpty()) {
+        return res.status(400).json({ errors: errors.array() });
+    }
+    try {
+        const id = req.params.id;
+        var updatedStudent;
+        try {
+            updatedStudent = await User.findByIdAndUpdate({_id:id},req.body,{new:true})
+        } catch (error) {
+            return res.status(400).json({ error: 'Email already in use' });
+        }
+        
+        if(!updatedStudent){
+            return res.status(404).json({error:"Student not found"})
+        }
+        const updatedStudentDetails = await StudentDetail.findOneAndUpdate({userId:id},req.body,{new:true})
+
+        return res.json({
+            email: updatedStudent.email,
+            name: updatedStudent.name,
+            active: updatedStudent.active,
+            class: updatedStudentDetails.class,
+            phoneNumber: updatedStudentDetails.phoneNumber,
+        })
+
+    } catch (error) {
+        console.error(error);
+        res.status(500).json({ error: 'Server error' });
+    }
+})
+
 
 module.exports = router
