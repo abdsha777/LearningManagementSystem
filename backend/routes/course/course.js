@@ -5,6 +5,8 @@ const isAdminOrTeacher = require('../../middleware/isAdminOrTeacher')
 const { body, validationResult } = require('express-validator');
 const User = require('../../models/User');
 const Enrollment = require('../../models/Enrollment');
+const multer = require("multer")
+const path = require("path")
 
 const router = express.Router()
 
@@ -72,26 +74,47 @@ router.get('/', fetchuser, async (req, res) => {
     }
 })
 
-router.post('/create/', fetchuser, isAdminOrTeacher, [
-    body('title').isLength({ min: 5 }),
-    body('description').isLength({ min: 10 }),
-    body('duration').isInt(),
-    body('courseImg')
+const storage = multer.diskStorage({
+    destination: (req, file, cb) => {
+        cb(null, "img"); // Set the destination directory
+    },
+    filename: (req, file, cb) => {
+        // Set the filename to the course name with the original extension
+        const extension = path.extname(file.originalname);
+        const courseName = req.body.title.replace(/\s+/g, '_').toLowerCase(); // Convert spaces to underscores
+        const fileName = `${courseName}${extension}`;
+        cb(null, fileName);
+    },
+});
+const upload = multer({ storage: storage });
+
+router.post('/create/', fetchuser, isAdminOrTeacher, upload.single('courseImg') , [
+    body('title').isLength({ min: 1 }),
+    body('description').isLength({ min: 5 }),
+    body('duration').exists(),
 ], async (req, res) => {
     const errors = validationResult(req);
     if (!errors.isEmpty()) {
         return res.status(400).json({ errors: errors.array() });
     }
     try {
-        const { title, description, duration, courseImg } = req.body;
-        console.log(req.user.id)
+        const { title, description, duration } = req.body;
+        const courseImg = req.file; // Access the uploaded file
+
+        // Check if an image was provided
+        if (!courseImg) {
+            return res.status(400).json({ error: 'Please provide a course image.' });
+        }
+
+        // Save the course with image information
         const newCourse = await Course.create({
             title: title,
             description: description,
             duration: duration,
-            courseImg: courseImg,
+            courseImg: courseImg.filename, // Store the filename in the database
             teacherId: req.user.id,
-        })
+        });
+
         res.status(201).json(newCourse);
     } catch (error) {
         console.error(error);
@@ -99,23 +122,14 @@ router.post('/create/', fetchuser, isAdminOrTeacher, [
     }
 })
 
-router.get('/teachermycourse/', fetchuser, isAdminOrTeacher, async (req, res) => {
+router.get('/mycourse/', fetchuser, isAdminOrTeacher, async (req, res) => {
     try {
-        const searchTitle = req.query.title || '';
 
         const query = { teacherId: req.user.id };
 
-        if (searchTitle) {
-            query.title = { $regex: searchTitle, $options: 'i' }; // Case-insensitive search by title
-        }
-
         const courses = await Course.find(query);
 
-        const result = {
-            courses: courses, // Add totalCourses to indicate the total number of courses available
-        };
-
-        res.json(result);
+        res.json(courses);
     } catch (error) {
         console.error(error);
         res.status(500).json({ error: 'Server error' });

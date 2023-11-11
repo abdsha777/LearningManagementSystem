@@ -4,7 +4,7 @@ import {useNavigate} from 'react-router-dom'
 import jwt_decode from "jwt-decode";
 
 function AuthProvider({ children }) {
-    const [login,setLogin]=useState(true);
+    const [login,setLogin]=useState(false);
     const [role,setRole] = useState("student");
     const nav = useNavigate();
     const [token,setToken] = useState(null)

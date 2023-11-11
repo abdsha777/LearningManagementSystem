@@ -1,90 +1,135 @@
-import React from 'react'
+import React, { useContext, useState } from 'react'
+import AuthContext from '../../context/AuthContext';
+import { useNavigate } from 'react-router-dom';
 
 function AddCourse() {
+    const [course, setCourse] = useState({})
+    const { token } = useContext(AuthContext);
+    const nav = useNavigate();
+
+    const [file, setFile] = useState(null);
+    const [img, setImg] = useState(null);
+    const [msg, setMsg] = useState(null);
+    function fileSelected(e) {
+        const acceptedImageTypes = ['image/gif', 'image/jpeg', 'image/png'];
+        if (e.target.files[0].size > 1000000){
+            setMsg("Image less than 1mb")
+            return
+
+        }
+        if (acceptedImageTypes.includes(e.target.files[0].type)) {
+            setFile(e.target.files[0])
+            setImg(URL.createObjectURL(e.target.files[0]))
+            setMsg(null)
+            setCourse({
+                ...course,
+                courseImg: e.target.files[0]
+            })
+        } else {
+            setMsg("Invalid Image Type")
+            setImg(null)
+            setFile(null)
+        }
+    }
+
+    const handleChange = (e) => {
+        setCourse({
+            ...course,
+            [e.target.name]: e.target.value,
+        });
+    };
+
+    async function createCourse(e) {
+        e.preventDefault();
+
+        const formDataToSend = new FormData();
+        formDataToSend.append('title', course.title);
+        formDataToSend.append('description', course.description);
+        formDataToSend.append('duration', course.duration);
+        formDataToSend.append('courseImg', course.courseImg);
+        // console.log(formDataToSend)
+        const res = await fetch("http://localhost:5000/api/course/create/", {
+            method: 'POST',
+            headers: { token },
+            body: formDataToSend
+        })
+        const data = await res.json();
+        if (res.ok) {
+            setMsg("Course Created")
+            nav('/mycourse/')
+        } else {
+            // console.log(data)
+            setMsg("Invalid")
+        }
+    }
+
     return (
-        <div>
-            <div className="main">
-                <div >
-                    <h2>Add New Course</h2>
+        <form>
+            <h2>Add New Course</h2>
+            
+            <div className="add_form">
+                <div className="input-box">
+                    <label htmlFor="cname">Course Title</label>
+                    <input type="text" id="title" placeholder="Name"
+                        name="title"
+                        value={course.title || ""}
+                        onChange={handleChange}
+                    />
                 </div>
 
-                <div className="add_form">
-                    <div className="input-box">
-                        <label htmlFor="cname">Course Name</label>
-                        <input type="text" id="cname" placeholder="Name" />
+                <div className="input-box">
+                    <label htmlFor="duration">Duration <small>In hours</small></label>
+                    <input type="number" id="duration" placeholder="Duration"
+                        name='duration'
+                        value={course.duration || ""}
+                        onChange={handleChange}
+                    />
+                </div>
 
+                <div className="input-box">
+                    <label htmlFor="desc">Description <small>About the course</small></label>
+                    <textarea placeholder="Enter Description"
+                        name='description'
+                        value={course.description || ""}
+                        onChange={handleChange}
+                    ></textarea>
 
-                    </div>
-
-                    <div className="input-box">
-                        <label htmlFor="duration">Duration</label>
-                        <input type="number" id="duration" placeholder="Duration" />
-
-
-                    </div>
-
-                    <div className="input-box">
-                        <p>Faculty</p>
-                        <select name="" id="">
-                            <option value="">Arts</option>
-                            <option value="">Scince</option>
-                            <option value="">commerce</option>
-                        </select>
-
-                    </div>
-
-                    <div className="input-box">
-                        <p>Category</p>
-                        <select name="" id="">
-                            <option value="">Full Stack Developer</option>
-                            <option value="">Physicology</option>
-                            <option value="">Business Understanding</option>
-                        </select>
-                    </div>
-
-                    <div className="input-box">
-                        <label htmlFor="desc">Description</label>
-                        <textarea placeholder="Enter Description"></textarea>
-
-                    </div>
-
-                    <div className="input-box">
-                        <p>Update Course Image/Thumbail OF course</p>
-                        <div clas='bulkUploadContainer'>
-                            <div className="parent">
-                                <div className="input">
-                                    <input type="file" className="ip" id="fileip" />
-                                </div>
-                                <div className="label" htmlFor="fileip">
-                                    <label htmlFor="fileip">
-                                        <img src="" alt="" className="uploadImgLogo" />
-                                        <p className="text">
-                                            click to uplaod
-                                        </p>
-                                    </label>
-                                </div>
+                </div>
+                <div className="input-box">
+                    <p>Upload course thumbnail <small>16x9 prefered</small> </p>
+                    <div clas='bulkUploadContainer'>
+                        <div className="parent">
+                            <div className="input" onChange={fileSelected}>
+                                <input type="file" className="ip" id="fileip" accept='image/*' size={1000000}/>
                             </div>
                         </div>
-
-
                     </div>
-
-                </div>
-
-                <div className="module_btn">
-                    <p> Module:</p>
-                    <button className="btn btn-border-blue">+ Add Module</button>
+                    {
+                        img && (
+                            <img src={img} className='preview' />
+                        )
+                    }
                 </div>
 
             </div>
+
+            {/* <div className="module_btn">
+                <p> Module:</p>
+                <button className="btn btn-border-blue">+ Add Module</button>
+            </div> */}
+            
+            {
+                msg && (
+                    <h2 className='errorMessage'>{msg}</h2>
+                )
+            }
 
             <div className="cancel_save">
                 <button className="btn btn-border cancel-btn">Cancel</button>
 
-                <button className="btn btn-filled">Save</button>
-
+                <button className="btn btn-filled" onClick={createCourse}>Save</button>
             </div>
-        </div >
+        </form >
     )
 }
 

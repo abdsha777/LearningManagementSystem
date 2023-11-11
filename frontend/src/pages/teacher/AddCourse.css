@@ -102,7 +102,11 @@
     outline: none;
     border: #a2a2a2 1px solid;
     border-radius: 10px;
+}
 
+.input-box p small,.input-box label small{
+    font-size: 12px;
+    font-weight: 400;
 }
 
 .module_btn {
@@ -118,4 +122,19 @@
     gap: 40px;
     align-items: center;
     /* padding-left: 23px; */
+}
+
+.preview{
+    width: 200px;
+    aspect-ratio: 16/9;
+    object-fit: cover;
+}
+
+.errorMessage{
+    display: inline-block;
+    padding: 10px;
+    margin-top: 10px;
+    background-color: rgb(250, 250, 75);
+    color: rgb(63, 63, 63);
+    border-radius: 5px ;
 }
