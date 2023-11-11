@@ -7,27 +7,97 @@ const Enrollment = require('../../models/Enrollment')
 const User = require('../../models/User')
 const StudentDetail = require('../../models/StudentDetail')
 const { body, validationResult } = require('express-validator');
+const TeacherDetail = require('../../models/TeacherDetail')
+const { default: mongoose } = require('mongoose')
 
 const router = express.Router()
 
-router.get('/',fetchuser,isAdmin,async (req,res)=>{
-    try {
-        const allUsers = await User.find();
-        res.json(allUsers);
-    } catch (error) {
-        console.error(error);
-        res.status(500).json({ error: 'Server error' });
-    }
-})
+// router.get('/',fetchuser,isAdmin,async (req,res)=>{
+//     try {
+//         const allUsers = await User.find();
+//         res.json(allUsers);
+//     } catch (error) {
+//         console.error(error);
+//         res.status(500).json({ error: 'Server error' });
+//     }
+// })
+
+
+//get all teachers
 router.get('/teachers',fetchuser,isAdmin,async (req,res)=>{
     try {
         const teachers = await User.find({role:'teacher'});
-        res.json(teachers);
+        const teachersInfo = await Promise.all(teachers.map(async (teacher) => {
+            const teacherDetail = await TeacherDetail.findOne({ userId: teacher._id });
+            const numOfCourse = await Course.countDocuments({teacherId:teacher._id})
+            return {
+                id: teacher._id,
+                email: teacher.email,
+                name: teacher.name,
+                active: teacher.active,
+                department: teacherDetail ? teacherDetail.department : null,
+                position: teacherDetail ? teacherDetail.position : null,
+                numOfCourse
+            };
+        }));
+        return res.json(teachersInfo);
     } catch (error) {
         console.error(error);
         res.status(500).json({ error: 'Server error' });
     }
 })
+
+// get one teacher
+router.get('/teacher/:id',fetchuser,isAdmin,async (req,res)=>{
+    try {
+        const id = req.params.id;
+        if(!mongoose.isObjectIdOrHexString(id)){
+            return res.status(400).json({error:"Invalid Id"})
+        }
+        const teacher = await User.findOne({_id:id});
+        const teacherDetail = await TeacherDetail.findOne({userId:id})
+
+        return res.json({
+            email: teacher.email,
+            name: teacher.name,
+            active: teacher.active,
+            department: teacherDetail ? teacherDetail.department : null,
+            position: teacherDetail ? teacherDetail.position : null,
+        });
+    } catch (error) {
+        console.error(error);
+        res.status(500).json({ error: 'Server error' });
+    }
+})
+// update the teacher
+router.put('/teacher/:id',fetchuser,isAdmin,[
+    body('email').isEmail(),
+    body('name').isLength({min:1}),
+    body('department').exists(),
+    body('position').exists(),
+],async (req,res)=>{
+    try {
+        const id = req.params.id;
+        if(!mongoose.isObjectIdOrHexString(id)){
+            return res.status(400).json({error:"Invalid Id"})
+        }
+        const teacher = await User.findOneAndUpdate({_id:id},req.body,{new:true});
+        const teacherDetail = await TeacherDetail.findOneAndUpdate({userId:id},req.body,{new:true})
+
+        return res.json({
+            email: teacher.email,
+            name: teacher.name,
+            active: teacher.active,
+            department: teacherDetail ? teacherDetail.department : null,
+            position: teacherDetail ? teacherDetail.position : null,
+        });
+    } catch (error) {
+        console.error(error);
+        res.status(500).json({ error: 'Server error' });
+    }
+})
+
+
 
 router.get('/students',fetchuser,isAdmin,async (req,res)=>{
     try {

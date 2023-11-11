@@ -89,14 +89,14 @@
   font-weight: normal;
 }
 
-.module5 td button.status {
+.module5 td button.statusBtn {
   color: #0BFF06;
   font-size: 16px;
   font-weight: 600;
   background-color: #E9FFE9;
   border: 0;
 }
-.module5 td button.status.inactive {
+.module5 td button.statusBtn.inactive {
     color: #F00;
     background-color: #FFE5E5;
   }

@@ -7,6 +7,7 @@ const isAdmin = require('../../middleware/isAdmin');
 const isAdminOrTeacher = require('../../middleware/isAdminOrTeacher');
 const fetchuser = require('../../middleware/fetchuser');
 const StudentDetail = require('../../models/StudentDetail');
+const TeacherDetail = require('../../models/TeacherDetail');
 
 const signature = "SIGNATURE";
 
@@ -39,7 +40,23 @@ router.post('/register',fetchuser,isAdmin,[
             name:name,
             role:role
         })
-        res.json({
+        if(role=="teacher"){
+            let teacherDetail = await TeacherDetail.create({
+                userId: user._id,
+                department: req.body.department,
+                position: req.body.position
+            })
+            return res.json({
+                id:user.id,
+                name:user.name,
+                role,
+                email,
+                password,
+                department:teacherDetail.department,
+                position:teacherDetail.position
+            })
+        }
+        return res.json({
             id:user.id,
             name:user.name,
             role,

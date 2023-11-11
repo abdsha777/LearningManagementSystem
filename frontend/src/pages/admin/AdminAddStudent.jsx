@@ -57,7 +57,7 @@ function AdminAddStudent() {
             body: JSON.stringify(student),
         }
         const res = await fetch(endpoint + "/api/auth/registerstudent/", init)
-        console.log(res)
+        // console.log(res)
         if (res.ok) {
             const data = await res.json();
             setStudent({})
