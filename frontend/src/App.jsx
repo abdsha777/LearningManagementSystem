@@ -7,7 +7,7 @@ import './pages/teacher/TeacherDashboard.css'
 import './pages/teacher/TeacherStudentList.css'
 import './pages/teacher/AddCourse.css'
 //css end
-import { BrowserRouter, Routes, Route } from 'react-router-dom'
+import { BrowserRouter, Routes, Route, Outlet } from 'react-router-dom'
 import Layout from './components/layout/Layout'
 import StudentCourseDetail from './pages/student/StudentCourseDetail'
 import StudentTest from './pages/student/StudentTest'
@@ -36,7 +36,20 @@ import LandingPage from './components/landing/LandingPage'
 import AddCourse from './pages/teacher/AddCourse'
 import AdminAddStudent from './pages/admin/AdminAddStudent'
 import AdminAddTeacher from './pages/admin/AdminAddTeacher'
+import EditCourse from './pages/teacher/EditCourse';
+import { useContext } from 'react';
+import AuthContext from './context/AuthContext';
 
+function StopRouter(){
+  const {login} = useContext(AuthContext);
+  return(
+    <>
+      {
+        login !== null&& <Outlet /> 
+      }
+    </>
+  )
+}
 
 function App() {
 
@@ -45,59 +58,67 @@ function App() {
       <BrowserRouter>
         <AuthProvider>
           <Routes>
-            <Route path='/login' element={<Login />} />
-            <Route path='/home' element={<LandingPage />} />
-            <Route path='/' element={<Layout />}>
+            <Route element={<StopRouter />}>
 
-              <Route element={<PrivateRoute />}>
 
-                <Route index element={<Dashboard />} />
-                <Route path='mycourse/' element={<MyCourse />} />
-                <Route path='profile/' element={<TeacherStudentProfile />} />
+              <Route path='/login' element={<Login />} />
+              <Route path='/home' element={<LandingPage />} />
+              <Route path='/' element={<Layout />}>
 
-                <Route element={<StudentPrivateRoute/>}>
+                <Route element={<PrivateRoute />}>
+
+                  <Route index element={<Dashboard />} />
+                  <Route path='mycourse/' element={<MyCourse />} />
+                  <Route path='profile/' element={<TeacherStudentProfile />} />
+
                   <Route path='courses/' element={<StudentSearchCourse />} />
+
                   <Route path='certificate/' element={<Certificates />} />
+
                   <Route path='courseDetail/:course/' element={<StudentCourseDetail />}>
                     <Route path='' element={<AllDoubts />} />
                     <Route path='doubt/:id/' element={<DoubtMessages />} />
                   </Route>
+
                   <Route path='courseDetail/:course/unitDetail/:id/' element={<StudentUnitDetail />} />
+
                   <Route
                     path='courseDetail/:course/unitDetail/:unitId/video/:videoId/'
-                    element={<StudentVideo />} 
+                    element={<StudentVideo />}
                   />
+
                   <Route
                     path='courseDetail/:course/unitDetail/:unitId/test/:testId/'
                     element={<StudentTest />}
                   />
+
                   <Route
                     path='courseDetail/:course/finaltest/:testId/'
                     element={<StudentTest />}
                   />
-                </Route>
 
-                <Route element={<TeacherPrivateRoute />}>
-                  <Route path='addCourse/' element={<AddCourse />} />
-                  <Route path='courselist/' element={<TeacherCourseList />} />
-                  <Route path='teacherstudentlist/' element={<TeacherStudentList />} />
-                  <Route path='teacherStudentList/add/' element={<AdminAddStudent />} />
-                  <Route path='teacherStudentList/update/:id/' element={<AdminAddStudent />} />
-                </Route>
-                <Route element={<AdminPrivateRoute />}>
-                  <Route path='teacherlist/' element={<AdminTeacherList />} />
-                  <Route path='adminStudentList/' element={<AdminStudentList />} />
-                  <Route path='adminCourselist/' element={<AdminCourseList/>} />
-                  <Route path='adminStudentList/add/' element={<AdminAddStudent />} />
-                  <Route path='adminStudentList/update/:id/' element={<AdminAddStudent />} />
-                  <Route path='teacherlist/add/' element={<AdminAddTeacher />} />
-                  <Route path='teacherlist/update/:id/' element={<AdminAddTeacher />} />
+                  <Route element={<TeacherPrivateRoute />}>
+                    <Route path='addCourse/' element={<AddCourse />} />
+                    <Route path='editCourse/:id/' element={<EditCourse />} />
+                    <Route path='courselist/' element={<TeacherCourseList />} />
+                    <Route path='teacherstudentlist/' element={<TeacherStudentList />} />
+                    <Route path='teacherStudentList/add/' element={<AdminAddStudent />} />
+                    <Route path='teacherStudentList/update/:id/' element={<AdminAddStudent />} />
+                  </Route>
+                  <Route element={<AdminPrivateRoute />}>
+                    <Route path='teacherlist/' element={<AdminTeacherList />} />
+                    <Route path='adminStudentList/' element={<AdminStudentList />} />
+                    <Route path='adminCourselist/' element={<AdminCourseList />} />
+                    <Route path='adminStudentList/add/' element={<AdminAddStudent />} />
+                    <Route path='adminStudentList/update/:id/' element={<AdminAddStudent />} />
+                    <Route path='teacherlist/add/' element={<AdminAddTeacher />} />
+                    <Route path='teacherlist/update/:id/' element={<AdminAddTeacher />} />
+                  </Route>
+
                 </Route>
 
               </Route>
-
             </Route>
-
           </Routes>
         </AuthProvider>
       </BrowserRouter>

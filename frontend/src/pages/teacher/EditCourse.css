@@ -1,0 +1,103 @@
+.sectionBody {
+    margin-bottom: 40px;
+}
+
+.sectionHeading {
+    font-size: 30px;
+    margin-bottom: 20px;
+    font-weight: bold;
+    color: #292929;
+}
+
+.sectionBox {
+    padding: 20px;
+    border-radius: 10px;
+    background-color: #d0fcff;
+    margin-bottom: 20px;
+}
+
+.textbox {
+    display: flex;
+    margin-bottom: 5px;
+}
+
+.textbox h3 {
+    color: rgba(0, 0, 0, 0.80);
+    font-size: 20px;
+    line-height: 29.124px;
+    /* 145.62% */
+    letter-spacing: 0.4px;
+}
+
+.textbox p {
+    color: #000;
+    font-size: 20px;
+    line-height: 29.124px;
+    /* 145.62% */
+    letter-spacing: 0.4px;
+    margin-left: 10px;
+}
+
+.textbox img{
+    height: 100px;
+    aspect-ratio: 16/9;
+    object-fit: cover;
+    margin-left: 10px;
+}
+
+.editBtn{
+    padding: 5px 10px;
+    background: rgba(93, 220, 214, 0.50);
+    border: 0;
+    border-radius: 10px;
+    color: #000;
+    font-size: 20px;
+    line-height: 29.124px; /* 145.62% */
+    letter-spacing: 0.4px;
+    display: flex;
+    align-items: center;
+    transition: 0.4s transform,0.4s background-color;
+}
+.editBtn:focus{
+    outline: 1px solid rgb(127, 127, 127);
+}
+.editBtn:hover{
+    transform: scale(1.05);
+    background-color:rgba(93, 220, 214, 0.80);
+}
+
+.mybutton{
+    min-width: 300px;
+    padding: 20px;
+    font-size: 25px;
+    font-weight: 700;
+    line-height: 29.124px; /* 100.428% */
+    letter-spacing: 0.58px;
+    border-radius: 10px;
+    border: 0;
+    transition: 0.4s transform,0.4s border;
+}
+.mybutton:hover{
+    transform: scale(0.98);
+    border: 1px solid black;
+}
+
+.dashedBtn{
+    border: 2px dashed #000;
+    background: #F0FEFF;
+    background-color: #d0fcff;
+}
+.dashedBtn:hover{
+    border: 2px dashed rgb(0, 213, 255)
+}
+.mr20{
+    margin-right: 20px;
+}
+
+.filledBtn{
+    background: #A7EDEB;
+}
+
+.mybutton.full{
+    background-color: #5DDCD6;;
+}

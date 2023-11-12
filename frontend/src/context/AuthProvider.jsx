@@ -4,8 +4,8 @@ import {useNavigate} from 'react-router-dom'
 import jwt_decode from "jwt-decode";
 
 function AuthProvider({ children }) {
-    const [login,setLogin]=useState(false);
-    const [role,setRole] = useState("student");
+    const [login,setLogin]=useState(null);
+    const [role,setRole] = useState("teacher");
     const nav = useNavigate();
     const [token,setToken] = useState(null)
     const [user,setUser] = useState(null)
@@ -21,7 +21,9 @@ function AuthProvider({ children }) {
             const decoded = jwt_decode(storedToken);
             setUser(decoded.user);
             setLogin(true);
-            nav('/')
+            // nav('/')
+        }else{
+            setLogin(false);
         }
     }, []);
 

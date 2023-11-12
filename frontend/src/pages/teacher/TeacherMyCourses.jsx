@@ -22,7 +22,7 @@ function TeacherMyCourses() {
         <div>
 
             <div>
-                <h1>My Course</h1>
+                <h1>My Courses</h1>
 
                 <div className="video-component">
                     <div className="videos">
