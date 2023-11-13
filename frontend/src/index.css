@@ -671,6 +671,7 @@ nav{
 
 .backlink{
     margin-bottom: 20px;
+    cursor: pointer;
 }
 .backlink a{
     text-decoration: none;

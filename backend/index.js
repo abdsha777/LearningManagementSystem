@@ -22,6 +22,8 @@ app.use('/api/auth', require('./routes/auth/login.js'))
 app.use('/api/users', require('./routes/users/users.js'))
 // course
 app.use('/api/course', require('./routes/course/course.js'))
+//unit
+app.use('/api/unit', require('./routes/course/unit.js'))
 // enroll
 app.use('/api/enroll', require('./routes/enrollment/enrollment.js'))
 // overview

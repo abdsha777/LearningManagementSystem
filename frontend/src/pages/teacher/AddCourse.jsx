@@ -3,6 +3,7 @@ import AuthContext from '../../context/AuthContext';
 import { useNavigate } from 'react-router-dom';
 
 function AddCourse() {
+    const endpoint="http://localhost:5000";
     const [course, setCourse] = useState({})
     const { token } = useContext(AuthContext);
     const nav = useNavigate();
@@ -44,7 +45,7 @@ function AddCourse() {
         formDataToSend.append('duration', course.duration);
         formDataToSend.append('courseImg', course.courseImg);
         // console.log(formDataToSend)
-        const res = await fetch("http://localhost:5000/api/course/create/", {
+        const res = await fetch(endpoint+"/api/course/create/", {
             method: 'POST',
             headers: { token },
             body: formDataToSend

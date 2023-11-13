@@ -2,6 +2,7 @@ const mongoose = require('mongoose')
 
 const videoSchema = mongoose.Schema({
     unitId: {
+        required:true,
         type: mongoose.SchemaTypes.ObjectId,
         ref:'Unit'
     },
@@ -12,6 +13,10 @@ const videoSchema = mongoose.Schema({
     },
     description: {
         type: String
+    },
+    url:{
+        type: String,
+        required:true,
     },
     sequence:{
         type:Number

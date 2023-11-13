@@ -39,6 +39,7 @@ import AdminAddTeacher from './pages/admin/AdminAddTeacher'
 import EditCourse from './pages/teacher/EditCourse';
 import { useContext } from 'react';
 import AuthContext from './context/AuthContext';
+import AddUnit from './pages/teacher/AddUnit';
 
 function StopRouter(){
   const {login} = useContext(AuthContext);
@@ -59,7 +60,6 @@ function App() {
         <AuthProvider>
           <Routes>
             <Route element={<StopRouter />}>
-
 
               <Route path='/login' element={<Login />} />
               <Route path='/home' element={<LandingPage />} />
@@ -100,6 +100,8 @@ function App() {
                   <Route element={<TeacherPrivateRoute />}>
                     <Route path='addCourse/' element={<AddCourse />} />
                     <Route path='editCourse/:id/' element={<EditCourse />} />
+                    <Route path='editCourse/:id/addUnit/' element={<AddUnit />} />
+                    <Route path='editCourse/:id/editUnit/:unitId' element={<AddUnit />} />
                     <Route path='courselist/' element={<TeacherCourseList />} />
                     <Route path='teacherstudentlist/' element={<TeacherStudentList />} />
                     <Route path='teacherStudentList/add/' element={<AdminAddStudent />} />
