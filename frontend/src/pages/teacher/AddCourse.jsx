@@ -7,7 +7,6 @@ function AddCourse() {
     const { token } = useContext(AuthContext);
     const nav = useNavigate();
 
-    const [file, setFile] = useState(null);
     const [img, setImg] = useState(null);
     const [msg, setMsg] = useState(null);
     function fileSelected(e) {
@@ -15,10 +14,8 @@ function AddCourse() {
         if (e.target.files[0].size > 1000000){
             setMsg("Image less than 1mb")
             return
-
         }
         if (acceptedImageTypes.includes(e.target.files[0].type)) {
-            setFile(e.target.files[0])
             setImg(URL.createObjectURL(e.target.files[0]))
             setMsg(null)
             setCourse({
@@ -41,7 +38,6 @@ function AddCourse() {
 
     async function createCourse(e) {
         e.preventDefault();
-
         const formDataToSend = new FormData();
         formDataToSend.append('title', course.title);
         formDataToSend.append('description', course.description);

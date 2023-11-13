@@ -101,3 +101,13 @@
 .mybutton.full{
     background-color: #5DDCD6;;
 }
+
+@media (max-width:600px) {
+    .mybutton{
+        width: 100%;
+    }
+    .mr20{
+        margin-right: 0;
+        margin-bottom: 20px;
+    }
+}

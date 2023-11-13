@@ -1,4 +1,5 @@
 import React, { useContext, useEffect, useState } from 'react'
+import {Link} from 'react-router-dom'
 import './TeacherMyCourses.css'
 import AuthContext from '../../context/AuthContext';
 
@@ -29,13 +30,13 @@ function TeacherMyCourses() {
                         {   
                             courses.map((course, key) => {
                                 return (
-                                    <div className="video-box" key={key}>
+                                    <Link className="video-box" key={key} to={'/editCourse/'+course._id}>
                                         <div className="video-img" style={{ backgroundImage: `url(${backend}/img/${course.courseImg})` }} ></div>
                                         <div className="video-info">
                                             <h1>{course.title   }</h1>
                                         </div>
                                         <small>Duration:{course.duration} Hours</small>
-                                    </div>
+                                    </Link>
 
                                 )
                             })

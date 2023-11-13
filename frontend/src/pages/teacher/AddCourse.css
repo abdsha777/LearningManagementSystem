@@ -140,3 +140,9 @@
     color: rgb(63, 63, 63);
     border-radius: 5px ;
 }
+
+@media (max-width:600px) {
+    .input-box input,.input-box textarea{
+        width: 100%;
+    }
+}

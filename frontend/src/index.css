@@ -22,12 +22,14 @@ body {
     padding: 10px;
     font-family: 'Inter', sans-serif;
     height: 100vh;
+    width: 100vw;
+    overflow: hidden;
 }
 
 main {
     display: grid;
     grid-template-columns: 1fr 5fr;
-    position: relative;
+    /* position: relative; */
 }
 
 /* navbar */
@@ -107,6 +109,7 @@ nav{
     border-radius: 0 0 25px 0;
     overflow-y: scroll;
     padding: 30px 40px;
+    /* position: relative; */
 }
 
 .main-content::-webkit-scrollbar {
@@ -676,4 +679,9 @@ nav{
     margin-bottom: 20px;
     padding: 5px 20px;
     border-radius: 5px;
+}
+
+a{
+    text-decoration: none;
+    color: black;
 }

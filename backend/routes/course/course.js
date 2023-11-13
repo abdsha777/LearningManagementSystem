@@ -6,7 +6,8 @@ const { body, validationResult } = require('express-validator');
 const User = require('../../models/User');
 const Enrollment = require('../../models/Enrollment');
 const multer = require("multer")
-const path = require("path")
+const path = require("path");
+const { default: mongoose } = require('mongoose');
 
 const router = express.Router()
 
@@ -74,6 +75,26 @@ router.get('/', fetchuser, async (req, res) => {
     }
 })
 
+router.get('/detail/:id', fetchuser, async (req, res) => {
+    try {
+        const id = req.params.id;
+        if(!mongoose.isObjectIdOrHexString(id)){
+            return res.status(400).json({error:"Invalid Id"})
+        }
+        const course = await Course.findOne({_id:id})
+
+        // if(req.user.id != course._id){
+        //     return res.status(401).json({error:"Unauthorized"})
+        // }
+
+
+        return res.json(course)
+    } catch (error) {
+        console.error(error);
+        res.status(500).json({ error: 'Server error' });
+    }
+})
+
 const storage = multer.diskStorage({
     destination: (req, file, cb) => {
         cb(null, "img"); // Set the destination directory
@@ -124,7 +145,7 @@ router.post('/create/', fetchuser, isAdminOrTeacher, upload.single('courseImg') 
 
 router.get('/mycourse/', fetchuser, isAdminOrTeacher, async (req, res) => {
     try {
-
+    
         const query = { teacherId: req.user.id };
 
         const courses = await Course.find(query);
@@ -135,5 +156,41 @@ router.get('/mycourse/', fetchuser, isAdminOrTeacher, async (req, res) => {
         res.status(500).json({ error: 'Server error' });
     }
 })
+
+router.post('/update/:id', fetchuser, isAdminOrTeacher, upload.single('courseImg') , [
+    body('title').isLength({ min: 1 }),
+    body('description').isLength({ min: 5 }),
+    body('duration').exists(),
+], async (req, res) => {
+    const errors = validationResult(req);
+    if (!errors.isEmpty()) {
+        return res.status(400).json({ errors: errors.array() });
+    }
+    try {
+        const id = req.params.id;
+        if(!mongoose.isObjectIdOrHexString(id)){
+            return res.status(400).json({error:"Invalid Id"})
+        }
+        const { title, description, duration } = req.body;
+        const courseImg = req.file; // Access the uploaded file
+
+        // Save the course with image information
+        const updated = await Course.findOneAndUpdate({
+            _id:id
+        },{
+            title: title,
+            description: description,
+            duration: duration,
+            courseImg: courseImg?.filename, // Store the filename in the database
+            teacherId: req.user.id,
+        });
+
+        res.status(200).json(updated);
+    } catch (error) {
+        console.error(error);
+        res.status(500).json({ error: 'Server error' });
+    }
+})
+
 
 module.exports = router
