@@ -19,7 +19,7 @@ function Popup({ handler, children }) {
     
     return (
         <>  
-            <div onClick={show}>
+            <div onClick={show} style={{display:'inline-block'}} className="popUpBtnFix">
                 {handler}
             </div>
             <div className={`popupWrapper ${hidden?"":"active"}`} onClick={handlePopupClick}>

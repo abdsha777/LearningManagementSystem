@@ -57,7 +57,31 @@ router.get('/get/:id', fetchuser, async (req, res) => {
     }
 })
 
+router.put('/update/:id', fetchuser, isAdminOrTeacher, [
+    body('title').isLength({ min: 1 }),
+    body('description').isLength({ min: 2 }),
+    body('duration').isInt(),
+], async (req, res) => {
+    try {
+        const errors = validationResult(req);
+        if (!errors.isEmpty()) {
+            return res.status(400).json({ errors: errors.array() });
+        }
+        const { title, description, duration } = req.body;
+        const id = req.params.id;
 
+        const newUnit = await Unit.findOneAndUpdate({_id:id},{
+            title,
+            description,
+            duration
+        },{new:true})
+
+        res.status(201).json(newUnit);
+    } catch (error) {
+        console.error(error);
+        res.status(500).json({ error: 'Server error' });
+    }
+})
 
 
 

@@ -24,6 +24,8 @@ app.use('/api/users', require('./routes/users/users.js'))
 app.use('/api/course', require('./routes/course/course.js'))
 //unit
 app.use('/api/unit', require('./routes/course/unit.js'))
+//video
+app.use('/api/video', require('./routes/course/video.js'))
 // enroll
 app.use('/api/enroll', require('./routes/enrollment/enrollment.js'))
 // overview

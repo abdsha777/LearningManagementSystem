@@ -19,6 +19,7 @@
 .textbox {
     display: flex;
     margin-bottom: 5px;
+    overflow: hidden;
 }
 
 .textbox h3 {
@@ -37,8 +38,14 @@
     letter-spacing: 0.4px;
     margin-left: 10px;
 }
-
-.textbox img{
+.textbox a{
+    font-size: 20px;
+    line-height: 29.124px;
+    /* 145.62% */
+    letter-spacing: 0.4px;
+    margin-left: 10px;
+}
+.textbox img,.textbox iframe{
     height: 100px;
     aspect-ratio: 16/9;
     object-fit: cover;
@@ -102,12 +109,29 @@
     background-color: #5DDCD6;;
 }
 
-@media (max-width:600px) {
+@media (max-width:670px) {
     .mybutton{
         width: 100%;
+        min-width: 0;
+        padding: 15px;
     }
     .mr20{
         margin-right: 0;
         margin-bottom: 20px;
     }
+    .popUpBtnFix{
+        width: 100%;   
+    }
+}
+
+@media (max-width:450px) {
+    .textbox h3,.textbox p {
+        font-size: 16px;
+    }
+    
+    .textbox a {
+        font-size: 12px;
+    }
+
+    
 }
