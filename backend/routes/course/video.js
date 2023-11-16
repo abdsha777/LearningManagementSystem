@@ -148,4 +148,39 @@ router.put('/update/', fetchuser, isAdminOrTeacher, [
     }
 })
 
+router.delete('/delete/:id', fetchuser, isAdminOrTeacher,async (req,res)=>{
+    try {
+        const id = req.params.id;
+        if(!mongoose.isValidObjectId(id)){
+            return res.status(400).json({error:"Invalid Id"})
+        }
+        const video = await Video.findOne({_id:id})
+        if(!video){
+            return res.status(400).json({error:"Video does not exist"})
+        }
+        const unit = await Unit.findOne({_id:video.unitId})
+        const course = await Course.findOne({_id:unit.courseId})
+        if(course.teacherId==req.user.id){
+            await Video.deleteOne({_id:id})
+
+            const allVideos= await Video.find({unitId:unit._id})
+            allVideos.sort((a,b)=>[
+                a.sequence<b.sequence?-1:1
+            ]).map((v,idx)=>{
+                v.sequence=idx+1;
+                v.save();
+            })
+
+            // return res.json(allVideos)
+
+            return res.json({message:"Video deleted Successfully"})
+        }else{
+            return res.status(401).json({error:"Unauthorized"})
+        }
+    } catch (error) {
+        console.log(error);
+        return res.status(500).json({error:"server error"})
+    }
+})
+
 module.exports = router

@@ -82,7 +82,7 @@
     letter-spacing: 0.58px;
     border-radius: 10px;
     border: 0;
-    transition: 0.4s transform,0.4s border;
+    transition: 0.4s transform,0.4s border,0.4s color;;
 }
 .mybutton:hover{
     transform: scale(0.98);
@@ -107,6 +107,23 @@
 
 .mybutton.full{
     background-color: #5DDCD6;;
+}
+
+.sectionBtns{
+    display: flex;
+    gap: 10px;
+}
+
+.deleteBtn svg{
+    margin-right: 3px;
+}
+.deleteBtn svg path{
+    transition: 0.4s fill;
+}
+.deleteBtn:hover, .deleteBtn:hover svg path{
+    color: white;
+    fill: white;
+    background-color: rgb(255, 0, 0);
 }
 
 @media (max-width:670px) {
