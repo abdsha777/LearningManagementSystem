@@ -57,6 +57,39 @@ router.get('/get/:id', fetchuser, async (req, res) => {
     }
 })
 
+router.delete('/delete/:id', fetchuser, isAdminOrTeacher, async (req, res) => {
+    try {
+        const id = req.params.id;
+        if(!mongoose.isValidObjectId(id)){
+            return res.status(400).json({error:"Invalid Id"})
+        }
+        const unit = await Unit.findOne({_id:id})
+        if(!unit){
+            return res.status(400).json({error:"Invalid Unit Id"})
+        }
+        const course = await Course.findOne({_id:unit.courseId})
+
+        if(course.teacherId==req.user.id){
+            await Unit.deleteOne({_id:id})
+            const allUnits = await Unit.find({courseId:course._id})
+
+            allUnits.sort((a,b)=>{
+                a.sequence<b.sequence?-1:1
+            }).map((u,idx)=>{
+                u.sequence=idx+1;
+                u.save()
+            })
+            return res.json({message:"Unit Deleted"})
+        }
+        else{
+            return res.status(401).json({error:"Unauthorized"})
+        }
+
+    } catch (error) {
+        console.error(error);
+        res.status(500).json({ error: 'Server error' });
+    }
+})
 router.put('/update/:id', fetchuser, isAdminOrTeacher, [
     body('title').isLength({ min: 1 }),
     body('description').isLength({ min: 2 }),
