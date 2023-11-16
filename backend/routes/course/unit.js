@@ -5,6 +5,7 @@ const Course = require('../../models/Course')
 const isAdminOrTeacher = require('../../middleware/isAdminOrTeacher')
 const { body, validationResult } = require('express-validator');
 const Unit = require('../../models/Unit');
+const Video = require('../../models/Video');
 
 const router = express.Router()
 
@@ -71,6 +72,7 @@ router.delete('/delete/:id', fetchuser, isAdminOrTeacher, async (req, res) => {
 
         if(course.teacherId==req.user.id){
             await Unit.deleteOne({_id:id})
+            await Video.deleteMany({unitId:id})
             const allUnits = await Unit.find({courseId:course._id})
 
             allUnits.sort((a,b)=>{
