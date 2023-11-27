@@ -79,8 +79,9 @@ router.post('/create/', fetchuser, isAdminOrTeacher, [
         const sequence = await Video.countDocuments({ unitId }) + 1
 
         // AIzaSyCvmIgCmavPYCR2JUGS_ha2WdNdPDX4fzw
-        let time = await getTime(url)
 
+        let time = await getTime(url.split('&')[0])
+        
         const newVideo = await Video.create({
             unitId,
             title,

@@ -13,12 +13,10 @@ import StudentCourseDetail from './pages/student/StudentCourseDetail'
 import StudentTest from './pages/student/StudentTest'
 import StudentUnitDetail from './pages/student/StudentUnitDetail'
 import StudentVideo from './pages/student/StudentVideo'
-import TeacherMyCourses from './pages/teacher/TeacherMyCourses'
 import Certificates from './pages/student/Certificates'
 import Login from './pages/auth/Login'
 import PrivateRoute from './components/private/PrivateRoute'
 import Dashboard from './components/dashboard/Dashboard'
-import StudentPrivateRoute from './components/private/StudentPrivateRoute'
 import TeacherPrivateRoute from './components/private/TeacherPrivateRoute'
 import AuthProvider from './context/AuthProvider'
 import MyCourse from './components/myCourse/MyCourse'
@@ -40,6 +38,7 @@ import EditCourse from './pages/teacher/EditCourse';
 import { useContext } from 'react';
 import AuthContext from './context/AuthContext';
 import AddUnit from './pages/teacher/AddUnit';
+import AddTest from './pages/teacher/AddTest';
 
 function StopRouter(){
   const {login} = useContext(AuthContext);
@@ -53,7 +52,6 @@ function StopRouter(){
 }
 
 function App() {
-
   return (
     <>
       <BrowserRouter>
@@ -100,6 +98,7 @@ function App() {
                   <Route element={<TeacherPrivateRoute />}>
                     <Route path='addCourse/' element={<AddCourse />} />
                     <Route path='editCourse/:id/' element={<EditCourse />} />
+                    <Route path='editCourse/:id/finalTest' element={<AddTest />} />
                     <Route path='editCourse/:id/addUnit/' element={<AddUnit />} />
                     <Route path='editCourse/:id/editUnit/:unitId' element={<AddUnit />} />
                     <Route path='courselist/' element={<TeacherCourseList />} />

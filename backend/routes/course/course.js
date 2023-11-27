@@ -10,6 +10,7 @@ const path = require("path");
 const { default: mongoose } = require('mongoose');
 const Unit = require('../../models/Unit');
 const Video = require('../../models/Video');
+const Test = require('../../models/Test');
 
 const router = express.Router()
 
@@ -89,8 +90,8 @@ router.get('/detail/:id', fetchuser, async (req, res) => {
         //     return res.status(401).json({error:"Unauthorized"})
         // }
         const units = await Unit.find({ courseId: course._id })
-        course.units = units
-
+        // course.units = units
+        const finalTest = await Test.findOne({courseId:course._id,final:true})
         const result = {
             _id: course._id,
             title: course.title,
@@ -108,7 +109,8 @@ router.get('/detail/:id', fetchuser, async (req, res) => {
                     duration: u.duration,
                     numOfVideo
                 }
-            }))
+            })),
+            finalTest:finalTest
         }
         return res.json(result)
     } catch (error) {

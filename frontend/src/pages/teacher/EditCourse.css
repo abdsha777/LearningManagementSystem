@@ -126,6 +126,18 @@
     background-color: rgb(255, 0, 0);
 }
 
+.sectionBox .ul{
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    margin: 0;
+    list-style-type: disc;
+    font-size: 20px;
+    line-height: 29.124px;
+    letter-spacing: 0.4px;
+    margin-left: 30px;
+}
+
 @media (max-width:670px) {
     .mybutton{
         width: 100%;
