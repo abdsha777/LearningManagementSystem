@@ -9,11 +9,6 @@ const testSchema = mongoose.Schema({
         type: mongoose.SchemaTypes.ObjectId,
         ref:'Unit'
     },
-    title:{
-        type: String,
-        required:true,
-        unique:true
-    },
     final:{
         type: Boolean,
         default:false

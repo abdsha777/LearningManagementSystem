@@ -5,7 +5,7 @@ const MCQSchema = mongoose.Schema({
         type: mongoose.SchemaTypes.ObjectId,
         ref:'Test'
     },
-    Question:{
+    question:{
         type: String,
         required:true,
         unique:true

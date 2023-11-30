@@ -11,6 +11,7 @@ const { default: mongoose } = require('mongoose');
 const Unit = require('../../models/Unit');
 const Video = require('../../models/Video');
 const Test = require('../../models/Test');
+const MCQ = require('../../models/MCQ');
 
 const router = express.Router()
 
@@ -92,6 +93,9 @@ router.get('/detail/:id', fetchuser, async (req, res) => {
         const units = await Unit.find({ courseId: course._id })
         // course.units = units
         const finalTest = await Test.findOne({courseId:course._id,final:true})
+
+        const mcqCount = await MCQ.countDocuments({testId:finalTest._id})
+
         const result = {
             _id: course._id,
             title: course.title,
@@ -110,7 +114,11 @@ router.get('/detail/:id', fetchuser, async (req, res) => {
                     numOfVideo
                 }
             })),
-            finalTest:finalTest
+            finalTest:{
+                _id: finalTest._id,
+                courseId: finalTest.courseId,
+                mcqCount: mcqCount
+            }
         }
         return res.json(result)
     } catch (error) {

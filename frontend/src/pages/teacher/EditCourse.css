@@ -128,14 +128,19 @@
 
 .sectionBox .ul{
     display: flex;
-    flex-direction: column;
     gap: 10px;
     margin: 0;
-    list-style-type: disc;
+    list-style-type: none;
     font-size: 20px;
     line-height: 29.124px;
     letter-spacing: 0.4px;
-    margin-left: 30px;
+    margin-left: 10px;
+    flex-wrap: wrap;
+}
+.sectionBox .ul li{
+    border-radius: 20px;
+    background: #5DDCD6;
+    padding: 5px 15px;
 }
 
 @media (max-width:670px) {

@@ -26,6 +26,8 @@ app.use('/api/course', require('./routes/course/course.js'))
 app.use('/api/unit', require('./routes/course/unit.js'))
 //video
 app.use('/api/video', require('./routes/course/video.js'))
+//test mcq
+app.use('/api/test', require('./routes/course/test.js'))
 // enroll
 app.use('/api/enroll', require('./routes/enrollment/enrollment.js'))
 // overview
