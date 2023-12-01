@@ -5,16 +5,22 @@ import AuthContext from "../../context/AuthContext";
 
 function AddTest() {
     const endpoint = "http://localhost:5000";
-    const { id } = useParams();
+    const { id,unitId } = useParams();
     const nav = useNavigate();
     const { token } = useContext(AuthContext);
 
     const [mcqs, setMcqs] = useState([]);
 
     function getMCQs() {
-        fetch(endpoint + "/api/test/final/get/" + id, { headers: { token } })
+        if(!unitId){
+            fetch(endpoint + "/api/test/final/get/" + id, { headers: { token } })
             .then((res) => res.json())
             .then((data) => setMcqs(data));
+        }else{
+            fetch(endpoint + "/api/test/get/" + unitId, { headers: { token } })
+            .then((res) => res.json())
+            .then((data) => setMcqs(data));
+        }
     }
 
     useEffect(() => {
@@ -27,7 +33,7 @@ function AddTest() {
                 <a onClick={() => nav(-1)}>&larr; back</a>
             </div>
             <div className="sectionBody">
-                <h1 className="sectionHeading">Final Test</h1>
+                <h1 className="sectionHeading">{unitId?"":"Final"} Test Questions</h1>
                 {mcqs.map((m) => (
                     <div className="sectionBox" key={m._id}>
                         <div className="textbox">

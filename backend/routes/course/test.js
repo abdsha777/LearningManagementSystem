@@ -34,6 +34,35 @@ router.get('/final/get/:id', fetchuser, async (req, res) => {
     }
 })
 
+router.get('/get/:id', fetchuser, async (req, res) => {
+    try {
+        const id = req.params.id;
+
+        if (!mongoose.isValidObjectId(id)) {
+            return res.status(400).json({ error: "Invalid Id" })
+        }
+
+        const finalTest = await Test.findOne({ unitId: id})
+        if(!finalTest){
+            return res.json([])
+        }
+
+        const mcqs = await MCQ.find({ testId: finalTest._id })
+        // console.log(req.user.role)
+        if (req.user.role == "student") {
+            const simplifiedMcqs = mcqs.map(({ question, options }) => ({
+                question,
+                options,
+            }));
+            return res.json(simplifiedMcqs)
+        }
+        return res.json(mcqs)
+    } catch (error) {
+        console.log(error)
+        return res.status(500).json({ error: "Server Error." })
+    }
+})
+
 router.post("/final/addmcq", fetchuser, isAdminOrTeacher,
     async (req, res) => {
         try {
@@ -52,8 +81,6 @@ router.post("/final/addmcq", fetchuser, isAdminOrTeacher,
                     courseId,
                     final: true
                 })
-                console.log(finalTest)
-                return res.send("new")
             }
 
             var newMCQ = await MCQ.create({
@@ -71,7 +98,41 @@ router.post("/final/addmcq", fetchuser, isAdminOrTeacher,
     }
 )
 
-router.put("/final/editmcq", fetchuser, isAdminOrTeacher,
+router.post("/addmcq", fetchuser, isAdminOrTeacher,
+    async (req, res) => {
+        try {
+            const { question, options, answer, unitId } = req.body;
+            if (!mongoose.isValidObjectId(unitId)) {
+                return res.status(400).json({ "error": "Invalid Course ID" })
+            }
+            if (!question || !options || options.length != 4 || !answer) {
+                return res.status(400).json({ "error": "Invalid Data" })
+            }
+
+            var newTest = await Test.findOne({ unitId })
+
+            if (!newTest) {
+                newTest = await Test.create({
+                    unitId
+                })
+            }
+
+            var newMCQ = await MCQ.create({
+                question,
+                answer,
+                options,
+                testId: newTest._id
+            })
+
+            return res.json(newMCQ)
+        } catch (error) {
+            console.log(error)
+            return res.status(500).json({ error: "Server Error." })
+        }
+    }
+)
+
+router.put("/editmcq", fetchuser, isAdminOrTeacher,
     async (req, res) => {
         try {
             const { question, options, answer, mcqId } = req.body;
@@ -95,5 +156,6 @@ router.put("/final/editmcq", fetchuser, isAdminOrTeacher,
         }
     }
 )
+
 
 module.exports = router

@@ -8,7 +8,7 @@ function AddEditQuestion({ handler, data, token, refresh, edit, final }) {
     const [msg, setMsg] = useState(null);
     const nav = useNavigate();
 
-    const { id } = useParams();
+    const { id, unitId } = useParams();
 
     const [question, setQuestion] = useState(null);
     const [option1, setOption1] = useState(null);
@@ -73,9 +73,11 @@ function AddEditQuestion({ handler, data, token, refresh, edit, final }) {
                         : option4,
                 final: final,
                 courseId: id,
+                unitId
             };
             // console.log(body);
-            var res = await fetch(endpoint + "/api/test/final/addmcq", {
+            let api = unitId?endpoint + "/api/test/addmcq":endpoint + "/api/test/final/addmcq";
+            var res = await fetch(api, {
                 method: "POST",
                 headers: { token, "Content-Type": "application/json" },
                 body: JSON.stringify(body),
@@ -85,11 +87,13 @@ function AddEditQuestion({ handler, data, token, refresh, edit, final }) {
                 // console.log(data);
                 setMsg(data.error);
             } else {
+                setQuestion(null);
                 setOption1(null);
                 setOption2(null);
                 setOption3(null);
                 setOption4(null);
                 console.log(data);
+                setAnswer("-")
                 refresh();
                 hide();
             }
@@ -110,16 +114,19 @@ function AddEditQuestion({ handler, data, token, refresh, edit, final }) {
                         : answer == "c"
                         ? option3
                         : option4,
+                unitId
             };
             console.log(body)
-            var res = await fetch(endpoint + "/api/test/final/editmcq", {
+            let api = endpoint + "/api/test/editmcq";
+
+            var res = await fetch(api, {
                 method: "PUT",
                 headers: { token, "Content-Type": "application/json" },
                 body: JSON.stringify(body),
             });
             var data = await res.json();
             if (!res.ok) {
-                console.log(data);
+                // console.log(data);
                 setMsg(data.error);
             } else {
                 // console.log(data);
@@ -184,7 +191,7 @@ function AddEditQuestion({ handler, data, token, refresh, edit, final }) {
                             <select
                                 name=""
                                 id=""
-                                value={answer}
+                                value={answer||""}
                                 onChange={(e) => setAnswer(e.target.value)}
                             >
                                 <option value="-">---</option>

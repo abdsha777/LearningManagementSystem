@@ -101,6 +101,7 @@ function App() {
                     <Route path='editCourse/:id/finalTest' element={<AddTest />} />
                     <Route path='editCourse/:id/addUnit/' element={<AddUnit />} />
                     <Route path='editCourse/:id/editUnit/:unitId' element={<AddUnit />} />
+                    <Route path='editCourse/:id/editUnit/:unitId/test' element={<AddTest />} />
                     <Route path='courselist/' element={<TeacherCourseList />} />
                     <Route path='teacherstudentlist/' element={<TeacherStudentList />} />
                     <Route path='teacherStudentList/add/' element={<AdminAddStudent />} />

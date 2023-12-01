@@ -93,8 +93,10 @@ router.get('/detail/:id', fetchuser, async (req, res) => {
         const units = await Unit.find({ courseId: course._id })
         // course.units = units
         const finalTest = await Test.findOne({courseId:course._id,final:true})
-
-        const mcqCount = await MCQ.countDocuments({testId:finalTest._id})
+        var mcqCount =0
+        if(finalTest){
+            mcqCount = await MCQ.countDocuments({testId:finalTest._id})
+        }
 
         const result = {
             _id: course._id,
@@ -104,6 +106,11 @@ router.get('/detail/:id', fetchuser, async (req, res) => {
             courseImg: course.courseImg,
             units: await Promise.all(units.map(async (u) => {
                 let numOfVideo = await Video.countDocuments({ unitId: u._id })
+                let test = await Test.findOne({unitId:u._id})
+                let numOfMCQ = 0;
+                if(test){
+                    numOfMCQ = await MCQ.countDocuments({testId:test._id})
+                }
                 return {
                     _id: u._id,
                     courseId: u.courseId,
@@ -111,14 +118,15 @@ router.get('/detail/:id', fetchuser, async (req, res) => {
                     description: u.description,
                     sequence: u.sequence,
                     duration: u.duration,
-                    numOfVideo
+                    numOfVideo,
+                    numOfMCQ
                 }
             })),
-            finalTest:{
-                _id: finalTest._id,
-                courseId: finalTest.courseId,
+            finalTest: finalTest?{
+                _id: finalTest?._id,
+                courseId: finalTest?.courseId,
                 mcqCount: mcqCount
-            }
+            }:null
         }
         return res.json(result)
     } catch (error) {
