@@ -16,8 +16,31 @@ function AddEditQuestion({ handler, data, token, refresh, edit, final }) {
     const [option3, setOption3] = useState(null);
     const [option4, setOption4] = useState(null);
     const [answer, setAnswer] = useState(null);
+    const [mcqId, setMcqId] = useState(null);
 
-    async function addFirstMcq(hide) {
+    useEffect(() => {
+        if (edit) {
+            setMcqId(data._id)
+            setQuestion(data.question);
+            setOption1(data.options[0]);
+            setOption2(data.options[1]);
+            setOption3(data.options[2]);
+            setOption4(data.options[3]);
+            setAnswer(data.answer);
+            setAnswer(
+                data.answer == null
+                    ? "-"
+                    : data.answer == option1
+                    ? "a"
+                    : data.answer == option2
+                    ? "b"
+                    : data.answer == option3
+                    ? "c"
+                    : "d");
+        }
+    }, []);
+
+    function validate() {
         if (
             !option1 ||
             !option2 ||
@@ -28,41 +51,81 @@ function AddEditQuestion({ handler, data, token, refresh, edit, final }) {
             answer == "-"
         ) {
             setMsg("Fill all the fields");
+            return false;
         } else {
             setMsg(null);
+            return true;
         }
-        let body = {
-            question,
-            options: [option1, option2, option3, option4],
-            answer:
-                answer == "a"
-                    ? option1
-                    : answer == "b"
-                    ? option2
-                    : answer == "c"
-                    ? option3
-                    : option4,
-            final: final,
-            courseId: id,
-        };
-        console.log(body);
-        var res = await fetch(endpoint + "/api/test/final/addmcq", {
-            method:'POST',
-            headers: { token,'Content-Type':"application/json"},
-            body: JSON.stringify(body)
-        });
-        var data = await res.json();
-        if (!res.ok) {
-            console.log(data);
-            setMsg(data.error);
-        } else {
-            setOption1(null)
-            setOption2(null)
-            setOption3(null)
-            setOption4(null)
-            console.log(data);
-            refresh();
-            hide();
+    }
+
+    async function addFirstMcq(hide) {
+        if (validate()) {
+            let body = {
+                question,
+                options: [option1, option2, option3, option4],
+                answer:
+                    answer == "a"
+                        ? option1
+                        : answer == "b"
+                        ? option2
+                        : answer == "c"
+                        ? option3
+                        : option4,
+                final: final,
+                courseId: id,
+            };
+            // console.log(body);
+            var res = await fetch(endpoint + "/api/test/final/addmcq", {
+                method: "POST",
+                headers: { token, "Content-Type": "application/json" },
+                body: JSON.stringify(body),
+            });
+            var data = await res.json();
+            if (!res.ok) {
+                // console.log(data);
+                setMsg(data.error);
+            } else {
+                setOption1(null);
+                setOption2(null);
+                setOption3(null);
+                setOption4(null);
+                console.log(data);
+                refresh();
+                hide();
+            }
+        }
+    }
+
+    async function editMcq(hide) {
+        if (validate()) {
+            let body = {
+                mcqId,
+                question,
+                options: [option1, option2, option3, option4],
+                answer:
+                    answer == "a"
+                        ? option1
+                        : answer == "b"
+                        ? option2
+                        : answer == "c"
+                        ? option3
+                        : option4,
+            };
+            console.log(body)
+            var res = await fetch(endpoint + "/api/test/final/editmcq", {
+                method: "PUT",
+                headers: { token, "Content-Type": "application/json" },
+                body: JSON.stringify(body),
+            });
+            var data = await res.json();
+            if (!res.ok) {
+                console.log(data);
+                setMsg(data.error);
+            } else {
+                // console.log(data);
+                refresh();
+                hide();
+            }
         }
     }
 
@@ -121,7 +184,7 @@ function AddEditQuestion({ handler, data, token, refresh, edit, final }) {
                             <select
                                 name=""
                                 id=""
-                                value={answer || ""}
+                                value={answer}
                                 onChange={(e) => setAnswer(e.target.value)}
                             >
                                 <option value="-">---</option>
@@ -146,7 +209,7 @@ function AddEditQuestion({ handler, data, token, refresh, edit, final }) {
                         <button
                             className="btn btn-filled"
                             onClick={() => {
-                                edit ? () => {} : addFirstMcq(hide);
+                                edit ? editMcq(hide) : addFirstMcq(hide);
                             }}
                         >
                             {edit ? "Update" : "Add"}

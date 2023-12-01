@@ -19,6 +19,7 @@ router.get('/final/get/:id', fetchuser, async (req, res) => {
         const finalTest = await Test.findOne({ courseId: id, final: true })
 
         const mcqs = await MCQ.find({ testId: finalTest._id })
+        // console.log(req.user.role)
         if (req.user.role == "student") {
             const simplifiedMcqs = mcqs.map(({ question, options }) => ({
                 question,
@@ -70,5 +71,29 @@ router.post("/final/addmcq", fetchuser, isAdminOrTeacher,
     }
 )
 
+router.put("/final/editmcq", fetchuser, isAdminOrTeacher,
+    async (req, res) => {
+        try {
+            const { question, options, answer, mcqId } = req.body;
+            if (!mongoose.isValidObjectId(mcqId)) {
+                return res.status(400).json({ "error": "Invalid MCQ ID" })
+            }
+            if (!question || !options || options.length != 4 || !answer) {
+                return res.status(400).json({ "error": "Invalid Data" })
+            }
+
+            var updatedMCQ = await MCQ.findOneAndUpdate({ _id: mcqId }, {
+                question,
+                answer,
+                options,
+            }, { new: true })
+
+            return res.json(updatedMCQ)
+        } catch (error) {
+            console.log(error)
+            return res.status(500).json({ error: "Server Error." })
+        }
+    }
+)
 
 module.exports = router
