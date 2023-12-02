@@ -232,5 +232,42 @@ router.post('/update/:id', fetchuser, isAdminOrTeacher, upload.single('courseImg
     }
 })
 
+router.put('/unitsequence',fetchuser,isAdminOrTeacher,async (req,res)=>{
+    try{
+        const {units} = req.body;
+        if(units.lenght<1){
+            return res.json({msg:"no data"})
+        }
+        // console.log(units)
+        await Promise.all(units.map(async (u)=>{
+            await Unit.findOneAndUpdate({_id:u._id},{
+                sequence:u.sequence
+            })
+        }))
+        return res.json({msg:"updated"})
+    }catch(error){
+        console.log(error)
+        return res.status(500).json({error:"Server Error"})
+    }
+})
+
+router.put('/videosequence',fetchuser,isAdminOrTeacher,async (req,res)=>{
+    try{
+        const {units} = req.body;
+        if(units.lenght<1){
+            return res.json({msg:"no data"})
+        }
+        // console.log(units)
+        await Promise.all(units.map(async (u)=>{
+            await Video.findOneAndUpdate({_id:u._id},{
+                sequence:u.sequence
+            })
+        }))
+        return res.json({msg:"updated"})
+    }catch(error){
+        console.log(error)
+        return res.status(500).json({error:"Server Error"})
+    }
+})
 
 module.exports = router
