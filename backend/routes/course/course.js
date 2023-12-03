@@ -61,6 +61,8 @@ router.get('/', fetchuser, async (req, res) => {
                     enrolledStudents: enrolledStudentsCount,
                     completedStudents: completedStudentsCount, // Add the number of students who have completed the course
                     date: course.createdAt, // Add the course date (adjust as needed)
+                    duration: course.duration,
+                    courseImg: course.courseImg
                 };
             })
         );

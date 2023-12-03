@@ -10,6 +10,12 @@
     src: url('./fonts/Inter-Bold.ttf');
     font-weight: bold;
 }
+@font-face {
+    font-family: 'Inter';
+    /* src: url('./fonts/Inter-Regular.ttf'); */
+    src: url('./fonts/Inter-SemiBold.ttf');
+    font-weight: 500;
+}
 
 * {
     box-sizing: border-box;

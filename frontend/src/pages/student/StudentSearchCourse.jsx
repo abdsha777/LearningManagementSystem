@@ -1,68 +1,64 @@
-import React, { useEffect, useState } from 'react'
-import image from '../../assets/image.jpg'
+import React, { useContext, useEffect, useState } from "react";
+import image from "../../assets/image.jpg";
+import AuthContext from "../../context/AuthContext";
+import { Link } from "react-router-dom";
 
 function StudentSearchCourse() {
     // const dbJson = "https://jsonserver-6gyk.onrender.com";
-    const dbJson = "http://localhost:7000";
-    const [module, setModule] = useState([]);
+    const backend = "http://localhost:5000";
+    const { token } = useContext(AuthContext);
     const [course, setCourse] = useState([]);
 
-    const getModuleList = () => {
-        fetch(`${dbJson}/student_module`)
-            .then(response => response.json())
-            .then(data => setModule(data))
-            .catch(error => console.log(error))
-    }
     const getCourseList = () => {
-        fetch(`${dbJson}/StudentCourse`)
-            .then(response => response.json())
-            .then(data => setCourse(data))
-            .catch(error => console.log(error))
-    }
-    useEffect(()=>{
-        getModuleList();
+        fetch(`${backend}/api/course/`, { headers: { token } })
+            .then((response) => response.json())
+            .then((data) => {setCourse(data);console.log(data)})
+            .catch((error) => console.log(error));
+    };
+    useEffect(() => {
         getCourseList();
-    },[])
+    }, []);
     return (
         <div>
             <div className="course-tag">
                 <b>Find a Course</b>
                 <div className="search">
-                    <div className="search-box"><input type="text" className="search-bar" placeholder="Search Course" /></div>
-                    <div className="filter-button"><button className="bton">Filter</button></div>
+                    <div className="search-box">
+                        <input
+                            type="text"
+                            className="search-bar"
+                            placeholder="Search Course"
+                        />
+                    </div>
+                    <div className="filter-button">
+                        <button className="bton">Filter</button>
+                    </div>
                 </div>
             </div>
-            {
-                course.map((record, key) => {
-                    return (
-                        <div className="video-component">
-                            <p className="heading">{record.course_name}</p>
-                            <div className="videos">
-                            {
-                                module.map((rec, key) => {
-                                    return (
-                                       
-                                            <div className="video-box">
-                                                <div className="video-img" style={{backgroundImage:`url(${rec.image})`}}></div>
-                                                <div className="video-info">
-                                                    <h1>{rec.module_name}</h1>
-                                                </div>
-                                                <small>{rec.duration}</small>
 
-                                            </div>
-                                    )
-                                })
-                            }
-                             </div>
-                        </div>
-                    )
-                })
-            }
-
-
-
+            <div className="video-component">
+                <p className="heading"></p>
+                <div className="videos">
+                    {course.courses && course.courses.map((c, idx) => {
+                        return (
+                            <Link to={'/courseDetail/'+c.id} className="video-box" key={idx}>
+                                <div
+                                    className="video-img"
+                                    style={{
+                                        backgroundImage: `url(${backend}/img/${c.courseImg})`,
+                                    }}
+                                ></div>
+                                <div className="video-info">
+                                    <h1>{c.title}</h1>
+                                </div>
+                                <small>Duration: {c.duration} hours</small>
+                            </Link>
+                        );
+                    })}
+                </div>
+            </div>
         </div>
-    )
+    );
 }
 
-export default StudentSearchCourse
+export default StudentSearchCourse;
