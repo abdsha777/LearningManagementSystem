@@ -6,6 +6,7 @@ import { Link } from 'react-router-dom';
 
 function Navbar({showMenu}) {
     let {name,role} = useContext(AuthContext);
+    name =  name.charAt(0).toUpperCase() + name.slice(1);
     return (
         <header>
             <nav>

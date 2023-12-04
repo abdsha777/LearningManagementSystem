@@ -3,10 +3,10 @@ import Popup from './MyPopup'
 import { useNavigate } from 'react-router-dom';
 
 function EditCoursePopup({ handler, data, token, refresh }) {
-
+    const backend = import.meta.env.VITE_BACKEND;
     const [msg, setMsg] = useState(null);
     const [course,setCourse] = useState(data);
-    const [img, setImg] = useState("http://localhost:5000/img/"+data.courseImg);
+    const [img, setImg] = useState(`${backend}/img/`+data.courseImg);
     const [file,setFile] = useState(null);
     const nav = useNavigate();
 
@@ -32,7 +32,7 @@ function EditCoursePopup({ handler, data, token, refresh }) {
             formDataToSend.append('courseImg', file);
         }
         // console.log(formDataToSend)
-        const res = await fetch("http://localhost:5000/api/course/update/"+course._id, {
+        const res = await fetch(backend+"/api/course/update/"+course._id, {
             method: 'POST',
             headers: { token },
             body: formDataToSend

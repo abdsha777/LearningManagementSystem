@@ -5,7 +5,7 @@ import AddEditVideo from "../../components/popups/AddEditVideo";
 import ChangeSequence from "../../components/popups/ChangeSequence";
 
 function AddUnit() {
-    const endpoint = "http://localhost:5000";
+    const endpoint = import.meta.env.VITE_BACKEND;
     const nav = useNavigate();
     const { id, unitId } = useParams();
     const [unit, setUnit] = useState({ courseId: id });

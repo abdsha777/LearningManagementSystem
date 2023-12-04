@@ -25,10 +25,11 @@ mongoose.connect('mongodb://127.0.0.1:27017/lms');
 async function setupAdminUser() {
   try {
     // Prompt for admin user details
-    const email = await prompt('Enter admin email: ');
-    const password = await prompt('Enter admin password: ');
-    const name = await prompt('Enter admin name: ');
-
+    const email = await prompt('Enter email: ');
+    const password = await prompt('Enter password: ');
+    const name = await prompt('Enter name: ');
+    let role = await prompt('Enter role: 1 for admin, 2 for teacher, 3 for student')
+    role = role==3?"admin":role=="2"?"teacher":"student"
     // Hash the password before storing it
     const salt = await bcrypt.genSalt(5);
     const hashedPassword = await  bcrypt.hash(password ,salt);
@@ -36,14 +37,14 @@ async function setupAdminUser() {
     const adminUser = new User({
       email,
       password: hashedPassword,
-      role: 'admin',
+      role: role,
       name
     });
 
     // Save the admin user to the database
     await adminUser.save();
 
-    console.log('Admin user created successfully.');
+    console.log('user created successfully.');
   } catch (error) {
     console.error('Error setting up admin user:', error);
   } finally {

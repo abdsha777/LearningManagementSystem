@@ -7,7 +7,7 @@ import AuthContext from '../../context/AuthContext';
 function TeacherMyCourses() {
     const { token } = useContext(AuthContext);
     // const dbJson = "http://localhost:7000";
-    const backend = "http://localhost:5000";
+    const backend = import.meta.env.VITE_BACKEND;
     const [courses, setCourses] = useState([])
 
     const getCoureList = () => {

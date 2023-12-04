@@ -20,9 +20,8 @@ ChartJS.register(
 );
 
 function AdminDashboard() {
-    // const backend = "https://jsonserver-6gyk.onrender.com";
-    const backend = " http://localhost:7000";
-    // const backend = "http://localhost:5000";
+    const backend = import.meta.env.VITE_BACKEND;
+    
     const {token} = useContext(AuthContext);
     const [course, setCourse] = useState([])
     const [overView, setOverview] = useState([])

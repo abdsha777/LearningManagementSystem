@@ -17,24 +17,7 @@ const router = express.Router()
 
 router.get('/', fetchuser, async (req, res) => {
     try {
-        const page = parseInt(req.query.page) || 1;
-        const limit = parseInt(req.query.limit) || 10;
-        const searchTitle = req.query.title || '';
-
-        const startIndex = (page - 1) * limit;
-        const endIndex = page * limit;
-
-        const query = {};
-        if (searchTitle) {
-            query.title = { $regex: searchTitle, $options: 'i' };
-        }
-
-        const coursesCount = await Course.countDocuments(query);
-        const totalPages = Math.ceil(coursesCount / limit);
-
-        const courses = await Course.find(query)
-            .skip(startIndex)
-            .limit(limit);
+        const courses = await Course.find()
 
         // Retrieve additional information for each course
         const courseDetails = await Promise.all(
@@ -68,10 +51,7 @@ router.get('/', fetchuser, async (req, res) => {
         );
 
         const result = {
-            courses: courseDetails,
-            currentPage: page,
-            totalPages: totalPages,
-            totalCourses: coursesCount,
+            courses: courseDetails
         };
 
         res.json(result);
@@ -100,12 +80,18 @@ router.get('/detail/:id', fetchuser, async (req, res) => {
             mcqCount = await MCQ.countDocuments({testId:finalTest._id})
         }
 
+        const teacher = await User.findOne({_id:course.teacherId})
+
+        const enrolledStudents = await Enrollment.countDocuments({courseId:course._id})
+
         const result = {
             _id: course._id,
             title: course.title,
             description: course.description,
             duration: course.duration,
             courseImg: course.courseImg,
+            teacher:teacher.name,
+            enrolledStudents,
             units: await Promise.all(units.map(async (u) => {
                 let numOfVideo = await Video.countDocuments({ unitId: u._id })
                 let test = await Test.findOne({unitId:u._id})
@@ -121,7 +107,8 @@ router.get('/detail/:id', fetchuser, async (req, res) => {
                     sequence: u.sequence,
                     duration: u.duration,
                     numOfVideo,
-                    numOfMCQ
+                    numOfMCQ,
+                    videos: await Video.find({ unitId: u._id })
                 }
             })),
             finalTest: finalTest?{

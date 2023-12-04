@@ -47,7 +47,7 @@ function ChangeSequence({ handler, data, token, refresh }) {
     }
 
     async function saveSequence(hide){
-        const endpoint = "http://localhost:5000";
+        const endpoint = import.meta.env.VITE_BACKEND;
         const res = await fetch(endpoint + "/api/course/videosequence/",{
             headers:{
                 token,

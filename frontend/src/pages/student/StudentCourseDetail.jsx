@@ -1,28 +1,54 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useContext } from "react";
 import Doubts from "../../components/chat/Doubts";
-import { Link } from "react-router-dom";
+import { Link, useParams } from "react-router-dom";
 import img from "../../assets/image.jpg";
+import Accordian from "../../components/accordian/Accordian";
+import AuthContext from "../../context/AuthContext";
 
 function StudentCourseDetail() {
-    // const dbJson = "https://jsonserver-6gyk.onrender.com";
-    const dbJson = " http://localhost:7000";
+    const backend = import.meta.env.VITE_BACKEND;
+    const { token } = useContext(AuthContext);
+    const {course: id} = useParams();
 
-    const [course, setCourse] = useState([]);
-    const [Module, setModule] = useState([]);
+    const [course,setCourse] = useState(null)
+
+    function getCourseData(){
+        fetch(backend+"/api/course/detail/"+id,{headers:{token}})
+        .then(res=>res.json())
+        .then(data=>{setCourse(data);})
+        .catch(err=>console.log(err))
+    }
+
+    useEffect(()=>{
+        getCourseData();
+    },[])
+
+    if(!course){
+        return(
+            <div className="teacher-view-course">
+                <h1 className="title">Loading...</h1>
+            </div>
+        )
+    }
 
     return (
         <div className="teacher-view-course">
-            <h1 className="title">Django Web Framework</h1>
+            <h1 className="title">{course.title}</h1>
             <h4 className="description">
-                Learn how to make strongly secured real world application with
-                Django.
+                {course.description}
             </h4>
 
             <div className="course-content">
                 <div className="left-content">
-                    <img src={img} alt="" className="course-img" />
+                    <img src={backend+"/img/"+course.courseImg} alt="" className="course-img" />
                     <h4>Lessons in this course.</h4>
-                    <div>accordian</div>
+                    {
+                        course.units.length>0 ? (
+                            <Accordian data={course.units} />
+                        ):(
+                            <p>Currently no lessons...</p>
+                        )
+                    }
                 </div>
 
                 <div className="right-content">
@@ -42,7 +68,7 @@ function StudentCourseDetail() {
                             </svg>
                             <div>
                                 <small>Lessons</small>
-                                <p>7</p>
+                                <p>{course.units.length}</p>
                             </div>
                         </div>
                         <div className="right-side">
@@ -79,7 +105,7 @@ function StudentCourseDetail() {
                                 />
                             </svg>
                             <small>Students:</small>
-                            <p>122</p>
+                            <p>{course.enrolledStudents}</p>
                         </div>
 
                         <div>
@@ -96,7 +122,7 @@ function StudentCourseDetail() {
                                 />
                             </svg>
                             <small>Duration:</small>
-                            <p>20 Hours</p>
+                            <p>{course.duration} Hours</p>
                         </div>
 
                         <div>
@@ -117,7 +143,7 @@ function StudentCourseDetail() {
                                 />
                             </svg>
                             <small>Teacher:</small>
-                            <p>Sakata Gintoki</p>
+                            <p>{course.teacher}</p>
                         </div>
                     </div>
                     <button className="btn btn-filled">Enroll</button>

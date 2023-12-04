@@ -4,10 +4,7 @@ import { Link } from "react-router-dom";
 import AuthContext from "../../context/AuthContext";
 
 function AdminTeacherList() {
-  // const backend = "https://jsonserver-6gyk.onrender.com";
-  // const backend = "http://localhost:7000";
-  const backend = "http://localhost:5000";
-  // const backend = "https://lms-fh7w.onrender.com";
+  const backend = import.meta.env.VITE_BACKEND;
 
   const [teacher, setTeacher] = useState([]);
   const [filteredTeachers, setFilteredTeachers] = useState([]);

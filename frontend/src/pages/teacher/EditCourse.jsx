@@ -8,7 +8,7 @@ import ChangeSequence from "../../components/popups/ChangeSequence";
 
 function EditCourse() {
     const nav = useNavigate();
-    const endpoint = "http://localhost:5000";
+    const endpoint = import.meta.env.VITE_BACKEND;
     const { token } = useContext(AuthContext);
     const { id } = useParams();
     const [course, setCourse] = useState({});

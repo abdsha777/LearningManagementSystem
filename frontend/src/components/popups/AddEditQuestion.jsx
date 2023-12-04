@@ -4,7 +4,7 @@ import { useNavigate, useParams } from "react-router-dom";
 import AuthContext from "../../context/AuthContext";
 
 function AddEditQuestion({ handler, data, token, refresh, edit, final }) {
-    const endpoint = "http://localhost:5000";
+    const endpoint = import.meta.env.VITE_BACKEND;
     const [msg, setMsg] = useState(null);
     const nav = useNavigate();
 

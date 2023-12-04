@@ -5,7 +5,7 @@ import { Link } from "react-router-dom";
 
 function StudentSearchCourse() {
     // const dbJson = "https://jsonserver-6gyk.onrender.com";
-    const backend = "http://localhost:5000";
+    const backend = import.meta.env.VITE_BACKEND;
     const { token } = useContext(AuthContext);
     const [course, setCourse] = useState([]);
 

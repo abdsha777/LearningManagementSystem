@@ -3,7 +3,7 @@ import Popup from './MyPopup'
 import { useNavigate } from 'react-router-dom';
 
 function AddEditVideo({ handler, data, token, refresh, unitId, edit }) {
-    const endpoint="http://localhost:5000";
+    const endpoint=import.meta.env.VITE_BACKEND;
     const [msg, setMsg] = useState(null);
     const [video, setVideo] = useState({unitId:unitId});
     const nav = useNavigate();

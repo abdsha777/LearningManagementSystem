@@ -7,8 +7,7 @@ import './AdminAddStudent.css';
 
 
 function AdminAddStudent() {
-    // const endpoint = "http://localhost:7000";
-    const endpoint = "http://localhost:5000";
+    const endpoint = import.meta.env.VITE_BACKEND;
     const [student, setStudent] = useState({});
     const { id } = useParams();
     const { role } = useContext(AuthContext);

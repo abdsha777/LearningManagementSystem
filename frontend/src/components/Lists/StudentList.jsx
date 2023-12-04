@@ -12,7 +12,8 @@ function StudentList() {
     const [statusFilter,setStatusFilter]=useState("");
     const [q,setQ]=useState("");
     // const endpoint = "http://localhost:7000/Admin_Teacher_student";
-    const endpoint = "http://localhost:5000/api/users/students/";
+    const backend = import.meta.env.VITE_BACKEND;
+    const endpoint = `${backend}/api/users/students/`;
     const {token} = useContext(AuthContext)
 
     function getStudents() {

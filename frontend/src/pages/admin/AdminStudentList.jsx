@@ -7,10 +7,7 @@ import StudentFilter from '../../components/popups/StudentFilter';
 import StudentList from '../../components/Lists/StudentList';
 
 function AdminStudentList() {
-  // const dbJson = "https://jsonserver-6gyk.onrender.com";
-  const backend = "http://localhost:7000";
-  // const backend = "http://localhost:5000";
-  // const backend = "https://lms-fh7w.onrender.com";
+  const backend = import.meta.env.VITE_BACKEND;
   const [student, setStudent] = useState([]);
   const { token } = useContext(AuthContext);
   const [loading,setLoading] = useState(true);

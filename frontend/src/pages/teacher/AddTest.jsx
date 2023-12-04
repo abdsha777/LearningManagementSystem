@@ -4,7 +4,7 @@ import AddEditQuestion from "../../components/popups/AddEditQuestion";
 import AuthContext from "../../context/AuthContext";
 
 function AddTest() {
-    const endpoint = "http://localhost:5000";
+    const endpoint = import.meta.env.VITE_BACKEND;
     const { id,unitId } = useParams();
     const nav = useNavigate();
     const { token } = useContext(AuthContext);

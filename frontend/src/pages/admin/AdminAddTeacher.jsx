@@ -3,8 +3,7 @@ import { useNavigate, useParams, Link } from 'react-router-dom';
 import AuthContext from '../../context/AuthContext';
 
 function AdminAddTeacher() {
-    // const endpoint = "http://localhost:7000";
-    const endpoint = "http://localhost:5000";
+    const endpoint = import.meta.env.VITE_BACKEND;
     const [teacher, setTeacher] = useState({ role: "teacher" });
     const { id } = useParams();
     const nav = useNavigate();

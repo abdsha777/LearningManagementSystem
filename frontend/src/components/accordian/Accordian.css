@@ -1,0 +1,116 @@
+
+.accordion{
+    width: 100%;
+}
+.accordion_label {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    font-family: Inter;
+    font-size: 24px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 95.023%;
+    cursor: pointer;
+    padding: 20px 40px;
+    border-top: 1px;
+    background: #D1F5F4;
+}
+
+.accordion_label.first {
+    border-radius: 10px 10px 0 0;
+}
+
+.accordion_label.last {
+    border-radius: 0 0 10px 10px;
+}
+
+.accordion_input:checked~.accordion_label {
+    padding: 20px 40px;
+    background: #1F1F1F;
+    color: #FFF;
+}
+
+.accordion_input:checked~.accordion_label.last {
+    border-radius: 0;
+}
+.accordion_input:checked~.accordion_label.last ~ .section_content {
+    border-radius: 0 0 10px 10px;
+}
+
+.accordion_label label svg path {
+    fill: black;
+}
+
+.accordion_label label svg {
+    margin-left: 10px;
+    transform: rotateZ(180deg);
+    transition: .4s transform;
+}
+
+.accordion_input:checked~.accordion_label label svg {
+    transform: rotateZ(0deg);
+}
+
+.accordion_input:checked~.accordion_label label svg path {
+    fill: white;
+}
+
+
+.section_content {
+    display: block;
+    margin-bottom: 10px;
+    background: #E9E9E9;
+    width: 100%;
+    max-height: 0;
+    transition: all .2s linear,margin-bottom .1s linear,padding .2s;
+    overflow: hidden;
+    padding: 0 40px;
+}
+
+.accordion_input:checked~ .section_content{
+    max-height: 100vh;
+    padding: 20px 40px;
+    margin-bottom: 0;
+}
+
+.section1_content1 {
+
+    display: flex;
+    justify-content: space-between;
+    /* display: grid;
+    grid-template-columns: 20% 40% 45%;
+     */
+    margin-bottom: 5px;
+}
+.section1_topic{
+    cursor: pointer;
+}
+
+.section1_icon_topic {
+    display: flex;
+    gap: 10px
+}
+
+.accordion_input {
+    display: none;
+}
+
+.accordion_input:checked~.accordion_label3 label span {
+
+    transform: rotate(0deg);
+
+}
+
+@media (max-width: 800px) {
+    
+
+    .accordion_module p{
+        display: none;
+    }
+    .section1_duration{
+        display: none;
+    }
+    
+
+}

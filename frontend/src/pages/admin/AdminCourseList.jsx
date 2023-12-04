@@ -3,8 +3,7 @@ import './AdminCourseList.css';
 import StudentFilter from '../../components/popups/StudentFilter';
 
 function AdminCourseList() {
-    // const dbJson = "https://jsonserver-6gyk.onrender.com";
-    const dbJson = "http://localhost:7000";
+    const dbJson = import.meta.env.VITE_BACKEND;
     const [courses, setCourses] = useState([])
     const getCourseList=()=>{
         fetch(`${dbJson}/Admin_course_list`)
