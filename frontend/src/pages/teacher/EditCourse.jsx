@@ -191,6 +191,7 @@ function EditCourse() {
                         data={course.units}
                         token={token}
                         refresh={getCourse}
+                        unit={true}
                     />
                 )}
             </div>

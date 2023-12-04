@@ -1,9 +1,7 @@
 import React, { useContext, useEffect, useState } from "react";
 import Popup from "./MyPopup";
-import { useNavigate, useParams } from "react-router-dom";
-import AuthContext from "../../context/AuthContext";
 
-function ChangeSequence({ handler, data, token, refresh }) {
+function ChangeSequence({ handler, data, token, refresh, unit }) {
     const [units, setUnits] = useState([]);
 
     useEffect(() => {
@@ -13,7 +11,7 @@ function ChangeSequence({ handler, data, token, refresh }) {
     function up(seq){
         // to reduce the sequence
         if(seq==1){
-            console.log('wrong')
+            // console.log('wrong')
             return
         }
         setUnits([...units.map(u=>{
@@ -30,7 +28,7 @@ function ChangeSequence({ handler, data, token, refresh }) {
     }
     function down(seq){
         if(seq==units.length){
-            console.log('wrong2')
+            // console.log('wrong2')
             return
         }
         setUnits([...units.map(u=>{
@@ -47,8 +45,9 @@ function ChangeSequence({ handler, data, token, refresh }) {
     }
 
     async function saveSequence(hide){
+        // console.log(units)
         const endpoint = import.meta.env.VITE_BACKEND;
-        const res = await fetch(endpoint + "/api/course/videosequence/",{
+        const res = await fetch( unit?endpoint+"/api/course/unitsequence/":endpoint+"/api/course/videosequence/",{
             headers:{
                 token,
                 "Content-Type":"application/json",
@@ -57,7 +56,7 @@ function ChangeSequence({ handler, data, token, refresh }) {
             body: JSON.stringify({units})
         }) 
         const data = await res.json()
-        console.log(data)
+        // console.log(data)
         if(res.ok){
             refresh();
             hide();
