@@ -11,14 +11,14 @@ function AdminStudentList() {
   const [student, setStudent] = useState([]);
   const { token } = useContext(AuthContext);
   const [loading,setLoading] = useState(true);
-  const getStudentList = async() => {
-    // fetch(`${backend}/api/users/students/`, { headers: { token } })
-    fetch(`${backend}/Admin_Teacher_student`, { headers: { token } })
-      .then(response => response.json())
-      .then(data => setStudent(data))
-      .catch(error => console.log(error))
-    setLoading(false)
-  }
+  // const getStudentList = async() => {
+  //   // fetch(`${backend}/api/users/students/`, { headers: { token } })
+  //   fetch(`${backend}/Admin_Teacher_student`, { headers: { token } })
+  //     .then(response => response.json())
+  //     .then(data => setStudent(data))
+  //     .catch(error => console.log(error))
+  //   setLoading(false)
+  // }
   // useEffect(() => {
   //   getStudentList();
   // }, [])
