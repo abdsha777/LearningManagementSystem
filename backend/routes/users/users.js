@@ -170,8 +170,8 @@ router.get('/student/:id',fetchuser,isAdminOrTeacher,async(req,res)=>{
             id: student.id,
             name: student.name,
             email: student.email,
-            class: studentDetail.class,
-            phoneNumber: studentDetail.phoneNumber,
+            class: studentDetail?.class,
+            phoneNumber: studentDetail?.phoneNumber,
             active:student.active
         }
         return res.json(studentInfo);
