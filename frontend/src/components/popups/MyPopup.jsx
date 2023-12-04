@@ -1,5 +1,5 @@
 import React, { useState } from 'react'
-import './Mypopup.css'
+import './MyPopup.css'
 
 function Popup({ handler, children }) {
     const [hidden,setHidden] = useState(true);

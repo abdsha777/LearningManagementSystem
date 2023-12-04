@@ -1,5 +1,5 @@
 import React,{useState,useEffect} from 'react';
-// import './teachercourselist.css';
+// import './Teachercourselist.css';
 
 function TeacherCourseList() {
     // const dbJson = "https://jsonserver-6gyk.onrender.com";
