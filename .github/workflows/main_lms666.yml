@@ -57,5 +57,5 @@ jobs:
         with:
           app-name: 'LMS666'
           slot-name: 'Production'
-          package: .
+          package: ./backend
           publish-profile: ${{ secrets.AZUREAPPSERVICE_PUBLISHPROFILE_9DC797E767BC4E55B6812E46FC623E00 }}
