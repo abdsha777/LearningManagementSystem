@@ -17,7 +17,9 @@ router.get('/final/get/:id', fetchuser, async (req, res) => {
         }
 
         const finalTest = await Test.findOne({ courseId: id, final: true })
-
+        if(!finalTest){
+            return res.json([])
+        }
         const mcqs = await MCQ.find({ testId: finalTest._id })
         // console.log(req.user.role)
         if (req.user.role == "student") {
