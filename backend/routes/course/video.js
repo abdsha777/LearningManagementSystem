@@ -6,6 +6,7 @@ const isAdminOrTeacher = require('../../middleware/isAdminOrTeacher')
 const { body, validationResult } = require('express-validator');
 const Unit = require('../../models/Unit');
 const Video = require('../../models/Video');
+const fetch = require('node-fetch')
 
 const getDuration = (durationString = "") => {
     const duration = { hours: 0, minutes: 0, seconds: 0 };
