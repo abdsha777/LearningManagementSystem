@@ -67,57 +67,242 @@ router.get('/detail/:id', fetchuser, async (req, res) => {
         if (!mongoose.isValidObjectId(id)) {
             return res.status(400).json({ error: "Invalid Id" })
         }
-        const course = await Course.findOne({ _id: id })
-
-        // if(req.user.id != course._id){
-        //     return res.status(401).json({error:"Unauthorized"})
+        // const course = await Course.findOne({ _id: id })
+        // if (!course) {
+        //     return res.status(400).json({ error: "Invalid Id" })
         // }
-        const units = await Unit.find({ courseId: course._id })
-        // course.units = units
-        const finalTest = await Test.findOne({courseId:course._id,final:true})
-        var mcqCount =0
-        if(finalTest){
-            mcqCount = await MCQ.countDocuments({testId:finalTest._id})
-        }
+        // const isEnrolled = await Enrollment.findOne({ courseId: course._id, userId: req.user.id })
+        // // console.log(isEnrolled)
 
-        const teacher = await User.findOne({_id:course.teacherId})
+        // const units = await Unit.find({ courseId: course._id })
+        // // course.units = units
+        // const finalTest = await Test.findOne({ courseId: course._id, final: true })
+        // var mcqCount = 0
+        // if (finalTest) {
+        //     mcqCount = await MCQ.countDocuments({ testId: finalTest._id })
+        // }
 
-        const enrolledStudents = await Enrollment.countDocuments({courseId:course._id})
+        // const teacher = await User.findOne({ _id: course.teacherId })
 
-        const result = {
-            _id: course._id,
-            title: course.title,
-            description: course.description,
-            duration: course.duration,
-            courseImg: course.courseImg,
-            teacher:teacher.name,
-            enrolledStudents,
-            units: await Promise.all(units.map(async (u) => {
-                let numOfVideo = await Video.countDocuments({ unitId: u._id })
-                let test = await Test.findOne({unitId:u._id})
-                let numOfMCQ = 0;
-                if(test){
-                    numOfMCQ = await MCQ.countDocuments({testId:test._id})
+        // const enrolledStudents = await Enrollment.countDocuments({ courseId: course._id })
+
+        // const result = {
+        //     _id: course._id,
+        //     title: course.title,
+        //     description: course.description,
+        //     duration: course.duration,
+        //     courseImg: course.courseImg,
+        //     teacher: teacher.name,
+        //     enrolledStudents,
+        //     isEnrolled,
+        //     units: await Promise.all(units.map(async (u) => {
+        //         let numOfVideo = await Video.countDocuments({ unitId: u._id })
+        //         let test = await Test.findOne({ unitId: u._id })
+        //         let numOfMCQ = 0;
+        //         if (test) {
+        //             numOfMCQ = await MCQ.countDocuments({ testId: test._id })
+        //         }
+        //         return {
+        //             _id: u._id,
+        //             courseId: u.courseId,
+        //             title: u.title,
+        //             description: u.description,
+        //             sequence: u.sequence,
+        //             duration: u.duration,
+        //             numOfVideo,
+        //             numOfMCQ,
+        //             videos: await Video.find({ unitId: u._id })
+        //         }
+        //     })),
+        //     finalTest: finalTest ? {
+        //         _id: finalTest?._id,
+        //         courseId: finalTest?.courseId,
+        //         mcqCount: mcqCount
+        //     } : null
+        // }
+        // return res.json(result)
+
+        const result1 = await Course.aggregate([
+            { $match: { _id: new mongoose.Types.ObjectId(id) } },
+            {
+                $lookup: {
+                    from: 'units',
+                    let: { courseId: '$_id' },
+                    pipeline: [
+                        {
+                            $match: {
+                                $expr: {
+                                    $eq: ['$courseId', '$$courseId']
+                                }
+                            }
+                        },
+                        {
+                            $lookup: {
+                                from: 'videos',
+                                localField: '_id',
+                                foreignField: 'unitId',
+                                as: 'videos'
+                            }
+                        },
+                        {
+                            $lookup: {
+                                from: 'tests',
+                                localField: '_id',
+                                foreignField: 'unitId',
+                                as: 'test'
+                            }
+                        },
+                        {
+                            $lookup: {
+                                from: 'mcqs',
+                                localField: 'test._id',
+                                foreignField: 'testId',
+                                as: 'mcqs'
+                            }
+                        },
+                        {
+                            $addFields: {
+                                numOfVideo: { $size: '$videos' },
+                                numOfMCQ: { $size: '$mcqs' }
+                            }
+                        }
+                    ],
+                    as: "units"
                 }
-                return {
-                    _id: u._id,
-                    courseId: u.courseId,
-                    title: u.title,
-                    description: u.description,
-                    sequence: u.sequence,
-                    duration: u.duration,
-                    numOfVideo,
-                    numOfMCQ,
-                    videos: await Video.find({ unitId: u._id })
+            },
+            {
+                $lookup: {
+                    from: 'users',
+                    localField: 'teacherId',
+                    foreignField: '_id',
+                    as: 'teacher'
                 }
-            })),
-            finalTest: finalTest?{
-                _id: finalTest?._id,
-                courseId: finalTest?.courseId,
-                mcqCount: mcqCount
-            }:null
-        }
-        return res.json(result)
+            },
+            {
+                $lookup: {
+                    from: 'enrollments',
+                    let: { courseId: '$_id' },
+                    pipeline: [
+                        {
+                            $match: {
+                                $expr: {
+                                    $and: [
+                                        { $eq: ['$courseId', '$$courseId'] },
+                                        { $eq: ['$userId', req.user.id] }
+                                    ]
+                                }
+                            }
+                        }
+                    ],
+                    as: 'enrollment'
+                }
+            },
+            {
+                $lookup: {
+                    from: 'enrollments',
+                    let: { courseId: '$_id' },
+                    pipeline: [
+                        {
+                            $match: {
+                                $expr: {
+                                    $eq: ['$courseId', '$$courseId']
+                                }
+                            }
+                        }
+                    ],
+                    as: 'enrolledStudents'
+                }
+            },
+            {
+                $lookup: {
+                    from: 'tests',
+                    let: { courseId: '$_id' },
+                    pipeline: [
+                        {
+                            $match: {
+                                $expr: {
+                                    $and: [
+                                        { $eq: ['$courseId', '$$courseId'] },
+                                        { $eq: ['$final', true] }
+                                    ]
+                                }
+                            }
+                        },
+                        {
+                            $lookup: {
+                                from: 'mcqs',
+                                localField: '_id',
+                                foreignField: 'testId',
+                                as: 'mcqs'
+                            }
+                        },
+                        {
+                            $addFields: {
+                                mcqCount: { $size: '$mcqs' }
+                            }
+                        },
+                        { $unset: ['mcqs'] }
+                    ],
+                    as: 'finalTest'
+                }
+            },
+            {
+                $addFields: {
+                    isEnrolled: { $size: '$enrollment' },
+                    teacher: { $arrayElemAt: ['$teacher.name', 0] },
+                    enrolledStudents: { $size: '$enrolledStudents' },
+                    finalTest: {
+                        $cond: {
+                            if: { $gt: [{ $size: '$finalTest' }, 0] },
+                            then: { $arrayElemAt: ['$finalTest', 0] },
+                            else: null
+                        }
+                    }
+                }
+            },
+            {
+                $project: {
+                    _id: 1,
+                    title: 1,
+                    description: 1,
+                    duration: 1,
+                    courseImg: 1,
+                    teacher: 1,
+                    enrolledStudents: 1,
+                    isEnrolled: 1,
+                    units: {
+                        $map: {
+                            input: '$units',
+                            as: 'unit',
+                            in: {
+                                _id: '$$unit._id',
+                                courseId: '$$unit.courseId',
+                                title: '$$unit.title',
+                                description: '$$unit.description',
+                                sequence: '$$unit.sequence',
+                                duration: '$$unit.duration',
+                                numOfVideo: '$$unit.numOfVideo',
+                                numOfMCQ: '$$unit.numOfMCQ',
+                                videos: '$$unit.videos'
+                            }
+                        }
+                    },
+                    finalTest: {
+                        $cond: {
+                            if: { $ne: ['$finalTest', null] },
+                            then: {
+                                _id: '$finalTest._id',
+                                courseId: '$finalTest.courseId',
+                                mcqCount: '$finalTest.mcqCount'
+                            },
+                            else: null
+                        }
+                    }
+                }
+            }
+        ])
+
+        return res.json(result1[0])
     } catch (error) {
         console.error(error);
         res.status(500).json({ error: 'Server error' });
@@ -221,41 +406,41 @@ router.post('/update/:id', fetchuser, isAdminOrTeacher, upload.single('courseImg
     }
 })
 
-router.put('/unitsequence',fetchuser,isAdminOrTeacher,async (req,res)=>{
-    try{
-        const {units} = req.body;
-        if(units.lenght<1){
-            return res.json({msg:"no data"})
+router.put('/unitsequence', fetchuser, isAdminOrTeacher, async (req, res) => {
+    try {
+        const { units } = req.body;
+        if (units.lenght < 1) {
+            return res.json({ msg: "no data" })
         }
         // console.log(units)
-        await Promise.all(units.map(async (u)=>{
-            await Unit.findOneAndUpdate({_id:u._id},{
-                sequence:u.sequence
+        await Promise.all(units.map(async (u) => {
+            await Unit.findOneAndUpdate({ _id: u._id }, {
+                sequence: u.sequence
             })
         }))
-        return res.json({msg:"updated"})
-    }catch(error){
+        return res.json({ msg: "updated" })
+    } catch (error) {
         console.log(error)
-        return res.status(500).json({error:"Server Error"})
+        return res.status(500).json({ error: "Server Error" })
     }
 })
 
-router.put('/videosequence',fetchuser,isAdminOrTeacher,async (req,res)=>{
-    try{
-        const {units} = req.body;
-        if(units.lenght<1){
-            return res.json({msg:"no data"})
+router.put('/videosequence', fetchuser, isAdminOrTeacher, async (req, res) => {
+    try {
+        const { units } = req.body;
+        if (units.lenght < 1) {
+            return res.json({ msg: "no data" })
         }
         // console.log(units)
-        await Promise.all(units.map(async (u)=>{
-            await Video.findOneAndUpdate({_id:u._id},{
-                sequence:u.sequence
+        await Promise.all(units.map(async (u) => {
+            await Video.findOneAndUpdate({ _id: u._id }, {
+                sequence: u.sequence
             })
         }))
-        return res.json({msg:"updated"})
-    }catch(error){
+        return res.json({ msg: "updated" })
+    } catch (error) {
         console.log(error)
-        return res.status(500).json({error:"Server Error"})
+        return res.status(500).json({ error: "Server Error" })
     }
 })
 

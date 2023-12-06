@@ -2,41 +2,23 @@ const express = require('express')
 const fetchuser = require('../../middleware/fetchuser')
 const { body, validationResult } = require('express-validator');
 const Enrollment = require('../../models/Enrollment');
+const  mongoose = require('mongoose');
 
 const router = express.Router()
 
-router.post('/', fetchuser, [
-    body('courseId').isMongoId()
-], async (req, res) => {
-    const errors = validationResult(req);
-    if (!errors.isEmpty()) {
-        return res.status(400).json({ errors: errors.array() });
-    }
+router.post('/',fetchuser,async (req,res)=>{
     try {
-        const { courseId } = req.body;
-
-        const existingEnrollment = await Enrollment.findOne({
-            userId: req.user._id,
-            courseId: courseId,
-        });
-
-        if (existingEnrollment) {
-            return res.status(400).json({ error: 'User is already enrolled in the course' });
+        const {courseId,userId} = req.body;
+        if(!courseId || !userId || !mongoose.isValidObjectId(courseId) || !mongoose.isValidObjectId(userId)){
+            return res.status(400).json({error:"Invalid data"})
         }
-        const dueDate = new Date();
-        dueDate.setMonth(dueDate.getMonth() + 3);
-        const newEnrollment = new Enrollment({
-            userId: req.user._id, // User's ID
-            courseId: courseId,
-            enrollmentDate: new Date(),
-            dueDate: dueDate, // Set your due date logic
-        });
-        await newEnrollment.save();
-
-        res.status(201).json(newEnrollment);
+        const newEnrollment = await Enrollment.create({
+            courseId,
+            userId,
+        })
     } catch (error) {
-        console.error(error);
-        return res.status(500).json({ error: 'Server error' });
+        console.log(error)
+        return res.status(500).json({"error":"Server error"})
     }
 })
 

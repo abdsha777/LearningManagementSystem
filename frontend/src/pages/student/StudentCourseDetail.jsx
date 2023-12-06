@@ -8,47 +8,50 @@ import AuthContext from "../../context/AuthContext";
 function StudentCourseDetail() {
     const backend = import.meta.env.VITE_BACKEND;
     const { token } = useContext(AuthContext);
-    const {course: id} = useParams();
+    const { course: id } = useParams();
 
-    const [course,setCourse] = useState(null)
+    const [course, setCourse] = useState(null);
 
-    function getCourseData(){
-        fetch(backend+"/api/course/detail/"+id,{headers:{token}})
-        .then(res=>res.json())
-        .then(data=>{setCourse(data);})
-        .catch(err=>console.log(err))
+    function getCourseData() {
+        fetch(backend + "/api/course/detail/" + id, { headers: { token } })
+            .then((res) => res.json())
+            .then((data) => {
+                console.log(data)
+                setCourse(data);
+            })
+            .catch((err) => console.log(err));
     }
 
-    useEffect(()=>{
+    useEffect(() => {
         getCourseData();
-    },[])
+    }, []);
 
-    if(!course){
-        return(
+    if (!course) {
+        return (
             <div className="teacher-view-course">
                 <h1 className="title">Loading...</h1>
             </div>
-        )
+        );
     }
 
     return (
         <div className="teacher-view-course">
             <h1 className="title">{course.title}</h1>
-            <h4 className="description">
-                {course.description}
-            </h4>
+            <h4 className="description">{course.description}</h4>
 
             <div className="course-content">
                 <div className="left-content">
-                    <img src={backend+"/img/"+course.courseImg} alt="" className="course-img" />
+                    <img
+                        src={backend + "/img/" + course.courseImg}
+                        alt=""
+                        className="course-img"
+                    />
                     <h4>Lessons in this course.</h4>
-                    {
-                        course.units.length>0 ? (
-                            <Accordian data={course.units} />
-                        ):(
-                            <p>Currently no lessons...</p>
-                        )
-                    }
+                    {course.units.length > 0 ? (
+                        <Accordian data={course.units} />
+                    ) : (
+                        <p>Currently no lessons...</p>
+                    )}
                 </div>
 
                 <div className="right-content">
@@ -146,8 +149,17 @@ function StudentCourseDetail() {
                             <p>{course.teacher}</p>
                         </div>
                     </div>
-                    <button className="btn btn-filled">Enroll</button>
+                    {!course.isEnrolled && (
+                        <button className="btn btn-filled">Enroll</button>
+                    )}
                 </div>
+
+                {!course.isEnrolled && (
+                    <div className="floatingBtn">
+                        <div className="blur"></div>
+                        <button className="btn btn-filled">Enroll</button>
+                    </div>
+                )}
             </div>
         </div>
     );
