@@ -2,23 +2,30 @@ const express = require('express')
 const fetchuser = require('../../middleware/fetchuser')
 const { body, validationResult } = require('express-validator');
 const Enrollment = require('../../models/Enrollment');
-const  mongoose = require('mongoose');
+const mongoose = require('mongoose');
 
 const router = express.Router()
 
-router.post('/',fetchuser,async (req,res)=>{
+router.post('/', fetchuser, async (req, res) => {
     try {
-        const {courseId,userId} = req.body;
-        if(!courseId || !userId || !mongoose.isValidObjectId(courseId) || !mongoose.isValidObjectId(userId)){
-            return res.status(400).json({error:"Invalid data"})
+        const { courseId } = req.body;
+        const userId = req.user.id;
+        // console.log(courseId)
+        if (!courseId || !mongoose.isValidObjectId(courseId)) {
+            return res.status(400).json({ error: "Invalid data" })
+        }
+        const alreadyEnrolled = await Enrollment.findOne({courseId,userId})
+        if(alreadyEnrolled){
+            return res.status(400).json({ error: "Already Enrolled" })
         }
         const newEnrollment = await Enrollment.create({
             courseId,
             userId,
         })
+        return res.json(newEnrollment)
     } catch (error) {
         console.log(error)
-        return res.status(500).json({"error":"Server error"})
+        return res.status(500).json({ "error": "Server error" })
     }
 })
 

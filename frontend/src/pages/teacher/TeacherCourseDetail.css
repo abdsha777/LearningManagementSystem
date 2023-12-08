@@ -138,13 +138,14 @@
 }
 
 @media only screen and (max-width: 1100px) {
-    .course-content {
-        flex-direction: column;
-    }
+    
 
 }
 
-@media only screen and (max-width: 700px) {
+@media only screen and (max-width: 900px) {
+    .course-content {
+        flex-direction: column;
+    }
     .right-content {
         padding: 0;
     }
@@ -158,26 +159,26 @@
         align-items: center;
         justify-content: center;
         position: sticky;
-        bottom: -10px;
-        left: -50px;
-        right: -50px;
+        bottom: -30px;
         padding-top: 10px;
+        padding-bottom: 20px;
+        border-radius: 10px;
+        overflow: hidden;
     }
 
     .floatingBtn .blur {
-        background-color: rgb(255, 255, 255);
+        background-color: white;
         position: absolute;
         inset: 0;
         z-index: 0;
-        filter: blur(10px);
-        opacity: 0.6;
+        opacity: 0.2;
     }
 
     .floatingBtn button {
         z-index: 2;
         width: 100%;
-        margin: 0 20px;
-        font-size: 40px;
+        margin: 5px 30px;
+        font-size: 30px;
         font-weight: bold;
         line-height: 95.023%;
         box-shadow: #000 0px 2px 8px 1px;
@@ -196,6 +197,19 @@
         font-size: 17px;
         gap: 10px;
         grid-template-columns: 45% 55%;
+    }
+
+    .teacher-view-course .title {
+        font-size: 40px;
+    }
+    
+    .teacher-view-course .description {
+        font-size: 16px;
+    }
+
+    .left-content h4 {
+        font-size: 26px;
+        margin-bottom: 15px;
     }
 }
 

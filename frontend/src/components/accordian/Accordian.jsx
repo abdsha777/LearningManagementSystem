@@ -1,8 +1,14 @@
 import React from "react";
 import "./Accordian.css";
 
-function Accordian({ data }) {
+function Accordian({ data, isEnrolled }) {
     // console.log(data);
+    const gradientStyle = {
+        background: `
+          radial-gradient(closest-side, #D1F5F4 79%, transparent 80% 100%),
+          conic-gradient(rgb(0, 0, 10) 5%, rgb(255, 255, 255) 0)
+        `,
+      };
     return (
         <div className="accordion">
             {data
@@ -23,7 +29,7 @@ function Accordian({ data }) {
                                 name="module_accordion"
                                 id={unit._id}
                                 className="accordion_input"
-                                defaultChecked={idx==0}
+                                defaultChecked={idx == 0}
                             />
                             <label
                                 htmlFor={unit._id}
@@ -47,15 +53,25 @@ function Accordian({ data }) {
                                         />
                                     </svg>
                                 </label>
-                                <p>
-                                    {unit.numOfVideo} videos. {unit.duration}{" "}
-                                    hours
-                                </p>
+                                {isEnrolled ? (
+                                    <div className="progress-bar"
+                                    // style={gradientStyle}
+                                    
+                                    ></div>
+                                ) : (
+                                    <p>
+                                        {unit.numOfVideo} videos.{" "}
+                                        {unit.duration} hours
+                                    </p>
+                                )}
                             </label>
 
                             <div className="section_content">
                                 {unit.videos.map((v) => (
-                                    <div className="section1_content1" key={v._id}>
+                                    <div
+                                        className="section1_content1"
+                                        key={v._id}
+                                    >
                                         <div className="section1_icon_topic">
                                             <svg
                                                 xmlns="http://www.w3.org/2000/svg"
@@ -84,8 +100,12 @@ function Accordian({ data }) {
                                             </div>
                                         </div>
                                         <div className="section1_duration">
-                                            {v.duration.hours?v.duration.hours+" hours":""}
-                                            {v.duration.minutes?v.duration.minutes+" min":""}
+                                            {v.duration.hours
+                                                ? v.duration.hours + " hours"
+                                                : ""}
+                                            {v.duration.minutes
+                                                ? v.duration.minutes + " min"
+                                                : ""}
                                         </div>
                                     </div>
                                 ))}

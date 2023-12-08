@@ -188,7 +188,7 @@ router.get('/detail/:id', fetchuser, async (req, res) => {
                                 $expr: {
                                     $and: [
                                         { $eq: ['$courseId', '$$courseId'] },
-                                        { $eq: ['$userId', req.user.id] }
+                                        { $eq: ['$userId', new mongoose.Types.ObjectId(req.user.id)] }
                                     ]
                                 }
                             }

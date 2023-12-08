@@ -16,7 +16,7 @@ function StudentCourseDetail() {
         fetch(backend + "/api/course/detail/" + id, { headers: { token } })
             .then((res) => res.json())
             .then((data) => {
-                console.log(data)
+                console.log(data);
                 setCourse(data);
             })
             .catch((err) => console.log(err));
@@ -34,6 +34,19 @@ function StudentCourseDetail() {
         );
     }
 
+    async function enroll() {
+        const res = await fetch(backend + "/api/enroll/", {
+            headers: { token, "Content-Type": "application/json" },
+            method: "POST",
+            body: JSON.stringify({ courseId: course._id }),
+        })
+        const data = await res.json();
+        if(res.ok){
+            console.log(data)
+            getCourseData();
+        }
+    }
+
     return (
         <div className="teacher-view-course">
             <h1 className="title">{course.title}</h1>
@@ -48,7 +61,7 @@ function StudentCourseDetail() {
                     />
                     <h4>Lessons in this course.</h4>
                     {course.units.length > 0 ? (
-                        <Accordian data={course.units} />
+                        <Accordian data={course.units} isEnrolled={course.isEnrolled} />
                     ) : (
                         <p>Currently no lessons...</p>
                     )}
@@ -150,14 +163,18 @@ function StudentCourseDetail() {
                         </div>
                     </div>
                     {!course.isEnrolled && (
-                        <button className="btn btn-filled">Enroll</button>
+                        <button className="btn btn-filled" onClick={enroll}>
+                            Enroll
+                        </button>
                     )}
                 </div>
 
                 {!course.isEnrolled && (
                     <div className="floatingBtn">
                         <div className="blur"></div>
-                        <button className="btn btn-filled">Enroll</button>
+                        <button className="btn btn-filled" onClick={enroll}>
+                            Enroll
+                        </button>
                     </div>
                 )}
             </div>
