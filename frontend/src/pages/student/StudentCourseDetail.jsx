@@ -16,7 +16,7 @@ function StudentCourseDetail() {
         fetch(backend + "/api/course/detail/" + id, { headers: { token } })
             .then((res) => res.json())
             .then((data) => {
-                console.log(data);
+                // console.log(data);
                 setCourse(data);
             })
             .catch((err) => console.log(err));

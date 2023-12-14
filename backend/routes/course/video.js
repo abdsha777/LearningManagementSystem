@@ -40,6 +40,7 @@ const getDuration = (durationString = "") => {
 
 async function getTime(url) {
     const id = url.split("v=")[1];
+    // console.log(id)
     const videoUrl = new URL("https://www.googleapis.com/youtube/v3/videos");
     videoUrl.search = new URLSearchParams({
         key: "AIzaSyCvmIgCmavPYCR2JUGS_ha2WdNdPDX4fzw",
@@ -82,19 +83,21 @@ router.post('/create/', fetchuser, isAdminOrTeacher, [
         // AIzaSyCvmIgCmavPYCR2JUGS_ha2WdNdPDX4fzw
 
         let time = await getTime(url.split('&')[0])
-        
+        var youtubeId = time.id;
+        // console.log(youtubeId)
         const newVideo = await Video.create({
             unitId,
             title,
             description,
             sequence,
             url,
+            youtubeId,
             duration: {
                 hours: time.duration.hours,
                 minutes: time.duration.minutes,
             }
         })
-        
+        // console.log(newVideo)
         res.status(201).json(newVideo);
     } catch (error) {
         console.error(error);
@@ -126,23 +129,26 @@ router.put('/update/', fetchuser, isAdminOrTeacher, [
 
         // AIzaSyCvmIgCmavPYCR2JUGS_ha2WdNdPDX4fzw
         const video = await Video.findOne({_id})
-
+        var youtubeId;
         var duration = video.duration;
         if(video.url!=url){
+        // if(1){
             let time = await getTime(url)
+            console.log(time)
+            youtubeId = time.id;
             duration= {
                 hours: time.duration.hours,
                 minutes: time.duration.minutes,
             }
         }
-
         const newVideo = await Video.findOneAndUpdate({_id},{
             title,
             description,
             url,
-            duration
-        })
-        
+            duration,
+            youtubeId
+        },{new:true})
+        // console.log(newVideo)
         res.status(201).json(newVideo);
     } catch (error) {
         console.error(error);

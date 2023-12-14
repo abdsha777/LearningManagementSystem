@@ -1,93 +1,46 @@
-.video-info1 {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    width: 350px;
-    gap: 10px;
-    margin-bottom: 30px;
-}
-
-.video-info1 h4 {
-    color: #323030;
-    font-size: 18px;
-    font-weight: 500;
-}
-
-.video-info1 p {
-    color: #323030;
-    font-family: Roboto;
-    font-size: 25px;
-    font-style: normal;
-    font-weight: 600;
-}
-
-#video-no {
-    font-weight: 1000;
-    color: black;
-    font-size: 20px;
-}
-
-.video {
-    width: 100%;
-    flex-shrink: 0;
-    display: flex;
-    justify-content: center;
-    position: relative;
-    margin-bottom: 30px;
-}
-
-.video iframe {
-    border-radius: 10px;
-    width: 650px;
-    height: 405px;
-}
-
-.video img {
-    width: 746px;
-}
-
-.video svg {
-    position: absolute;
-    top: 150px;
-}
-
-.video-desc {
-    color: black;
-    font-family: Inter;
-    font-size: 16px;
-    font-style: normal;
+.studentVideo .title {
+    font-size: 50px;
     font-weight: 400;
-    line-height: 31.696px;
-    /* 198.1% */
-    letter-spacing: 0.32px;
+}
+
+.studentVideo .description {
+    font-size: 20px;
+    font-weight: 400;
+    margin-bottom: 30px;
+}
+
+.studentVideo .course-content {
     display: flex;
-    margin-bottom: 40px;
+    gap: 30px;
 }
 
-.video-desc h4 {
-    color: #847E7E;
+.studentVideo .left-content {
+    flex: 4;
+    /* background-color: #ffd2d2; */
 }
 
-.video-btns {
-    display: flex;
-    justify-content: space-between;
+.studentVideo .right-content {
+    flex: 2;
+    /* background-color: rgb(196, 196, 248); */
+    height: 10px;
 }
 
-@media only screen and (max-width: 1100px) {
-    .video iframe {
-        border-radius: 5px;
-        width: 450px;
-        height: 205px;
-    }
-    .video-info1{
-        margin: 0;
-        width: 100%;
-    }
-    .video-info1 h4{
-        text-align: left;
-    }
-    .video-desc{
-        flex-direction: column;
-        line-height: 26px;
-        letter-spacing: -0.1px;
-    }
+.studentVideo iframe {
+    width: 100%;
+    aspect-ratio: 16/9;
+    overflow: hidden;
+    object-fit: cover;
+    margin-bottom: 30px;
+    border-radius: 10px;
+}
+
+.left-content h4 {
+    color: #000;
+    font-family: Inter;
+    font-size: 32px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 95.023%;
+    /* 38.009px */
+    margin-bottom: 30px;
 }

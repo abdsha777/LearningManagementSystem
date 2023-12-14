@@ -21,6 +21,9 @@ const videoSchema = mongoose.Schema({
     sequence: {
         type: Number,
     },
+    youtubeId: {
+        type:String,
+    },
     duration: {
         hours: {
             type: Number,

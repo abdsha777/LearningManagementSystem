@@ -81,12 +81,12 @@ function App() {
                   <Route path='courseDetail/:course/unitDetail/:id/' element={<StudentUnitDetail />} />
 
                   <Route
-                    path='courseDetail/:course/unitDetail/:unitId/video/:videoId/'
+                    path='courseDetail/:course/video/:videoId/'
                     element={<StudentVideo />}
                   />
 
                   <Route
-                    path='courseDetail/:course/unitDetail/:unitId/test/:testId/'
+                    path='courseDetail/:course/test/:testId/'
                     element={<StudentTest />}
                   />
 

@@ -77,7 +77,7 @@
 }
 
 .section1_content1 {
-
+    cursor: default;
     display: flex;
     justify-content: space-between;
     /* display: grid;
@@ -87,12 +87,18 @@
 }
 
 .section1_topic {
-    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 .section1_icon_topic {
     display: flex;
-    gap: 10px
+    gap: 10px;
+}
+.section1_icon_topic:hover p,.section1_icon_topic:hover svg path{
+    stroke: rgb(0, 68, 255);
+    color: rgb(0, 68, 255);
 }
 
 .accordion_input {

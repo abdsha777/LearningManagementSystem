@@ -1,14 +1,15 @@
 import React from "react";
 import "./Accordian.css";
+import { Link } from "react-router-dom";
 
-function Accordian({ data, isEnrolled }) {
-    // console.log(data);
+function Accordian({ data, isEnrolled, side,courseId }) {
+    // console.log(courseId);
     const gradientStyle = {
         background: `
           radial-gradient(closest-side, #D1F5F4 79%, transparent 80% 100%),
           conic-gradient(rgb(0, 0, 10) 5%, rgb(255, 255, 255) 0)
         `,
-      };
+    };
     return (
         <div className="accordion">
             {data
@@ -54,9 +55,9 @@ function Accordian({ data, isEnrolled }) {
                                     </svg>
                                 </label>
                                 {isEnrolled ? (
-                                    <div className="progress-bar"
-                                    // style={gradientStyle}
-                                    
+                                    <div
+                                        className="progress-bar"
+                                        // style={gradientStyle}
                                     ></div>
                                 ) : (
                                     <p>
@@ -67,48 +68,97 @@ function Accordian({ data, isEnrolled }) {
                             </label>
 
                             <div className="section_content">
-                                {unit.videos.map((v) => (
-                                    <div
-                                        className="section1_content1"
-                                        key={v._id}
-                                    >
-                                        <div className="section1_icon_topic">
-                                            <svg
-                                                xmlns="http://www.w3.org/2000/svg"
-                                                width="24"
-                                                height="24"
-                                                viewBox="0 0 24 24"
-                                                fill="none"
-                                            >
-                                                <path
-                                                    d="M18 4H6C3.79086 4 2 5.79086 2 8V16C2 18.2091 3.79086 20 6 20H18C20.2091 20 22 18.2091 22 16V8C22 5.79086 20.2091 4 18 4Z"
-                                                    stroke="black"
-                                                    strokeWidth="2"
-                                                    strokeLinecap="round"
-                                                    strokeLinejoin="round"
-                                                />
-                                                <path
-                                                    d="M15 12L10 9V15L15 12Z"
-                                                    stroke="black"
-                                                    strokeWidth="2"
-                                                    strokeLinecap="round"
-                                                    strokeLinejoin="round"
-                                                />
-                                            </svg>
-                                            <div className="section1_topic">
-                                                {v.title}
+                                {unit.videos.map((v) =>
+                                    isEnrolled ? (
+                                        <Link
+                                            to={`${side?`/courseDetail/${courseId}/`:""}video/${v._id}`}
+                                            className="section1_content1"
+                                            style={{cursor:"pointer"}}
+                                            key={v._id}
+                                        >
+                                            <div className="section1_icon_topic">
+                                                <svg
+                                                    xmlns="http://www.w3.org/2000/svg"
+                                                    width="24"
+                                                    height="24"
+                                                    viewBox="0 0 24 24"
+                                                    fill="none"
+                                                >
+                                                    <path
+                                                        d="M18 4H6C3.79086 4 2 5.79086 2 8V16C2 18.2091 3.79086 20 6 20H18C20.2091 20 22 18.2091 22 16V8C22 5.79086 20.2091 4 18 4Z"
+                                                        stroke="black"
+                                                        strokeWidth="2"
+                                                        strokeLinecap="round"
+                                                        strokeLinejoin="round"
+                                                    />
+                                                    <path
+                                                        d="M15 12L10 9V15L15 12Z"
+                                                        stroke="black"
+                                                        strokeWidth="2"
+                                                        strokeLinecap="round"
+                                                        strokeLinejoin="round"
+                                                    />
+                                                </svg>
+                                                <p className="section1_topic">
+                                                    {v.title}
+                                                </p>
+                                            </div>
+                                            <div className="section1_duration">
+                                                {v.duration.hours
+                                                    ? v.duration.hours +
+                                                      " hours"
+                                                    : ""}
+                                                {v.duration.minutes
+                                                    ? v.duration.minutes +
+                                                      " min"
+                                                    : ""}
+                                            </div>
+                                        </Link>
+                                    ) : (
+                                        <div
+                                            className="section1_content1"
+                                            key={v._id}
+                                        >
+                                            <div className="section1_icon_topic">
+                                                <svg
+                                                    xmlns="http://www.w3.org/2000/svg"
+                                                    width="24"
+                                                    height="24"
+                                                    viewBox="0 0 24 24"
+                                                    fill="none"
+                                                >
+                                                    <path
+                                                        d="M18 4H6C3.79086 4 2 5.79086 2 8V16C2 18.2091 3.79086 20 6 20H18C20.2091 20 22 18.2091 22 16V8C22 5.79086 20.2091 4 18 4Z"
+                                                        stroke="black"
+                                                        strokeWidth="2"
+                                                        strokeLinecap="round"
+                                                        strokeLinejoin="round"
+                                                    />
+                                                    <path
+                                                        d="M15 12L10 9V15L15 12Z"
+                                                        stroke="black"
+                                                        strokeWidth="2"
+                                                        strokeLinecap="round"
+                                                        strokeLinejoin="round"
+                                                    />
+                                                </svg>
+                                                <div className="section1_topic">
+                                                    {v.title}
+                                                </div>
+                                            </div>
+                                            <div className="section1_duration">
+                                                {v.duration.hours
+                                                    ? v.duration.hours +
+                                                      " hours"
+                                                    : ""}
+                                                {v.duration.minutes
+                                                    ? v.duration.minutes +
+                                                      " min"
+                                                    : ""}
                                             </div>
                                         </div>
-                                        <div className="section1_duration">
-                                            {v.duration.hours
-                                                ? v.duration.hours + " hours"
-                                                : ""}
-                                            {v.duration.minutes
-                                                ? v.duration.minutes + " min"
-                                                : ""}
-                                        </div>
-                                    </div>
-                                ))}
+                                    )
+                                )}
 
                                 <div className="section1_content1">
                                     <div className="section1_icon_topic">
@@ -124,9 +174,9 @@ function Accordian({ data, isEnrolled }) {
                                                 fill="black"
                                             />
                                         </svg>
-                                        <div className="section1_topic">
+                                        <p className="section1_topic">
                                             Quick quiz
-                                        </div>
+                                        </p>
                                     </div>
                                     <div className="section1_duration">
                                         {unit.numOfMCQ} questions
