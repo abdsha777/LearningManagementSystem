@@ -2,7 +2,7 @@ import React from "react";
 import "./Accordian.css";
 import { Link } from "react-router-dom";
 
-function Accordian({ data, isEnrolled, side,courseId }) {
+function Accordian({ data, isEnrolled, side, courseId }) {
     // console.log(courseId);
     const gradientStyle = {
         background: `
@@ -33,11 +33,11 @@ function Accordian({ data, isEnrolled, side,courseId }) {
                                 defaultChecked={idx == 0}
                             />
                             <label
-                                htmlFor={unit._id}
+                                htmlFor={!unit.locked ? unit._id : "666"}
                                 className={"accordion_label " + extra}
                             >
                                 <label
-                                    htmlFor={unit._id}
+                                    htmlFor={!unit.locked ? unit._id : "666"}
                                     className="accordion_label_content"
                                 >
                                     {unit.sequence}. {unit.title}
@@ -54,13 +54,30 @@ function Accordian({ data, isEnrolled, side,courseId }) {
                                         />
                                     </svg>
                                 </label>
-                                {isEnrolled ? (
+                                {isEnrolled && !unit.locked ? (
                                     <div
                                         className="progress-bar"
                                         // style={gradientStyle}
                                     ></div>
                                 ) : (
                                     <p>
+                                        {unit.locked && (
+                                            <>
+                                                <svg
+                                                    xmlns="http://www.w3.org/2000/svg"
+                                                    width="16"
+                                                    height="21"
+                                                    viewBox="0 0 16 21"
+                                                    fill="none"
+                                                >
+                                                    <path
+                                                        d="M2 21C1.45 21 0.979333 20.8043 0.588 20.413C0.196666 20.0217 0.000666667 19.5507 0 19V9C0 8.45 0.196 7.97933 0.588 7.588C0.98 7.19667 1.45067 7.00067 2 7H3V5C3 3.61667 3.48767 2.43767 4.463 1.463C5.43833 0.488333 6.61733 0.000666667 8 0C9.38333 0 10.5627 0.487667 11.538 1.463C12.5133 2.43833 13.0007 3.61733 13 5V7H14C14.55 7 15.021 7.196 15.413 7.588C15.805 7.98 16.0007 8.45067 16 9V19C16 19.55 15.8043 20.021 15.413 20.413C15.0217 20.805 14.5507 21.0007 14 21H2ZM8 16C8.55 16 9.021 15.8043 9.413 15.413C9.805 15.0217 10.0007 14.5507 10 14C10 13.45 9.80433 12.9793 9.413 12.588C9.02167 12.1967 8.55067 12.0007 8 12C7.45 12 6.97933 12.196 6.588 12.588C6.19667 12.98 6.00067 13.4507 6 14C6 14.55 6.196 15.021 6.588 15.413C6.98 15.805 7.45067 16.0007 8 16ZM5 7H11V5C11 4.16667 10.7083 3.45833 10.125 2.875C9.54167 2.29167 8.83333 2 8 2C7.16667 2 6.45833 2.29167 5.875 2.875C5.29167 3.45833 5 4.16667 5 5V7Z"
+                                                        fill="black"
+                                                    />
+                                                </svg>
+                                                •
+                                            </>
+                                        )}
                                         {unit.numOfVideo} videos.{" "}
                                         {unit.duration} hours
                                     </p>
@@ -71,9 +88,15 @@ function Accordian({ data, isEnrolled, side,courseId }) {
                                 {unit.videos.map((v) =>
                                     isEnrolled ? (
                                         <Link
-                                            to={`${side?`/courseDetail/${courseId}/`:""}video/${v._id}`}
-                                            className="section1_content1"
-                                            style={{cursor:"pointer"}}
+                                            to={`${
+                                                side
+                                                    ? `/courseDetail/${courseId}/`
+                                                    : ""
+                                            }video/${v._id}`}
+                                            className={`section1_content1 ${
+                                                v.locked ? "locked" : ""
+                                            }`}
+                                            style={{ cursor: "pointer" }}
                                             key={v._id}
                                         >
                                             <div className="section1_icon_topic">
@@ -159,8 +182,12 @@ function Accordian({ data, isEnrolled, side,courseId }) {
                                         </div>
                                     )
                                 )}
-
-                                <div className="section1_content1">
+                                {}
+                                <div
+                                    className={`section1_content1 ${
+                                        unit.testLocked ? "locked" : ""
+                                    }`}
+                                >
                                     <div className="section1_icon_topic">
                                         <svg
                                             xmlns="http://www.w3.org/2000/svg"

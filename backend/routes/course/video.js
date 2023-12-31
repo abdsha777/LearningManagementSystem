@@ -6,7 +6,10 @@ const isAdminOrTeacher = require('../../middleware/isAdminOrTeacher')
 const { body, validationResult } = require('express-validator');
 const Unit = require('../../models/Unit');
 const Video = require('../../models/Video');
-const fetch = require('node-fetch')
+const fetch = require('node-fetch');
+const VideoRecord = require('../../models/VideoRecord');
+const Test = require('../../models/Test');
+const TestRecord = require('../../models/TestRecord');
 
 const getDuration = (durationString = "") => {
     const duration = { hours: 0, minutes: 0, seconds: 0 };
@@ -188,6 +191,102 @@ router.delete('/delete/:id', fetchuser, isAdminOrTeacher, async (req, res) => {
     } catch (error) {
         console.log(error);
         return res.status(500).json({ error: "server error" })
+    }
+})
+
+router.post('/start/', fetchuser, async (req, res) => {
+    try {
+        const { videoId } = req.body;
+
+        if (videoId == null || !mongoose.isValidObjectId(videoId)) {
+            return res.status(400).json({ error: "Provide a valid video id." })
+        }
+
+        const video = await Video.findOne({ _id: videoId })
+
+        if (!video) {
+            return res.status(400).json({ error: "Provide a valid video id." })
+        }
+
+
+        var videoRecord = await VideoRecord.findOne({ videoId: videoId, userId: req.user.id })
+
+        if (videoRecord == null) {
+            return res.status(401).json({ error: "Not Enrolled." })
+        }
+        videoRecord = await VideoRecord.findOneAndUpdate({ _id: videoRecord._id }, {
+            startedOn: Date.now()
+        }, { new: true })
+
+
+        return res.json(videoRecord)
+
+    } catch (error) {
+        console.log(error)
+        return res.status(500).json({ "error": 'Server Error' })
+    }
+})
+
+router.post('/check/', fetchuser, async (req, res) => {
+    try {
+        const { videoId } = req.body;
+
+        if (videoId == null || !mongoose.isValidObjectId(videoId)) {
+            return res.status(400).json({ error: "Provide a valid video id." })
+        }
+
+        const video = await Video.findOne({ _id: videoId })
+
+        if (!video) {
+            return res.status(400).json({ error: "Provide a valid video id." })
+        }
+
+
+        var videoRecord = await VideoRecord.findOne({ videoId: videoId, userId: req.user.id })
+
+        if (videoRecord == null) {
+            return res.status(401).json({ error: "Not Enrolled." })
+        }
+
+        if (!videoRecord.startedOn) {
+            return res.status(406).json({ error: "Not Started." })
+        }
+
+        let started = videoRecord.startedOn;
+        let current = Date.now();
+        console.log()
+
+        let difference = Math.abs((started - current) / 1000)
+
+        let totalVideoSeconds = 0;
+        totalVideoSeconds += video.duration.hours ? video.duration.hours * 3600 : 0;
+        totalVideoSeconds += video.duration.minutes ? video.duration.minutes * 60 : 0;
+        totalVideoSeconds += video.duration.seconds ? video.duration.seconds : 0;
+
+        // console.log(difference, totalVideoSeconds * 0.7)
+
+        if (difference > (totalVideoSeconds * 0.75)) {
+            await VideoRecord.findOneAndUpdate({
+                _id: videoRecord._id
+            }, { completed: true })
+            const nextVideo = await Video.findOne({ unitId: video.unitId, sequence: video.sequence + 1 })
+            if (nextVideo) {
+                const nextVideoRecord = await VideoRecord.findOneAndUpdate({ videoId: nextVideo._id, userId: req.user.id }, { locked: false }, { new: true })
+                return res.json(nextVideoRecord)
+            } else {
+                // find test
+                const nextTest = await TestRecord.findOneAndUpdate({ unitId: video.unitId }, { locked: false }, { new: true })
+
+                return res.json(nextTest)
+            }
+        } else {
+            console.log('no')
+        }
+        return res.json(video)
+
+    } catch (error) {
+        console.log(error)
+        return res.status(500).json({ "error": 'Server Error' })
     }
 })
 

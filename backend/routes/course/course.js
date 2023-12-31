@@ -12,6 +12,9 @@ const Unit = require('../../models/Unit');
 const Video = require('../../models/Video');
 const Test = require('../../models/Test');
 const MCQ = require('../../models/MCQ');
+const UnitRecord = require('../../models/UnitRecord');
+const VideoRecord = require('../../models/VideoRecord');
+const TestRecord = require('../../models/TestRecord');
 
 const router = express.Router()
 
@@ -67,242 +70,267 @@ router.get('/detail/:id', fetchuser, async (req, res) => {
         if (!mongoose.isValidObjectId(id)) {
             return res.status(400).json({ error: "Invalid Id" })
         }
-        // const course = await Course.findOne({ _id: id })
-        // if (!course) {
-        //     return res.status(400).json({ error: "Invalid Id" })
-        // }
-        // const isEnrolled = await Enrollment.findOne({ courseId: course._id, userId: req.user.id })
-        // // console.log(isEnrolled)
+        const course = await Course.findOne({ _id: id })
+        if (!course) {
+            return res.status(400).json({ error: "Invalid Id" })
+        }
+        const isEnrolled = await Enrollment.findOne({ courseId: course._id, userId: new mongoose.Types.ObjectId(req.user.id) })
 
-        // const units = await Unit.find({ courseId: course._id })
-        // // course.units = units
-        // const finalTest = await Test.findOne({ courseId: course._id, final: true })
-        // var mcqCount = 0
-        // if (finalTest) {
-        //     mcqCount = await MCQ.countDocuments({ testId: finalTest._id })
-        // }
+        const units = await Unit.find({ courseId: course._id })
+        // course.units = units
+        const finalTest = await Test.findOne({ courseId: course._id, final: true })
+        var mcqCount = 0
+        if (finalTest) {
+            mcqCount = await MCQ.countDocuments({ testId: finalTest._id })
+        }
 
-        // const teacher = await User.findOne({ _id: course.teacherId })
+        const teacher = await User.findOne({ _id: course.teacherId })
 
-        // const enrolledStudents = await Enrollment.countDocuments({ courseId: course._id })
+        const enrolledStudents = await Enrollment.countDocuments({ courseId: course._id })
 
-        // const result = {
-        //     _id: course._id,
-        //     title: course.title,
-        //     description: course.description,
-        //     duration: course.duration,
-        //     courseImg: course.courseImg,
-        //     teacher: teacher.name,
-        //     enrolledStudents,
-        //     isEnrolled,
-        //     units: await Promise.all(units.map(async (u) => {
-        //         let numOfVideo = await Video.countDocuments({ unitId: u._id })
-        //         let test = await Test.findOne({ unitId: u._id })
-        //         let numOfMCQ = 0;
-        //         if (test) {
-        //             numOfMCQ = await MCQ.countDocuments({ testId: test._id })
+        const result = {
+            _id: course._id,
+            title: course.title,
+            description: course.description,
+            duration: course.duration,
+            courseImg: course.courseImg,
+            teacher: teacher.name,
+            enrolledStudents,
+            isEnrolled,
+            units: await Promise.all(units.map(async (u) => {
+                let numOfVideo = await Video.countDocuments({ unitId: u._id })
+                let test = await Test.findOne({ unitId: u._id })
+                let testRecord;
+                if (test) {
+                    testRecord = await TestRecord.findOne({ testId: test._id, userId: new mongoose.Types.ObjectId(req.user.id) })
+                    console.log(test._id)
+                    console.log(req.user.id)
+                    console.log(testRecord)
+                }
+                let numOfMCQ = 0;
+                if (test) {
+                    numOfMCQ = await MCQ.countDocuments({ testId: test._id })
+                }
+                const unitRecord = await UnitRecord.findOne({ unitId: u._id, userId: req.user.id })
+
+                const videos = await Video.find({ unitId: u._id })
+                return {
+                    _id: u._id,
+                    courseId: u.courseId,
+                    title: u.title,
+                    description: u.description,
+                    sequence: u.sequence,
+                    duration: u.duration,
+                    numOfVideo,
+                    numOfMCQ,
+                    testLocked: testRecord?.locked,
+                    locked: unitRecord?.locked,
+                    videos: await Promise.all(videos.map(async (v) => {
+                        let videoRecord = await VideoRecord.findOne({ videoId: v._id, userId: req.user.id })
+                        return {
+                            _id: v._id,
+                            unitId: v.unitId,
+                            duration: v.duration,
+                            description: v.description,
+                            youtubeId: v.youtubeId,
+                            title: v.title,
+                            url: v.url,
+                            sequence: v.sequence,
+                            locked: videoRecord?.locked
+                        }
+                    }))
+                    // videos: videos
+                }
+            })),
+            finalTest: finalTest ? {
+                _id: finalTest?._id,
+                courseId: finalTest?.courseId,
+                mcqCount: mcqCount
+            } : null
+        }
+        return res.json(result)
+
+        // const result1 = await Course.aggregate([
+        //     { $match: { _id: new mongoose.Types.ObjectId(id) } },
+        //     {
+        //         $lookup: {
+        //             from: 'units',
+        //             let: { courseId: '$_id' },
+        //             pipeline: [
+        //                 {
+        //                     $match: {
+        //                         $expr: {
+        //                             $eq: ['$courseId', '$$courseId']
+        //                         }
+        //                     }
+        //                 },
+        //                 {
+        //                     $lookup: {
+        //                         from: 'videos',
+        //                         localField: '_id',
+        //                         foreignField: 'unitId',
+        //                         as: 'videos'
+        //                     }
+        //                 },
+        //                 {
+        //                     $lookup: {
+        //                         from: 'tests',
+        //                         localField: '_id',
+        //                         foreignField: 'unitId',
+        //                         as: 'test'
+        //                     }
+        //                 },
+        //                 {
+        //                     $lookup: {
+        //                         from: 'mcqs',
+        //                         localField: 'test._id',
+        //                         foreignField: 'testId',
+        //                         as: 'mcqs'
+        //                     }
+        //                 },
+        //                 {
+        //                     $addFields: {
+        //                         numOfVideo: { $size: '$videos' },
+        //                         numOfMCQ: { $size: '$mcqs' }
+        //                     }
+        //                 }
+        //             ],
+        //             as: "units"
         //         }
-        //         return {
-        //             _id: u._id,
-        //             courseId: u.courseId,
-        //             title: u.title,
-        //             description: u.description,
-        //             sequence: u.sequence,
-        //             duration: u.duration,
-        //             numOfVideo,
-        //             numOfMCQ,
-        //             videos: await Video.find({ unitId: u._id })
+        //     },
+        //     {
+        //         $lookup: {
+        //             from: 'users',
+        //             localField: 'teacherId',
+        //             foreignField: '_id',
+        //             as: 'teacher'
         //         }
-        //     })),
-        //     finalTest: finalTest ? {
-        //         _id: finalTest?._id,
-        //         courseId: finalTest?.courseId,
-        //         mcqCount: mcqCount
-        //     } : null
-        // }
-        // return res.json(result)
+        //     },
+        //     {
+        //         $lookup: {
+        //             from: 'enrollments',
+        //             let: { courseId: '$_id' },
+        //             pipeline: [
+        //                 {
+        //                     $match: {
+        //                         $expr: {
+        //                             $and: [
+        //                                 { $eq: ['$courseId', '$$courseId'] },
+        //                                 { $eq: ['$userId', new mongoose.Types.ObjectId(req.user.id)] }
+        //                             ]
+        //                         }
+        //                     }
+        //                 }
+        //             ],
+        //             as: 'enrollment'
+        //         }
+        //     },
+        //     {
+        //         $lookup: {
+        //             from: 'enrollments',
+        //             let: { courseId: '$_id' },
+        //             pipeline: [
+        //                 {
+        //                     $match: {
+        //                         $expr: {
+        //                             $eq: ['$courseId', '$$courseId']
+        //                         }
+        //                     }
+        //                 }
+        //             ],
+        //             as: 'enrolledStudents'
+        //         }
+        //     },
+        //     {
+        //         $lookup: {
+        //             from: 'tests',
+        //             let: { courseId: '$_id' },
+        //             pipeline: [
+        //                 {
+        //                     $match: {
+        //                         $expr: {
+        //                             $and: [
+        //                                 { $eq: ['$courseId', '$$courseId'] },
+        //                                 { $eq: ['$final', true] }
+        //                             ]
+        //                         }
+        //                     }
+        //                 },
+        //                 {
+        //                     $lookup: {
+        //                         from: 'mcqs',
+        //                         localField: '_id',
+        //                         foreignField: 'testId',
+        //                         as: 'mcqs'
+        //                     }
+        //                 },
+        //                 {
+        //                     $addFields: {
+        //                         mcqCount: { $size: '$mcqs' }
+        //                     }
+        //                 },
+        //                 { $unset: ['mcqs'] }
+        //             ],
+        //             as: 'finalTest'
+        //         }
+        //     },
+        //     {
+        //         $addFields: {
+        //             isEnrolled: { $size: '$enrollment' },
+        //             teacher: { $arrayElemAt: ['$teacher.name', 0] },
+        //             enrolledStudents: { $size: '$enrolledStudents' },
+        //             finalTest: {
+        //                 $cond: {
+        //                     if: { $gt: [{ $size: '$finalTest' }, 0] },
+        //                     then: { $arrayElemAt: ['$finalTest', 0] },
+        //                     else: null
+        //                 }
+        //             }
+        //         }
+        //     },
+        //     {
+        //         $project: {
+        //             _id: 1,
+        //             title: 1,
+        //             description: 1,
+        //             duration: 1,
+        //             courseImg: 1,
+        //             teacher: 1,
+        //             enrolledStudents: 1,
+        //             isEnrolled: 1,
+        //             units: {
+        //                 $map: {
+        //                     input: '$units',
+        //                     as: 'unit',
+        //                     in: {
+        //                         _id: '$$unit._id',
+        //                         courseId: '$$unit.courseId',
+        //                         title: '$$unit.title',
+        //                         description: '$$unit.description',
+        //                         sequence: '$$unit.sequence',
+        //                         duration: '$$unit.duration',
+        //                         numOfVideo: '$$unit.numOfVideo',
+        //                         numOfMCQ: '$$unit.numOfMCQ',
+        //                         videos: '$$unit.videos'
+        //                     }
+        //                 }
+        //             },
+        //             finalTest: {
+        //                 $cond: {
+        //                     if: { $ne: ['$finalTest', null] },
+        //                     then: {
+        //                         _id: '$finalTest._id',
+        //                         courseId: '$finalTest.courseId',
+        //                         mcqCount: '$finalTest.mcqCount'
+        //                     },
+        //                     else: null
+        //                 }
+        //             }
+        //         }
+        //     }
+        // ])
 
-        const result1 = await Course.aggregate([
-            { $match: { _id: new mongoose.Types.ObjectId(id) } },
-            {
-                $lookup: {
-                    from: 'units',
-                    let: { courseId: '$_id' },
-                    pipeline: [
-                        {
-                            $match: {
-                                $expr: {
-                                    $eq: ['$courseId', '$$courseId']
-                                }
-                            }
-                        },
-                        {
-                            $lookup: {
-                                from: 'videos',
-                                localField: '_id',
-                                foreignField: 'unitId',
-                                as: 'videos'
-                            }
-                        },
-                        {
-                            $lookup: {
-                                from: 'tests',
-                                localField: '_id',
-                                foreignField: 'unitId',
-                                as: 'test'
-                            }
-                        },
-                        {
-                            $lookup: {
-                                from: 'mcqs',
-                                localField: 'test._id',
-                                foreignField: 'testId',
-                                as: 'mcqs'
-                            }
-                        },
-                        {
-                            $addFields: {
-                                numOfVideo: { $size: '$videos' },
-                                numOfMCQ: { $size: '$mcqs' }
-                            }
-                        }
-                    ],
-                    as: "units"
-                }
-            },
-            {
-                $lookup: {
-                    from: 'users',
-                    localField: 'teacherId',
-                    foreignField: '_id',
-                    as: 'teacher'
-                }
-            },
-            {
-                $lookup: {
-                    from: 'enrollments',
-                    let: { courseId: '$_id' },
-                    pipeline: [
-                        {
-                            $match: {
-                                $expr: {
-                                    $and: [
-                                        { $eq: ['$courseId', '$$courseId'] },
-                                        { $eq: ['$userId', new mongoose.Types.ObjectId(req.user.id)] }
-                                    ]
-                                }
-                            }
-                        }
-                    ],
-                    as: 'enrollment'
-                }
-            },
-            {
-                $lookup: {
-                    from: 'enrollments',
-                    let: { courseId: '$_id' },
-                    pipeline: [
-                        {
-                            $match: {
-                                $expr: {
-                                    $eq: ['$courseId', '$$courseId']
-                                }
-                            }
-                        }
-                    ],
-                    as: 'enrolledStudents'
-                }
-            },
-            {
-                $lookup: {
-                    from: 'tests',
-                    let: { courseId: '$_id' },
-                    pipeline: [
-                        {
-                            $match: {
-                                $expr: {
-                                    $and: [
-                                        { $eq: ['$courseId', '$$courseId'] },
-                                        { $eq: ['$final', true] }
-                                    ]
-                                }
-                            }
-                        },
-                        {
-                            $lookup: {
-                                from: 'mcqs',
-                                localField: '_id',
-                                foreignField: 'testId',
-                                as: 'mcqs'
-                            }
-                        },
-                        {
-                            $addFields: {
-                                mcqCount: { $size: '$mcqs' }
-                            }
-                        },
-                        { $unset: ['mcqs'] }
-                    ],
-                    as: 'finalTest'
-                }
-            },
-            {
-                $addFields: {
-                    isEnrolled: { $size: '$enrollment' },
-                    teacher: { $arrayElemAt: ['$teacher.name', 0] },
-                    enrolledStudents: { $size: '$enrolledStudents' },
-                    finalTest: {
-                        $cond: {
-                            if: { $gt: [{ $size: '$finalTest' }, 0] },
-                            then: { $arrayElemAt: ['$finalTest', 0] },
-                            else: null
-                        }
-                    }
-                }
-            },
-            {
-                $project: {
-                    _id: 1,
-                    title: 1,
-                    description: 1,
-                    duration: 1,
-                    courseImg: 1,
-                    teacher: 1,
-                    enrolledStudents: 1,
-                    isEnrolled: 1,
-                    units: {
-                        $map: {
-                            input: '$units',
-                            as: 'unit',
-                            in: {
-                                _id: '$$unit._id',
-                                courseId: '$$unit.courseId',
-                                title: '$$unit.title',
-                                description: '$$unit.description',
-                                sequence: '$$unit.sequence',
-                                duration: '$$unit.duration',
-                                numOfVideo: '$$unit.numOfVideo',
-                                numOfMCQ: '$$unit.numOfMCQ',
-                                videos: '$$unit.videos'
-                            }
-                        }
-                    },
-                    finalTest: {
-                        $cond: {
-                            if: { $ne: ['$finalTest', null] },
-                            then: {
-                                _id: '$finalTest._id',
-                                courseId: '$finalTest.courseId',
-                                mcqCount: '$finalTest.mcqCount'
-                            },
-                            else: null
-                        }
-                    }
-                }
-            }
-        ])
-
-        return res.json(result1[0])
+        // return res.json(result1[0])
     } catch (error) {
         console.error(error);
         res.status(500).json({ error: 'Server error' });

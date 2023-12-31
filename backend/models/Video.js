@@ -22,7 +22,7 @@ const videoSchema = mongoose.Schema({
         type: Number,
     },
     youtubeId: {
-        type:String,
+        type: String,
     },
     duration: {
         hours: {
@@ -32,7 +32,7 @@ const videoSchema = mongoose.Schema({
         minutes: {
             type: Number,
             default: 0
-        } 
+        }
     },
 });
 

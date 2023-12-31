@@ -11,21 +11,34 @@ function StudentCourseDetail() {
     const { course: id } = useParams();
 
     const [course, setCourse] = useState(null);
+    const [error, setError] = useState(false);
 
-    function getCourseData() {
-        fetch(backend + "/api/course/detail/" + id, { headers: { token } })
-            .then((res) => res.json())
-            .then((data) => {
-                // console.log(data);
-                setCourse(data);
-            })
-            .catch((err) => console.log(err));
+    async function getCourseData() {
+        const res = await fetch(backend + "/api/course/detail/" + id, {
+            headers: { token },
+        });
+
+        const data = await res.json();
+        if (res.ok) {
+            setCourse(data);
+        } else {
+            setError(true);
+            console.log(data);
+        }
     }
 
     useEffect(() => {
         getCourseData();
     }, []);
 
+    if (error) {
+        return (
+            <div className="teacher-view-course">
+                <h1 className="title">An error occured...</h1>
+                <p>Server Error. Please try again later</p>
+            </div>
+        );
+    }
     if (!course) {
         return (
             <div className="teacher-view-course">
@@ -39,10 +52,10 @@ function StudentCourseDetail() {
             headers: { token, "Content-Type": "application/json" },
             method: "POST",
             body: JSON.stringify({ courseId: course._id }),
-        })
+        });
         const data = await res.json();
-        if(res.ok){
-            console.log(data)
+        if (res.ok) {
+            console.log(data);
             getCourseData();
         }
     }
@@ -61,7 +74,10 @@ function StudentCourseDetail() {
                     />
                     <h4>Lessons in this course.</h4>
                     {course.units.length > 0 ? (
-                        <Accordian data={course.units} isEnrolled={course.isEnrolled} />
+                        <Accordian
+                            data={course.units}
+                            isEnrolled={course.isEnrolled}
+                        />
                     ) : (
                         <p>Currently no lessons...</p>
                     )}
