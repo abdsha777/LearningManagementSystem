@@ -103,9 +103,9 @@ router.get('/detail/:id', fetchuser, async (req, res) => {
                 let testRecord;
                 if (test) {
                     testRecord = await TestRecord.findOne({ testId: test._id, userId: new mongoose.Types.ObjectId(req.user.id) })
-                    console.log(test._id)
-                    console.log(req.user.id)
-                    console.log(testRecord)
+                    // console.log(test._id)
+                    // console.log(req.user.id)
+                    // console.log(testRecord)
                 }
                 let numOfMCQ = 0;
                 if (test) {
@@ -124,6 +124,7 @@ router.get('/detail/:id', fetchuser, async (req, res) => {
                     numOfVideo,
                     numOfMCQ,
                     testLocked: testRecord?.locked,
+                    testId: test?._id,
                     locked: unitRecord?.locked,
                     videos: await Promise.all(videos.map(async (v) => {
                         let videoRecord = await VideoRecord.findOne({ videoId: v._id, userId: req.user.id })

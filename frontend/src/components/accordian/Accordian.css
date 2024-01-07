@@ -143,6 +143,16 @@
 }
 
 
+.accordion .accordion_label p {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.accordion.small .accordion_label p small {
+    display: none;
+}
+
 @media (max-width: 800px) {
 
     .progress-bar {
@@ -153,9 +163,9 @@
         padding: 20px;
     }
 
-    .accordion_module p {
+    /* .accordion_module p {
         display: none;
-    }
+    } */
 
     /* .section1_duration {
         display: none;

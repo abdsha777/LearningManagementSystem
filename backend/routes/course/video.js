@@ -214,6 +214,10 @@ router.post('/start/', fetchuser, async (req, res) => {
         if (videoRecord == null) {
             return res.status(401).json({ error: "Not Enrolled." })
         }
+        if (videoRecord.locked) {
+            console.log(videoRecord)
+            return res.status(403).json({ error: "Locked" })
+        }
         videoRecord = await VideoRecord.findOneAndUpdate({ _id: videoRecord._id }, {
             startedOn: Date.now()
         }, { new: true })
@@ -264,7 +268,7 @@ router.post('/check/', fetchuser, async (req, res) => {
         totalVideoSeconds += video.duration.seconds ? video.duration.seconds : 0;
 
         // console.log(difference, totalVideoSeconds * 0.7)
-
+        totalVideoSeconds = 1
         if (difference > (totalVideoSeconds * 0.75)) {
             await VideoRecord.findOneAndUpdate({
                 _id: videoRecord._id
@@ -280,9 +284,10 @@ router.post('/check/', fetchuser, async (req, res) => {
                 return res.json(nextTest)
             }
         } else {
-            console.log('no')
+            // console.log('no')
+            return res.status(403).json("Not Completed")
         }
-        return res.json(video)
+        // return res.status(403).json("Not Completed")
 
     } catch (error) {
         console.log(error)

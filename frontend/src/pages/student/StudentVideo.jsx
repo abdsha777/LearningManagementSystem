@@ -2,7 +2,7 @@ import React, { useContext, useEffect, useState } from "react";
 import "./StudentVideo.css";
 import Accordian from "../../components/accordian/Accordian";
 import AuthContext from "../../context/AuthContext";
-import { Link, useNavigate, useParams } from "react-router-dom";
+import { Link, Navigate, useNavigate, useParams } from "react-router-dom";
 
 function StudentVideo() {
     const backend = import.meta.env.VITE_BACKEND;
@@ -14,6 +14,8 @@ function StudentVideo() {
     const nav = useNavigate();
 
     const [course, setCourse] = useState(null);
+
+    const [nextLocked, setNextLocked] = useState(true);
 
     function setVideos(data) {
         let prevVideo = null;
@@ -33,7 +35,7 @@ function StudentVideo() {
                         j == data.units[i].videos.length - 1 &&
                         i < data.units.length - 1
                     ) {
-                        console.log("get from next");
+                        // console.log("get from next");
                         nextVideo = data.units[i + 1].videos[0];
                     }
                     if (j < data.units[i].videos.length - 1) {
@@ -50,8 +52,10 @@ function StudentVideo() {
         setVideo(currentVideo);
         setPrev(prevVideo);
         setNext(nextVideo);
+        setNextLocked(nextVideo.locked);
 
-        console.log(prevVideo, currentVideo, nextVideo);
+        startVideo(currentVideo);
+        // console.log(prevVideo, currentVideo, nextVideo);
     }
 
     function getCourseData() {
@@ -66,8 +70,71 @@ function StudentVideo() {
     }
 
     useEffect(() => {
-        getCourseData();
+        let ignore = false;
+        if (!ignore) {
+            getCourseData();
+        }
+        return () => {
+            ignore = false;
+        };
     }, [videoId]);
+
+    async function startVideo(data) {
+        try {
+            let res = await fetch(backend + "/api/video/start/", {
+                method: "POST",
+                headers: {
+                    token,
+                    "Content-Type": "application/json",
+                },
+                body: JSON.stringify({ videoId }),
+            });
+            let data2 = await res.json();
+            // console.log(res);
+            if (res.ok) {
+                // console.log(data);
+                let totalDuration = 0;
+                totalDuration += data.duration.hours
+                    ? data.duration.hours * 3600
+                    : 0;
+                totalDuration += data.duration.minutes
+                    ? data.duration.minutes * 60
+                    : 0;
+                totalDuration = totalDuration * 1000 * 0.05;
+                // console.log(totalDuration);
+                setTimeout(() => {
+                    checkVideo();
+                }, totalDuration);
+            } else {
+                nav("/courseDetail/" + id);
+            }
+        } catch (error) {
+            console.log(error);
+        }
+    }
+
+    async function checkVideo() {
+        try {
+            let res = await fetch(backend + "/api/video/check/", {
+                method: "POST",
+                headers: {
+                    token,
+                    "Content-Type": "application/json",
+                },
+                body: JSON.stringify({ videoId }),
+            });
+            // console.log(res);
+            if (res.ok) {
+                setNextLocked(false);
+            } else {
+                setTimeout(() => {
+                    checkVideo();
+                }, 10000);
+            }
+        } catch (error) {
+            console.log(error);
+        }
+    }
 
     if (!course) {
         return (
@@ -92,6 +159,7 @@ function StudentVideo() {
                             frameBorder="0"
                             allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
                             allowFullScreen
+                            onClick={startVideo}
                         ></iframe>
                     )}
                     <div className="videoBtns">
@@ -117,7 +185,7 @@ function StudentVideo() {
                                 </button>
                             </Link>
                         )}
-                        {next && (
+                        {next && !nextLocked && (
                             <Link
                                 to={`/courseDetail/${id}/video/${next._id}`}
                                 className="next"
