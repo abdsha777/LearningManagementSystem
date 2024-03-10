@@ -18,19 +18,20 @@ function AdminCourseList() {
     },[])
     return (
         <div className="main_module">
-            <h1 className="list-heading">Course List</h1>
+            <h3 className="list-heading">Course List</h3>
 
             <div className="sub_heading">
                 <input type="text" placeholder="Search Courses" />
                 
-                <StudentFilter />
+                {/* <StudentFilter /> */}
+                <button class="filterBtn">Filter</button>
             </div>
 
-            <div className="module2">
-                <p className="heading1">Courses</p>
-            </div>
+            
+            <h4>Courses</h4>
+            
 
-            <div className="module5">
+            <div className="listTableContainer">
                 <table>
                     <thead>
                         <tr>

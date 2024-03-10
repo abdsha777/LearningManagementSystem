@@ -54,7 +54,7 @@ function AdminDashboard() {
             label: 'No Of Sudents',
             // data: overView.courseData?.map(e=>e.studentCount),
             data: [22,33,100],
-            backgroundColor: ['#5DDCD6']
+            backgroundColor: ['#d44950']
         }]
     }
     const options = {
@@ -80,7 +80,7 @@ function AdminDashboard() {
                         <div>
                             <div className="text">
                                 <h3 id="main-text">Total No. of Student</h3>
-                                <h4 id="num">{overView.totalStudents}</h4>
+                                <h4 id="num">{overView.totalStudents}11</h4>
                             </div>
                         </div>
 
@@ -91,7 +91,7 @@ function AdminDashboard() {
                         <div>
                             <div className="text">
                                 <h3 id="main-text">Total No. of Teachers</h3>
-                                <h4 id="num">{overView.totalTeachers}</h4>
+                                <h4 id="num">{overView.totalTeachers}22</h4>
                             </div>
                         </div>
                     </div>
@@ -101,7 +101,7 @@ function AdminDashboard() {
                         <div>
                             <div className="text">
                                 <h3 id="main-text">Total Course Uploaded</h3>
-                                <h4 id="num">{overView.totalCourses}</h4>
+                                <h4 id="num">{overView.totalCourses}122</h4>
                             </div>
                         </div>
                     </div>
@@ -112,7 +112,7 @@ function AdminDashboard() {
                         <div>
                             <div className="text">
                                 <h3 id="main-text">Total Student Enrolled</h3>
-                                <h4 id="num">{overView.totalEnrollments}</h4>
+                                <h4 id="num">{overView.totalEnrollments}22</h4>
                             </div>
                         </div>
                     </div>
@@ -128,7 +128,7 @@ function AdminDashboard() {
                 </div>
             </div>
             <div className="CourseTable">
-                <h1>Courses</h1>
+                <h3>Courses</h3>
                 <table>
                     <thead>
                         <tr>
@@ -140,6 +140,13 @@ function AdminDashboard() {
                         </tr>
                     </thead>
                     <tbody>
+                        <tr>
+                            <td>aa</td>
+                            <td>aa</td>
+                            <td>aa</td>
+                            <td>aa</td>
+                            <td>aa</td>
+                        </tr>
                         {
                             course.map((record, key) => {
                                 let date = new Date(record.date )

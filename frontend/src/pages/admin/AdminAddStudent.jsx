@@ -17,7 +17,7 @@ function AdminAddStudent() {
     const [message, setMessage] = useState(null)
 
     const getStudent = () => {
-        fetch(`${endpoint}/api/users/student/${id}/`,{headers:{token}})
+        fetch(`${endpoint}/api/users/student/${id}/`, { headers: { token } })
             .then((response) => response.json())
             .then((data) => setStudent(data))
             .catch((error) => console.log);
@@ -100,7 +100,7 @@ function AdminAddStudent() {
 
     return (
         <div>
-            <div className="main">
+            <div className="studentForm">
                 <div className="backlink">
                     <Link to={navPath}>&larr; back</Link>
                 </div>
@@ -112,10 +112,7 @@ function AdminAddStudent() {
                     )
                 }
 
-                <div>
-                    <h2>{id ? "Update" : "Add"} Student</h2>
-                </div>
-
+                <h3 className="title">{id ? "Update" : "Add"} Student</h3>
                 <div className="add_form">
 
                     <div className="input-box">
@@ -176,7 +173,7 @@ function AdminAddStudent() {
                                         name="active"
                                         placeholder="Phone Number"
                                         checked={student.active || false}
-                                        onChange={()=>setStudent({...student,active: !student.active})}
+                                        onChange={() => setStudent({ ...student, active: !student.active })}
                                     />
                                 </div>
                             </>
@@ -198,7 +195,7 @@ function AdminAddStudent() {
             </div>
 
             <div className="bulkUpload">
-                <h2>Bulk Upload</h2>
+                <h4>Bulk Upload</h4>
                 <input type="file" id="bulk" name="bulk" onChange={fileSelected} />
                 <label htmlFor="bulk">
                     <svg xmlns="http://www.w3.org/2000/svg" width="14" height="17" viewBox="0 0 14 17" fill="none">

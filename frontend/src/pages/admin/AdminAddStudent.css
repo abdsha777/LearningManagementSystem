@@ -9,12 +9,13 @@
     display: none;
 }
 
-.bulkUpload h2{
-    margin-bottom: 20px;
+.bulkUpload h4{
+    color: var(--text);
+    margin-bottom: 10px;
 }
 
 .bulkUpload label{
-    background-color: #5ddcd6;
+    background-color: var(--accent);
     padding: 10px 20px;
     max-width: 180px;
     border-radius: 5px;
@@ -53,4 +54,12 @@
     padding: 10px;
     border-radius: 5px;
     font-size: 20px;
+}
+.studentForm{
+    display: flex;
+    flex-direction: column;
+    max-width: 400px;
+}
+.studentForm .title{
+    color: var(--accent80);
 }

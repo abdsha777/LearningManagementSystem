@@ -80,7 +80,7 @@ function AdminTeacherList() {
 
   return (
     <div className="main_module">
-      <h1 className="list-heading">Teachers List</h1>
+      <h3 className="list-heading">Teachers List</h3>
       <div className="module2">
         <Link to={"add/"} className="btn btn-border-blue">+ Add Teacher</Link>
         <button className="btn btn-border-blue">Bulk Upload</button>
@@ -88,14 +88,14 @@ function AdminTeacherList() {
       <div className="sub_heading">
         <input type="text" placeholder="Search Students" onChange={(e) => { setQuery(e.target.value) }} />
         {/* <StudentFilter /> */}
-        <button className='filter1'>Filter</button>
+        <button className='filterBtn'>Filter</button>
       </div>
       <div className="module2">
         <button className="btn btn-filled big">Set Status</button>
         {/* <TeacherSetStatus /> */}
 
       </div>
-      <div className="module5">
+      <div className="listTableContainer">
         {
           loading ? (
             <h1>Loading...</h1>
@@ -122,7 +122,7 @@ function AdminTeacherList() {
                         <td>{record.numOfCourse}</td>
                         <td>
                           <Link to={'update/' + record.id}>
-                            <button>Update</button>
+                            <button >Update</button>
                           </Link>
                         </td>
                         <td>

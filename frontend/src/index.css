@@ -191,7 +191,7 @@ body {
     font-family: 'Inter', sans-serif;
     height: 100vh;
     width: 100vw;
-    /* overflow: hidden; */
+    overflow-x: hidden;
     display: flex;
     flex-direction: column;
     color: var(--text);
@@ -413,19 +413,14 @@ nav {
 }
 
 .btn {
-    padding: 15px 20px;
-    border-radius: 10px;
-    background-color: white;
-    font-size: 15px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    color: #323030;
-    font-style: normal;
-    font-weight: 400;
-    min-width: 150px;
-    min-height: 45px;
-    text-decoration: none;
+    cursor: pointer;
+    padding: 10px 20px;
+    color: var(--text);
+    border: 0;
+    border-radius: 4px;
+    font-size: 1.333rem;
+    width: max-content;
+    min-width: 100px;
 }
 
 .btn a {
@@ -434,12 +429,13 @@ nav {
 }
 
 .btn-border-blue {
-    border: 1px solid #5DDCD6;
+    background-color: var(--secondary25);
+    border: 1px solid var(--secondary);
     transition: 0.5s background-color;
 }
 
 .btn-border-blue:hover {
-    background-color: #5DDCD6;
+    background-color: var(--accent);
     color: white;
 }
 
@@ -448,12 +444,13 @@ nav {
 }
 
 .btn-border {
-    border: 1px solid #868181;
+    border: 1px solid var(--accent);
 }
 
 .cancel-btn {
     transition: 0.2s border;
     transition: 0.3s color;
+    background-color: var(--secondary10);
 }
 
 .cancel-btn:hover {
@@ -462,7 +459,7 @@ nav {
 }
 
 .btn-filled {
-    background-color: #5DDCD6;
+    background-color: var(--accent70);
     border: 0;
     color: white;
     font-weight: 500;
@@ -470,7 +467,7 @@ nav {
 }
 
 .btn-filled:hover {
-    background-color: #5ddc90;
+    background-color: var(--accent);
 }
 
 
@@ -895,7 +892,7 @@ nav {
 .backlink a {
     text-decoration: none;
     font-size: 20px;
-    border: gray 1px solid;
+    border: var(--accent) 1px solid;
     margin-bottom: 20px;
     padding: 5px 20px;
     border-radius: 5px;
@@ -903,5 +900,5 @@ nav {
 
 a {
     text-decoration: none;
-    color: black;
+    color: var(--accent);
 }
