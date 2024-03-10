@@ -10,8 +10,6 @@ function Login() {
         <div className="login">
             <div className="login-left">
                 <div className="ll-header">
-                    <div className="login-logo">
-                    </div>
                     <div className="ll-heading">
                         AISC Learning Management System
                     </div>
@@ -89,63 +87,63 @@ function Login() {
                                     fill="none">
                                     <path
                                         d="M7.0625 13.7125C13.3128 11.0865 22.2751 8.25481 30.9903 7.37477C40.3834 6.42377 48.3499 7.82189 52.9688 12.7118V81.8799C46.3653 78.1184 37.9963 77.6003 30.2769 78.381C21.9432 79.2327 13.5388 81.6528 7.0625 84.1367V13.7125ZM60.0312 12.7118C64.6501 7.82189 72.6166 6.42377 82.0098 7.37477C90.7249 8.25481 99.6872 11.0865 105.938 13.7125V84.1367C99.4541 81.6528 91.0568 79.2256 82.7231 78.3881C74.9967 77.6003 66.6347 78.1113 60.0312 81.8799V12.7118ZM56.5 6.29602C49.5434 0.284797 39.4582 -0.609434 30.2769 0.313186C19.5843 1.39904 8.79281 5.08242 2.06931 8.15545C1.4524 8.4374 0.929251 8.8918 0.562323 9.46439C0.195396 10.037 0.000187661 10.7036 0 11.3846L0 89.4524C0.000163582 90.0462 0.148575 90.6304 0.43164 91.1515C0.714704 91.6727 1.12337 92.1141 1.62021 92.4355C2.11705 92.7568 2.68618 92.9477 3.27547 92.9907C3.86476 93.0337 4.45536 92.9274 4.99319 92.6816C11.2223 89.8428 21.2581 86.4291 30.9832 85.4426C40.9343 84.4348 49.2751 86.06 53.7456 91.6667C54.0765 92.0812 54.4958 92.4157 54.9725 92.6455C55.4492 92.8753 55.9712 92.9947 56.5 92.9947C57.0288 92.9947 57.5508 92.8753 58.0275 92.6455C58.5042 92.4157 58.9235 92.0812 59.2544 91.6667C63.7249 86.06 72.0658 84.4348 82.0098 85.4426C91.7419 86.4291 101.785 89.8428 108.007 92.6816C108.545 92.9274 109.135 93.0337 109.725 92.9907C110.314 92.9477 110.883 92.7568 111.38 92.4355C111.877 92.1141 112.285 91.6727 112.568 91.1515C112.851 90.6304 113 90.0462 113 89.4524V11.3846C113 10.7036 112.805 10.037 112.438 9.46439C112.071 8.8918 111.548 8.4374 110.931 8.15545C104.207 5.08242 93.4157 1.39904 82.7231 0.313186C73.5418 -0.616531 63.4566 0.284797 56.5 6.29602Z"
-                                        fill="#C5EEE6" />
+                                        fill="#fff" />
                                 </svg>
                             </div>
                         </div>
                     </div>
-                    <div className="tag-line">
+                    <h4 className="tag-line">
                         Unlocking Knowledge,
                         Empowering Success.
-                    </div>
+                    </h4>
                 </div>
             </div>
 
             <div className="login-right">
                 <div className="ll-header-1">
-                    <div className="logo-1">
-
-                    </div>
-                    <div className="ll-heading-1">
+                    <h2 className="ll-heading-1">
                         AISC Learning Management System
-                    </div>
+                    </h2>
                 </div>
 
 
                 <div className="login-form">
-                    <h1>LOGIN</h1>
-                    <div className="input-box">
-                        <label htmlFor="email">Email</label>
-                        <input type="text" id="email" placeholder="Enter email..."
-                            value={email}
-                            onChange={(e) => setEmail(e.target.value)}
-                        />
+                    <div className="inside-login">
+                        <h2>LOGIN</h2>
+                        <div className="linput-box">
+                            <label htmlFor="email">Email</label>
+                            <input type="text" id="email" placeholder="Enter email..."
+                                value={email}
+                                onChange={(e) => setEmail(e.target.value)}
+                            />
 
+                        </div>
+                        <div className="linput-box">
+                            <label htmlFor="password">Password</label>
+                            <input type="password" id="password" placeholder="Enter password..."
+                                value={password}
+                                onChange={(e) => setPassword(e.target.value)}
+                            />
+
+                        </div>
+
+                        <div className="lbtn-fp">
+                            <button className=""
+                                onClick={() => {
+                                    loginUser(email, password)
+                                }}
+                            >
+                                LOGIN
+                            </button>
+
+                            <a href="">
+                                <small>
+                                    Forget Password ?
+                                </small>
+                            </a>
+                        </div>
                     </div>
-                    <div className="input-box">
-                        <label htmlFor="password">Password</label>
-                        <input type="password" id="password" placeholder="Enter password..."
-                            value={password}
-                            onChange={(e) => setPassword(e.target.value)}
-                        />
 
-                    </div>
-
-                    <div className="lbtn-fp">
-                        <button className="btn-filled-1"
-                            onClick={() => {
-                                loginUser(email, password)
-                            }}
-                        >
-                            LOGIN
-                        </button>
-
-                        <a href="">
-                            <small>
-                                Forget Password ?
-                            </small>
-                        </a>
-                    </div>
                 </div>
 
             </div>

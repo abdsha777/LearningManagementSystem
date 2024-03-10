@@ -1,13 +1,17 @@
-
+.sidebar-container{
+    height: 100%;
+    position: relative;
+    z-index: 50;
+}
 .sidebar{
-    background-color: white;
+    width: 250px;
     display: flex;
     flex-direction: column;
     padding: 20px 10px;
     border: 0;
     border-radius: 0 0 0 25px;
-    margin-right: 10px;
-    min-height:85vh;
+    position: sticky;
+    top: 60px;
 }
 
 .sidebar-links{
@@ -26,17 +30,17 @@
     transition: 0.3s;
 }
 .sidebar-links:hover{
-    color: black;
-    /* background-color: rgb(232, 232, 232); */
+    color: white;
+    background-color: var(--secondary30);
     transform: translateY(-2px);
     box-shadow: #919191 0px 2px 7px 1px;;
 }
 .sidebar-links.active{
-    background: #5DDCD6;
+    background: var(--secondary20);
     color: white;
 }
 .sidebar-links.active:hover{
-    color: black;
+    color: white;
 }
 .sidebar-links.active:hover img{
     opacity: 1;
@@ -51,6 +55,10 @@
     transition: transform 400ms ease-in;
 }
 
+
+.sidebar-links svg path{
+    stroke: var(--accent);
+}
 
 
 .sidebar-links:hover > svg{
@@ -67,7 +75,7 @@
 }
 .sidebar-links:hover > .student-svg{
     transform: rotateY(180deg);
-    fill: black;
+
 }
 .sidebar-links:hover > .class-svg{
     transform: rotateY(180deg);

@@ -29,7 +29,7 @@ async function setupAdminUser() {
     const password = await prompt('Enter password: ');
     const name = await prompt('Enter name: ');
     let role = await prompt('Enter role: 1 for admin, 2 for teacher, 3 for student')
-    role = role==3?"admin":role=="2"?"teacher":"student"
+    role = role=="1"?"admin":role=="2"?"teacher":"student"
     // Hash the password before storing it
     const salt = await bcrypt.genSalt(5);
     const hashedPassword = await  bcrypt.hash(password ,salt);

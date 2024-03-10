@@ -1,81 +1,92 @@
-/* .studentListNew{
-
-} */
+.studentListNew{
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    height: 100%;
+}
 .listHeading{
     display: flex;
     align-items: center;
-    margin-bottom: 25px;
 }
 
-.listHeading h1{
-    color: #5DDCD6;
+.listHeading h3{
+    color: var(--secondary);
     text-align: center;
-    font-size: 48px;
     width: 100%;
 }
-
+.listHeading a{
+    display: flex;
+    cursor: pointer;
+}
 .listHeading button{
-    padding: 0 40px;
-    background-color: #5DDCD6;
+    cursor: pointer;
+    padding: 10px 20px;
+    background-color: var(--accent);
+    color: var(--text);
     border: 0;
-    border-radius: 10px;
-    font-size: 60px;
-    line-height: 0.9;
+    border-radius: 4px;
+    font-size: 1.333rem;
+    width: max-content;
+}
+.listHeading a:hover button{
+    color: white;
 }
 
 .searchSection{
     display: flex;
-    margin-bottom: 25px;
+    gap: 20px;
 }
 
 .searchSection input{
+    border-radius: 3px;
+    background: var(--secondary30);
+    border: 0;
+    padding: 10px;
+    transition: 0.4s background-color;
+    color: var(--text);
+    font-size: 16px;
     width: 100%;
-    border-radius: 10px; 
-    border: 1px solid #5DDCD6;
-    box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
-    margin-right: 40px;
-    padding: 10px 40px;
-    font-size: 32px;
 }
 .searchSection input:focus{
     outline: 0;
-    border: 1px solid #555;
+    background: var(--secondary40);
 }
 .searchSection input::placeholder{
-    color: lightgray;
+    color: var(--text50);
 }
 
 .searchSection button{
-    border-radius: 10px;
-    background: #D1FFFD;
-    box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
-    color: #555;
-    font-size: 32px;
-    padding: 10px 40px;
+    cursor: pointer;
+    padding: 10px 20px;
+    background-color: var(--secondary);
+    color: var(--text70);
     border: 0;
+    border-radius: 4px;
+    font-size: 1.333rem;
+    width: max-content;
     display: flex;
-    align-items: center;
-    justify-content: center;
-    transition: 0.3s background-color;
 }
 .searchSection button:hover{
-    background-color: #5DDCD6;
+    color: var(--text);
 }
 
 .searchSection button svg{
     margin-right: 10px;
 }
+.searchSection button svg path{
+    fill: var(--text);
+}
 
 /* list section  */
 
 .listSection{
-    display: grid;
-    grid-template-columns: 25% 75%;
-    /* gap: 40px; */
+    display: flex;
+    height: 100%;
 }
 
 .filterBox{
-    border-radius: 10px;
+    width: 300px;
+    border-radius: 4px;
     box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
     overflow: hidden;
     display: flex;
@@ -84,16 +95,17 @@
 }
 
 .filterHead{
-    padding: 10px 30px;
-    background: #D1FFFD;
+    padding: 10px 20px;
+    background: var(--secondary90);
 }
 
 .filterBody{
     display: flex;
     flex-direction: column;
     min-height: 35vh;
-    max-height: 35vh;
     overflow-y: scroll;
+    background-color: var(--secondary20);
+    color: var(--text);
 }
 .filterBody::-webkit-scrollbar{
     width: 3px;
@@ -101,7 +113,7 @@
     border: 0;
 }
 .filterBody::-webkit-scrollbar-thumb{
-    background-color: #5DDCD6;
+    background-color: var(--accent);
 }
 .filterBody::-webkit-scrollbar-track{
     display: none;
@@ -109,8 +121,8 @@
 }
 
 .filter{
-    border: 1px solid #CFCFCF;
-    padding: 10px 30px;
+    border: 1px solid var(--secondary20);
+    padding: 10px 20px;
 }
 
 .filterInfo{
@@ -119,59 +131,59 @@
     margin-bottom: 10px;
 }
 .filterInfo h4{
-    color: #555;
     font-size: 20px;
     font-weight: 700;
 }
 .filterInfo button{
-    color: #5DDCD6;
+    color: var(--accent);
     font-size: 14px;
     background-color: transparent;
     border: 0;
+    cursor: pointer;
 }
 .filterInfo button:hover{
     text-decoration: underline;
 }
 
 .filterDropDown{
-    border-radius: 10px;
-    background: #D1FFFD;
-    padding: 10px 20px;
-    width: 100%;
-    appearance: none;
-    background-image: url("data:image/svg+xml;utf8,<svg fill='black' height='24' viewBox='0 0 24 24' width='24' xmlns='http://www.w3.org/2000/svg'><path d='M7 10l5 5 5-5z'/><path d='M0 0h24v24H0z' fill='none'/></svg>");
-    background-repeat: no-repeat;
-    background-position-x: 100%;
-    background-position-y: 50%;
-
-    color: #737373;
-    font-size: 16px;
+    border-radius: 3px;
+    background: var(--secondary30);
     border: 0;
+    padding: 10px;
+    transition: 0.4s background-color;
+    color: var(--text);
+    font-size: 16px;
+    width: 100%;
+    cursor: pointer;
+}
+.filterDropDown:hover{
+    background: var(--secondary40);
 }
 .filterDropDown option{
     padding: 10px 20px;
+    color: #000;
 }
 
 .filterBottom{
-    padding: 10px 30px;
-    background-color: #D1FFFD;
+    padding: 10px 20px;
+    background-color: var(--secondary90);
     display: flex;
     justify-content: center;
     gap: 10px;
     margin-top: auto;
 }
 .filterBottom button{
-    padding: 10px 20px;
-    color: #5DDCD6;
-    font-size: 24px;
+    padding: 5px 20px;
+    color: var(--text);
+    font-size: 20px;
     width: 100%;
-    background-color: white;
-    border-radius: 10px;
-    border: 1px solid #000;
+    background-color: var(--secondary10);
+    border-radius: 3px;
+    border: 1px solid var(--text20);
 }
 .filterBottom button:nth-child(2){
-    color: black;
-    background-color: #5DDCD6;
+    color: var(--text);
+    background-color: var(--accent);
     border: 0;
 }
 
@@ -183,21 +195,21 @@
 .listBox{
     /* border: 1px solid black; */
     margin-left: 25px;
-    border-radius: 10px;
+    border-radius: 3px;
     overflow: hidden;
-    box-shadow: 0px 2px 4px 0px rgba(0, 0, 0, 0.25);
     display: flex;
     flex-direction: column;
     justify-content: space-between;
     max-height: 400px; /* Set the max height to 400px */
     overflow-y: auto;
     position: relative;
+    flex: 1;
 }
 .listBox::-webkit-scrollbar{
     width: 5px;
 }
 .listBox::-webkit-scrollbar-thumb{
-    background-color: #5DDCD6;
+    background-color: var(--accent);
 }
 
 .listTable{
@@ -211,9 +223,13 @@
 
 .listTable thead tr{
     width: 100%;
-    background-color: #D1FFFD;
     justify-content: space-between;
     position: sticky;
+    color: var(--text);
+    width: 100%;
+    background: var(--secondary90);
+    border-radius: 3px;
+    overflow: hidden;
 }
 
 .listTable thead th{
@@ -224,29 +240,32 @@
 
 .listTable tbody tr{
     display: table-row;
-    background-color: black;
     padding-bottom: 10px;
 }
 
 .listTable tbody td{
-    background-color: #f0fffe;
+    background-color: var(--secondary20);;
     padding: 10px 5px;
+    color: var(--text);
+    border-bottom: 1px solid var(--secondary20);
 }
-
+.listTable tbody td svg path{
+    fill: var(--text);
+}
 .studentDetails{
     display: flex;
 }
 .studentDetails h3{
-    color: #555;
     font-size: 24px;
 }
 .studentDetails .img{
-    background-color: #5DDCD6;
-    width: 40px;
-    height: 40px;
+    width: 30px;
+    height: 30px;
+    margin-top: auto;
+    margin-bottom: auto;
     border-radius: 50%;
     overflow: hidden;
-    border: 1px solid #5DDCD6;
+    border: 1px solid var(--accent);
 }
 .studentDetails .img img{
     width: 100%;
@@ -264,7 +283,6 @@
 
 
 .listBulkActions{
-    background: #D1FFFD;
     padding: 10px 30px;
     margin-top: auto;
     display: flex;
@@ -272,26 +290,25 @@
     justify-content: space-between;
     position: sticky;
     bottom: 0;
+    color: var(--text);
+    background: var(--secondary90);
 }
 
 .listBulkActions label{
-    font-size: 20px;
+    font-size: 18px;
 }
 .listBulkActions button{
-    display: flex;
-    width: 173px;
-    height: 50px;
-    padding: 10px 0px;
-    justify-content: center;
-    align-items: center;
-    background-color: white;
-    border-radius: 10px;
-    color: #71E0DB;
-    font-size: 24px;
+    padding: 5px 20px;
+    color: var(--text);
+    font-size: 20px;
+    width: 180px;
+    background-color: var(--secondary10);
+    border-radius: 3px;
+    border: 1px solid var(--text20);
 }
 .listBulkActions .bulkApply{
-    background-color: #5DDCD6;
-    color: #000;
+    background-color: var(--accent);
+    color: var(--text);
     border: 0;
 }
 
@@ -304,7 +321,7 @@
     border-radius: 3px;
 }
 .listSection input[type=checkbox]:checked{
-    background-color: #5DDCD6;
+    background-color: var(--accent);
 }
 
 

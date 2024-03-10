@@ -4,16 +4,18 @@ import Navbar from '../navbar/Navbar'
 import Menu from '../menu/Menu'
 import Sidebar from '../sidebar/Sidebar'
 function Layout() {
-    const [menu,setMenu]=useState('')
-    function showMenu(){
-        setMenu(menu=="active"?"":"active")
+    const [menu, setMenu] = useState('')
+    function showMenu() {
+        setMenu(menu == "active" ? "" : "active")
     }
     return (
         <>
             <Navbar showMenu={showMenu} />
             <main>
                 <Menu menu={menu} showMenu={showMenu} />
-                <Sidebar />
+                <div className="sidebar-container shadow">
+                    <Sidebar />
+                </div>
                 <div className="main-content">
                     <Outlet />
                 </div>

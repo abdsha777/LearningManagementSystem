@@ -36,8 +36,8 @@ function StudentList() {
     return (
         <div className='studentListNew'>
             <div className="listHeading">
-                <h1>STUDENT LIST</h1>
-                <Link to={'add'}><button>+</button></Link>
+                <h3>STUDENT LIST</h3>
+                <Link to={'add'}><button>+ Add Student</button></Link>
             </div>
             <div className="searchSection">
                 <input type="text" name="query" placeholder='Search by name...' onChange={(e)=>setQ(e.target.value)} />
@@ -52,7 +52,7 @@ function StudentList() {
 
                 <div className="filterBox">
                     <div className="filterHead">
-                        <h2>Filter</h2>
+                        <h4>Filter</h4>
                     </div>
                     <div className="filterBody">
                         <div className="filter">

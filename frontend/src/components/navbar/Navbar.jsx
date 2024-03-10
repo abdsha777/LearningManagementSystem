@@ -9,24 +9,24 @@ function Navbar({showMenu}) {
     name =  name.charAt(0).toUpperCase() + name.slice(1);
     return (
         <header>
-            <nav>
+            <nav className='shadow'>
                 <div className="menu" onClick={showMenu}>
                     <div></div>
                     <div></div>
                     <div></div>
                 </div>
                 <div className="logo">
-                    <div className="logo-img"></div>
-                    <h2>LMS</h2>
+                    {/* <div className="logo-img"></div> */}
+                    <h4>LMS</h4>
                 </div>
-                <h1 className="greetings">Welcome {name}</h1>
+                <p className="greetings">Welcome {name}</p>
 
                 <div className="profile">
                     <Link to="/profile/">
                         <img src={sir} alt="sir" />
                     </Link>
                     <div className="profile-info">
-                        <h2>{name}</h2>
+                        <p>{name}</p>
                         <p>{role}</p>
                     </div>
                 </div>
