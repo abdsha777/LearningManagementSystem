@@ -53,7 +53,7 @@ function EditCoursePopup({ handler, data, token, refresh }) {
         <Popup handler={handler}>
             {({ hide }) => (
                 <>
-                    <h1>Edit Course</h1>
+                    <h3>Edit Course</h3>
                     <div className="input-box">
                         <label htmlFor="cname">Course Title</label>
                         <input type="text" id="title" placeholder="Name"

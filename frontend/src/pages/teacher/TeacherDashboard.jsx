@@ -46,7 +46,7 @@ function TeacherDashboard() {
         datasets: [{
             label: 'No Of Sudents',
             data: [121, 222, 88, 200, 121, 222, 88, 200],
-            backgroundColor: ['#5DDCD6']
+            backgroundColor: ['#d44950']
         }]
     }
     const options = {
@@ -108,7 +108,7 @@ function TeacherDashboard() {
                 </div>
             </div>
             <div className="CourseTable">
-                <h1>My Course</h1>
+                <h3>My Course</h3>
                 <table>
                     <thead>
                         <tr>
@@ -119,6 +119,12 @@ function TeacherDashboard() {
                         </tr>
                     </thead>
                     <tbody>
+                        <tr>
+                            <td>aaa</td>
+                            <td>aaa</td>
+                            <td>aaa</td>
+                            <td>aaa</td>
+                        </tr>
                         {
                             course.map((record,key)=>{
                                 return(

@@ -23,7 +23,7 @@ function TeacherMyCourses() {
         <div>
 
             <div>
-                <h1>My Courses</h1>
+                <h3>My Courses</h3>
 
                 <div className="video-component">
                     <div className="videos">
@@ -33,7 +33,7 @@ function TeacherMyCourses() {
                                     <Link className="video-box" key={key} to={'/editCourse/'+course._id}>
                                         <div className="video-img" style={{ backgroundImage: `url(${backend}/img/${course.courseImg})` }} ></div>
                                         <div className="video-info">
-                                            <h1>{course.title   }</h1>
+                                            <p>{course.title   }</p>
                                         </div>
                                         <small>Duration:{course.duration} Hours</small>
                                     </Link>

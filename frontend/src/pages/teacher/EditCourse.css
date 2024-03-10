@@ -3,16 +3,13 @@
 }
 
 .sectionHeading {
-    font-size: 30px;
-    margin-bottom: 20px;
-    font-weight: bold;
-    color: #292929;
+    margin-bottom: 10px;
 }
 
 .sectionBox {
-    padding: 20px;
-    border-radius: 10px;
-    background-color: #d0fcff;
+    padding: 10px 20px;
+    border-radius: 5px;
+    background-color: var(--secondary30);
     margin-bottom: 20px;
 }
 
@@ -20,22 +17,17 @@
     display: flex;
     margin-bottom: 5px;
     overflow: hidden;
+    align-items: center;
 }
 
-.textbox h3 {
-    color: rgba(0, 0, 0, 0.80);
+.textbox h5 {
+    color: var(--text80);
+    font-weight: 400;
     font-size: 20px;
-    line-height: 29.124px;
-    /* 145.62% */
-    letter-spacing: 0.4px;
 }
 
 .textbox p {
-    color: #000;
-    font-size: 20px;
-    line-height: 29.124px;
-    /* 145.62% */
-    letter-spacing: 0.4px;
+    color: var(--text);
     margin-left: 10px;
 }
 .textbox a{
@@ -53,60 +45,66 @@
 }
 
 .editBtn{
-    padding: 5px 10px;
-    background: rgba(93, 220, 214, 0.50);
+    padding: 10px ;
+    background: var(--secondary70);
     border: 0;
-    border-radius: 10px;
-    color: #000;
-    font-size: 20px;
-    line-height: 29.124px; /* 145.62% */
-    letter-spacing: 0.4px;
+    border-radius: 5px;
+    color: var(--text);
+    font-size: 18px;
     display: flex;
     align-items: center;
     transition: 0.4s transform,0.4s background-color;
+    display: flex;
+    gap: 1px;
+}
+.editBtn svg{
+    width: 20px;
+    height: 20px;
+}
+.editBtn svg path{
+    fill: var(--text);
 }
 .editBtn:focus{
     outline: 1px solid rgb(127, 127, 127);
 }
 .editBtn:hover{
     transform: scale(1.05);
-    background-color:rgba(93, 220, 214, 0.80);
+    background-color:var(--accent);
+    /* color: var(--text); */
 }
-
 .mybutton{
-    min-width: 300px;
-    padding: 20px;
-    font-size: 25px;
-    font-weight: 700;
-    line-height: 29.124px; /* 100.428% */
-    letter-spacing: 0.58px;
-    border-radius: 10px;
+    min-width: 250px;
+    padding: 10px 20px;
+    font-size: 20px;
+    border-radius: 5px;
     border: 0;
     transition: 0.4s transform,0.4s border,0.4s color;;
 }
 .mybutton:hover{
     transform: scale(0.98);
-    border: 1px solid black;
+    
 }
 
 .dashedBtn{
-    border: 2px dashed #000;
-    background: #F0FEFF;
-    background-color: #d0fcff;
+    background-color: var(--accent10);
+    border: 1px solid var(--accent);
+    color: var(--text);
 }
 .dashedBtn:hover{
-    border: 2px dashed rgb(0, 213, 255)
+    background-color: var(--accent30);
 }
 .mr20{
     margin-right: 20px;
 }
 
 .filledBtn{
-    background: #A7EDEB;
+    background: var(--secondary);
+    color: var(--text);
 }
 
 .mybutton.full{
-    background-color: #5DDCD6;;
+    background-color: var(--accent);
+    color: var(--text);
 }
 
 .sectionBtns{

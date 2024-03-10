@@ -5,7 +5,7 @@ import AuthContext from '../../context/AuthContext';
 
 import defaultUser from "../../assets/user.jpg";
 
-function StudentList() {
+function StudentList({teacher}) {
     const [students, setStudents] = useState([]);
     const [classFilter, setClassFilter] = useState("");
     const [classFilters,setClassFilters]=useState([]);
@@ -13,7 +13,10 @@ function StudentList() {
     const [q,setQ]=useState("");
     // const endpoint = "http://localhost:7000/Admin_Teacher_student";
     const backend = import.meta.env.VITE_BACKEND;
-    const endpoint = `${backend}/api/users/students/`;
+    var endpoint = `${backend}/api/users/students/`;
+    if(teacher){
+        endpoint = `${backend}/api/users/mystudents/`;
+    }
     const {token} = useContext(AuthContext)
 
     function getStudents() {

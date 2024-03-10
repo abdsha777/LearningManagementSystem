@@ -18,12 +18,16 @@ function TeacherCourseList() {
     return (
         <div>
             <div className="head">
-                <h1>My Course List</h1>
+                <h3 className='list-heading'>My Course List</h3>
             </div>
-            <div className="inputs">
-                <input type="text" placeholder="Search courses" />
+            <div className="sub_heading">
+                <input type="text" placeholder="Search Courses" />
+                
+                {/* <StudentFilter /> */}
+                <button class="filterBtn">Filter</button>
             </div>
-            <div className="table-start">
+
+            <div className="listTableContainer">
                 <table>
                     <thead>
                         <tr>

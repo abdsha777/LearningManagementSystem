@@ -187,7 +187,7 @@ function AddUnit() {
             {unitId && (
                 <>
                     <div className="sectionBody">
-                        <h1 className="sectionHeading">Videos</h1>
+                        <h4 className="sectionHeading">Videos</h4>
 
                         {videos
                             .sort((a, b) => {
@@ -301,7 +301,7 @@ function AddUnit() {
                     </div>
 
                     <div className="sectionBody">
-                        <h1 className="sectionHeading">Test</h1>
+                        <h4 className="sectionHeading">Test</h4>
                         {unit.numberOfQuestion <= 0 ? (
                             <Link to={"test"}>
                                 <button className="mybutton dashedBtn mr20">

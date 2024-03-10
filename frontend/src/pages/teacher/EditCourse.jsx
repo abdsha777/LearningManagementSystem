@@ -46,23 +46,23 @@ function EditCourse() {
                 <a onClick={() => nav(-1)}>&larr; back</a>
             </div>
             <div className="sectionBody">
-                <h1 className="sectionHeading">Edit Course</h1>
+                <h3 className="sectionHeading">Edit Course</h3>
                 <div className="sectionBox">
                     <div className="textbox">
-                        <h3>Title:</h3>
+                        <h5>Title:</h5>
                         <p>{course.title}</p>
                     </div>
                     <div className="textbox">
-                        <h3>Duration:</h3>
+                        <h5>Duration:</h5>
                         <p>{course.duration} hours</p>
                     </div>
                     <div className="textbox">
-                        <h3>Description:</h3>
+                        <h5>Description:</h5>
                         <p>{course.description}</p>
                     </div>
                     {course.courseImg && (
                         <div className="textbox">
-                            <h3>Course Image:</h3>
+                            <h5>Course Image:</h5>
                             <img
                                 src={`${endpoint}/img/${course.courseImg}`}
                                 alt="courseImg"
@@ -102,7 +102,7 @@ function EditCourse() {
                 </div>
             </div>
             <div className="sectionBody">
-                <h1 className="sectionHeading">Edit Unit</h1>
+                <h4 className="sectionHeading">Edit Unit</h4>
 
                 {course.units
                     ?.sort((a, b) => {
@@ -112,23 +112,23 @@ function EditCourse() {
                         return (
                             <div className="sectionBox" key={u._id}>
                                 <div className="textbox">
-                                    <h3>Sequence:</h3>
+                                    <h5>Sequence:</h5>
                                     <p>{u.sequence}</p>
                                 </div>
                                 <div className="textbox">
-                                    <h3>Name:</h3>
+                                    <h5>Name:</h5>
                                     <p>{u.title}</p>
                                 </div>
                                 <div className="textbox">
-                                    <h3>Description:</h3>
+                                    <h5>Description:</h5>
                                     <p>{u.description}</p>
                                 </div>
                                 <div className="textbox">
-                                    <h3>No of videos:</h3>
+                                    <h5>No of videos:</h5>
                                     <p>{u.numOfVideo}</p>
                                 </div>
                                 <div className="textbox">
-                                    <h3>No of questions in test:</h3>
+                                    <h5>No of questions in test:</h5>
                                     <p>{u.numOfMCQ}</p>
                                 </div>
 
@@ -196,7 +196,7 @@ function EditCourse() {
                 )}
             </div>
             <div className="sectionBody">
-                <h1 className="sectionHeading">Final Test</h1>
+                <h4 className="sectionHeading">Final Test</h4>
                 {course.finalTest == null ? (
                     <Link to={"finalTest"}>
                         <button className="mybutton dashedBtn mr20">

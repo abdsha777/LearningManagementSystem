@@ -61,8 +61,8 @@ function AddCourse() {
     }
 
     return (
-        <form>
-            <h2>Add New Course</h2>
+        <form className="addCourseForm">
+            <h3>Add New Course</h3>
 
             <div className="add_form">
                 <div className="input-box">
@@ -128,7 +128,7 @@ function AddCourse() {
                 <button className="btn btn-border-blue">+ Add Module</button>
             </div> */}
 
-            {msg && <h2 className="errorMessage">{msg}</h2>}
+            {msg && <h4 className="errorMessage">{msg}</h4>}
 
             <div className="cancel_save">
                 <button className="btn btn-border cancel-btn">Cancel</button>
