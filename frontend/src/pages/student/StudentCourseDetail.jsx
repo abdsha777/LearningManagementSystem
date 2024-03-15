@@ -34,7 +34,7 @@ function StudentCourseDetail() {
     if (error) {
         return (
             <div className="teacher-view-course">
-                <h1 className="title">An error occured...</h1>
+                <h3>An error occured...</h3>
                 <p>Server Error. Please try again later</p>
             </div>
         );
@@ -42,7 +42,7 @@ function StudentCourseDetail() {
     if (!course) {
         return (
             <div className="teacher-view-course">
-                <h1 className="title">Loading...</h1>
+                <h3>Loading...</h3>
             </div>
         );
     }
@@ -62,8 +62,8 @@ function StudentCourseDetail() {
 
     return (
         <div className="teacher-view-course">
-            <h1 className="title">{course.title}</h1>
-            <h4 className="description">{course.description}</h4>
+            <h3 >{course.title}</h3>
+            <h4>{course.description}</h4>
 
             <div className="course-content">
                 <div className="left-content">

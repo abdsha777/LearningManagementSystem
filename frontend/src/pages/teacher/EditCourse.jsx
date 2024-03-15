@@ -206,7 +206,7 @@ function EditCourse() {
                 ) : (
                     <div className="sectionBox">
                         <div className="textbox">
-                            <h3>No of question:</h3>
+                            <h5>No of question:</h5>
                             <p>{course.finalTest.mcqCount}</p>
                         </div>
 

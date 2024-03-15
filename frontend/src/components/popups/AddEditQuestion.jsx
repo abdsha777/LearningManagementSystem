@@ -140,7 +140,7 @@ function AddEditQuestion({ handler, data, token, refresh, edit, final }) {
         <Popup handler={handler}>
             {({ hide }) => (
                 <>
-                    <h1>{edit ? "Edit" : "Add"} Question</h1>
+                    <h3>{edit ? "Edit" : "Add"} Question</h3>
                     <div className="input-box">
                         <label htmlFor="cname">Question</label>
                         <input

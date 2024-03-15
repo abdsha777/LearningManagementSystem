@@ -33,15 +33,15 @@ function AddTest() {
                 <a onClick={() => nav(-1)}>&larr; back</a>
             </div>
             <div className="sectionBody">
-                <h1 className="sectionHeading">{unitId?"":"Final"} Test Questions</h1>
+                <h3 className="sectionHeading">{unitId?"":"Final"} Test Questions</h3>
                 {mcqs.map((m) => (
                     <div className="sectionBox" key={m._id}>
                         <div className="textbox">
-                            <h3>Question:</h3>
+                            <h5>Question:</h5>
                             <p>{m.question}</p>
                         </div>
                         <div className="textbox">
-                            <h3>Options:</h3>
+                            <h5>Options:</h5>
                             <ul className="ul">
                                 {m.options.map((o, idx) => (
                                     <li key={idx}>{o}</li>
@@ -49,7 +49,7 @@ function AddTest() {
                             </ul>
                         </div>
                         <div className="textbox">
-                            <h3>Answer:</h3>
+                            <h5>Answer:</h5>
                             <p>{m.answer}</p>
                         </div>
                         <AddEditQuestion

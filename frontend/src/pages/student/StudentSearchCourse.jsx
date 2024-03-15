@@ -12,7 +12,7 @@ function StudentSearchCourse() {
     const getCourseList = () => {
         fetch(`${backend}/api/course/`, { headers: { token } })
             .then((response) => response.json())
-            .then((data) => {setCourse(data);console.log(data)})
+            .then((data) => { setCourse(data); console.log(data) })
             .catch((error) => console.log(error));
     };
     useEffect(() => {
@@ -20,28 +20,20 @@ function StudentSearchCourse() {
     }, []);
     return (
         <div>
-            <div className="course-tag">
-                <b>Find a Course</b>
-                <div className="search">
-                    <div className="search-box">
-                        <input
-                            type="text"
-                            className="search-bar"
-                            placeholder="Search Course"
-                        />
-                    </div>
-                    <div className="filter-button">
-                        <button className="bton">Filter</button>
-                    </div>
+            <div className="topHeading">
+                <h3>Find a course</h3>
+                <div class="sub_heading">
+                    <input type="text" placeholder="Search Courses" />
+                    <button class="filterBtn">Filter</button>
                 </div>
             </div>
 
             <div className="video-component">
-                <p className="heading"></p>
+                {/* <p className="heading"></p> */}
                 <div className="videos">
                     {course.courses && course.courses.map((c, idx) => {
                         return (
-                            <Link to={'/courseDetail/'+c.id} className="video-box" key={idx}>
+                            <Link to={'/courseDetail/' + c.id} className="video-box" key={idx}>
                                 <div
                                     className="video-img"
                                     style={{
@@ -49,7 +41,7 @@ function StudentSearchCourse() {
                                     }}
                                 ></div>
                                 <div className="video-info">
-                                    <h1>{c.title}</h1>
+                                    <h5>{c.title}</h5>
                                 </div>
                                 <small>Duration: {c.duration} hours</small>
                             </Link>

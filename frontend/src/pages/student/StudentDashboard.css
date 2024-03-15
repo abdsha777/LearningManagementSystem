@@ -7,52 +7,41 @@
 
 /* top ka card ka css */
 .over-afridi {
-    max-height: 80px;
+    /* max-height: 80px; */
     display: flex;
-    background-color: #FEFEFE;
+    gap: 30px;
     margin-top: 20px;
-    margin-bottom: 20px;
-    gap: 40px;
+    margin-bottom: 30px;
 }
 
 .green-afridi {
-    margin-left: 70px;
-    width: 240px;
-    height: 80px;
+    min-width: 230px;
+    padding: 10px;
     display: flex;
     justify-content: center;
     align-items: center;
-    background: rgba(93, 220, 214, 0.75);
-    /*box-shadow: 3px 3px rgb(74, 109, 109);*/
-    box-shadow: 2px 2px 0 1px rgb(180, 197, 197);
-    border: 1px;
-    border-radius: 15px;
+    background: linear-gradient(var(--secondary70),var(--secondary90));
+    border: none;
+    border-radius: 10px;
+    color: var(--text);
 }
 
 .text-in-green {
     flex-direction: column;
-    width: 60%;
     text-align: left;
-    margin-top: 1opx;
-    padding: 0%;
 }
 
 .text-in-green h3 {
-    color: #FFF;
     font-family: Inter;
     font-size: 20px
 }
 
 .greendiv-motive {
-    color: black;
-    font-size: 15px;
+    font-size: 16px;
 }
 
 .green-icon {
-    /*   background-color:rgba(93, 220, 214, 0.75);
-      */
-    border: 15px;
-    width: 40%;
+    margin-right: 10px;
     display: flex;
     justify-content: center;
 }
@@ -60,44 +49,20 @@
     height: 40px;
     width: 40px;
 }
+.green-icon svg path{
+    stroke: var(--accent);
+}
 
 .img {
     padding: 0;
 }
 
 /* table   */
-
-.display-info {
-    padding: 20px;
-    border-collapse: collapse;
-    width: 100%;
-    /* margin-left: 50px; */
-    position: relative;
-    max-height: 300px;
-    overflow-y: scroll;
+.cyt{
+    margin-bottom: 20px;
 }
-
-
-.table-h-afridi {
-    color: #847E7E;
-    font-family: Inter;
-    font-size: 18px;
-    font-style: normal;
-    font-weight: 300;
-    line-height: 29.124px;
-    text-align: left;
-}
-
-.table-h-afridi td{
-    color: #323030;
-    font-family: Inter;
-    font-size: 18px;
-    font-style: normal;
-    font-weight: 600;
-    line-height: 29.124px;
-}
-.table-h-afridi td ,.table-h-afridi th{
-    padding: 10px;
+.cyt2{
+    margin: 20px 0;
 }
 
 /* bottom card grid of suggestion  */
