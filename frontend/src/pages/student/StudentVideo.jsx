@@ -148,7 +148,7 @@ function StudentVideo() {
             <div className="backlink">
                 <a onClick={() => nav(-1)}>&larr; back</a>
             </div>
-            <h1 className="title">{video.title}</h1>
+            <h3>{video.title}</h3>
             <h4 className="description">{video.description}</h4>
             <div className="course-content">
                 <div className="left-content">

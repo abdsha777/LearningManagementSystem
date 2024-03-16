@@ -21,6 +21,7 @@
 .course-content {
     display: flex;
     gap: 30px;
+    margin-top: 10px;
 }
 
 .left-content {
@@ -44,13 +45,6 @@
 }
 
 .left-content h4 {
-    color: #000;
-    font-family: Inter;
-    font-size: 32px;
-    font-style: normal;
-    font-weight: 500;
-    line-height: 95.023%;
-    /* 38.009px */
     margin-bottom: 30px;
 }
 
@@ -58,9 +52,15 @@
     display: flex;
     width: 100%;
     border-radius: 20px;
-    border: 1px solid #4F4F4F;
-    background: #DAFFFD;
+    border: 1px solid var(--accent);
+    background-color: var(--secondary90);
+    color: var(--text);
+}
 
+.noLessons{
+    color: var(--accent);
+    padding: 10px;
+    background-color: var(--secondary10);
 }
 
 .course-detail-box .left-side {
@@ -87,14 +87,17 @@
 .course-detail-box>div>svg {
     margin-right: 10px;
 }
+.course-detail-box>div>svg path {
+    fill: var(--accent);
+}
 
 .course-detail-box>div>div>small {
-    color: #1A1A1A;
+    /* color: #1A1A1A; */
     font-size: 12px;
 }
 
 .course-detail-box>div>div>p {
-    color: #000;
+    /* color: #000; */
     font-size: 18px;
     font-weight: 600;
 }
@@ -104,6 +107,7 @@
     display: flex;
     flex-direction: column;
     gap: 10px;
+    color: var(--text);
 }
 
 .course-detail>div {
@@ -113,15 +117,19 @@
 }
 
 .course-detail>div small {
-    color: #393939;
+    /* color: #393939; */
     font-family: Inter;
     font-size: 18px;
 }
 
 .course-detail>div p {
-    color: #000;
+    /* color: #000; */
     font-size: 18px;
     font-weight: 500;
+}
+
+.course-detail svg path{
+    fill: var(--accent);
 }
 
 .right-content button {

@@ -19,9 +19,7 @@ function Certificates() {
         <div className='certificate-main'>
 
             <div className="video-component">
-                <div className="certificate-heading">
-                    <p>Certificate</p>
-                </div>
+                <h3>Certificates</h3>
                 <div className="videos">
                     {
                         certificates.map((c, idx) => {

@@ -17,7 +17,7 @@ function StudentMyCourse() {
     return (
         <div>
             <div className="video-component">
-                <h1>Enrolled Course</h1>
+                <h3>Enrolled Course</h3>
                 <div className="videos">
 
                     {
@@ -38,7 +38,7 @@ function StudentMyCourse() {
                 </div>
             </div>
             <div className="video-component">
-                <h1>Completed Course</h1>
+                <h2>Completed Course</h2>
                 <div className="videos">
                     {
                         courses.filter(c => c.is_complete).map((c, idx) => {

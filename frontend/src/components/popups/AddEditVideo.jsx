@@ -90,7 +90,7 @@ function AddEditVideo({ handler, data, token, refresh, unitId, edit }) {
 
                     {
                         msg && (
-                            <h2 className='errorMessage'>{msg}</h2>
+                            <h5 className='errorMessage'>{msg}</h5>
                         )
                     }
 

@@ -34,16 +34,6 @@
     border-radius: 10px;
 }
 
-.left-content h4 {
-    color: #000;
-    font-family: Inter;
-    font-size: 32px;
-    font-style: normal;
-    font-weight: 500;
-    line-height: 95.023%;
-    /* 38.009px */
-    margin-bottom: 30px;
-}
 
 .videoBtns {
     display: flex;

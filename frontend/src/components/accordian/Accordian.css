@@ -14,7 +14,7 @@
     cursor: pointer;
     padding: 20px 40px;
     border-top: 1px;
-    background: #D1F5F4;
+    background: var(--secondary80);
     position: relative;
 }
 
@@ -28,8 +28,8 @@
 
 .accordion_input:checked~.accordion_label {
     padding: 20px 40px;
-    background: #1F1F1F;
-    color: #FFF;
+    background: linear-gradient(var(--accent),var(--accent95));
+    color: var(--text);
 }
 
 .accordion_input:checked~.accordion_label.last {
@@ -41,7 +41,7 @@
 }
 
 .accordion_label label svg path {
-    fill: black;
+    fill: var(--accent80);
 }
 
 .accordion_label label svg {
@@ -62,14 +62,16 @@
 .section_content {
     display: block;
     margin-bottom: 10px;
-    background: #E9E9E9;
+    background: var(--secondary25);
     width: 100%;
     max-height: 0;
     transition: all .2s linear, margin-bottom .1s linear, padding .2s;
     overflow: hidden;
     padding: 0 40px;
 }
-
+.section_content svg path{
+    fill: var(--accent80);
+}
 .accordion_input:checked~.section_content {
     max-height: 100vh;
     padding: 20px 40px;
@@ -109,8 +111,8 @@
 
 .section1_icon_topic:hover p,
 .section1_icon_topic:hover svg path {
-    stroke: rgb(0, 68, 255);
-    color: rgb(0, 68, 255);
+    stroke: var(--accent);
+    color: var(--accent);
 }
 
 .accordion_input {
@@ -132,14 +134,14 @@
     top: 50%;
     transform: translateY(-50%);
     background:
-        radial-gradient(closest-side, #D1F5F4 70%, transparent 0% 0%),
-        conic-gradient(rgb(58 180 215)33%, rgb(255, 255, 255) 0);
+        radial-gradient(closest-side, var(--secondary) 70%, transparent 0% 0%),
+        conic-gradient(var(--accent) 33%, var(--text) 0);
 }
 
 .accordion_input:checked~.accordion_label .progress-bar {
     background:
-        radial-gradient(closest-side, #1F1F1F 71%, transparent 0% 0%),
-        conic-gradient(rgb(58 180 215)33%, rgb(255, 255, 255) 0);
+        radial-gradient(closest-side, var(--accent) 70%, transparent 0% 0%),
+        conic-gradient(var(--secondary) 33%, var(--text) 0);
 }
 
 

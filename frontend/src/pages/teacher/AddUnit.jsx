@@ -169,7 +169,7 @@ function AddUnit() {
                     ></textarea>
                 </div>
 
-                {msg && <h2 className="errorMessage">{msg}</h2>}
+                {msg && <h4 className="errorMessage">{msg}</h4>}
 
                 <div className="cancel_save">
                     <button className="btn btn-border cancel-btn">
@@ -196,15 +196,15 @@ function AddUnit() {
                             .map((v, idx) => (
                                 <div className="sectionBox" key={idx}>
                                     <div className="textbox">
-                                        <h3>Sequence:</h3>
+                                        <h5>Sequence:</h5>
                                         <p>{v.sequence}</p>
                                     </div>
                                     <div className="textbox">
-                                        <h3>Title:</h3>
+                                        <h5>Title:</h5>
                                         <p>{v.title}</p>
                                     </div>
                                     <div className="textbox">
-                                        <h3>Duration:</h3>
+                                        <h5>Duration:</h5>
                                         <p>
                                             {v.duration && v.duration.hours > 0
                                                 ? `${v.duration.hours} hours`
@@ -213,11 +213,11 @@ function AddUnit() {
                                         </p>
                                     </div>
                                     <div className="textbox">
-                                        <h3>Description:</h3>
+                                        <h5>Description:</h5>
                                         <p>{v.description}</p>
                                     </div>
                                     <div className="textbox">
-                                        <h3>YouTube Link:</h3>
+                                        <h5>YouTube Link:</h5>
                                         <a href={v.url} target="_blank">
                                             {v.url}
                                         </a>

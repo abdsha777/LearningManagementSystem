@@ -67,7 +67,7 @@ function ChangeSequence({ handler, data, token, refresh, unit }) {
         <Popup handler={handler}>
             {({ hide }) => (
                 <>
-                    <h1>Change Sequence</h1>
+                    <h3>Change Sequence</h3>
 
                     <div className="units">
 

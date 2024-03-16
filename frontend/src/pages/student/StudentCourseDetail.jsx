@@ -70,7 +70,7 @@ function StudentCourseDetail() {
                     <img
                         src={backend + "/img/" + course.courseImg}
                         alt=""
-                        className="course-img"
+                        className="course-img shadow"
                     />
                     <h4>Lessons in this course.</h4>
                     {course.units.length > 0 ? (
@@ -79,7 +79,7 @@ function StudentCourseDetail() {
                             isEnrolled={course.isEnrolled}
                         />
                     ) : (
-                        <p>Currently no lessons...</p>
+                        <p className="noLessons">Currently no lessons...</p>
                     )}
                 </div>
 

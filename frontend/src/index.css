@@ -285,10 +285,11 @@ nav {
 /* main content goes here */
 
 .main-content {
+    position: relative;
     width: 100%;
     /* height: 85vh; */
     border-radius: 0 0 25px 0;
-    overflow-y: scroll;
+    /* overflow-y: scroll; */
     padding: 30px 40px;
     color: var(--text);
 }
@@ -459,7 +460,7 @@ nav {
 }
 
 .btn-filled {
-    background-color: var(--accent70);
+    background-color: var(--accent80);
     border: 0;
     color: white;
     font-weight: 500;

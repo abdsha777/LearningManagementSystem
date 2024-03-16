@@ -23,8 +23,10 @@ function Popup({ handler, children }) {
                 {handler}
             </div>
             <div className={`popupWrapper ${hidden?"":"active"}`} onClick={handlePopupClick}>
-                <div className='popupBody' >
-                    {children({hide})}
+                <div className="popupmiddle">
+                    <div className='popupBody' >
+                        {children({hide})}
+                    </div>
                 </div>
             </div>
         </>
