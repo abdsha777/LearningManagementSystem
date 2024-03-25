@@ -269,7 +269,7 @@ router.post('/check/', fetchuser, async (req, res) => {
 
         // console.log(difference, totalVideoSeconds * 0.7)
         totalVideoSeconds = 1
-        if (difference > (totalVideoSeconds * 0.75)) {
+        if (difference > (totalVideoSeconds * 0.5)) {
             await VideoRecord.findOneAndUpdate({
                 _id: videoRecord._id
             }, { completed: true })
